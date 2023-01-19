@@ -1,0 +1,2338 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" >
+    <head>
+        <script>
+           
+            if (navigator.userAgent.match(/Windows Phone/i)) {
+                var msViewportStyle = document.createElement("style");
+                msViewportStyle.appendChild(
+                  document.createTextNode(
+                    "@-ms-viewport{width:auto!important}"
+                  )
+                );
+                document.getElementsByTagName("head")[0].
+                  appendChild(msViewportStyle);
+            }
+   
+        </script>
+        <title>
+	Kennesaw State University - Net Price Calculator
+</title>
+            <link href="/Content/3.3.5/bootstrap.css" rel="stylesheet" />
+            <link href="/Content/bootstrapSlider.css" rel="stylesheet" />
+            <link id="ctl00_ctl00_mainStyle" rel="Stylesheet" type="text/css" href="/Style.ashx" />
+    
+    <style>
+       
+         .markerBorderColor{
+            border:solid 1px red;
+            display:inline-block;
+            line-height:0px;
+        }
+         .markerBorderColor >input:not([type]){
+             line-height:initial;
+         }
+         .markerBorderColor >input,select{
+             margin-left:0px!important;
+             margin-right:0px!important;
+             margin-top:0px!important;
+             margin-bottom:0px!important;
+         }
+         .Question.inerror > .middle{
+             border-width:0px;
+         }
+         ::-webkit-input-placeholder {
+             color: #b3b3b3;
+             
+            }
+            :-moz-placeholder { /* older Firefox*/
+             color: #b3b3b3;
+            }
+            ::-moz-placeholder { /* Firefox 19+ */ 
+             color: #b3b3b3;
+            } 
+            :-ms-input-placeholder { 
+             color: #b3b3b3;
+            }
+            .FullName > .middle > .ControlPlaceHolder{
+                margin-left:5px;
+            }
+            .SingleCoulmn{
+                margin-left:5px !important;
+                float:left !important;
+            }
+            .clearBtn{
+                margin-top:15px;
+            }
+    </style>
+    
+    <style>
+        /*for bigger screens to adjust help icon close to question*/
+        
+            @media(min-width:1200px) {
+                .helpIconSurvey {
+                    right: 120px !important;
+                }
+            }
+        
+        @media only screen and (min-device-width : 320px) and (max-device-width : 736px) {
+          select {
+                font-size: 16px;
+                background: #eee;
+              
+            }
+           input {
+                font-size: 16px;
+                background: #eee;
+              
+            }
+           input[type=radio] {
+                width: 20px;
+                height: 20px;
+            }
+           input[type=checkbox] {
+                width: 20px;
+                height: 20px;
+               
+            }
+            .CheckBox .middle .Title{
+               margin-left:40px !important;
+               margin-top:5px !important;
+           }
+            
+            input[type=radio] {
+                width: 20px;
+                height: 20px;
+            }
+            input[type=radio] + label{
+                vertical-align:middle;
+                margin-bottom:10px;
+            }
+           
+         }
+
+        
+       
+        .SurveyHelp{
+            display:none;
+        }
+        .middle>.Error{
+            clear:both;
+            float:left;
+        }
+      .selected.SurveyElement{
+          background-color:transparent;
+      }
+
+      .error {
+            -moz-box-shadow: 0 0 10px #888;
+			-webkit-box-shadow: 0 0 10px#888;
+			box-shadow: 0 0 7px #888;
+           
+        }
+
+        input[type=number]::-webkit-outer-spin-button,
+        input[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            -moz-appearance:textfield;
+        }
+
+        .SurveyElement.selected {
+          background-color:none;
+        }
+
+        .Question.selected > .middle {
+          border-width:1px;
+         border-color:transparent;
+         background-color:transparent;
+        }
+
+      
+       
+    </style>
+
+
+        <!--[if lte IE 8]>
+        <style>
+            .modal-dialog {
+                width: 50%;
+            }
+        </style>
+        <![endif]-->
+        
+        <style type="text/css">
+            
+            .SurveyPresenter {
+                position: relative;
+            }
+            table.SurveyStyle {
+                border-collapse: separate;
+            }
+
+        </style>
+        <!--[if IE 6]>
+        <script type="text/javascript">
+            var _ie6 = true;
+        </script>
+        <![endif]-->
+        
+        
+               <script></script>
+             </head>
+    <body id="ctl00_ctl00_Body1">
+        <form name="aspnetForm" method="post" action="./survey.aspx" id="aspnetForm">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTEwODUyMjU3NDkPZBYCZg9kFgJmD2QWBGYPZBYCAgQPFgIeBGhyZWYFCy9TdHlsZS5hc2h4ZAIBD2QWBGYPZBYCAgMPZBYEAgMPZBYMAgIPZBYGZg9kFgICAQ8WAh4LXyFJdGVtQ291bnQCAhYEZg9kFgJmDw8WBB4PQ29tbWFuZEFyZ3VtZW50BQExHgdFbmFibGVkaGQWAmYPFQEHRW5nbGlzaGQCAg9kFgJmDw8WAh8CBQEyZBYCZg8VAQhFc3Bhw7FvbGQCAQ8WAh4Fc3R5bGUFG3RleHQtYWxpZ246bGVmdDtmbG9hdDpub25lOxYCAgEPDxYEHghDc3NDbGFzcwUhaW50ZXJuYWwgdmFsaWRhdGUgYnRuIGJ0bi1wcmltYXJ5HgRfIVNCAgJkZAICD2QWAgIBDw8WBB8FBSFpbnRlcm5hbCB2YWxpZGF0ZSBidG4gYnRuLXByaW1hcnkfBgICZGQCAw9kFgZmD2QWAgIBDxYCHwECAhYEZg9kFgJmDw8WBB8CBQExHwNoZBYCZg8VAQdFbmdsaXNoZAICD2QWAmYPDxYCHwIFATJkFgJmDxUBCEVzcGHDsW9sZAIBDxYCHwQFG3RleHQtYWxpZ246bGVmdDtmbG9hdDpub25lOxYCAgEPDxYEHwUFIWludGVybmFsIHZhbGlkYXRlIGJ0biBidG4tcHJpbWFyeR8GAgJkZAICD2QWAgIBDw8WBB8FBSFpbnRlcm5hbCB2YWxpZGF0ZSBidG4gYnRuLXByaW1hcnkfBgICZGQCBA9kFgZmD2QWAgIBDxYCHwECAhYEZg9kFgJmDw8WBB8CBQExHwNoZBYCZg8VAQdFbmdsaXNoZAICD2QWAmYPDxYCHwIFATJkFgJmDxUBCEVzcGHDsW9sZAIBDxYCHwQFG3RleHQtYWxpZ246bGVmdDtmbG9hdDpub25lOxYCAgEPDxYEHwUFIWludGVybmFsIHZhbGlkYXRlIGJ0biBidG4tcHJpbWFyeR8GAgJkZAICD2QWAgIBDw8WBB8FBSFpbnRlcm5hbCB2YWxpZGF0ZSBidG4gYnRuLXByaW1hcnkfBgICZGQCBQ9kFgZmD2QWAgIBDxYCHwECAhYEZg9kFgJmDw8WBB8CBQExHwNoZBYCZg8VAQdFbmdsaXNoZAICD2QWAmYPDxYCHwIFATJkFgJmDxUBCEVzcGHDsW9sZAIBDxYCHwQFG3RleHQtYWxpZ246bGVmdDtmbG9hdDpub25lOxYCAgEPDxYEHwUFIWludGVybmFsIHZhbGlkYXRlIGJ0biBidG4tcHJpbWFyeR8GAgJkZAICD2QWAgIBDw8WBB8FBSFpbnRlcm5hbCB2YWxpZGF0ZSBidG4gYnRuLXByaW1hcnkfBgICZGQCBg8UKwACZDK2LwABAAAA/////wEAAAAAAAAABAEAAAD7AVN5c3RlbS5Db2xsZWN0aW9ucy5HZW5lcmljLkRpY3Rpb25hcnlgMltbU3lzdGVtLkludDMyLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODldLFtSZXpvbHZlLlN1cnZleUVuZ2luZS5Nb2RlbC5BbnN3ZXJzLkFuc3dlciwgU3VydmV5RW5naW5lLk1vZGVsLCBWZXJzaW9uPTYuMC4wLjUsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbF1dBAAAAAdWZXJzaW9uCENvbXBhcmVyCEhhc2hTaXplDUtleVZhbHVlUGFpcnMAAwADCJEBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuR2VuZXJpY0VxdWFsaXR5Q29tcGFyZXJgMVtbU3lzdGVtLkludDMyLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODldXQj/AVN5c3RlbS5Db2xsZWN0aW9ucy5HZW5lcmljLktleVZhbHVlUGFpcmAyW1tTeXN0ZW0uSW50MzIsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV0sW1Jlem9sdmUuU3VydmV5RW5naW5lLk1vZGVsLkFuc3dlcnMuQW5zd2VyLCBTdXJ2ZXlFbmdpbmUuTW9kZWwsIFZlcnNpb249Ni4wLjAuNSwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsXV1bXSMAAAAJAgAAACUAAAAJAwAAAAQCAAAAkQFTeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5HZW5lcmljRXF1YWxpdHlDb21wYXJlcmAxW1tTeXN0ZW0uSW50MzIsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dAAAAAAcDAAAAAAEAAAAjAAAAA/0BU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuS2V5VmFsdWVQYWlyYDJbW1N5c3RlbS5JbnQzMiwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XSxbUmV6b2x2ZS5TdXJ2ZXlFbmdpbmUuTW9kZWwuQW5zd2Vycy5BbnN3ZXIsIFN1cnZleUVuZ2luZS5Nb2RlbCwgVmVyc2lvbj02LjAuMC41LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGxdXQwFAAAASVN1cnZleUVuZ2luZS5Nb2RlbCwgVmVyc2lvbj02LjAuMC41LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwE/P////0BU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuS2V5VmFsdWVQYWlyYDJbW1N5c3RlbS5JbnQzMiwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XSxbUmV6b2x2ZS5TdXJ2ZXlFbmdpbmUuTW9kZWwuQW5zd2Vycy5BbnN3ZXIsIFN1cnZleUVuZ2luZS5Nb2RlbCwgVmVyc2lvbj02LjAuMC41LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGxdXQIAAAADa2V5BXZhbHVlAAQIKVJlem9sdmUuU3VydmV5RW5naW5lLk1vZGVsLkFuc3dlcnMuQW5zd2VyBQAAABAHAAAJBgAAAAH5/////P///9ITAAAJCAAAAAH3/////P///9MTAAAJCgAAAAH1/////P///yUAAAAJDAAAAAHz/////P///w8BAAAJDgAAAAHx/////P///20BAAAJEAAAAAHv/////P///ycAAAAJEgAAAAHt/////P///8sAAAAJFAAAAAHr/////P///1MEAAAJFgAAAAHp/////P///4kEAAAJGAAAAAHn/////P///zAAAAAJGgAAAAHl/////P///ywAAAAJHAAAAAHj/////P///y0AAAAJHgAAAAHh/////P///y4AAAAJIAAAAAHf/////P///zMMAAAJIgAAAAHd/////P///3cBAAAJJAAAAAHb/////P///7cEAAAJJgAAAAHZ/////P///9kLAAAJKAAAAAHX/////P///9cLAAAJKgAAAAHV/////P///3sEAAAJLAAAAAHT/////P///9YLAAAJLgAAAAHR/////P///xwHAAAJMAAAAAHP/////P///woCAAAJMgAAAAHN/////P///9MLAAAJNAAAAAHL/////P////0BAAAJNgAAAAHJ/////P///3YAAAAJOAAAAAHH/////P///3wEAAAJOgAAAAHF/////P///wsAAAAJPAAAAAHD/////P///z4YAAAJPgAAAAHB/////P///8kNAAAJQAAAAAG//////P///woWAAAJQgAAAAG9/////P///5kAAAAJRAAAAAG7/////P///9gLAAAJRgAAAAG5/////P///z0AAAAJSAAAAAG3/////P///9ULAAAJSgAAAAxLAAAASVN5c3RlbSwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFBgAAAClSZXpvbHZlLlN1cnZleUVuZ2luZS5Nb2RlbC5BbnN3ZXJzLkFuc3dlcg0AAAAOQW5zd2VyTW9kaWZpZWQPUHJvcGVydHlDaGFuZ2VkCG1GaWVsZElkDW1RdWVzdGlvbk5hbWUGbVN0YXRlF0JpbmRpbmdMaXN0YDErYWRkTmV3UG9zJEJpbmRpbmdMaXN0YDErcmFpc2VMaXN0Q2hhbmdlZEV2ZW50cyRCaW5kaW5nTGlzdGAxK3JhaXNlSXRlbUNoYW5nZWRFdmVudHMWQmluZGluZ0xpc3RgMSthbGxvd05ldxdCaW5kaW5nTGlzdGAxK2FsbG93RWRpdBlCaW5kaW5nTGlzdGAxK2FsbG93UmVtb3ZlHUJpbmRpbmdMaXN0YDErdXNlclNldEFsbG93TmV3EkNvbGxlY3Rpb25gMStpdGVtcwMEAAEEAAAAAAAAAAMTU3lzdGVtLkV2ZW50SGFuZGxlcjFTeXN0ZW0uQ29tcG9uZW50TW9kZWwuUHJvcGVydHlDaGFuZ2VkRXZlbnRIYW5kbGVySwAAAAgvUmV6b2x2ZS5TdXJ2ZXlFbmdpbmUuTW9kZWwuQW5zd2Vycy5lQW5zd2VyU3RhdGUFAAAACAEBAQEBAX9TeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5MaXN0YDFbW1N5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dBQAAAAoKEAcAAAoFtP///y9SZXpvbHZlLlN1cnZleUVuZ2luZS5Nb2RlbC5BbnN3ZXJzLmVBbnN3ZXJTdGF0ZQEAAAAHdmFsdWVfXwAIBQAAAAEAAAD/////AQAAAQEACU0AAAABCAAAAAYAAAAKCtITAAAKAbL///+0////AQAAAP////8BAAABAQAJTwAAAAEKAAAABgAAAAoK0xMAAAoBsP///7T///8BAAAA/////wEAAAEBAAlRAAAAAQwAAAAGAAAACgolAAAACgGu////tP///wEAAAD/////AQAAAQEACVMAAAABDgAAAAYAAAAKCg8BAAAKAaz///+0////AQAAAP////8BAAABAQAJVQAAAAEQAAAABgAAAAoKbQEAAAoBqv///7T///8BAAAA/////wEAAAEBAAlXAAAAARIAAAAGAAAACgonAAAACgGo////tP///wEAAAD/////AQAAAQEACVkAAAABFAAAAAYAAAAKCssAAAAKAab///+0////AQAAAP////8BAAABAQAJWwAAAAEWAAAABgAAAAoKUwQAAAoBpP///7T///8BAAAA/////wEAAAEBAAldAAAAARgAAAAGAAAACgqJBAAACgGi////tP///wEAAAD/////AQAAAQEACV8AAAABGgAAAAYAAAAKCjAAAAAKAaD///+0////AQAAAP////8BAAABAQAJYQAAAAEcAAAABgAAAAoKLAAAAAoBnv///7T///8BAAAA/////wEAAAEBAAljAAAAAR4AAAAGAAAACgotAAAACgGc////tP///wEAAAD/////AQAAAQEACWUAAAABIAAAAAYAAAAKCi4AAAAKAZr///+0////AQAAAP////8BAAABAQAJZwAAAAEiAAAABgAAAAoKMwwAAAoBmP///7T///8BAAAA/////wEAAAEBAAlpAAAAASQAAAAGAAAACgp3AQAACgGW////tP///wEAAAD/////AQAAAQEACWsAAAABJgAAAAYAAAAKCrcEAAAKAZT///+0////AQAAAP////8BAAABAQAJbQAAAAEoAAAABgAAAAoK2QsAAAoBkv///7T///8BAAAA/////wEAAAEBAAlvAAAAASoAAAAGAAAACgrXCwAACgGQ////tP///wEAAAD/////AQAAAQEACXEAAAABLAAAAAYAAAAKCnsEAAAKAY7///+0////AQAAAP////8BAAABAQAJcwAAAAEuAAAABgAAAAoK1gsAAAoBjP///7T///8BAAAA/////wEAAAEBAAl1AAAAATAAAAAGAAAACgocBwAACgGK////tP///wEAAAD/////AQAAAQEACXcAAAABMgAAAAYAAAAKCgoCAAAKAYj///+0////AQAAAP////8BAAABAQAJeQAAAAE0AAAABgAAAAoK0wsAAAoBhv///7T///8BAAAA/////wEAAAEBAAl7AAAAATYAAAAGAAAACgr9AQAACgGE////tP///wEAAAD/////AQAAAQEACX0AAAABOAAAAAYAAAAKCnYAAAAKAYL///+0////AQAAAP////8BAAABAQAJfwAAAAE6AAAABgAAAAoKfAQAAAoBgP///7T///8BAAAA/////wEAAAEBAAmBAAAAATwAAAAGAAAACgoLAAAACgF+////tP///wEAAAD/////AQAAAQEACYMAAAABPgAAAAYAAAAKCj4YAAAKAXz///+0////AQAAAP////8BAAABAQAJhQAAAAFAAAAABgAAAAoKyQ0AAAoBev///7T///8BAAAA/////wEAAAEBAAmHAAAAAUIAAAAGAAAACgoKFgAACgF4////tP///wEAAAD/////AQAAAQEACYkAAAABRAAAAAYAAAAKCpkAAAAKAXb///+0////AQAAAP////8BAAABAQAJiwAAAAFGAAAABgAAAAoK2AsAAAoBdP///7T///8BAAAA/////wEAAAEBAAmNAAAAAUgAAAAGAAAACgo9AAAACgFy////tP///wEAAAD/////AQAAAQEACY8AAAABSgAAAAYAAAAKCtULAAAKAXD///+0////AQAAAP////8BAAABAQAJkQAAAARNAAAAf1N5c3RlbS5Db2xsZWN0aW9ucy5HZW5lcmljLkxpc3RgMVtbU3lzdGVtLlN0cmluZywgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgYAAAgICZIAAAABAAAAAQAAAAFPAAAATQAAAAmTAAAAAQAAAAEAAAABUQAAAE0AAAAJlAAAAAEAAAABAAAAAVMAAABNAAAACZUAAAABAAAAAQAAAAFVAAAATQAAAAmWAAAAAQAAAAEAAAABVwAAAE0AAAAJlwAAAAEAAAABAAAAAVkAAABNAAAACZgAAAABAAAAAQAAAAFbAAAATQAAAAmZAAAAAQAAAAEAAAABXQAAAE0AAAAJmgAAAAEAAAABAAAAAV8AAABNAAAACZsAAAABAAAAAQAAAAFhAAAATQAAAAmcAAAAAQAAAAEAAAABYwAAAE0AAAAJnQAAAAEAAAABAAAAAWUAAABNAAAACZ4AAAABAAAAAQAAAAFnAAAATQAAAAmfAAAAAQAAAAEAAAABaQAAAE0AAAAJoAAAAAEAAAABAAAAAWsAAABNAAAACaEAAAABAAAAAQAAAAFtAAAATQAAAAmiAAAAAQAAAAEAAAABbwAAAE0AAAAJowAAAAEAAAABAAAAAXEAAABNAAAACaQAAAABAAAAAQAAAAFzAAAATQAAAAmlAAAAAQAAAAEAAAABdQAAAE0AAAAJpgAAAAEAAAABAAAAAXcAAABNAAAACacAAAABAAAAAQAAAAF5AAAATQAAAAmoAAAAAQAAAAEAAAABewAAAE0AAAAJqQAAAAEAAAABAAAAAX0AAABNAAAACaoAAAABAAAAAQAAAAF/AAAATQAAAAmrAAAAAQAAAAEAAAABgQAAAE0AAAAJrAAAAAEAAAABAAAAAYMAAABNAAAACa0AAAABAAAAAQAAAAGFAAAATQAAAAmuAAAAAQAAAAEAAAABhwAAAE0AAAAJrwAAAAEAAAABAAAAAYkAAABNAAAACbAAAAABAAAAAQAAAAGLAAAATQAAAAmxAAAAAQAAAAEAAAABjQAAAE0AAAAJsgAAAAEAAAABAAAAAY8AAABNAAAACbMAAAABAAAAAQAAAAGRAAAATQAAAAm0AAAAAQAAAAEAAAARkgAAAAQAAAAGtQAAAAM5NzgNAxGTAAAABAAAAAa2AAAACGtlbm5lc2F3DQMRlAAAAAQAAAAGtwAAAAExDQMRlQAAAAQAAAAGuAAAAAEwDQMRlgAAAAQAAAAGuQAAAAEwDQMRlwAAAAQAAAAGugAAAAEwDQMRmAAAAAQAAAAGuwAAAAEwDQMRmQAAAAQAAAAGvAAAAAEwDQMRmgAAAAQAAAAGvQAAAAEwDQMRmwAAAAQAAAAGvgAAAAEwDQMRnAAAAAQAAAAGvwAAAAVGYWxzZQ0DEZ0AAAAEAAAABsAAAAABMQ0DEZ4AAAAEAAAABsEAAAABMQ0DEZ8AAAAEAAAABsIAAAABMg0DEaAAAAAEAAAABsMAAAAFRmFsc2UNAxGhAAAABAAAAAbEAAAAATENAxGiAAAABAAAAAbFAAAAATANAxGjAAAABAAAAAbGAAAABUZhbHNlDQMRpAAAAAQAAAAGxwAAAAEwDQMRpQAAAAQAAAAGyAAAAAVGYWxzZQ0DEaYAAAAEAAAABskAAAAFRmFsc2UNAxGnAAAABAAAAAbKAAAABUZhbHNlDQMRqAAAAAQAAAAGywAAAAVGYWxzZQ0DEakAAAAEAAAABswAAAABMA0DEaoAAAAEAAAABs0AAAAFRmFsc2UNAxGrAAAABAAAAAbOAAAAATANAxGsAAAABAAAAAbPAAAAATANAxGtAAAABAAAAAbQAAAAATANAxGuAAAABAAAAAbRAAAAATANAxGvAAAABAAAAAbSAAAAATANAxGwAAAABAAAAAbTAAAAAjIyDQMRsQAAAAQAAAAG1AAAAAANAxGyAAAABAAAAAnUAAAADQMRswAAAAQAAAAJ1AAAAA0DEbQAAAAEAAAACdQAAAANAwsWBGYPFgIeBVZhbHVlZWQCAQ9kFgICAQ9kFgJmDxAPFgIeB0NoZWNrZWRoZGRkZAIHD2QWBAIBDxYEHwQFG3RleHQtYWxpZ246bGVmdDtmbG9hdDpub25lOx4HVmlzaWJsZWhkAgUPFgIfBAUbdGV4dC1hbGlnbjpsZWZ0O2Zsb2F0Om5vbmU7FgICAQ8PFgQfBQUhaW50ZXJuYWwgdmFsaWRhdGUgYnRuIGJ0bi1wcmltYXJ5HwYCAmRkAgYPFgIfCWhkAgYPD2QWAh4EdHlwZQUPdGV4dC9qYXZhc2NyaXB0ZBgCBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WAQVMY3RsMDAkY3RsMDAkTWFpbkJvZHkkTWFpbkJvZHkkU3VydmV5Q29udHJvbDEkSW50cm9kdWN0aW9uI3FpanliaGNpdWlpdmxnJGNoawUsY3RsMDAkY3RsMDAkTWFpbkJvZHkkTWFpbkJvZHkkU3VydmV5Q29udHJvbDEPFCsACWRmZGRkBRpJbnRyb2R1Y3Rpb24jSW50cm9QYWdlTWluaSgpbVN5c3RlbS5HbG9iYWxpemF0aW9uLkN1bHR1cmVJbmZvLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkCZW5oaGRIBSsokA+RpDMYGzDQHWSjdKsVAQ==" />
+
+
+<script type="text/javascript">
+//<![CDATA[
+function FinishLaterPostback() { window._validNavigate = true; __doPostBack('ctl00$ctl00$BelowWrapper$LightweightLogin','FinishLater') }//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=EIxBlztGmg3rtq112qlCmQV0O0HkmhDNHP_A9G9A9mFoU5yQk4HtuxYxV0zf7JEhCcJLj5ohmOwUoJmF5bO9XnRMRP20VkNJr3yOwOOMLx1iST3AFqYam1xq_ry6Oc8b0_nJmMLKqWDhSbwP1dDD8HxPD2jQLDDM91U4Dy85_wK8tEYE0&amp;t=49337fe8" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="Script/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="script/WebKit.js" type="text/javascript"></script>
+<script src="script/jquery.vAlign.js" type="text/javascript"></script>
+<script src="script/json2.js" type="text/javascript"></script>
+<script src="script/jquery.urldecoder.min.js" type="text/javascript"></script>
+<script src="script/flowplayer-3.2.6.min.js" type="text/javascript"></script>
+<script src="script/jquery.vtooltip.js" type="text/javascript"></script>
+<script src="script/jquery.rezolve.transactionalField.js" type="text/javascript"></script>
+<script src="script/jquery.wrapRoundedCorner.js" type="text/javascript"></script>
+<script src="script/jquery.corner.js" type="text/javascript"></script>
+<script src="script/jquery.rezolve.accordion.js" type="text/javascript"></script>
+<script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="Scripts/placeholders.min.js" type="text/javascript"></script>
+<script src="Scripts/jquery.backstretch.min.js" type="text/javascript"></script>
+<script src="script/jquery.ncc.development.aspx" type="text/javascript"></script>
+<script src="script/idle-timer.js" type="text/javascript"></script>
+<script src="script/jquery.outerHTML.js" type="text/javascript"></script>
+<script src="scripts/aria.js" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=k80yNLbrUk6AP3OISKg0vjXiQW62IGMtlylYcDOHszgFA2fCJAVoeUHy4-CaAeOpuNWabqLpNdQu08M-oXRnl9AUnAWnezv4wqqZdDuFfB5paNXlSwQGwYOvkwaCYTTuo19XtedM0qSsKbIxvIhynQ7LfiqUURjQyfDoNhKhqPGKIsSHGJrhgZQZMQUIFmZ5CmGRRXjLSd0miBzWdONrEhEnN8eqHDlwtb2e2hNizBGV3U9DT6xev8kZWQUyWhHK7O1BAX9ucmmWSEPTCbTlcb5LBfpK3L_FRs-ATgYuO7CqE7d2qz57gFaGteJVzZwYgg2ryrLlnQ9x8H6C5Zp2E4FBhvCczav-IDav3K8Ur0iv1jpM5HtqYUcW7yKRCNuH9OLzCu0ewwK6Yaf8hSdMzup-oiLVqRE-Rnp8X0BeIU3k_21ZkiKBmopxdCUjlbOJ6L-yiV9XesbC_BmKDNfxi0QHWaxCGBKCN7YOTXHJVVZN4SEvMEGxQT4BA7XbrqDlpm70YcOE6wzctRy3GSOWV6eD2HJ3r_KrFnNjNoKSn8vzcsHrFiAOke-BGojXq17v6qo49ooAPc3XwVuVJoNLq9lKMXHyyQq_SsBu8zveGnE4INm9jOeCcc3Ad_2IxRDRY9xS3UqFVp-kMX4Po5i8soWWKgqtLI5Xat-fAZMZicLG_0wC1AoWPfY8Co9heZ71jFWuIIc8u7RPZPnonk3FeeiegVAMADauDlIRo15abFPn4EMLeGs1LV-579tX66FpYzSYFyXtAI59f3o4UJbagD8jkW1vOecGT_L80yt1AvjpSNBcDy_-OaBJyxkd8erL52Ypu3WdWRANx7VmGRdSclBlUAjdjpnjN645cEGsBeWeNjAsYVaQe8iNTfpad82Q9z7BCwNh2FRG4AhlMfKIPlbT0SKUlJZjIVKupMlyEEMMpOq-vf9o-QSQKwUsNfCicD-YJRzvVG-EMLr7R7ZJRnz_MJYsr7-4aeN42X8AGQpWVdjuPmc0roxLiDIRhO9Z1FrprEIa0OvHc4UXouN3iHg-i5tKaZWxPJgNt-z1fzVe04-Q7OfzbCY1P9iGGA3BGdHwmHuMU6NJJFwpAgoHIPZ58qAdOskc8iylCPbSAPJPhK4-sxplM9WDwGLIUXJ6f-KodB8JKP6w7NwxbTlsGUxwU14B_VvAAcalsKvgESqqs7Rglr2SH9mTgzH4UQn9qKoHcE9-3qDXo_YKuQbErvnILW7gsfLEpsOHxYNf0nG_aq9rzchtFKv8YFq2vCO5kOc0GaOMOgJNv1t0d0diE3wBMbL5TgAJboRXRdx0aaKWBgUgei0eG0cZvi61XWkDvEWHr3EENZEgkwredpIURBIbb9E3RSejoSB0TIqTyhr_XFdTJjUl4Z9RNtroo2-WVy9csgQlRMMR-Q3yM-v_44EuTjQI4ErdL3m6k4Bnq1wZLZ2n1zkEqPONWOG4a1YlSVnvQHw2zwI9HCM_9v1Qmhi25c3bfkWx0AGytEqGPZefb9u9Tc_CGpBc_0COMao3mfmq7S72wx6CEM8ncmGWMfYO73XntdkjnjY8-o5QF2lv6N7V7wj8-77Pos0jRzQJpTW9HQ2" type="text/javascript"></script>
+<script src="script/SurveyEngineFixes.js" type="text/javascript"></script>
+<script src="script/LightweightLogin.js?1" type="text/javascript"></script>
+<script src="Services/SurveyEngine.asmx/jsdebug" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function s_getBoolVariableValue(input) {
+    if (input == null) {
+        return null;
+    }
+    else if (input instanceof Boolean) {
+        return input;
+    }
+    else {
+        return input.toString().toLowerCase() == "true";
+    }
+}
+
+//]]>
+</script>
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="67F08486" />
+            
+            <!--[if lte IE 8]><html class="ie7"><![endif]-->
+             <!--[if lt IE 9]>
+                <script src="script/html5shiv.min.js"></script>
+                <script src="script/respond.min.js"></script>
+            <![endif]-->
+            <script type="text/javascript">
+                //function adapt_to_orientation() {
+                //    var ori = window.orientation;
+                //   // alert(ori);
+                //    var screenwidth = (ori == 90 || ori == -90) ? screen.height : screen.width;
+                //    var screenheight = (ori == 90 || ori == -90) ? screen.width : screen.height;
+                //   // alert(screenwidth);
+                //    // alert(screenheight);
+                //    // resize meta viewport
+                //    $('meta[name=viewport]').attr('content', '');
+                //    $('meta[name=viewport]').attr('content', 'initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no');
+                //}
+                //adapt_to_orientation();
+                $(function () {
+                    $("input[type=\"hidden\"][data-outputmodule]").each(function() {
+                        var that = $(this);
+                        that.detach();
+                        $("body").append(that);
+                    });
+
+                });
+
+                
+
+                /* turned off logging of javascript errors.
+                window.onerror = function (msg, url, line) {
+                    var headers = {};
+                    try {
+                        var sc = $find(rez_surveycontrol_id);
+                        if (sc != null) {
+                            // try to include some additional information in the header.
+                            headers = {
+                                "Survey_Page": $(".MenuItem.selected > .innerTab").html(),
+                                "Survey_Question": (sc.get_currentQuestion() != null) ? sc.get_currentQuestion().get_id() : ""
+                            };
+                        }
+                    } catch (ex) {
+                        headers = {};
+                    }
+                    if (url == null || url.length == 0 || line == 0 || line > 10000) {
+                        return;
+                    }
+                    $.ajax({
+                        headers: headers,
+                        type: "POST",
+                        url: "Utility.asmx/JSErrorReport",
+                        contentType: "application/json; charset=utf-8",
+                        data: JSON.stringify({ msg: msg, url: url, line: line })
+                    });
+                };
+                */
+
+                function ShowValueProposition() {
+                    $("#ValueProposition").modal("show");
+                }
+                function ShowValueProposition2() {
+                    $("#ValueProposition2").modal("show");
+                }
+
+                function ShowAddlInfo() {
+                    $("#AddlInfoWindowDlg").modal("show");
+                }
+
+                function ShowTOU() {
+                    $("#TermsOfUseDialog").modal("show");
+                }
+
+                $(function () {
+                    
+                    // we first need to check if this page is in an iFrame and Safari browser
+                    if (top.location != self.location && navigator.userAgent.indexOf("Safari") > -1 && navigator.userAgent.indexOf("Chrome") == -1) {
+                        top.location = self.location.href;
+                        return;
+                    }
+
+                    $(".showtermsofuse").on("click", function (evt) {
+                        evt.preventDefault();
+                        ShowTOU();
+                        return false;
+                    });
+
+                    $(".showvalueproposition").on("click", function (evt) {
+                        evt.preventDefault();
+                        ShowValueProposition();
+                        return false;
+                    });
+                    $(".showvaluepropositionNew").on("click", function (evt) {
+                        evt.preventDefault();
+                        ShowValueProposition2();
+                        return false;
+                    });
+                    $(".AddlInfoWindow").on("click", function (evt) {
+                        evt.preventDefault();
+                        ShowAddlInfo();
+                        return false;
+                    });
+
+                    $("input[fieldid],select[fieldid]").TransactionField();
+
+                    $("div[data-img-src]").each(function() {
+                        $(this).backstretch($(this).attr("data-img-src"));
+                    });
+
+                });
+
+            </script>
+            <div class="themeBg">
+                <div class="wrapper">
+                    
+    
+    <input type="hidden" name="ctl00$ctl00$MainBody$SurveyVersion" id="ctl00_ctl00_MainBody_SurveyVersion" value="1.0.5" />
+   
+    <style>
+         #aac_calc_url{
+            word-wrap:break-word;
+        }
+        #ncc_calc_url{
+             word-wrap:break-word;
+        }
+       
+    </style>
+     
+    <style>
+         #NCTBannerHeader{
+                display:none;
+            }
+         .logoResponsive img{
+             margin:auto;
+         }
+    </style>
+        
+    <script type="text/javascript">
+    
+        var message_id = 0;
+        jQuery.PopSessionInfo = function(message) {
+            if ($("#session_info").length > 0) {
+                message_id++;
+                var mid = "npc_idle_message_" + message_id.toString();
+                var e = $("<span id=\"" + mid + "\">" + message + "</span>");
+                $("#session_info").append(e);
+                window.setTimeout(Function.createDelegate(this, function() { $("#" + mid).remove(); }), 5000);
+            }
+        };
+        
+        jQuery.SessionTimeoutUrl = '/SessionTimeout.aspx';
+
+        jQuery.IdleActivityEventHandler = function() {
+            $.idleTimer("destroy");
+            jQuery.PopSessionInfo("user idle event");
+            // function you want to fire when the user goes idle
+
+            window.ShowBootstrapDialog(
+                "Idle Activity Detection",
+                "<p>Due to an extended period of inactivity, your session will be abandoned.<br/>We do this to protect your personal information.</p>",
+                [
+                    { 
+                        "html" : "Continue Session", 
+                        "style" : "primary", 
+                        "action" : function() {
+                            if ($.logoutTimer != null) {
+                                window.clearTimeout($.logoutTimer);
+                            }
+                            $.idleTimer($(document).data("timeout_interval"));
+                            $(document).bind("idle.idleTimer", jQuery.IdleActivityEventHandler);
+                            window.HideBootstrapDialog();
+                        }
+                    },
+                    {
+                        "html" : "End Session",
+                        "action" : function() {
+                            window.location.href = "?stid=0";
+                            window.HideBootstrapDialog();
+                        }
+                    }
+                ]);
+            
+            if ($.idleMessageAutoRedirectTimeout != null) {
+                $.logoutTimer = window.setTimeout(function() {
+                    window._validNavigate = true;
+                    window.location.href = jQuery.SessionTimeoutUrl;
+                }, jQuery.idleMessageAutoRedirectTimeout);
+            }
+        };
+
+        jQuery.SessionDroppedEventHandler = function() {
+            window.location.href = jQuery.SessionTimeoutUrl;
+        };
+
+        jQuery.SessionVerifiedEventHandler = function() {
+            jQuery.PopSessionInfo("Server session verified.");
+            $.lastSessionReset = new Date();
+        };
+
+        jQuery.SessionCheckErrorEventHandler = function(e, m, x) {
+            jQuery.PopSessionInfo("Server not responding!");
+            
+            window.ShowBootstrapDialog(
+                "Server Communication Error",
+                "<p>We detected the web service is no longer available. To protect your personal information, we ended your session. Click \"OK\" to start over.</p>",
+                [
+                    { 
+                        "html" : "OK", 
+                        "style" : "primary", 
+                        "action" : function() {
+                            window.location.href = "?stid=0";
+                            window.HideBootstrapDialog();
+                        }
+                    }
+                ]);
+        };
+
+        jQuery.fn.initializeIdleTimer = function(surveyTransactionId, timeoutMinutes, displayMessageMinutes, sessionCheckInterval) {
+            $._stid = surveyTransactionId;
+            $.lastSessionReset = new Date();
+            $(document).data("timeout_interval", 60000 * timeoutMinutes);
+            $.idleTimer($(document).data("timeout_interval"));
+            $.idleMessageAutoRedirectTimeout = displayMessageMinutes * 60000;
+            $(document).bind("idle.idleTimer", jQuery.IdleActivityEventHandler);
+            $.sessionResetInterval = window.setInterval(function() {
+                jQuery.PopSessionInfo("check server session...");
+                $.ajax({
+                    type: "POST",
+                    url: "Utility.asmx/SessionTest",
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify({ transactionId: $._stid }),
+                    success: function(data) {
+                        if (data != null && data.d != null && data.d == true) {
+                            jQuery.SessionVerifiedEventHandler();
+                        } else {
+                            jQuery.SessionDroppedEventHandler();
+                        }
+                    },
+                    error: jQuery.SessionCheckErrorEventHandler
+                });
+            }, 60000 * sessionCheckInterval);
+        };
+
+    </script>
+    
+    <script type="text/javascript">
+
+        $(function() {		
+        					
+            // hide the .IntroPageTitle > .middle > .Title style for older browsers.
+            $(".IntroPageTitle > .middle > .Title").hide();
+            // Suppress the navigate away warning when changing languages.
+            $(".langChoice a.choice").bind("click", function(e) {
+                window._validNavigate = true;
+                return true;
+            });
+            $(".ViewInSurveyCommand a").bind("click", function(e) {
+                window._validNavigate = true;
+                return true;
+            });
+            // validate test id ******
+            
+
+        });
+
+       
+        
+    </script>
+
+    <div id="Outerwrapper">
+        <div class="border">
+                        
+            <div class="border-top"><div class="border-top-left"><div class="border-top-right"></div></div></div>
+            <div class="border-left" id="Header"><div class="border-right"> 
+                    
+                
+                        <div class="container-fluid">
+                             <div class="row logoResponsive">
+                                   <a title="Return to the Kennesaw State University  Website" href="https://www.kennesaw.edu/" target="_blank">
+                                    <div class="visible-lg visible-md col-lg-12" style="padding:0px;">
+                                        <img src="di-image_banner.sepng?1" alt= "Kennesaw State University" class="img-responsive pull-center" />
+                                    </div>
+                                     <div class="col-md-12  visible-sm " style="padding:0px;">
+                                         <img src="di-logo_medium.sepng?1" alt= "Kennesaw State University" class="img-responsive pull-center" />
+                                    </div>
+                                     <div class="col-xs-12 visible-xs" style="padding:0px;">
+                                          <img src="di-logo_small.sepng?1" alt= "Kennesaw State University" class="img-responsive pull-center" />
+                                    </div>
+                                   </a>
+                                </div>
+                        </div>
+                  
+            </div></div>
+            <div style="clear:both;"></div>
+            <div class="border-left" id="contentarea"><div class="border-right">
+                
+    
+    <div id="progress_complete"></div>
+    <input type="hidden" name="ctl00$ctl00$MainBody$MainBody$AddressVerificationStatus" id="ctl00_ctl00_MainBody_MainBody_AddressVerificationStatus" value="-1" />
+    
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <style>
+       
+        .header{
+            display:none;
+        }
+        body{
+             font-size: 14px;
+        }
+
+        /*.content-box {
+            max-height: 50px;
+            background-color: #f00;
+            border: 2px solid #da251c;
+            color: black;
+            height: auto;
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        @media (min-width: 992px) {
+            .col-md-offset-1 {
+                margin-left: 11%;
+            }
+        }
+
+
+        .footer {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 40px;
+        }
+        .footer-center-content{
+            color: #f0f0f0;
+            text-align:center;
+            padding-top: 10px;
+        }*/
+        .navBar {
+            color: #cb2e32;
+            padding: 5px ;
+            font-size: 14pt;
+            font-weight: bold;
+            text-align: right;
+            float: right;
+        }
+
+        .content-margin-top {
+            margin-top: 15px;
+        }
+
+            .head3 {
+                color: #cb2e32;
+                font-weight: bold;
+            }
+            /*large display*/
+            .wrapper {
+                    width: 900px;
+                    margin: 0 auto;
+                }
+            
+             /*Medium display*/
+             @media (min-width: 640px) and (max-width: 990px)  {
+              .wrapper {
+                width: 100%;
+                margin:auto;
+              }
+              .headerLogo {
+                width:100%;
+		        }
+              .btn {
+                    width: 250px;
+                    padding-left:0px;
+                 }
+              .btn a{
+                  padding-left:30px;
+              }
+            }
+              /*Smaller display*/
+            @media (max-width: 638px) {
+               .wrapper {
+                    width: 100%;
+                }
+		        .headerLogo {
+                    width:100%;
+		        }
+		        .acceptTerm {
+                    font-size:8pt;
+                    line-height:22px;
+		        }
+               
+                 .btn {
+                    width: 250px;
+                    padding-left:0px;
+                 }
+                 .btn a{
+                  padding-left:30px;
+              }
+            }
+
+             .CheckBox.Question > .middle > .Title{
+                   margin-top:0px;
+                }
+           
+		    .introImage {
+		        margin: auto;
+		    }
+
+            .introtextTop {
+                margin:auto;
+                margin-top:10px;
+                width:100%;
+		    }
+            
+		   
+		    .navBar {
+                font-size:12pt;
+		    }
+
+            /*temporray set it in theme.*/
+
+            #NCTBannerHeader,.logoResponsive{
+                display:none;
+            }
+            .pull-center {
+                 margin: auto;
+            }
+            .SurveyPresenter{
+                min-height:inherit;
+            }
+            .ExternalContent{
+                display:none;
+            }
+            .NavigationControls{
+                display:none;
+            }
+            .spaceFiller{
+            height:20px;
+            }
+              .SurveyElement {
+                margin-left:-10px;
+            } 
+            .border-right{
+                padding-bottom:0px;
+            }
+            .languageOption{
+                margin-bottom:15px;
+            }
+            .mediumContent p{
+                font-size:1.1em;
+            }
+            .langChoice{
+                display:none;
+            }
+            .languageOption .langChoice{
+                display:block;
+            }
+            .border-right .SaveFinishLater{
+                display:none;
+            }
+    </style>
+   
+
+
+			<div class="container-fluid">
+		
+            <div class="row">
+                <a title="Return to the Kennesaw State University Website" href="https://www.kennesaw.edu/" target="_blank">
+                <div class="visible-lg visible-md col-lg-12" style="padding:0px;">
+                    <img src="di-image_banner.sepng?1" alt="Kennesaw State University" class="img-responsive pull-center" />
+                </div>
+                 <div class="col-md-12  visible-sm " style="padding:0px;">
+                     <img src="di-logo_medium.sepng?1" alt="Kennesaw State University" class="img-responsive pull-center" />
+                </div>
+                 <div class="col-xs-12 visible-xs" style="padding:0px;">
+                      <img src="di-logo_small.sepng?1" alt="Kennesaw State University" class="img-responsive pull-center" />
+                </div>
+               </a>
+            </div>
+            
+            <div class="spaceFiller"></div>
+            
+            <div class="row">
+                <div class="visible-lg visible-md col-lg-12" style="padding:0px;">
+                    <img src="di-intro_image_large.sepng?1" alt="Making College Affordable" class="img-responsive pull-center" />
+                </div>
+                 <div class="col-md-12  visible-sm "  style="padding:0px;">
+                     <img src="di-intro_image_medium.sepng?1" alt="Making College Affordable" class="img-responsive pull-center" />
+                </div>
+                 <div class="col-xs-12 visible-xs"  style="padding:0px;">
+                      <img src="di-intro_image_small.sepng?1" alt="Making College Affordable" class="img-responsive pull-center" />
+                </div>
+            </div>
+            <div class="row content-margin-top introtextTop">
+              
+                
+                 
+                 <table class="visible-lg visible-md">
+                     <tr>
+                         <td colspan="2">
+                              <p style="padding-left:15px;margin-bottom:0px"></p>
+                         </td>
+                     </tr>
+                        <tr>
+                           
+                            <td style="width:33%">
+                                  <img src="di-stopwatch_large.sepng?1" class="img-responsive" alt="2019-2020 Academic Year. 92% First-time, Full-time students Received Grant/Scholarship Aid." />
+                            </td>
+                             <td style="width:66%;vertical-align:middle;">
+                                  <p style="padding-left:15px;margin-bottom:0px"><div style="text-align:left; font-size:115%; color:#000000; margin:5% 6% 5% -5%;"><p><b>Welcome to Kennesaw State University’s Net Price Calculator!</b></p>
+<p>We’re so glad you’ve chosen Kennesaw State University! In the Owl Nation, we believe students from all economic backgrounds should have the opportunity to obtain their degree with as little debt as possible.
+Our goal is to make college affordable so you can graduate and go on to achieve greatness. Whether you attend our Kennesaw or Marietta campuses, you’re in the right place to explore the many scholarships, grant, loan and work-study opportunities available that make paying for your college education as affordable as possible.</p>
+
+<p>Take the next step and explore what it costs to invest in a KSU education.</p>
+</div>
+</p>
+                            </td>
+                        </tr>
+                     <tr>
+                         <td colspan="2">
+                              <p style="padding-left:15px;margin-bottom:0px"></p>
+                         </td>
+                     </tr>
+                    </table>
+                    <table class="visible-xs">
+                         <tr>
+                             <td colspan="2">
+                                  <p style="padding-left:15px;margin-bottom:0px"><div style="text-align:left; font-size:115%; color:#000000; margin-top:3%;"><p><b>Welcome to Kennesaw State University’s Net Price Calculator!</b></p>
+<p>We’re so glad you’ve chosen Kennesaw State University! In the Owl Nation, we believe students from all economic backgrounds should have the opportunity to obtain their degree with as little debt as possible.
+Our goal is to make college affordable so you can graduate and go on to achieve greatness. Whether you attend our Kennesaw or Marietta campuses, you’re in the right place to explore the many scholarships, grant, loan and work-study opportunities available that make paying for your college education as affordable as possible.</p>
+
+<p>Take the next step and explore what it costs to invest in a KSU education.</p>
+</div>
+</p>
+                             </td>
+                        </tr>
+                        <tr>
+                            <td style="width:50%">
+                                  <img src="di-stopwatch_small.sepng?1" class="img-responsive" alt="2019-2020 Academic Year. 92% First-time, Full-time students Received Grant/Scholarship Aid." />
+                            </td>
+                            <td style="width:50%;vertical-align:middle;">
+                                  <p style="padding-left:20px;margin-bottom:0px"></p>
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                             <td colspan="2">
+                                  <p style="padding-left:15px;margin-bottom:0px"></p>
+                             </td>
+                        </tr>
+                    </table>
+                     <table class="visible-sm mediumContent">
+                         <tr>
+                             <td colspan="2">
+                                  <p style="padding-left:15px;margin-bottom:0px"></p>
+                             </td>
+                        </tr>
+                        <tr>
+                             <td style="width:34%">
+                                 <img src="di-stopwatch_medium.sepng?1" class="img-responsive" alt="2019-2020 Academic Year. 92% First-time, Full-time students Received Grant/Scholarship Aid." />
+                            </td>
+                            <td style="width:66%;vertical-align:middle;">
+                                   <p style="padding-left:20px;margin-bottom:0px"><div style="text-align:left; font-size:115%; color:#000000; margin-top:5%;"><p><b>Welcome to Kennesaw State University’s Net Price Calculator!</b></p>
+<p>We’re so glad you’ve chosen Kennesaw State University! In the Owl Nation, we believe students from all economic backgrounds should have the opportunity to obtain their degree with as little debt as possible.
+Our goal is to make college affordable so you can graduate and go on to achieve greatness. Whether you attend our Kennesaw or Marietta campuses, you’re in the right place to explore the many scholarships, grant, loan and work-study opportunities available that make paying for your college education as affordable as possible.</p>
+
+<p>Take the next step and explore what it costs to invest in a KSU education.</p>
+</div>
+</p>
+                            </td>
+                           
+                        </tr>
+                        <tr>
+                             <td colspan="2">
+                                  <p style="padding-left:15px;margin-bottom:0px"></p>
+                             </td>
+                        </tr>
+                    </table>
+                 
+                
+              
+            </div>
+            <div class="row content-margin-top">
+                <div id="surveyHost" class="col-xs-12">
+                   
+                </div>
+            </div>
+            <div class="row content-margin-top">
+                <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 ">
+                    <div class="hidden-lg hidden-md" style="text-align:center;">
+                         <div id="ctl00_ctl00_MainBody_MainBody_Intro1_nextButtonCell" class="btn nextButton" style="text-align:left;float:none;">
+                            <a id="ctl00_ctl00_MainBody_MainBody_Intro1_btnNext" class="internal validate btn btn-primary" href="javascript:__doPostBack(&#39;ctl00$ctl00$MainBody$MainBody$Intro1$btnNext&#39;,&#39;&#39;)">Get Started</a>
+                        </div>
+                       
+                    </div>
+                     <div class="visible-lg visible-md">
+                         <div id="ctl00_ctl00_MainBody_MainBody_Intro1_Div1" class="btn nextButton">
+                            <a id="ctl00_ctl00_MainBody_MainBody_Intro1_btnNextlg" class="internal validate btn btn-primary" href="javascript:__doPostBack(&#39;ctl00$ctl00$MainBody$MainBody$Intro1$btnNextlg&#39;,&#39;&#39;)">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+        </div>
+   
+<script>
+    $(document).ready(function () {
+        var element = $('#ctl00_ctl00_MainBody_MainBody_SurveyControl1').detach();
+        $('#surveyHost').append(element);
+
+    
+    });
+  
+</script>
+        <input id="ctl00$ctl00$MainBody$MainBody$SurveyControl1_prefix" name="ctl00_ctl00_MainBody_MainBody_SurveyControl1_prefix" type="hidden" value="Introduction#" /><table class="SurveyStyle" cellpadding="0" cellspacing="0" id="ctl00_ctl00_MainBody_MainBody_SurveyControl1">
+	<tr>
+		<td class="SurveyPresenter" valign="top"><div class="Children">
+			<input type="hidden" name="ctl00$ctl00$MainBody$MainBody$SurveyControl1$var_hnjqcdehcdecrfr" id="ctl00_ctl00_MainBody_MainBody_SurveyControl1_var_hnjqcdehcdecrfr" /><div class="SurveyElement IntroPageStyle Container Page IntroPageStyle" id="ctl00_ctl00_MainBody_MainBody_SurveyControl1_Introduction#IntroPageMini">
+				<div class="top">
+
+				</div><div class="middle">
+					<div class="Title">
+						
+					</div><div class="Caption">
+						
+					</div><div class="Children">
+						<div id="ctl00_ctl00_MainBody_MainBody_SurveyControl1_Introduction#plnxwssitfkjlsjrt" class="SurveyElement ExternalContent">
+							<div style="text-align:left; font-size:115%; color:#000000; margin:5% 6% 5% -5%;"><p><b>Welcome to Kennesaw State University's Net Price Calculator!</b></p>
+<p>We're so glad you've chosen Kennesaw State University! In the Owl Nation, we believe students from all economic backgrounds should have the opportunity to obtain their degree with as little debt as possible.
+Our goal is to make college affordable so you can graduate and go on to achieve greatness. Whether you attend our Kennesaw or Marietta campuses, you're in the right place to explore the many scholarships, grant, loan and work-study opportunities available that make paying for your college education as affordable as possible.</p>
+
+<p>Take the next step and explore what it costs to invest in a KSU education.</p>
+</div>
+<div style="clear:both;"></div>
+						</div><div class="SurveyElement Question HasHelp CheckBox" id="ctl00_ctl00_MainBody_MainBody_SurveyControl1_Introduction#qijybhciuiivlg">
+							<div class="top">
+
+							</div><div class="middle">
+								<div class="Title">
+									I accept the <a href="#" class="showtermsofuse">Terms of Use</a> agreement.
+								</div><div class="Caption">
+									
+								</div><div class="Control">
+									<input id="ctl00_ctl00_MainBody_MainBody_SurveyControl1_Introduction#qijybhciuiivlg_chk" type="checkbox" name="ctl00$ctl00$MainBody$MainBody$SurveyControl1$Introduction#qijybhciuiivlg$chk" />
+								</div><div id="qijybhciuiivlg_Error" class="Error">
+
+								</div><div style="clear:both;"></div>
+							</div><div class="bottom">
+
+							</div>
+						</div>
+					</div><div id="IntroPageMini_Error" class="Error">
+
+					</div><div style="clear:both;"></div>
+				</div><div class="bottom">
+
+				</div>
+			</div>
+		</div></td>
+	</tr>
+</table>
+    <div class="NavigationControls" style="margin-top: 10px; padding-bottom: 10px;">
+        <div class="container-fluid">
+            <div id="ctl00_ctl00_MainBody_MainBody_buttonTable" class="row" style="border-collapse: separate; width:100%">
+                 
+                
+                <div id="ctl00_ctl00_MainBody_MainBody_nextButtonCell" class="nextButton btnForXS" style="text-align:left;float:none;">
+                    <a id="ctl00_ctl00_MainBody_MainBody_btnNext" class="internal validate btn btn-primary" href="javascript:__doPostBack(&#39;ctl00$ctl00$MainBody$MainBody$btnNext&#39;,&#39;&#39;)">Get Started</a>
+                </div>
+            
+            </div>
+        </div>
+        
+    </div>
+
+    <script type="text/javascript">
+        //<!-- <![CDATA[
+        window._validNavigate = false;
+        window.onbeforeunload = confirmBrowseAway;
+        var rez_surveycontrol_id = "ctl00_ctl00_MainBody_MainBody_SurveyControl1";
+        function confirmBrowseAway() {
+            var inFrame = window.location != window.parent.location;
+            if (inFrame == false && !window._validNavigate) {
+                $.idleTimer('destroy');
+                if ($._stid > 0) {
+                    window.setTimeout(function () { $.idleTimer(60000 * 30); }, 1000);
+                }
+                return "To avoid losing your data, be sure to use the \"Previous\" and \"Next\" buttons to navigate through the application";
+            }
+        }
+        var addressCheckClear = false;
+
+        function SubmitHandler() {
+            var sc = $find(rez_surveycontrol_id);
+            var result = sc.validate();
+            if (result) {
+                window._validNavigate = true;
+                if (addressCheckClear == false) {
+                    var addressValidated = validateAddress();
+                    return addressValidated;
+                }
+                return true;
+            }
+            else {
+                sc.moveToError();
+                return false;
+            }
+        }
+
+        
+        //]]> -->
+    </script>
+    
+    <script type="text/javascript">
+
+        function SurveyEngineDatabaseCallCache() {
+            this.items = [];
+            
+        }
+        
+        SurveyEngineDatabaseCallCache.getKeyFromParams = function(method, params) {
+            return method + "(" + params.join(",") + ")";
+        };
+        
+        SurveyEngineDatabaseCallCache.prototype = {
+            GetValue: function(method, params) {
+                var key = SurveyEngineDatabaseCallCache.getKeyFromParams(method, params);
+                for (var i = 0; i < this.items.length; i++) {
+                    if (this.items[i].key == key) {
+                        return this.items[i].value;
+                    }
+                }
+                return this.LoadValue(method, params);
+            },
+            LoadValue: function(method, params) {
+                var $this = this;
+                var $item = null;
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    url: "Services/SurveyEngine.asmx/SurveyDatabaseCall",
+                    data: Sys.Serialization.JavaScriptSerializer.serialize({ methodName: method, parameters: params }),
+                    dataType: "json",
+                    async: false,
+                    success: function(data) {
+                        $item = {
+                            key: SurveyEngineDatabaseCallCache.getKeyFromParams(method, params),
+                            value: data.d
+                        };
+                        $this.items.push($item);
+                    }
+                });
+                return $item.value;
+            }
+        };
+
+        var databaseCallCache = new SurveyEngineDatabaseCallCache();
+
+        function HandleDatabaseCall(sender, args) {
+
+            var v1 = args.get_methodName(); // string
+            var v2 = args.get_parameters(); // array
+            var o = databaseCallCache.GetValue(v1, v2);
+            args.set_results(o);
+
+        }
+
+        
+
+        //<!-- <![CDATA[
+        // this function will get called after the page is loaded. It must be
+        // attached to the PageRequestManager's pageLoaded event handler.
+        function AttachSurveyAlertHandler(sender, args) {
+            // attached the alert event handler.
+            
+            $find(rez_surveycontrol_id).add_alert(SurveyAlertHandler);
+            $find(rez_surveycontrol_id).add_databaseCall(HandleDatabaseCall);
+            $find(rez_surveycontrol_id).add_event(HandleSurveyEvent);
+            $find(rez_surveycontrol_id).add_showHelp(function (sender, e) {
+                var target = e.target;
+                if (target == null) {
+                    return;
+                }
+                $(target.get_element()).removeClass("selected");
+                $(":input,radio,input:checkbox", target.get_element()).addClass("error");
+                return;
+                if (e == null) {
+                    return;
+                }
+                
+                var help = $(".middle > .Help", target.get_element());
+                help.show(500);
+                
+            });
+            $find(rez_surveycontrol_id).add_hideHelp(function (sender, e) {
+                var target = e.target;
+                if (target == null) {
+                    return;
+                }
+                $(":input,radio,input:checkbox", target.get_element()).removeClass("error");
+                return;
+                if (e == null) {
+                    return;
+                }
+               
+                var help = $(".middle > .Help", target.get_element());
+                help.hide(500);
+                
+            });
+            scrollTo(0, 0);
+            InitializeSurveyStyleFixes();
+        }
+        // attach the above event handler to the pageLoaded event.
+        Sys.Application.add_load(AttachSurveyAlertHandler);
+
+        // this function will get called when the survey control
+        // raises the "alert" event.
+        function SurveyAlertHandler(sender, args) {
+            // The alert event handler passes a title, body, and importance property in the event args.
+            ShowDialog(args.title, args.body, args.importance, args.dialogDismissHandler);
+        }
+
+        function HandleSurveyEvent(sender, args){
+            if (args.Code == "UpdateProgress"){
+                if (typeof ShowProgressUI == "function"){
+                    var pageName = (function() {
+                        var prefix = $("table[id$=\"SurveyControl1\"").prop("id");
+                        return $("td.SurveyPresenter div.SurveyElement:first").prop("id").substring(prefix.length+1);
+                    })();
+                    var isDependant = (function(survey) { 
+                        var v = survey.getVariableById(31); 
+                        if (v == null) { 
+                            return true; 
+                        } 
+                        var value = v.get_value(0);
+                        if (value == null) {
+                            return true;
+                        }
+                        return value.toLowerCase() != "independent";
+                    })(sender);
+                    // call web service
+                    $.ajax({
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        url: "Services/SurveyEngine.asmx/SurveyCalculateProgress",
+                        data: Sys.Serialization.JavaScriptSerializer.serialize({ currentPageUniqueName: pageName, isDependant: isDependant }),
+                        dataType: "json",
+                        context: sender
+                    }).done(function(data) {
+                        this.set_percentComplete(data.d);
+                        ShowProgressUI(this);
+                    });
+                }
+                else {
+                    return;
+                }
+            }
+        }
+
+
+        // quick and dirty dialog
+        function ShowDialog(title, body, importance, dialogClosedHandler) {
+        
+            window.ShowBootstrapDialog(
+                (title==null || title.length == 0) ? "Alert" : title,
+                body,
+                [
+                    {
+                        "html": "OK",
+                        "style": "primary",
+                        "action": function() {
+                            try {
+                                window.HideBootstrapDialog();
+                                if (dialogClosedHandler) {
+                                    dialogClosedHandler();
+                                }
+                            }
+                            catch(ex) {
+                            }
+                            return true;
+                        }
+                    }
+                ]);
+
+        }
+        //]]> -->
+    </script> 
+
+    <script type="text/javascript">
+
+        $(function() {
+
+            $._stid = new Number(0);
+            if ($._stid > 0) {
+                $.fn.initializeIdleTimer(
+                    $._stid, // the current survey transaction id (used to verify the session via web service)
+                    new Number(30),      // the inactivity timeout (the number of minutes the end user has no activity before showing the inactivity message)
+                    new Number(2),       // automatic redirect (the number of minutes the inactivity message should remain on screen before automatically redirecting the user)
+                    new Number(5)        // server session verify interval (the number of minutes between server queries to verify the session is still alive)
+                );
+            }
+
+            $("a.internal").bind("click", function(e) {
+                window._validNavigate = true;
+                return true;
+            });
+
+            $("a.validate").bind("click", function(e) {
+                if (!SubmitHandler()) {
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                    return false;
+                }
+                return true;
+            });
+
+            // rewite all "javascript:__doPostBack..." events for IE6. (stupid IE 6!)
+            if (window._ie6 !== undefined && window._ie6 == true) {
+                var postBackLinks = $("a[href^=\"javascript:__doPostBack\"]");
+                $.each(postBackLinks, function(i,val) {
+                    var o = $(val);
+                    var href = o.attr("href");
+                    var re = /__doPostBack\('([^']+)','([^']*)'\)/;
+                    re.exec(href);
+                    o.bind("click", {target: RegExp.$1,args:RegExp.$2},function(e) {
+                        e.preventDefault();
+                        __doPostBack(e.data.target, e.data.args);
+                        return false;
+                    });
+                    o.attr("href", "#");
+                });
+            };
+
+
+
+        });
+
+        $("select").change(function (e) {
+            if(screen.width < 500 ||
+                         navigator.userAgent.match(/Android/i) ||
+                         navigator.userAgent.match(/webOS/i) ||
+                         navigator.userAgent.match(/iPhone/i) ||
+                         navigator.userAgent.match(/iPod/i)) {
+                $(this).blur();
+            }
+          
+          
+        });
+        
+        
+
+    </script>
+
+      <div id="myModal" class="modal fade" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h3 class="modal-title modal-title-help">Help</h3>
+                    </div>
+                    <div class="modal-body modal-body-help">
+                       
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div id="myModalAddress" class="modal fade" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header customHeader" >
+                        
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Verify your mailing address</h4>
+                                            </div>
+                    <div class="modal-body modal-body-help" style="padding-top:5px;padding-bottom:5px;">
+                        <p style="border-bottom:1px solid #e5e5e5;padding-bottom:5px;">There's a problem with the address you provided - we've marked our suggestions in red below. Please choose which version of the address you want to use.</p>
+                      
+                           <div id="origAddress" class="addressDiv">
+                            <div style="display: table-row;">
+                               <div class="addressRadio">
+                                    <input type="radio" onclick="SelectAddress('origAddress');" name="rdoAddressList" title="Select Address"  id="rdoAddress1" value ="" style="vertical-align: text-top"   >
+                              </div>
+                               <div style="	display: table-cell;">
+                                  <b> Original Address</b>
+                                     
+                                      <div id="_origAddress">
+                                      
+                                       </div>
+                                </div>
+                            </div>
+                            </div>
+                        
+                    <div class="selected-row addressDiv" id="newAddress">
+                         <div style="display: table-row;">
+                        <div class="addressRadio">
+                            <input type="radio" onclick="SelectAddress('newAddress');" name="rdoAddressList" title="Select Address" id="rdoAddress2" value ="" checked="checked"  >
+                            </div>
+                        <div>
+                              <div style="	display: table-cell;">
+                            <b> Suggested Address</b>
+                            <div id="_address">
+                                      
+                                </div>
+                            </div> 
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                       <div class="container-fluid" style="width:90%">
+                                <div class="col-xs-12 col-sm-5 btnForXS">
+                                <button type="button" class="btn btn-primary" id="selectAddress"  data-dismiss="modal">Use this Address</button>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 btnForXS">
+                                     <button type="button" class="internal btn btn-default"  data-dismiss="modal">Edit this Address</button>
+                                  </div>
+                                <div class="col-xs-12 col-sm-1 btnForXS clearBtn">
+                                      <a   id="clearAddress" style="vertical-align:bottom;" data-dismiss="modal">Clear</a>
+                                   
+                                </div>
+                            </div>
+                           
+                    </div>
+                </div>
+            </div>
+        </div>
+   <div id="noMatchAddress" class="modal fade" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Address Not Found</h4>
+                    </div>
+                    <div class="modal-body modal-body-help">
+                      <div>
+                          Your address could not be verified, do you want to continue with this address, or edit and recheck?
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                       <button type="button" class="internal btn btn-default"  data-dismiss="modal">Edit</button>
+                       <button type="button" class="internal btn btn-default" id="noMatchContinue"  data-dismiss="modal">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="detectMobileDevices"></div>
+    <script type="text/javascript">
+
+        $(function () {
+            function reposition() {
+                var modal = $(this),
+                    dialog = modal.find('.modal-dialog');
+                modal.css('display', 'block');
+
+                // Dividing by two centers the modal exactly, but dividing by three 
+                // or four works better for larger screens.
+                dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
+            }
+            // Reposition when a modal is shown
+            $('.modal').on('show.bs.modal', reposition);
+            // Reposition when the window is resized
+            $(window).on('resize', function () {
+                $('.modal:visible').each(reposition);
+            });
+        });
+        
+        $(".Question > .middle > .Help").parent(".middle").parent(".Question").each(function () {
+            var $this = $(this);
+            var $this = $(this);
+            var topmar = 3;
+            if($(".Title", $this).html()!=undefined){
+                if ($(".Title", $this).html().trim() == "High School Selection") {
+                    topmar = -20;
+                }
+            }
+            var a = $("<a class=\"helpIconSurvey\" tabindex=\"0\" data-container=\"body\" data-toggle=\"popover\" data-trigger=\"focus\" data-placement=\"left\" title=\"\" aria-label=\"help\" href=\"#\"></a>").css({
+                position: "absolute",
+                top: topmar,
+                right: 2,
+                width: 20,
+                height: 20
+            });
+            a.css('color', '#000000');
+            a.on("click", function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+               
+                // alert(e.target.parentElement.id);
+                var title = e.target.parentElement.getAttribute("modaltitle");
+                var content = e.target.parentElement.getAttribute("data-content");
+                if (title == null) {
+                    title = e.target.getAttribute("modaltitle");
+                }
+                if(content==null) {
+                    content = e.target.getAttribute("data-content");
+                }
+                $(".modal-title-help").html(title);
+                $(".modal-body-help").html(content);
+                $("#myModal").modal('show');
+            });
+           
+           
+            a.attr("id", this.id + "_help");
+            a.attr("modaltitle", $(" > .middle > .Help > .help-title", $this).html());
+            a.attr("data-content", $(" > .middle > .Help > .help-body", $this).html());
+            var spanid = this.id + "_help_span";
+            a.append("<span style=\"font-size: 18px\" id="+spanid +" class=\"glyphicon glyphicon-question-sign\"></span>");
+            $this.append(a);
+        });
+        //type=Number handling in different browsers
+
+        //for firefox remove type=number
+        jQuery(document).ready(function ($) {
+            var FF = !(window.mozInnerScreenX == null);
+            if (FF) {
+                $(':input[type=number]').each(function () {
+                    $(this).attr("type", "text");
+                });
+            }
+            //if chrome and desktop remove type
+            if ($('.detectMobileDevices').css('display') == 'none') {
+               
+            } else {
+                try {
+                    var ua = navigator.userAgent;
+                    if (/Chrome/i.test(ua)) {
+                        $(':input[type=number]').each(function () {
+                            $(this).attr("type", "text");
+                        });
+                    }
+                }
+                catch (ex) { }
+            }
+        });
+        var delayed = false;
+        var survey = "ctl00_ctl00_MainBody_MainBody_SurveyControl1";
+        jQuery(document).ready(function ($) {
+            $("input").attr("autocomplete", "off");
+            $('input').bind('keydown', function (e) {
+                if (e.keyCode == '38' || e.keyCode == '40') {
+                    e.preventDefault();
+                }
+            });
+            $(':input[type=number]').on('mousewheel', function (e) {
+                e.preventDefault();
+            });
+            //handling for zip type
+           // alert(navigator.userAgent.match(/(iPod|iPhone|iPad)/));
+            if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+                try{
+                    $find(survey).getVariableById(258).add_changed(function () {
+                        try{
+                            var country = $find(survey).getVariableById(258).get_value(0);
+                            if (country == "1") {
+                                //alert($(this)[0].id);
+                                $(':input[type=text]').each(function () {
+                                    var component = $find($(this)[0].id);
+                                    if (component.get_FieldId() == 9) {
+                                        $(this).attr("type", "text");
+                                        $(this).attr("pattern", "[0-9]*");
+                                    }
+                                });
+                       
+                        
+                            } else {
+                                $(':input[type=text]').each(function () {
+                                    var component = $find($(this)[0].id);
+                                    if (component.get_FieldId() == 9) {
+                                        $(this).removeAttr("pattern");
+                                    }
+                                });
+                        
+                            }
+                        }catch(ex){}
+                    });
+               
+                    $(':input[type=number]').each(function () {
+                        // alert(2);
+                        try{
+                            var component = $find($(this)[0].id);
+                            var country = $find(survey).getVariableById(258).get_value(0);
+                            if (component.get_FieldId() == 9 && country == "1") {
+                                //alert($(this)[0].id);
+                                $(this).attr("type", "text");
+                                $(this).attr("pattern", "[0-9]*");
+                            } else if (component.get_FieldId() == 9) {
+                                $(this).attr("type", "text");
+                                $(this).removeAttr("pattern");
+                            }
+                        }catch(ex)
+                        {
+                        }
+
+                    });
+                }catch(ex){}
+            } else {
+               
+               // alert(2);
+                $(':input[type=number]').focus(function () {
+                    //alert(1);
+                    try{
+                        var component = $find($(this)[0].id);
+                        var country = $find(survey).getVariableById(258).get_value(0);
+                        if (component.get_FieldId() == 9 && country != "1") {
+                            //not USA
+                        } else if (component.get_FieldId() == 9){
+                            delayed = false;
+                            setTimeout(function () { delayed = true; }, 1000);
+                            //only change type on smaller devices
+                            if ($('.detectMobileDevices').css('display') == 'none') {
+                                $(this).attr("type", "number");
+                            }
+                           
+                            //  $(this).focus();
+                        }
+                    }catch(ex){}
+
+                });
+                $(':input[type=number]').blur(function () {
+                    if (delayed) {
+                        $(this).attr("type", "text");
+                    }
+
+                });
+                $(':input[type=number]').each(function () {
+                    try{
+                        // alert(2);
+                        var component = $find($(this)[0].id);
+                        if (component.get_FieldId() == 9) {
+                            $(this).attr("type", "text");
+                            $(this).val($find(survey).getVariableById(9).get_value(0));
+                        }}
+                    catch(ex){}
+
+
+                });
+            }
+
+        });
+        
+       
+        var survey = "ctl00_ctl00_MainBody_MainBody_SurveyControl1";
+        function validateAddress() {
+            if ($find(survey).getVariableById(7) != null && $find(survey).getVariableById(350) != null && $find(survey).getVariableById(258) != null 
+                && $find(survey).getVariableById(10) != null && $find(survey).getVariableById(11) != null) {
+
+                var address1 = $find(survey).getVariableById(7).get_value(0);
+                var address2 = $find(survey).getVariableById(350).get_value(0);
+                var country = $find(survey).getVariableById(258).get_value(0);
+                var zip = $find(survey).getVariableById(9).get_value(0);
+                var city = $find(survey).getVariableById(10).get_value(0);
+                var state = $find(survey).getVariableById(11).get_value(0);
+                if (!address1.trim() || !country.trim() || !city.trim() || !state.trim() || country != "1" || state==0) {
+                    //set address_validation_result, set not checked/verified
+                    if (addVerification != null) {
+                        addVerification.value = '5';
+                    }
+                    return true;
+                }
+                //only for USA
+              
+                country = "USA";
+               
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    url: "Services/SurveyEngine.asmx/ValidateAddress",
+                    data: Sys.Serialization.JavaScriptSerializer.serialize({ address1: address1, address2: address2, country: country, state: state, city: city, zip: zip }),
+                    dataType: "json",
+                    async: true,
+                    success: function (data) {
+                        AddressResult(data);
+
+                    }
+                });
+                return false;
+
+            } else {
+                return true;
+            }
+        }
+        var addressData = null;
+        var addVerification = document.getElementById("ctl00_ctl00_MainBody_MainBody_AddressVerificationStatus");
+        function AddressResult(data) {
+            addressData = data.d;
+            if (data.d.HaveSuggestedAddress) {
+                var address1 = $find(survey).getVariableById(7).get_value(0);
+                var address2 = $find(survey).getVariableById(350).get_value(0);
+                var country = $find(survey).getVariableById(258).get_value(0);
+                var zip = $find(survey).getVariableById(9).get_value(0);
+                var city = $find(survey).getVariableById(10).get_value(0);
+                var state = $find(survey).getVariableById(11).get_value(0);
+                var _OrigAddressHtml = '<span id="spnAddress">' + address1 + ',&nbsp;' + address2 + ',&nbsp;' + city + '  ' + data.d.OrigState + ' ' + zip + '&nbsp;' + '</span>';
+                $("#_origAddress").html(_OrigAddressHtml);
+                var newadd1 = (address1 != data.d.Address1) ? "<span class='addDiff'>" + data.d.Address1 + "</span>" : data.d.Address1;
+                var newadd2 = (address2 != data.d.Address2) ? "<span class='addDiff'>" + data.d.Address2 + "</span>" : data.d.Address2;
+                var newcity = (city != data.d.City) ? "<span class='addDiff'>" + data.d.City + "</span>" : data.d.City;
+                var newstate = (data.d.OrigState != data.d.State) ? "<span class='addDiff'>" + data.d.State + "</span>" : data.d.State;
+                var newzip = (zip != data.d.Zip) ? "<span class='addDiff'>" + data.d.Zip + "</span>" : data.d.Zip;
+                //match with multiple address.
+                if (newadd1.trim() && data.d.Address1.trim()) {
+                   
+                    newadd1 = newadd1 + ",&nbsp;";
+                }
+                if (newadd2.trim() && data.d.Address2.trim()) {
+                    newadd2 = newadd2 + ",&nbsp;";
+                }
+                var _addressHtml = '<span id="spnAddress">' + newadd1 + newadd2 + newcity + '&nbsp;' + newstate + '&nbsp;' + newzip + '&nbsp;' + '</span>';
+                $("#_address").html(_addressHtml);
+                $("#myModalAddress").modal('show');
+            }
+            else if (data.d.ServiceFailed == true) {
+               
+                if ( addVerification!= null) {
+                    addVerification.value = '4';
+                }
+                //service call failed, dont stop move on..
+                addressCheckClear = true;
+                document.getElementById("ctl00_ctl00_MainBody_MainBody_btnNext").click();
+            }
+            else if (data.d.Result == true) {
+                //set address_validation_result, set  verified no suggestion
+                if (addVerification != null) {
+                    addVerification.value = '1';
+                }
+                //all passed submit
+                addressCheckClear = true;
+                document.getElementById("ctl00_ctl00_MainBody_MainBody_btnNext").click();
+            }
+            else {
+                //no match
+                //set address_validation_result, set no match found
+                if (addVerification != null) {
+                    addVerification.value = '3';
+                }
+                $("#noMatchAddress").modal('show');
+            }
+
+        }
+
+        function SelectAddress(ele) {
+            document.getElementById('newAddress').className = 'addressDiv';
+            document.getElementById('origAddress').className = 'addressDiv';
+            document.getElementById(ele).className = 'selected-row addressDiv';
+        };
+        $("#clearAddress").on("click", function (e) {
+            
+                $find(survey).getVariableById(10).set_value('', 0);
+                $find(survey).getVariableById(7).set_value('', 0);
+                $find(survey).getVariableById(350).set_value('', 0);
+                $find(survey).getVariableById(9).set_value('', 0);
+                $find(survey).getVariableById(11).set_value('0', 0);
+                if (addVerification != null) {
+                    addVerification.value = '5';
+                }
+                addressCheckClear = true;
+                document.getElementById("ctl00_ctl00_MainBody_MainBody_btnNext").click();
+           
+        });
+
+        $("#noMatchContinue").on("click", function (e) {
+            if (addVerification != null) {
+                addVerification.value = '3';
+            }
+            addressCheckClear = true;
+            document.getElementById("ctl00_ctl00_MainBody_MainBody_btnNext").click();
+        });
+        $("#selectAddress").on("click", function (e) {
+        addressCheckClear = true;
+        if ($('#rdoAddress2').is(':checked')) {
+            $find(survey).getVariableById(10).set_value(addressData.City, 0);
+            $find(survey).getVariableById(7).set_value(addressData.Address1, 0);
+            $find(survey).getVariableById(350).set_value(addressData.Address2, 0);
+            $find(survey).getVariableById(11).set_value(addressData.StateId, 0);
+            $find(survey).getVariableById(9).set_value(addressData.Zip, 0);
+            //set address_validation_result, suggested address accepted
+            if (addVerification != null) {
+                addVerification.value = '2';
+            }
+        }
+        else {
+            //check if main address is verified or not
+            if (addressData != null && addressData.Result==true) {
+                addVerification.value = '2';
+            } else  {
+                addVerification.value = '5';
+            }
+        }
+        document.getElementById("ctl00_ctl00_MainBody_MainBody_btnNext").click();
+    });
+    </script>
+    <style>
+        .addDiff{
+            color:red;
+        }
+        .selected-row{
+            background-color:#FFF7F8;
+            border: 1px solid #FFE9EC;
+        }
+        .addressDiv{
+            padding-top: 5px; 
+            padding-bottom: 10px;
+            display: table;
+            width:100%;
+            border-radius:5px;
+            
+        }
+        .addressRadio{
+            margin-right: 20px;
+            padding-left: 10px; 
+           	display: table-cell;
+        }
+        .customHeader {
+           background:#f0f0f0;
+           border-top-left-radius: 5px;
+           border-top-right-radius: 5px;
+        }
+        /*some school specfic style overrides.*/
+        .TxtAreaClass .Control{
+            margin-left:0px !important;
+        }
+        .TxtAreaClass textarea{
+            width:100%;
+        }
+    </style>
+  
+
+
+                <div id="YouthGradientFooter"></div>
+                
+            </div></div>
+                    
+            <div id="NCTNotebookBottom"></div>
+            
+            <div class="border-bottom"><div class="border-bottom-left"><div class="border-bottom-right"></div></div></div>
+                    
+        </div>
+    </div>
+    <div id="ctl00_ctl00_MainBody_FootnoteOuter" class="footnote"><span id="ctl00_ctl00_MainBody_itsFooterOuter"><span style="margin-left:8px;float:right;margin-top:22px;">&copy;&nbsp;2022&nbsp;All rights reserved.</span></span></div>
+    
+
+                </div>
+            </div>
+            <div style="clear: both;">
+                
+    
+    <div id="ctl00_ctl00_BelowWrapper_testInfo" class="testInfo"><div>Survey Version: 1.0.5</div></div>
+    
+    
+<script type="text/javascript">
+
+    FinishLater.HasLogon = new Boolean( false);
+
+</script>
+
+<input type="hidden" name="ctl00$ctl00$BelowWrapper$LightweightLogin$FinishLaterEmail" id="FinishLaterEmail" />
+<input type="hidden" name="ctl00$ctl00$BelowWrapper$LightweightLogin$FinishLaterPassword" id="FinishLaterPassword" />
+<input type="hidden" name="ctl00$ctl00$BelowWrapper$LightweightLogin$FinishLaterQuestion" id="FinishLaterQuestion" />
+<input type="hidden" name="ctl00$ctl00$BelowWrapper$LightweightLogin$FinishLaterAnswer" id="FinishLaterAnswer" />
+
+<div class="modal fade ls-auth no-rtf" id="ls-auth-load" tabindex="-1" role="dialog" data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 296, &quot;schoolTextTypeName&quot;: &quot;FinishDialogMessage&quot; }">
+	Please login to access your saved information. 
+</h3>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="ls-auth-load-email">
+                            <span id="ctl00_ctl00_BelowWrapper_LightweightLogin_SchoolTextControl2" data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 297, &quot;schoolTextTypeName&quot;: &quot;EmailAddressLabel&quot; }">Email Address</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <input class="form-control" data-state="email" id="ls-auth-load-email" name="ls-auth-load-email" type="email" placeholder="Email" />
+                            <p id="lsAuthLoadEmailReq" class="alert alert-danger hide" data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 298, &quot;schoolTextTypeName&quot;: &quot;EmailRequireValMsg&quot; }">Email address is required</p>
+                            <p id="lsAuthLoadEmailFormat" class="alert alert-danger hide" data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 299, &quot;schoolTextTypeName&quot;: &quot;EmailValidFormatValMsg&quot; }">Email address is not in a valid format</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="ls-auth-load-password">
+                            <span id="ctl00_ctl00_BelowWrapper_LightweightLogin_SchoolTextControl3" data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 300, &quot;schoolTextTypeName&quot;: &quot;PasswordLabel&quot; }">Password</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <input class="form-control" id="ls-auth-load-password" name="ls-auth-load-password" type="password" placeholder="Password" />
+                            <p id="lsAuthLoadPasswordReq" class="alert alert-danger hide" data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 301, &quot;schoolTextTypeName&quot;: &quot;PasswordRequiredValMsg&quot; }">Password is required</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-9 form-control-static">
+                            <a href="#" class="ls-forgot-password-link">
+                                <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 314, &quot;schoolTextTypeName&quot;: &quot;ForgotMyPasswordLink&quot; }">I forgot my password</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group hide" id="lsAuthLoadNotFoundGrp">
+                        <div class="col-sm-offset-3 col-sm-9 form-control-static">
+                            <p id="lsAuthLoadNotFound" class="alert alert-danger" data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 315, &quot;schoolTextTypeName&quot;: &quot;ResponseDoesNotMatchMsg&quot; }">The response you provided does not match our records.</p>
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="ls-auth-load-cancel" class="btn btn-default">
+                    <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 310, &quot;schoolTextTypeName&quot;: &quot;CancelButton&quot; }">Cancel</span>
+                </button>
+                <button type="button" id="ls-auth-load-submit" class="btn btn-primary">
+                    <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 313, &quot;schoolTextTypeName&quot;: &quot;SubmitButton&quot; }">Submit</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade ls-auth no-rtf" id="ls-auth-save" tabindex="-1" role="dialog" data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 322, &quot;schoolTextTypeName&quot;: &quot;SaveDialogMessage&quot; }">
+	Please provide the following information to save your session.
+</h3>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="ls-auth-save-email">
+                            <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 297, &quot;schoolTextTypeName&quot;: &quot;EmailAddressLabel&quot; }">Email Address</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <input class="form-control" data-state="email" id="ls-auth-save-email" name="ls-auth-save-email" type="email" placeholder="Email" />
+                            <p id="lsAuthSaveEmailReq" class="alert alert-danger hide" data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 298, &quot;schoolTextTypeName&quot;: &quot;EmailRequireValMsg&quot; }">Email address is required</p>
+                            <p id="lsAuthSaveEmailFormat" class="alert alert-danger hide" data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 299, &quot;schoolTextTypeName&quot;: &quot;EmailValidFormatValMsg&quot; }">Email address is not in a valid format</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="ls-auth-save-password">
+                            <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 300, &quot;schoolTextTypeName&quot;: &quot;PasswordLabel&quot; }">Password</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <input class="form-control" id="ls-auth-save-password" name="ls-auth-save-password" type="password" placeholder="Password" />
+                            <p id="lsAuthSavePasswordReq" class="alert alert-danger hide" data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 301, &quot;schoolTextTypeName&quot;: &quot;PasswordRequiredValMsg&quot; }">Password is required</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-9 form-control-static">
+                            <a href="#" class="ls-forgot-password-link">
+                                <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 314, &quot;schoolTextTypeName&quot;: &quot;ForgotMyPasswordLink&quot; }">I forgot my password</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group hide" id="lsAuthSaveNotFoundGrp">
+                        <div class="col-sm-offset-3 col-sm-9 form-control-static">
+                            <p id="lsAuthSaveNotFound" class="alert alert-danger" data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 315, &quot;schoolTextTypeName&quot;: &quot;ResponseDoesNotMatchMsg&quot; }">The response you provided does not match our records.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="ls-auth-save-cancel" class="btn btn-default">
+                    <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 310, &quot;schoolTextTypeName&quot;: &quot;CancelButton&quot; }">Cancel</span>
+                </button>
+                <button type="button" id="ls-auth-save-submit" class="btn btn-primary">
+                    <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 313, &quot;schoolTextTypeName&quot;: &quot;SubmitButton&quot; }">Submit</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade ls-auth no-rtf" id="ls-auth-create" tabindex="-1" role="dialog" data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 322, &quot;schoolTextTypeName&quot;: &quot;SaveDialogMessage&quot; }">
+	Please provide the following information to save your session.
+</h3>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="ls-auth-create-email">
+                            <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 297, &quot;schoolTextTypeName&quot;: &quot;EmailAddressLabel&quot; }">Email Address</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <input class="form-control" data-state="email" id="ls-auth-create-email" name="ls-auth-create-email" type="email" placeholder="Email" />
+                            <p id="lsAuthCreateEmailReq" class="alert alert-danger hide" data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 298, &quot;schoolTextTypeName&quot;: &quot;EmailRequireValMsg&quot; }">Email address is required</p>
+                            <p id="lsAuthCreateEmailInvalid" class="alert alert-danger hide" data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 299, &quot;schoolTextTypeName&quot;: &quot;EmailValidFormatValMsg&quot; }">Email address is not in a valid format</p>
+                            <p id="lsAuthCreateEmailDuplicate" class="alert alert-danger hide" data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 309, &quot;schoolTextTypeName&quot;: &quot;EmailAlreadyExistsMsg&quot; }">This email address already exists. Please provide a new email address or click on "I already have an account".</p>
+                            <p>
+                                <a href="#" id="ls-auth-create-existing">
+                                    <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 326, &quot;schoolTextTypeName&quot;: &quot;UseExistingLoginLink&quot; }">I already have an account.</span>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="ls-auth-create-password">
+                            <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 300, &quot;schoolTextTypeName&quot;: &quot;PasswordLabel&quot; }">Password</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <input class="form-control" id="ls-auth-create-password" name="ls-auth-create-password" type="password" placeholder="Password" />
+                            <p id="lsAuthCreatePasswordReq" class="alert alert-danger hide" data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 301, &quot;schoolTextTypeName&quot;: &quot;PasswordRequiredValMsg&quot; }">Password is required</p>
+                            <p id="lsAuthCreatePasswordInvalid" class="alert alert-danger hide" data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 302, &quot;schoolTextTypeName&quot;: &quot;InsufficientPasswordLabel&quot; }">Your password must be at least 5 characters and include at least one letter and one number.</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="ls-auth-create-password-confirm">
+                            <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 303, &quot;schoolTextTypeName&quot;: &quot;ConfirmPasswordLabel&quot; }">Confirm password</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <input class="form-control" id="ls-auth-create-password-confirm" name="ls-auth-create-password-confirm" type="password" placeholder="Re-type Password" />
+                            <p id="lsAuthCreatePasswordConfirm" class="alert alert-danger hide" data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 304, &quot;schoolTextTypeName&quot;: &quot;ConfirmPasswordValMsg&quot; }">Your confirmed password does not match</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="ls-auth-create-question">
+                            <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 305, &quot;schoolTextTypeName&quot;: &quot;ChallengeQuestionLabel&quot; }">Challenge Question</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <select class="form-control" data-state="questionId" id="ls-auth-create-question" name="ls-auth-create-question">
+                                <option value="0">Select</option><option value="1">What is your mother's maiden name?</option><option value="2">What is the name of your elementary school?</option><option value="3">What is the name of your favorite pet?</option><option value="4">What is your father's middle name?</option><option value="5">What was your first car?</option><option value="6">What street did you live on while growing up?</option>
+                            </select>
+                            <p id="lsAuthCreateQuestionReq" class="alert alert-danger hide" data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 306, &quot;schoolTextTypeName&quot;: &quot;ChallengeQuestionRequireValMsg&quot; }">You must select a challenge question</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="ls-auth-create-answer">
+                            <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 307, &quot;schoolTextTypeName&quot;: &quot;ChallengeAnswerLabel&quot; }">Challenge Answer</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <input class="form-control" data-state="answer" id="ls-auth-create-answer" name="save-later-challenge-answer" type="text" />
+                            <p id="lsAuthCreateAnswerReq" class="alert alert-danger hide" data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 308, &quot;schoolTextTypeName&quot;: &quot;ChallengeAnswerRequiredValMsg&quot; }">Challenge answer is required</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" id="lsAuthCreateCancel">
+                    <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 310, &quot;schoolTextTypeName&quot;: &quot;CancelButton&quot; }">Cancel</span>
+                </button>
+                <button type="button" class="btn btn-primary" id="lsAuthCreateSaveAndExit">
+                    <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 311, &quot;schoolTextTypeName&quot;: &quot;SaveAndExitButton&quot; }">Save and Exit</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade ls-auth no-rtf" id="ls-fatal" tabindex="-1" role="dialog" data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>System Error</h3>
+            </div>
+            <div class="modal-body">
+                <p data-state="error">We're sorry but there was a system error that we could not recover from.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="lsfatalOK" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade ls-auth no-rtf" id="ls-error" tabindex="-1" role="dialog" data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Warning</h3>
+            </div>
+            <div class="modal-body">
+                <p data-state="error">We're sorry but there was a system error that we could not recover from.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="ls-error-ok" class="btn btn-primary">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade ls-auth no-rtf" id="ls-auth-forgot" tabindex="-1" role="dialog" data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 323, &quot;schoolTextTypeName&quot;: &quot;ForgotPasswordDialogMessage&quot; }">
+	Please provide your email address.
+</h3>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="ls-auth-forgot-email">
+                            <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 297, &quot;schoolTextTypeName&quot;: &quot;EmailAddressLabel&quot; }">Email Address</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <input class="form-control" data-state="email" id="ls-auth-forgot-email" name="ls-auth-forgot-email" type="email" placeholder="Email" />
+                            <p id="lsAuthForgotEmailReq" class="alert alert-danger hide" data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 298, &quot;schoolTextTypeName&quot;: &quot;EmailRequireValMsg&quot; }">Email address is required</p>
+                            <p id="lsAuthForgotEmailInvalid" class="alert alert-danger hide" data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 299, &quot;schoolTextTypeName&quot;: &quot;EmailValidFormatValMsg&quot; }">Email address is not in a valid format</p>
+                            <p id="lsAuthForgotEmailReviewContentMsg" class="alert alert-danger hide" data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 316, &quot;schoolTextTypeName&quot;: &quot;ReviewContentMsg&quot; }">We do not have a match for the information you provided. Please review and correct your information.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="ls-auth-forgot-email-cancel" type="button" class="btn btn-default">
+                    <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 310, &quot;schoolTextTypeName&quot;: &quot;CancelButton&quot; }">Cancel</span>
+                </button>
+                <button id="ls-auth-forgot-email-next" type="button" class="btn btn-primary">
+                    <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 320, &quot;schoolTextTypeName&quot;: &quot;NextButton&quot; }">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade ls-auth no-rtf" id="ls-auth-forgot-challage" tabindex="-1" role="dialog" data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 324, &quot;schoolTextTypeName&quot;: &quot;ChallengeDialogMessage&quot; }">
+	Please answer the security challenge question below.
+</h3>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" data-state="email" id="ls-auth-forgot-challage-email" name="ls-auth-forgot-challage-email" />
+                <input type="hidden" data-state="transactionId" id="ls-auth-forgot-challage-transaction-id" name="ls-auth-forgot-challage-transaction-id" />
+                <input type="hidden" data-state="questionId" id="ls-auth-forgot-challage-question-id" name="ls-auth-forgot-challage-question-id" />
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="ls-auth-forgot-challage-question">
+                            <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 305, &quot;schoolTextTypeName&quot;: &quot;ChallengeQuestionLabel&quot; }">Challenge Question</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <p id="ls-auth-forgot-challage-question" data-state="questionText" class="form-control-static"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="ls-auth-forgot-challange-answer">
+                            <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 307, &quot;schoolTextTypeName&quot;: &quot;ChallengeAnswerLabel&quot; }">Challenge Answer</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <input class="form-control" data-state="answer" id="ls-auth-forgot-challange-answer" name="ls-auth-forgot-challange-answer" type="text" />
+                            <p id="lsAuthForgotChallangeAnswerRequired" class="alert alert-danger hide" data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 308, &quot;schoolTextTypeName&quot;: &quot;ChallengeAnswerRequiredValMsg&quot; }">Challenge answer is required</p>
+                            <p id="lsAuthForgotChallangeAnswerIncorrect" class="alert alert-danger hide" data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 315, &quot;schoolTextTypeName&quot;: &quot;ResponseDoesNotMatchMsg&quot; }">The response you provided does not match our records.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="ls-auth-forgot-challage-previous" class="btn btn-default" type="button">
+                    <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 84, &quot;schoolTextTypeName&quot;: &quot;ButtonPrevious&quot; }">Previous</span>
+                </button>
+                <button id="ls-auth-forgot-challage-next" class="btn btn-primary" type="button">
+                    <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 320, &quot;schoolTextTypeName&quot;: &quot;NextButton&quot; }">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade ls-auth no-rtf" id="ls-auth-forgot-reset" tabindex="-1" role="dialog" data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 325, &quot;schoolTextTypeName&quot;: &quot;ResetPasswordDialogMessage&quot; }">
+	Please provide a new password. This will reset your current password.
+</h3>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" data-state="email" id="ls-auth-forgot-reset-email" name="ls-auth-forgot-reset-email" />
+                <input type="hidden" data-state="questionId" id="ls-auth-forgot-reset-question-id" name="ls-auth-forgot-question-id" />
+                <input type="hidden" data-state="answer" id="ls-auth-forgot-reset-answer" name="ls-auth-forgot-reset-answer" />
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="ls-auth-forgot-reset-password">
+                            <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 300, &quot;schoolTextTypeName&quot;: &quot;PasswordLabel&quot; }">Password</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="ls-auth-forgot-reset-password" name="ls-auth-forgot-reset-password" />
+                            <p id="lsAuthForgotResetPasswordReq" class="alert alert-danger hide" data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 301, &quot;schoolTextTypeName&quot;: &quot;PasswordRequiredValMsg&quot; }">Password is required</p>
+                            <p id="lsAuthForgotResetPasswordInvalid" class="alert alert-danger hide" data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 302, &quot;schoolTextTypeName&quot;: &quot;InsufficientPasswordLabel&quot; }">Your password must be at least 5 characters and include at least one letter and one number.</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="ls-auth-forgot-reset-confirm">
+                            <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 303, &quot;schoolTextTypeName&quot;: &quot;ConfirmPasswordLabel&quot; }">Confirm password</span>
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="ls-auth-forgot-reset-confirm" name="ls-auth-forgot-reset-confirm" />
+                            <p id="lsAuthForgotResetConfirmReq" class="alert alert-danger hide" data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 304, &quot;schoolTextTypeName&quot;: &quot;ConfirmPasswordValMsg&quot; }">Your confirmed password does not match</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="ls-auth-forgot-reset-previous" class="btn btn-default" type="button">
+                    <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 84, &quot;schoolTextTypeName&quot;: &quot;ButtonPrevious&quot; }">Previous</span>
+                </button>
+                <button id="ls-auth-forgot-reset-submit" class="btn btn-primary" type="button">
+                    <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 313, &quot;schoolTextTypeName&quot;: &quot;SubmitButton&quot; }">Submit</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade ls-auth no-rtf" id="ls-auth-wait" tabindex="-1" role="dialog" data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Processing</h3>
+            </div>
+            <div class="modal-body">
+                <p>Please wait one moment.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade ls-auth no-rtf" id="ls-auth-load-transaction" tabindex="-1" role="dialog" data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 318, &quot;schoolTextTypeName&quot;: &quot;TransactionNumberHeader&quot; }">
+	<p>Report ID</p>
+</h3>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>&nbsp;<div style="display:none;">test</div></th>
+                            <th>
+                                <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 318, &quot;schoolTextTypeName&quot;: &quot;TransactionNumberHeader&quot; }"><p>Report ID</p></span>
+                            </th>
+                            <th>
+                                <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 319, &quot;schoolTextTypeName&quot;: &quot;DateHeader&quot; }">Date</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <p id="lsAuthLoadTransactionChoose" class="alert alert-danger hide" data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 330, &quot;schoolTextTypeName&quot;: &quot;ChooseTransactionValMsg&quot; }">Please choose which session you would like to retrieve.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="ls-auth-load-transaction-previous" class="btn btn-default" type="button">
+                    <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 84, &quot;schoolTextTypeName&quot;: &quot;ButtonPrevious&quot; }">Previous</span>
+                </button>
+                <button id="ls-auth-load-transaction-submit" class="btn btn-primary" type="button">
+                    <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 313, &quot;schoolTextTypeName&quot;: &quot;SubmitButton&quot; }">Submit</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            </div>
+        
+
+<script type="text/javascript">
+//<![CDATA[
+$(function () { $(".roundedDlg").wrapRoundedCorner(0, "transparent", "text_header"); $(".roundedDlgInner").wrapRoundedCorner(0, "text_header", "content_background"); });Sys.Application.add_init(function() {
+    $create(Rez.Survey.Survey, {"DisplayRuleDelegate":function() { return true; } ,"ValidationRuleDelegate":function() { return true; } ,"displayTrackingCode":null,"displayTrackingEnabled":false,"helpContainerName":"ctl00_ctl00_MainBody_MainBody_SurveyControl1_SurveyHelp","percentComplete":0,"ruleVariableDependencies":new Array(),"triggerVariableDependencies":new Array(),"triggers":function(sender, args) { return;},"userCommands":[]}, null, {"parentElement":"ctl00_ctl00_MainBody_MainBody_SurveyControl1"}, $get("ctl00_ctl00_MainBody_MainBody_SurveyControl1"));
+});
+Sys.Application.add_init(function() {
+    $create(Rez.Survey.Variable, {"variableId":312,"variableName":"hnjqcdehcdecrfr"}, null, {"survey":"ctl00_ctl00_MainBody_MainBody_SurveyControl1"}, $get("ctl00_ctl00_MainBody_MainBody_SurveyControl1_var_hnjqcdehcdecrfr"));
+});
+Sys.Application.add_init(function() {
+    $create(Rez.Survey.Container, {"DisplayRuleDelegate":function() { return (true); } ,"ValidationRuleDelegate":function() { var errors = new Array();return errors; },"displayTrackingCode":null,"displayTrackingEnabled":false,"ruleVariableDependencies":new Array(),"triggerVariableDependencies":new Array(),"triggers":function(sender, args) { return;},"userCommands":[]}, null, {"parentElement":"ctl00_ctl00_MainBody_MainBody_SurveyControl1"}, $get("ctl00_ctl00_MainBody_MainBody_SurveyControl1_Introduction#IntroPageMini"));
+});
+Sys.Application.add_init(function() {
+    $create(Rez.Survey.Element, {"DisplayRuleDelegate":function() { return (true); } ,"ValidationRuleDelegate":function() { var errors = new Array();return errors; },"displayTrackingCode":null,"displayTrackingEnabled":false,"ruleVariableDependencies":new Array(),"triggerVariableDependencies":new Array(),"triggers":function(sender, args) { return;},"userCommands":[]}, null, {"parentElement":"ctl00_ctl00_MainBody_MainBody_SurveyControl1_Introduction#IntroPageMini"}, $get("ctl00_ctl00_MainBody_MainBody_SurveyControl1_Introduction#plnxwssitfkjlsjrt"));
+});
+Sys.Application.add_init(function() {
+    $create(Rez.Survey.Question, {"DisplayRuleDelegate":function() { return (true); } ,"ValidationRuleDelegate":function() { var errors = new Array();if (!( s_getBoolVariableValue($find("ctl00_ctl00_MainBody_MainBody_SurveyControl1_var_hnjqcdehcdecrfr").get_value(0))==true)) { Array.add(errors, "You must accept our Terms of Use to continue.");}return errors; },"displayTrackingCode":null,"displayTrackingEnabled":false,"help":{Title: "Terms of Use Acceptance", Body: "To protect the information you provide us, you must review and agree to our Terms of Service."},"isHidden":false,"ruleVariableDependencies":new Array(),"triggerVariableDependencies":new Array(),"triggers":function(sender, args) { return;},"userCommands":[],"variableNames":[{ name:"ctl00_ctl00_MainBody_MainBody_SurveyControl1_var_hnjqcdehcdecrfr", index:null, id:312 }]}, null, {"parentElement":"ctl00_ctl00_MainBody_MainBody_SurveyControl1_Introduction#IntroPageMini"}, $get("ctl00_ctl00_MainBody_MainBody_SurveyControl1_Introduction#qijybhciuiivlg"));
+    $create(Rez.Survey.Field, {"FieldId":312,"FieldIndex":null}, null, {"parentQuestion":"ctl00_ctl00_MainBody_MainBody_SurveyControl1_Introduction#qijybhciuiivlg"}, $get("ctl00_ctl00_MainBody_MainBody_SurveyControl1_Introduction#qijybhciuiivlg_chk"));
+});
+//]]>
+</script>
+</form>
+        
+        <div class="modal fade" id="TermsOfUseDialog" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              </div>
+              <div class="modal-body">
+                <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 183, &quot;schoolTextTypeName&quot;: &quot;TermsOfUse&quot; }"><p style="text-align: center;">NET PRICE CALCULATOR</p>
+<p style="text-align: center;">TERMS OF USE</p>
+<br><p>To protect the information you provide us, you must review and agree to our Terms of Service.</p><br>
+<p><strong>1.   ACKNOWLEDGMENT AND ACCEPTANCE OF TERMS OF SERVICE.</strong>  Your use of the Net Price Calculator is subject to the following Terms of Use ("Terms"). By accessing and using the Net Price Calculator, you agree to the terms and conditions of these Terms. If you are not willing to be bound by these terms, do not access and use the Net Price Calculator.</p>
+<p>Kennesaw State University ("Institution") and/or its licensors may change these Terms from time to time. Upon any change in the Terms, Institution and/or its licensors will notify you by posting the changes as a start-up screen prior to your subsequent use of the Net Price Calculator. Your continued use of the Net Price Calculator constitutes an affirmative: (a) acknowledgement by you of the Terms and its modifications; and (b) agreement by you to abide and be bound by these Terms and their modifications. Institution reserves the right to modify the Net Price Calculator with or without notice to you. Unless explicitly stated otherwise, any new features that augment or enhance the current Net Price Calculator shall be subject to these Terms.</p>
+<p><strong>2.   LICENSE GRANT; RESTRICTIONS.</strong>   Institution provides you with a nonexclusive, nontransferable, right and license to access and use the Net Price Calculator solely for the purpose of determining your individual estimated net price of attending Institution. You may not (i) encumber, transfer, lease, time-share or use the Net Price Calculator in any service bureau arrangement; (ii) copy, distribute, adapt, create derivative works of, translate, or otherwise modify the Net Price Calculator, or (iii) decompile, disassemble, reverse assemble, or otherwise reverse engineer the Net Price Calculator. You are not authorized to use the Net Price Calculator for the purpose of ascertaining, or attempting to ascertain, Institution's financial aid methodologies.  You are not authorized to aggregate sample data or real data in an effort to optimize estimated financial aid scenarios.  You are not authorized to aggregate data with net price calculator data of other institutions for purposes of generating comparisons, other than for your personal use.  You are not authorized to sell any data generated by the Net Price Calculator.  Institution and its licensors retain all rights, title and interest in and to the Net Price Calculator, and any and all modifications thereof, including all copyright, copyright registrations, trade secrets, trademarks, goodwill and confidential and proprietary information related thereto. No rights are granted to you hereunder other than as expressly set forth herein.</p>
+<p><strong>3.   DISCLAIMER OF WARRANTIES; LIMITATION ON LIABILITY.</strong>  YOU EXPRESSLY AGREE THAT USE OF THE NET PRICE CALCULATOR IS AT YOUR SOLE RISK. THE NET PRICE CALCULATOR IS PROVIDED ON AN "AS IS" "AS AVAILABLE" BASIS. INSTITUTION AND ITS LICENSORS EXPRESSLY DISCLAIM ALL WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT AS WELL AS ALL WARRANTIES ARISING BY USAGE OF TRADE, COURSE OF DEALING OR COURSE OF PERFORMANCE. INSTITUTION AND ITS LICENSORS MAKES NO WARRANTY THAT THE NET PRICE CALCULATOR WILL MEET YOUR REQUIREMENTS, OR THAT YOUR USE OF THE NET PRICE CALCULATOR WILL BE UNINTERRUPTED, TIMELY, SECURE, OR ERROR FREE; NOR DOES Kennesaw State University MAKE ANY WARRANTY AS TO THE RESULTS THAT MAY BE OBTAINED FROM THE USE OF THE NET PRICE CALCULATOR OR AS TO THE ACCURACY OR RELIABILITY OF ANY CONTENT OR ANY RESULTS OBTAINED THROUGH THE NET PRICE CALCULATOR OR THAT DEFECTS IN THE NET PRICE CALCULATOR WILL BE CORRECTED. YOU UNDERSTAND AND AGREE THAT ANY MATERIAL OR DATA DOWNLOADED OR OTHERWISE OBTAINED THROUGH THE USE OF THE NET PRICE CALCULATOR IS DONE AT YOUR OWN DISCRETION AND RISK AND THAT YOU WILL BE SOLELY RESPONSIBLE FOR ANY DAMAGE TO YOUR COMPUTER SYSTEM OR LOSS OF DATA THAT RESULTS FROM THE DOWNLOAD OR USE OF SUCH MATERIAL OR DATA. YOU ACKNOWLEDGE AND AGREE THAT THE NET PRICE CALCULATOR AND ANY INFORMATION MADE AVAILABLE TO YOU IS PROVIDED AS SELF-HELP TOOLS FOR INDEPENDENT USE AND ARE NOT INTENDED TO PROVIDE FINANCIAL ADVICE. INSTITUTION AND ITS LICENSORS CANNOT AND DO NOT GUARANTEE THEIR APPLICABILITY OR ACCURACY IN REGARDS TO INDIVIDUAL CIRCUMSTANCES. ALL EXAMPLES ARE HYPOTHETICAL AND ARE FOR ILLUSTRATIVE PURPOSES AND RESULT FROM VARIABLES AND INPUTS PROVIDED BY YOUR INSTITUTION AND ITS LICENSORS SHALL NOT BE LIABLE TO YOU FOR ANY DIRECT, INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL, PUNITIVE OR EXEMPLARY DAMAGES IN CONNECTION WITH THESE TERMS OR THE NET PRICE CALCULATOR, HOWEVER CAUSED, UNDER ANY THEORY OF LIABILITY.</p>
+<p><strong>4.   DATA; PRIVACY POLICY.</strong>  You acknowledge and agree that any and all information submitted by you in connection with your use of the Net Price Calculator ("Data") shall be treated in accordance with Institution's privacy policy <a href="https://www.kennesaw.edu/" target="_blank">https://www.kennesaw.edu/</a></p>
+<p><strong>5. MISCELLANEOUS.</strong> These Terms will be governed by the laws of the State of Georgia, without giving effect to any conflicts of laws principles. Both parties agree that the sole venue for actions related to the subject matter hereof shall be within the state of Georgia. Notwithstanding the foregoing, however, nothing in these Terms shall be deemed or construed as a waiver of any statutory or constitutional immunities to suit. These Terms shall inure to the benefit of both the Institution and its Licensors, which shall be express third party beneficiaries, and shall be enforceable by and for the benefit of each. If any provision of these Terms is, for any reason, held to be invalid or unenforceable, the other provisions of these Terms will remain enforceable and the invalid or unenforceable provision will be deemed modified so that it is valid and enforceable to the maximum extent permitted by law. Any waiver or failure to enforce any provision of these Terms on one occasion will not be deemed a waiver of any other provision or of such provision on any other occasion.</p></span>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="modal fade" id="ValueProposition" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              </div>
+              <div class="modal-body">
+                <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 237, &quot;schoolTextTypeName&quot;: &quot;ValuePropositionContents&quot; }"></span>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+         <div class="modal fade" id="ValueProposition2" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              </div>
+              <div class="modal-body">
+                <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 570, &quot;schoolTextTypeName&quot;: &quot;ValuePropositionContents2&quot; }"></span>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="modal fade no-rtf" id="AddlInfoWindowDlg" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              </div>
+              <div class="modal-body">
+                <span data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 267, &quot;schoolTextTypeName&quot;: &quot;AddlInfoWindow&quot; }">Pop up window default text</span>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <input type="hidden" id="SurveyTransactionIDHidden" value="0" />
+        
+        <script id="ctl00_ctl00_SchoolTextControl2" class="no-rtf" type="text/javascript" data-cmsinfo="{ &quot;type&quot;: &quot;SchoolText&quot;, &quot;schoolTextTypeId&quot;: 337, &quot;schoolTextTypeName&quot;: &quot;WebAnalyticsJS&quot; }">
+	
+</script>
+    
+   
+        <div id="global-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="global-modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h3>Modal header</h3>
+                    </div>
+                    <div class="modal-body">
+                        <p>One fine body</p>
+                    </div>
+                    <div class="modal-footer">
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            
+            function ShowBootstrapDialog(title, bodyHtml, commands, options) {
+                $("#global-modal .modal-header h3").html(title);
+                $("#global-modal .modal-body").html(bodyHtml);
+                $("#global-modal .modal-footer").empty();
+                if (options == null || options.showClose == null || options.showClose == true) {
+                    $("#global-modal .modal-header button").show();
+                }
+                else {
+                    $("#global-modal .modal-header button").hide();
+                }
+                if (commands != null && commands.length > 0) {
+                    for (var i = 0; i < commands.length; i++) {
+                        var btn = $("<button />").html(commands[i].html).addClass("btn").addClass("btn-" + (commands[i].style == null ? "default" : commands[i].style));
+                        btn.click(commands[i].action);
+                        $("#global-modal .modal-footer").append(btn);
+                    }
+                }
+                $("#global-modal").modal({ show: true });
+            }
+            
+            function HideBootstrapDialog() {
+                $("#global-modal").modal("hide");
+            }
+
+        </script>
+        
+        
+<input type="hidden" id="schoolText-undefined-1" class="outputText" data-outputmodule="296" data-outputlabel="FinishDialogMessage" value="Please login to access your saved information. " />
+<input type="hidden" id="schoolText-undefined-2" class="outputText" data-outputmodule="297" data-outputlabel="EmailAddressLabel" value="Email Address" />
+<input type="hidden" id="schoolText-undefined-3" class="outputText" data-outputmodule="298" data-outputlabel="EmailRequireValMsg" value="Email address is required" />
+<input type="hidden" id="schoolText-undefined-4" class="outputText" data-outputmodule="299" data-outputlabel="EmailValidFormatValMsg" value="Email address is not in a valid format" />
+<input type="hidden" id="schoolText-undefined-5" class="outputText" data-outputmodule="300" data-outputlabel="PasswordLabel" value="Password" />
+<input type="hidden" id="schoolText-undefined-6" class="outputText" data-outputmodule="301" data-outputlabel="PasswordRequiredValMsg" value="Password is required" />
+<input type="hidden" id="schoolText-undefined-7" class="outputText" data-outputmodule="314" data-outputlabel="ForgotMyPasswordLink" value="I forgot my password" />
+<input type="hidden" id="schoolText-undefined-8" class="outputText" data-outputmodule="315" data-outputlabel="ResponseDoesNotMatchMsg" value="The response you provided does not match our records." />
+<input type="hidden" id="schoolText-undefined-9" class="outputText" data-outputmodule="310" data-outputlabel="CancelButton" value="Cancel" />
+<input type="hidden" id="schoolText-undefined-10" class="outputText" data-outputmodule="313" data-outputlabel="SubmitButton" value="Submit" />
+<input type="hidden" id="schoolText-undefined-11" class="outputText" data-outputmodule="322" data-outputlabel="SaveDialogMessage" value="Please&amp;#160;provide the following information to save your session." />
+<input type="hidden" id="schoolText-undefined-12" class="outputText" data-outputmodule="297" data-outputlabel="EmailAddressLabel" value="Email Address" />
+<input type="hidden" id="schoolText-undefined-13" class="outputText" data-outputmodule="298" data-outputlabel="EmailRequireValMsg" value="Email address is required" />
+<input type="hidden" id="schoolText-undefined-14" class="outputText" data-outputmodule="299" data-outputlabel="EmailValidFormatValMsg" value="Email address is not in a valid format" />
+<input type="hidden" id="schoolText-undefined-15" class="outputText" data-outputmodule="300" data-outputlabel="PasswordLabel" value="Password" />
+<input type="hidden" id="schoolText-undefined-16" class="outputText" data-outputmodule="301" data-outputlabel="PasswordRequiredValMsg" value="Password is required" />
+<input type="hidden" id="schoolText-undefined-17" class="outputText" data-outputmodule="314" data-outputlabel="ForgotMyPasswordLink" value="I forgot my password" />
+<input type="hidden" id="schoolText-undefined-18" class="outputText" data-outputmodule="315" data-outputlabel="ResponseDoesNotMatchMsg" value="The response you provided does not match our records." />
+<input type="hidden" id="schoolText-undefined-19" class="outputText" data-outputmodule="310" data-outputlabel="CancelButton" value="Cancel" />
+<input type="hidden" id="schoolText-undefined-20" class="outputText" data-outputmodule="313" data-outputlabel="SubmitButton" value="Submit" />
+<input type="hidden" id="schoolText-undefined-21" class="outputText" data-outputmodule="322" data-outputlabel="SaveDialogMessage" value="Please&amp;#160;provide the following information to save your session." />
+<input type="hidden" id="schoolText-undefined-22" class="outputText" data-outputmodule="297" data-outputlabel="EmailAddressLabel" value="Email Address" />
+<input type="hidden" id="schoolText-undefined-23" class="outputText" data-outputmodule="298" data-outputlabel="EmailRequireValMsg" value="Email address is required" />
+<input type="hidden" id="schoolText-undefined-24" class="outputText" data-outputmodule="299" data-outputlabel="EmailValidFormatValMsg" value="Email address is not in a valid format" />
+<input type="hidden" id="schoolText-undefined-25" class="outputText" data-outputmodule="309" data-outputlabel="EmailAlreadyExistsMsg" value="This email address already exists. Please provide a new email address or click on &amp;quot;I already have an account&amp;quot;." />
+<input type="hidden" id="schoolText-undefined-26" class="outputText" data-outputmodule="326" data-outputlabel="UseExistingLoginLink" value="I already have an account." />
+<input type="hidden" id="schoolText-undefined-27" class="outputText" data-outputmodule="300" data-outputlabel="PasswordLabel" value="Password" />
+<input type="hidden" id="schoolText-undefined-28" class="outputText" data-outputmodule="301" data-outputlabel="PasswordRequiredValMsg" value="Password is required" />
+<input type="hidden" id="schoolText-undefined-29" class="outputText" data-outputmodule="302" data-outputlabel="InsufficientPasswordLabel" value="Your password must be at least 5 characters and include at least one letter and&amp;#160;one number." />
+<input type="hidden" id="schoolText-undefined-30" class="outputText" data-outputmodule="303" data-outputlabel="ConfirmPasswordLabel" value="Confirm password" />
+<input type="hidden" id="schoolText-undefined-31" class="outputText" data-outputmodule="304" data-outputlabel="ConfirmPasswordValMsg" value="Your confirmed password does not match" />
+<input type="hidden" id="schoolText-undefined-32" class="outputText" data-outputmodule="305" data-outputlabel="ChallengeQuestionLabel" value="Challenge Question" />
+<input type="hidden" id="schoolText-undefined-33" class="outputText" data-outputmodule="306" data-outputlabel="ChallengeQuestionRequireValMsg" value="You must select a challenge question" />
+<input type="hidden" id="schoolText-undefined-34" class="outputText" data-outputmodule="307" data-outputlabel="ChallengeAnswerLabel" value="Challenge Answer" />
+<input type="hidden" id="schoolText-undefined-35" class="outputText" data-outputmodule="308" data-outputlabel="ChallengeAnswerRequiredValMsg" value="Challenge answer is required" />
+<input type="hidden" id="schoolText-undefined-36" class="outputText" data-outputmodule="310" data-outputlabel="CancelButton" value="Cancel" />
+<input type="hidden" id="schoolText-undefined-37" class="outputText" data-outputmodule="311" data-outputlabel="SaveAndExitButton" value="Save and Exit" />
+<input type="hidden" id="schoolText-undefined-38" class="outputText" data-outputmodule="323" data-outputlabel="ForgotPasswordDialogMessage" value="Please provide your email address." />
+<input type="hidden" id="schoolText-undefined-39" class="outputText" data-outputmodule="297" data-outputlabel="EmailAddressLabel" value="Email Address" />
+<input type="hidden" id="schoolText-undefined-40" class="outputText" data-outputmodule="298" data-outputlabel="EmailRequireValMsg" value="Email address is required" />
+<input type="hidden" id="schoolText-undefined-41" class="outputText" data-outputmodule="299" data-outputlabel="EmailValidFormatValMsg" value="Email address is not in a valid format" />
+<input type="hidden" id="schoolText-undefined-42" class="outputText" data-outputmodule="316" data-outputlabel="ReviewContentMsg" value="We do not have a match for the information you provided. Please review and correct your information." />
+<input type="hidden" id="schoolText-undefined-43" class="outputText" data-outputmodule="310" data-outputlabel="CancelButton" value="Cancel" />
+<input type="hidden" id="schoolText-undefined-44" class="outputText" data-outputmodule="320" data-outputlabel="NextButton" value="Next" />
+<input type="hidden" id="schoolText-undefined-45" class="outputText" data-outputmodule="324" data-outputlabel="ChallengeDialogMessage" value="Please answer the security challenge question below." />
+<input type="hidden" id="schoolText-undefined-46" class="outputText" data-outputmodule="305" data-outputlabel="ChallengeQuestionLabel" value="Challenge Question" />
+<input type="hidden" id="schoolText-undefined-47" class="outputText" data-outputmodule="307" data-outputlabel="ChallengeAnswerLabel" value="Challenge Answer" />
+<input type="hidden" id="schoolText-undefined-48" class="outputText" data-outputmodule="308" data-outputlabel="ChallengeAnswerRequiredValMsg" value="Challenge answer is required" />
+<input type="hidden" id="schoolText-undefined-49" class="outputText" data-outputmodule="315" data-outputlabel="ResponseDoesNotMatchMsg" value="The response you provided does not match our records." />
+<input type="hidden" id="schoolText-undefined-50" class="outputText" data-outputmodule="84" data-outputlabel="ButtonPrevious" value="Previous" />
+<input type="hidden" id="schoolText-undefined-51" class="outputText" data-outputmodule="320" data-outputlabel="NextButton" value="Next" />
+<input type="hidden" id="schoolText-undefined-52" class="outputText" data-outputmodule="325" data-outputlabel="ResetPasswordDialogMessage" value="Please provide a new password. This will reset your current password." />
+<input type="hidden" id="schoolText-undefined-53" class="outputText" data-outputmodule="300" data-outputlabel="PasswordLabel" value="Password" />
+<input type="hidden" id="schoolText-undefined-54" class="outputText" data-outputmodule="301" data-outputlabel="PasswordRequiredValMsg" value="Password is required" />
+<input type="hidden" id="schoolText-undefined-55" class="outputText" data-outputmodule="302" data-outputlabel="InsufficientPasswordLabel" value="Your password must be at least 5 characters and include at least one letter and&amp;#160;one number." />
+<input type="hidden" id="schoolText-undefined-56" class="outputText" data-outputmodule="303" data-outputlabel="ConfirmPasswordLabel" value="Confirm password" />
+<input type="hidden" id="schoolText-undefined-57" class="outputText" data-outputmodule="304" data-outputlabel="ConfirmPasswordValMsg" value="Your confirmed password does not match" />
+<input type="hidden" id="schoolText-undefined-58" class="outputText" data-outputmodule="84" data-outputlabel="ButtonPrevious" value="Previous" />
+<input type="hidden" id="schoolText-undefined-59" class="outputText" data-outputmodule="313" data-outputlabel="SubmitButton" value="Submit" />
+<input type="hidden" id="schoolText-undefined-60" class="outputText" data-outputmodule="318" data-outputlabel="TransactionNumberHeader" value="&amp;lt;p&amp;gt;Report ID&amp;lt;/p&amp;gt;" />
+<input type="hidden" id="schoolText-undefined-61" class="outputText" data-outputmodule="318" data-outputlabel="TransactionNumberHeader" value="&amp;lt;p&amp;gt;Report ID&amp;lt;/p&amp;gt;" />
+<input type="hidden" id="schoolText-undefined-62" class="outputText" data-outputmodule="319" data-outputlabel="DateHeader" value="Date" />
+<input type="hidden" id="schoolText-undefined-63" class="outputText" data-outputmodule="330" data-outputlabel="ChooseTransactionValMsg" value="Please choose which session you would like to retrieve." />
+<input type="hidden" id="schoolText-undefined-64" class="outputText" data-outputmodule="84" data-outputlabel="ButtonPrevious" value="Previous" />
+<input type="hidden" id="schoolText-undefined-65" class="outputText" data-outputmodule="313" data-outputlabel="SubmitButton" value="Submit" />
+<input type="hidden" id="schoolText-undefined-66" class="outputText" data-outputmodule="183" data-outputlabel="TermsOfUse" value="&amp;lt;p style=&amp;quot;text-align: center;&amp;quot;&amp;gt;NET PRICE CALCULATOR&amp;lt;/p&amp;gt; &amp;lt;p style=&amp;quot;text-align: center;&amp;quot;&amp;gt;TERMS OF USE&amp;lt;/p&amp;gt; &amp;lt;br&amp;gt;&amp;lt;p&amp;gt;To protect the information you provide us, you must review and agree to our Terms of Service.&amp;lt;/p&amp;gt;&amp;lt;br&amp;gt; &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;1.   ACKNOWLEDGMENT AND ACCEPTANCE OF TERMS OF SERVICE.&amp;lt;/strong&amp;gt;  Your use of the Net Price Calculator is subject to the following Terms of Use (&amp;quot;Terms&amp;quot;). By accessing and using the Net Price Calculator, you agree to the terms and conditions of these Terms. If you are not willing to be bound by these terms, do not access and use the Net Price Calculator.&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;Kennesaw State University (&amp;quot;Institution&amp;quot;) and/or its licensors may change these Terms from time to time. Upon any change in the Terms, Institution and/or its licensors will notify you by posting the changes as a start-up screen prior to your subsequent use of the Net Price Calculator. Your continued use of the Net Price Calculator constitutes an affirmative: (a) acknowledgement by you of the Terms and its modifications; and (b) agreement by you to abide and be bound by these Terms and their modifications. Institution reserves the right to modify the Net Price Calculator with or without notice to you. Unless explicitly stated otherwise, any new features that augment or enhance the current Net Price Calculator shall be subject to these Terms.&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;2.   LICENSE GRANT; RESTRICTIONS.&amp;lt;/strong&amp;gt;   Institution provides you with a nonexclusive, nontransferable, right and license to access and use the Net Price Calculator solely for the purpose of determining your individual estimated net price of attending Institution. You may not (i) encumber, transfer, lease, time-share or use the Net Price Calculator in any service bureau arrangement; (ii) copy, distribute, adapt, create derivative works of, translate, or otherwise modify the Net Price Calculator, or (iii) decompile, disassemble, reverse assemble, or otherwise reverse engineer the Net Price Calculator. You are not authorized to use the Net Price Calculator for the purpose of ascertaining, or attempting to ascertain, Institution&amp;#39;s financial aid methodologies.  You are not authorized to aggregate sample data or real data in an effort to optimize estimated financial aid scenarios.  You are not authorized to aggregate data with net price calculator data of other institutions for purposes of generating comparisons, other than for your personal use.  You are not authorized to sell any data generated by the Net Price Calculator.  Institution and its licensors retain all rights, title and interest in and to the Net Price Calculator, and any and all modifications thereof, including all copyright, copyright registrations, trade secrets, trademarks, goodwill and confidential and proprietary information related thereto. No rights are granted to you hereunder other than as expressly set forth herein.&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;3.   DISCLAIMER OF WARRANTIES; LIMITATION ON LIABILITY.&amp;lt;/strong&amp;gt;  YOU EXPRESSLY AGREE THAT USE OF THE NET PRICE CALCULATOR IS AT YOUR SOLE RISK. THE NET PRICE CALCULATOR IS PROVIDED ON AN &amp;quot;AS IS&amp;quot; &amp;quot;AS AVAILABLE&amp;quot; BASIS. INSTITUTION AND ITS LICENSORS EXPRESSLY DISCLAIM ALL WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT AS WELL AS ALL WARRANTIES ARISING BY USAGE OF TRADE, COURSE OF DEALING OR COURSE OF PERFORMANCE. INSTITUTION AND ITS LICENSORS MAKES NO WARRANTY THAT THE NET PRICE CALCULATOR WILL MEET YOUR REQUIREMENTS, OR THAT YOUR USE OF THE NET PRICE CALCULATOR WILL BE UNINTERRUPTED, TIMELY, SECURE, OR ERROR FREE; NOR DOES Kennesaw State University MAKE ANY WARRANTY AS TO THE RESULTS THAT MAY BE OBTAINED FROM THE USE OF THE NET PRICE CALCULATOR OR AS TO THE ACCURACY OR RELIABILITY OF ANY CONTENT OR ANY RESULTS OBTAINED THROUGH THE NET PRICE CALCULATOR OR THAT DEFECTS IN THE NET PRICE CALCULATOR WILL BE CORRECTED. YOU UNDERSTAND AND AGREE THAT ANY MATERIAL OR DATA DOWNLOADED OR OTHERWISE OBTAINED THROUGH THE USE OF THE NET PRICE CALCULATOR IS DONE AT YOUR OWN DISCRETION AND RISK AND THAT YOU WILL BE SOLELY RESPONSIBLE FOR ANY DAMAGE TO YOUR COMPUTER SYSTEM OR LOSS OF DATA THAT RESULTS FROM THE DOWNLOAD OR USE OF SUCH MATERIAL OR DATA. YOU ACKNOWLEDGE AND AGREE THAT THE NET PRICE CALCULATOR AND ANY INFORMATION MADE AVAILABLE TO YOU IS PROVIDED AS SELF-HELP TOOLS FOR INDEPENDENT USE AND ARE NOT INTENDED TO PROVIDE FINANCIAL ADVICE. INSTITUTION AND ITS LICENSORS CANNOT AND DO NOT GUARANTEE THEIR APPLICABILITY OR ACCURACY IN REGARDS TO INDIVIDUAL CIRCUMSTANCES. ALL EXAMPLES ARE HYPOTHETICAL AND ARE FOR ILLUSTRATIVE PURPOSES AND RESULT FROM VARIABLES AND INPUTS PROVIDED BY YOUR INSTITUTION AND ITS LICENSORS SHALL NOT BE LIABLE TO YOU FOR ANY DIRECT, INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL, PUNITIVE OR EXEMPLARY DAMAGES IN CONNECTION WITH THESE TERMS OR THE NET PRICE CALCULATOR, HOWEVER CAUSED, UNDER ANY THEORY OF LIABILITY.&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;4.   DATA; PRIVACY POLICY.&amp;lt;/strong&amp;gt;  You acknowledge and agree that any and all information submitted by you in connection with your use of the Net Price Calculator (&amp;quot;Data&amp;quot;) shall be treated in accordance with Institution&amp;#39;s privacy policy &amp;lt;a href=&amp;quot;https://www.kennesaw.edu/&amp;quot; target=&amp;quot;_blank&amp;quot;&amp;gt;https://www.kennesaw.edu/&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;5. MISCELLANEOUS.&amp;lt;/strong&amp;gt; These Terms will be governed by the laws of the State of Georgia, without giving effect to any conflicts of laws principles. Both parties agree that the sole venue for actions related to the subject matter hereof shall be within the state of Georgia. Notwithstanding the foregoing, however, nothing in these Terms shall be deemed or construed as a waiver of any statutory or constitutional immunities to suit. These Terms shall inure to the benefit of both the Institution and its Licensors, which shall be express third party beneficiaries, and shall be enforceable by and for the benefit of each. If any provision of these Terms is, for any reason, held to be invalid or unenforceable, the other provisions of these Terms will remain enforceable and the invalid or unenforceable provision will be deemed modified so that it is valid and enforceable to the maximum extent permitted by law. Any waiver or failure to enforce any provision of these Terms on one occasion will not be deemed a waiver of any other provision or of such provision on any other occasion.&amp;lt;/p&amp;gt;" />
+<input type="hidden" id="schoolText-undefined-67" class="outputText" data-outputmodule="237" data-outputlabel="ValuePropositionContents" value="" />
+<input type="hidden" id="schoolText-undefined-68" class="outputText" data-outputmodule="570" data-outputlabel="ValuePropositionContents2" value="" />
+<input type="hidden" id="schoolText-undefined-69" class="outputText" data-outputmodule="267" data-outputlabel="AddlInfoWindow" value="Pop up window default text" />
+<input type="hidden" id="schoolText-undefined-70" class="outputText" data-outputmodule="337" data-outputlabel="WebAnalyticsJS" value="" />
+
+    </body>
+</html>

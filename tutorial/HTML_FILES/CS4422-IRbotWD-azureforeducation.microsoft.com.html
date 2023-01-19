@@ -1,0 +1,601 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/Library/Main/Images/favicon.ico">
+    <title>Azure Dev Tools for Teaching</title>
+
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+
+    <!-- Information for microsoft analytics -->
+    <meta name="ms.env" content="prod" />
+    <meta name="ms.sitesec" content="devtools" />
+    <meta name="ms.pagetype" content="static" />
+    <meta name="ms.lang" content="" />
+    <meta name="ms.loc" content="" />
+    <meta name="ms.locale" content="" />
+    <meta name="ms.auth" content="0" />
+    <meta name="ms.shortidmsdn" content="https://azureforeducation.microsoft.com/devtools/Index/" />
+    <!-- mwf styling base -->
+    <link href="/Library/CSS/main.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//assets.onestore.ms/cdnfiles/external/mwf/long/v1/v1.22.4/css/mwf-west-european-default.min.css">
+
+
+    <style type="text/css">
+        .msame_Drop_rewards {
+            display: none !important;
+        }
+
+        .shell-search input, .shell-search input[type="search"] {
+            box-sizing: inherit;
+        }
+        /*CSS override due to MWF bug*/
+        .c-universal-footer {
+            margin-top: 0px;
+        }
+
+        .c-select-menu.f-persist.f-border, .c-select-menu.f-persist.f-border button {
+            width: 100%;
+        }
+
+        .c-paragraph-3, .c-paragraph-4, .type-p3, .type-p4, p {
+            padding: 24px 0 0;
+            font-weight: 400;
+        }
+
+        .c-paragraph-3, .c-paragraph-4, .c-subheading-5, .c-subheading-6, .type-p3, .type-p4, .type-sh5, .type-sh6, p {
+            font-size: 15px;
+            line-height: 20px;
+        }
+
+        [class^="c-paragraph"] a.c-hyperlink, [class^="c-caption"] a.c-hyperlink {
+            text-decoration: none;
+        }
+
+        .center-row-header {
+            margin-top: 88px;
+        }
+
+        .center-row-header {
+            background-color: #ececec;
+        }
+
+            .center-row-header .context-uhf, .center-row-header .c-uhfh > div:first-child {
+                background-color: transparent !important;
+            }
+
+            .center-row-header header {
+                max-width: 1300px;
+                margin: 0 auto;
+            }
+
+                .center-row-header header .js-global-head {
+                    padding: 0;
+                }
+
+                .center-row-header header #uhfCatLogo {
+                    margin-left: 0;
+                }
+
+        .msame_Drop_rewards, #uhfLogo {
+            display: none !important;
+        }
+
+        div.c-show-pipe:before {
+            content: none !important;
+        }
+
+        @media only screen and (min-width: 768px) {
+            .azure-header {
+                top: 0;
+            }
+        }
+
+        .msame_Header {
+            z-index: 0 !important;
+        }
+
+        .footer-layout .row {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        .page-wrapper {
+            max-width: 1310px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        .auth.auth-container #azure-signin .msame_Header div {
+            transition: background-color .25s;
+            display: inline-block;
+            font-size: 14px;
+            height: 46px;
+            padding: 12px;
+        }
+
+            .auth.auth-container #azure-signin .msame_Header div:hover {
+                background: #0078d4 !important;
+            }
+
+        main {
+            outline: none !important;
+        }
+        /*End CSS override due to MWF bug*/
+    </style>
+    <style>
+
+.hide-unless-authenticated { display:none; }
+.hide-unless-verified { display:none; }
+    </style>
+    <!-- Custom CSS -->
+    <link href="/Content/css/base?v=aN2Zux0gfnvaeVtJnivMpk2gMB6BofKszeBnE5-I1rY1" rel="stylesheet"/>
+
+    <link href="/Content/css/flexboxgrid?v=P38K58_EmQpwgOhBbsBENknHir1-HhQ50c_C5pIJ3xY1" rel="stylesheet"/>
+
+
+    <link href="/library/bundles/jquery-css?v=YYBg3bESMXXVcSXhvqGfWA5gHfSW9F1DC_eAy3aQG-Y1" rel="stylesheet"/>
+
+    <link href="/library/bundles/font-awesome-css?v=-WLTuzNBbxh5Xdp3PPQN7vhHE74m1HtxXxCcPo3E8hM1" rel="stylesheet"/>
+
+
+    <script src="/bundles/jquery?v=ZQ-RUxH9MPgf969nTFpaZiUVTfp2F-nD6ip4UwZjI4A1"></script>
+
+    <script src="/bundles/jqueryval?v=EmDyKom-vMWcKGZ9C5Gi-jHTVdjjo3UKKfkUCulf1GQ1"></script>
+
+    <script src="/bundles/modernizr?v=wBEWDufH_8Md-Pbioxomt90vm6tJN2Pyy9u9zHtWsPo1"></script>
+
+    <script src="/Scripts/Visitor.js"></script>
+
+    <script src="/bundles/cdn?v=LMvhSPcLb8pGtJwE_5PXRleOp18_-dtHG6ue12KxdkE1"></script>
+
+
+    <script type="text/javascript">
+    window.LocalizationResources = new Array();
+
+    window.LocalizationResources['submission_upload_metadata_send'] = 'Sending file metadata to server. Please wait...';
+    window.LocalizationResources['submission_upload_cancelled'] = 'File upload has been cancelled.';
+    window.LocalizationResources['submission_upload_resume_upload'] = 'Error encountered during upload. Resuming upload...';
+    window.LocalizationResources['submission_upload_metadata_failed'] = 'Failed to send file meta data. Retry in a few minutes.';
+    window.LocalizationResources['submission_upload_file_not_selected'] = 'Please select a file to upload.';
+    window.LocalizationResources['submission_upload_unsupported_browser'] = 'Your browser does not support this functionality.';
+    window.LocalizationResources['submission_upload_zero_byte_file'] = 'File should not be empty.';
+    window.LocalizationResources['submission_upload_error'] = 'File could not be uploaded because {0}.';
+    window.LocalizationResources['submission_upload_saveto_servicebus'] = 'File information can not be sent to server.';
+    window.LocalizationResources['submission_upload_start_upload_onedrive'] = 'Start uploading file to one drive.';
+    window.LocalizationResources['submission_upload_success'] = 'File of size {0} has been uploaded successfully in {1} seconds.';
+    
+    window.LocalizationResources['submission_upload_size'] = 'Please select a file less than {0} MB';
+    
+    window.LocalizationResources['support_word_error'] = 'You\u0027ve reached the maximum allowed words.';
+    window.LocalizationResources['month_jan'] = 'Jan';
+    window.LocalizationResources['month_feb'] = 'Feb';
+    window.LocalizationResources['month_mar'] = 'Mar';
+    window.LocalizationResources['month_apr'] = 'Apr';
+    window.LocalizationResources['month_may'] = 'May';
+    window.LocalizationResources['month_jun'] = 'Jun';
+    window.LocalizationResources['month_jul'] = 'Jul';
+    window.LocalizationResources['month_aug'] = 'Aug';
+    window.LocalizationResources['month_sep'] = 'Sep';
+    window.LocalizationResources['month_oct'] = 'Oct';
+    window.LocalizationResources['month_nov'] = 'Nov';
+    window.LocalizationResources['month_dec'] = 'Dec';
+    window.LocalizationResources['month_und'] = '';
+    window.LocalizationResources['month_1'] = 'Jan';
+    window.LocalizationResources['month_2'] = 'Feb';
+    window.LocalizationResources['month_3'] = 'Mar';
+    window.LocalizationResources['month_4'] = 'Apr';
+    window.LocalizationResources['month_5'] = 'May';
+    window.LocalizationResources['month_6'] = 'Jun';
+    window.LocalizationResources['month_7'] = 'Jul';
+    window.LocalizationResources['month_8'] = 'Aug';
+    window.LocalizationResources['month_9'] = 'Sep';
+    window.LocalizationResources['month_10'] = 'Oct';
+    window.LocalizationResources['month_11'] = 'Nov';
+    window.LocalizationResources['month_12'] = 'Dec';
+    window.LocalizationResources['month_13'] = '';
+    window.LocalizationResources['day_mon'] = 'Mon';
+    window.LocalizationResources['day_tue'] = 'Tue';
+    window.LocalizationResources['day_wed'] = 'Wed';
+    window.LocalizationResources['day_thu'] = 'Thu';
+    window.LocalizationResources['day_fri'] = 'Fri';
+    window.LocalizationResources['day_sat'] = 'Sat';
+    window.LocalizationResources['day_sun'] = 'Sun';
+    window.LocalizationResources['day_1'] = 'Sun';
+    window.LocalizationResources['day_2'] = 'Mon';
+    window.LocalizationResources['day_3'] = 'Tue';
+    window.LocalizationResources['day_4'] = 'Wed';
+    window.LocalizationResources['day_5'] = 'Thu';
+    window.LocalizationResources['day_6'] = 'Fri';
+    window.LocalizationResources['day_7'] = 'Sat';
+    
+</script>
+
+    
+    <script type="text/javascript">
+       $( document ).ready(function() {
+      $("#uhfCatLogo").children("span").text('Azure Dev Tools for Teaching');
+});
+
+    </script>
+    <script>
+        function CheckBrowser() {
+            if ('localStorage' in window && window['localStorage'] !== null) {
+                // we can use localStorage object to store data
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        $(function () {
+            $("#RemindMeLater").click(function () {
+                $("#FirstAlert").hide();
+            });
+        });
+
+        function HideFirstAlert() {
+            $("#FirstAlert").hide();
+        }
+
+        $(document).ready(function () {
+
+            $(".msame_Header div").attr({
+      "title" : "Sign in to your account"
+    });
+            var meCtrl=$("#meControl")[0].innerHTML;
+            $("#azure-header .nav-basic .nav-basic-links .auth.auth-container").html('<div id="azure-signin">'+meCtrl+'</div>');
+            $('#azure-signin').children("div").attr('id', 'meControl_1');
+            $('#meControl_1').children("div").removeAttr('class');
+
+            // Fix signin/signout text being smaller than other items when viewed on mobile devices
+            $('.msame_Header_name').css('padding-top', 'inherit');
+            $('.msame_Header_name').css('text-overflow', 'inherit');
+            $('.msame_Header_name').css('font-size', '15px');
+            $('.msame_Header_name').css('max-width', '250px');
+            $('.theme-dark.brand-purple.js-cat-head .c-logo').replaceWith('<a class="c-logo" itemprop="url" href="https://azureforeducation.microsoft.com/en-us" aria-label="Azure Dev Tools for Teaching Home" ms.title="Azure Dev Tools for Teaching Home"><span style="font-size: 18px;display: inline;">Azure Dev Tools for Teaching</span><img itemprop="logo" itemscope="itemscope" class="c-image" role="presentation" alt="" src="https://azureforeducation.microsoft.com/Library/Main/Images/logos/Microsoft%20Imagine%20Logo_wht_RGB_PNG_40px_Icon.png" style="display: inline;"></a>');
+            if(false)
+            {
+            }
+
+            // KEROS FIXES (document.cookie = "enable_keros_fixes=true;")
+
+
+            function hideTooltipOnEscape(event) {
+                if (event.key === "Escape") {
+                    $(event.data.element).children('[role="tooltip"]').hide();
+                }
+            }
+
+            $('[role="tooltip"]').parent().on("focus",
+                function () {
+                    $(this).on("keyup", { element: this }, hideTooltipOnEscape);
+                    $(this).one("blur", function () {
+                        // undo the jQuery manipulation
+                        // don't use .show() because it uses inline styles, overriding css
+                        $(this).children('[role="tooltip"]').removeAttr('style');
+                        $(this).off("keyup", hideTooltipOnEscape);
+                    });
+                }
+            );
+
+            window.setTimeout(function() {
+                $('.msame_Header.msame_unauth').attr('role','link');
+                //Hack to get alt text in meControl
+                if($('#meControl').find('img:first').length) $('#meControl').find('img:first').attr('alt', '');
+                if (window.location.hostname === 'compete.imagine.microsoft.com' || false) {
+                    // FIX KEROS: MAS 20 – Non-text Content
+                    $("#ShellHeaderWrapper header img.c-image[itemprop='logo']").attr("alt", "");
+                // FIX KEROS: MAS 20 – Non-text Content
+                $("#ShellHeaderWrapper header img[role='presentation']").attr("alt", "");
+                // FIX KEROS: MAS 20 – Non-text Content
+                $.each($("div section.page-wrapper[data-grid='container'] img[alt='']"), function (index, value) { $(value).attr("alt", "imagine image " + index + ": " + value.currentSrc); });
+                // FIX KEROS: MAS 40 B – Name, Role, Value
+                $("#ShellHeaderWrapper #headerArea[role='Header']").attr("role", "banner");
+                // FIX KEROS: MAS 40 B – Name, Role, Value
+                $(".footerMainContainer #footerArea[role='Footer']").attr("role", "contentinfo");
+                // FIX KEROS: MAS 27 – Bypass Blocks
+                $.each($("#footerUniversalFooter footer nav h4.c-heading-4"), function (index, value) { $(value).replaceWith($('<h3 class="c-heading-4">' + value.innerHTML + '</h3>')); });
+                // FIX KEROS: MAS 20 B – Link Purpose (In Context)
+                $.each($("div section.page-wrapper[data-grid='container'] a"), function (index, value) { if (value.href === value.innerHTML) value.innerHTML = '"' + value.innerHTML + '"'; });
+            }
+            }, 1000);
+        });
+
+    </script>
+    <script type='text/javascript'>
+        var appInsights = window.appInsights || function (config) {
+            function r(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } }
+            var t = { config: config }, u = document, e = window, o = 'script', s = u.createElement(o), i, f; for (s.src = config.url || '//az416426.vo.msecnd.net/scripts/a/ai.0.js', u.getElementsByTagName(o)[0].parentNode.appendChild(s), t.cookie = u.cookie, t.queue = [], i = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Ajax']; i.length;)r('track' + i.pop()); return r('setAuthenticatedUserContext'), r('clearAuthenticatedUserContext'), config.disableExceptionTracking || (i = 'onerror', r('_' + i), f = e[i], e[i] = function (config, r, u, e, o) { var s = f && f(config, r, u, e, o); return s !== !0 && t['_' + i](config, r, u, e, o), s }), t
+        }({
+            instrumentationKey: '7ab73a89-c7f3-49a0-90cb-c4f0036eaa0f'
+        });
+
+        window.appInsights = appInsights;
+        appInsights.trackPageView();
+    </script>
+
+    <script src="/bundles/InstGeneral?v=p9AP4-23qL_nl8voXVWBq7M2e-Ka_BWZwwwAyA_hBVM1"></script>
+
+
+</head>
+<body class="context-msia">
+    <div id="skiplinks">
+        <a href="#ShellHeaderWrapper" class="js-clickOnSpaceOrEnter m-skip-to-main" role="button" aria-label="Skip to navigation menu by tapping the enter key.">Skip to navigation menu [Enter]</a>
+        <a href="#main" class="js-clickOnSpaceOrEnter m-skip-to-main" role="button" aria-label="Skip to main content of the page by tapping the enter key.">Skip to main content [Enter]</a>
+        <a href="#divFooterContainer" class="js-clickOnSpaceOrEnter m-skip-to-main" role="button" aria-label="Skip to footer section of the page by tapping the enter key.">Skip to footer content [Enter]</a>
+    </div>
+    <style type="text/css">
+        html{
+            overflow-x:hidden !important;
+        }
+        .main-header {
+            -webkit-text-size-adjust: 100%;
+            font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            box-sizing: border-box;
+            width: 100%;
+            min-height: 50px;
+            padding: 10px 0;
+            font-size: 12px;
+            color: #f2f2f2;
+            background: #1a1a1a;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            flex-direction: row;
+        }
+        .main-center-newux {
+            -webkit-text-size-adjust: 100%;
+            font-size: 12px;
+            color: #f2f2f2;
+            box-sizing: inherit;
+            -webkit-box-flex: 1;
+            flex: 1 1 516px;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            flex-direction: row;
+            padding: 0 !important;
+            margin: 0 30px;
+            flex-wrap: wrap;
+        }
+        #microsoft-logo {
+            -webkit-text-size-adjust: 100%;
+            font-size: 12px;
+            color: #f2f2f2;
+            -webkit-box-direction: normal;
+            box-sizing: inherit;
+            background: url("data:image/svg+xml,%3Csvg width%3D%22147%22 height%3D%2221%22 viewBox%3D%220 0 147 21%22 fill%3D%22none%22 xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0D%3Cg clip-path%3D%22url(%23clip0)%22%3E%0D%3Cpath d%3D%22M109.384 4.2002L114.13 16.8002H111.713L110.607 13.6794H105.658L104.58 16.8002H102.193L106.939 4.2002H109.384ZM108.074 6.53353L106.211 11.8419H109.996L108.132 6.53353H108.074Z%22 fill%3D%22white%22%2F%3E%0D%3Cpath d%3D%22M115.178 7.75879H122.37V8.60462L117.653 15.1088H122.399V16.8005H114.829V15.7796L119.487 9.45046H115.149V7.75879H115.178Z%22 fill%3D%22white%22%2F%3E%0D%3Cpath d%3D%22M131.453 7.75879V16.8005H129.299V15.6046H129.27C128.979 16.013 128.6 16.3338 128.134 16.5671C127.668 16.8005 127.144 16.9171 126.562 16.9171C125.514 16.9171 124.728 16.6255 124.175 16.013C123.621 15.4296 123.359 14.4963 123.359 13.2421V7.75879H125.514V13.0088C125.514 13.7671 125.659 14.3505 125.98 14.7296C126.271 15.1088 126.737 15.313 127.348 15.313C127.959 15.313 128.425 15.1088 128.804 14.6713C129.153 14.2338 129.357 13.6796 129.357 13.0088V7.75879H131.453Z%22 fill%3D%22white%22%2F%3E%0D%3Cpath d%3D%22M137.829 7.6123C138.004 7.6123 138.15 7.6123 138.295 7.64147C138.441 7.67064 138.557 7.6998 138.645 7.72897V9.8873C138.528 9.7998 138.382 9.74147 138.15 9.65397C137.946 9.56647 137.684 9.5373 137.363 9.5373C136.839 9.5373 136.403 9.77064 136.053 10.2081C135.704 10.6456 135.5 11.3165 135.5 12.2498V16.7998H133.375V7.75814H135.5V9.1873H135.529C135.733 8.69147 136.024 8.3123 136.403 8.02064C136.81 7.75814 137.276 7.6123 137.829 7.6123Z%22 fill%3D%22white%22%2F%3E%0D%3Cpath d%3D%22M146.273 14.5255V16.2755C145.923 16.5089 145.458 16.6839 144.904 16.8297C144.351 16.9755 143.74 17.0339 143.099 17.0339C141.731 17.0339 140.654 16.6255 139.897 15.8089C139.14 14.9922 138.761 13.8547 138.761 12.3964C138.761 10.9964 139.169 9.82969 139.984 8.92552C140.799 8.02135 141.847 7.55469 143.099 7.55469C144.351 7.55469 145.312 7.93385 146.011 8.69219C146.71 9.45052 147.059 10.5005 147.059 11.8714V12.8922H140.887C140.974 13.7964 141.265 14.438 141.76 14.788C142.255 15.138 142.866 15.3422 143.652 15.3422C144.147 15.3422 144.642 15.2547 145.108 15.1089C145.516 14.9922 145.923 14.788 146.273 14.5255ZM144.904 11.3755C144.904 10.6755 144.73 10.1505 144.409 9.77135C144.089 9.39219 143.623 9.21719 143.041 9.21719C142.546 9.21719 142.08 9.39219 141.673 9.77135C141.265 10.1505 141.003 10.6755 140.857 11.3755H144.904Z%22 fill%3D%22white%22%2F%3E%0D%3Cpath d%3D%22M40.8774 4.19994V16.7999H38.6938V6.91244H38.6647L34.7634 16.7999H33.3076L29.3189 6.91244H29.2898V16.7999H27.2809V4.19994H30.4253L34.0355 13.5333H34.0937L37.9077 4.19994H40.8774ZM42.6826 5.16244C42.6826 4.81244 42.799 4.52077 43.061 4.28744C43.3231 4.0541 43.6142 3.93744 43.9636 3.93744C44.3421 3.93744 44.6623 4.0541 44.8953 4.3166C45.1282 4.54994 45.2738 4.8416 45.2738 5.1916C45.2738 5.5416 45.1573 5.83327 44.8953 6.0666C44.6332 6.29994 44.3421 6.4166 43.9636 6.4166C43.5851 6.4166 43.294 6.29994 43.061 6.0666C42.8281 5.77494 42.6826 5.48327 42.6826 5.16244ZM45.0408 7.75827V16.7999H42.9155V7.75827H45.0408ZM51.4752 15.2541C51.7954 15.2541 52.1448 15.1666 52.5233 15.0208C52.9018 14.8749 53.2512 14.6708 53.5714 14.4374V16.4208C53.2221 16.6249 52.8436 16.7708 52.4069 16.8583C51.9701 16.9458 51.5043 17.0041 50.9802 17.0041C49.641 17.0041 48.5637 16.5958 47.7485 15.7499C46.9042 14.9041 46.4966 13.8249 46.4966 12.5416C46.4966 11.0833 46.9333 9.88744 47.7776 8.9541C48.6219 8.02077 49.8156 7.5541 51.3878 7.5541C51.7954 7.5541 52.1739 7.61244 52.5815 7.69994C52.9892 7.8166 53.3094 7.93327 53.5423 8.04994V10.0916C53.2221 9.85827 52.8727 9.6541 52.5524 9.53744C52.2031 9.3916 51.8537 9.33327 51.5043 9.33327C50.66 9.33327 49.9903 9.59577 49.4663 10.1499C48.9422 10.7041 48.6802 11.4333 48.6802 12.3666C48.6802 13.2708 48.9131 13.9999 49.408 14.4958C49.9612 14.9916 50.6309 15.2541 51.4752 15.2541ZM59.5982 7.61244C59.7729 7.61244 59.9184 7.61244 60.064 7.6416C60.2096 7.67077 60.326 7.69994 60.4134 7.7291V9.88744C60.2969 9.79994 60.1514 9.7416 59.9184 9.6541C59.7146 9.5666 59.4526 9.53744 59.1323 9.53744C58.6083 9.53744 58.1716 9.77077 57.8222 10.2083C57.4728 10.6458 57.269 11.3166 57.269 12.2499V16.7999H55.1436V7.75827H57.269V9.18744H57.2981C57.5019 8.6916 57.7931 8.31244 58.1716 8.02077C58.5792 7.75827 59.045 7.61244 59.5982 7.61244ZM60.5299 12.4249C60.5299 10.9374 60.9375 9.7416 61.7818 8.8666C62.6261 7.9916 63.7907 7.5541 65.3047 7.5541C66.7022 7.5541 67.8085 7.96244 68.5946 8.80827C69.3807 9.6541 69.7883 10.7916 69.7883 12.2208C69.7883 13.6791 69.3807 14.8458 68.5364 15.7208C67.6921 16.5958 66.5566 17.0333 65.1009 17.0333C63.7034 17.0333 62.597 16.6249 61.7818 15.8083C60.9375 14.9624 60.5299 13.8249 60.5299 12.4249ZM62.7426 12.3374C62.7426 13.2708 62.9464 13.9999 63.3831 14.4958C63.8198 14.9916 64.4312 15.2541 65.2173 15.2541C66.0034 15.2541 66.5857 14.9916 66.9933 14.4958C67.4009 13.9999 67.6047 13.2708 67.6047 12.2791C67.6047 11.3166 67.4009 10.5874 66.9642 10.0916C66.5566 9.59577 65.9743 9.36244 65.2173 9.36244C64.4312 9.36244 63.8489 9.62494 63.4122 10.1499C62.9464 10.6458 62.7426 11.3749 62.7426 12.3374ZM72.9327 10.1499C72.9327 10.4416 73.0201 10.7041 73.2239 10.8791C73.4277 11.0541 73.8353 11.2583 74.5049 11.5208C75.3492 11.8708 75.9606 12.2499 76.2809 12.6583C76.6303 13.0958 76.805 13.5916 76.805 14.2041C76.805 15.0499 76.4847 15.7499 75.8151 16.2458C75.1745 16.7708 74.272 17.0333 73.1656 17.0333C72.7871 17.0333 72.3795 16.9749 71.9137 16.8874C71.4479 16.7999 71.0694 16.6833 70.7491 16.5374V14.4374C71.1276 14.6999 71.5643 14.9333 72.001 15.0791C72.4378 15.2249 72.8454 15.3124 73.2239 15.3124C73.6897 15.3124 74.0682 15.2541 74.272 15.1083C74.5049 14.9624 74.6214 14.7583 74.6214 14.4374C74.6214 14.1458 74.5049 13.8833 74.272 13.7083C74.0391 13.5041 73.5732 13.2708 72.9327 13.0083C72.1466 12.6874 71.5934 12.3083 71.2732 11.8999C70.9529 11.4916 70.7782 10.9666 70.7782 10.3249C70.7782 9.50827 71.0985 8.83744 71.739 8.31244C72.3795 7.78744 73.2239 7.52494 74.2429 7.52494C74.5631 7.52494 74.9125 7.5541 75.291 7.6416C75.6695 7.69994 76.0189 7.8166 76.2809 7.9041V9.9166C75.9897 9.7416 75.6695 9.5666 75.291 9.42077C74.9125 9.27494 74.534 9.2166 74.1846 9.2166C73.777 9.2166 73.4568 9.3041 73.253 9.44994C73.0492 9.6541 72.9327 9.85827 72.9327 10.1499ZM77.7075 12.4249C77.7075 10.9374 78.1151 9.7416 78.9594 8.8666C79.8038 7.9916 80.9684 7.5541 82.4823 7.5541C83.8798 7.5541 84.9862 7.96244 85.7723 8.80827C86.5584 9.6541 86.966 10.7916 86.966 12.2208C86.966 13.6791 86.5584 14.8458 85.7141 15.7208C84.8697 16.5958 83.7343 17.0333 82.2785 17.0333C80.881 17.0333 79.7747 16.6249 78.9594 15.8083C78.1442 14.9624 77.7075 13.8249 77.7075 12.4249ZM79.9202 12.3374C79.9202 13.2708 80.124 13.9999 80.5608 14.4958C80.9975 14.9916 81.6089 15.2541 82.395 15.2541C83.1811 15.2541 83.7634 14.9916 84.171 14.4958C84.5786 13.9999 84.7824 13.2708 84.7824 12.2791C84.7824 11.3166 84.5786 10.5874 84.1419 10.0916C83.7343 9.59577 83.152 9.36244 82.395 9.36244C81.6089 9.36244 81.0266 9.62494 80.5899 10.1499C80.1531 10.6458 79.9202 11.3749 79.9202 12.3374ZM94.0117 9.50827H90.8382V16.7999H88.6838V9.50827H87.1698V7.75827H88.6838V6.5041C88.6838 5.5416 89.004 4.78327 89.6154 4.17077C90.2268 3.55827 91.0129 3.2666 91.9737 3.2666C92.2357 3.2666 92.4687 3.2666 92.6725 3.29577C92.8763 3.32494 93.0509 3.3541 93.1965 3.41243V5.24994C93.1383 5.22077 92.9927 5.16244 92.818 5.1041C92.6433 5.04577 92.4395 5.0166 92.2066 5.0166C91.7699 5.0166 91.4205 5.16244 91.1876 5.42494C90.9547 5.7166 90.8382 6.12494 90.8382 6.64994V7.7291H94.0117V5.68744L96.1371 5.04577V7.7291H98.2916V9.4791H96.1371V13.7083C96.1371 14.2624 96.2245 14.6708 96.4283 14.8749C96.6321 15.1083 96.9523 15.2249 97.389 15.2249C97.5055 15.2249 97.6511 15.1958 97.8258 15.1374C98.0004 15.0791 98.146 15.0208 98.2916 14.9333V16.6833C98.146 16.7708 97.9422 16.8291 97.6219 16.8874C97.3017 16.9458 97.0106 16.9749 96.6903 16.9749C95.7877 16.9749 95.1181 16.7416 94.6814 16.2458C94.2447 15.7791 94.0117 15.0499 94.0117 14.0874V9.50827Z%22 fill%3D%22white%22%2F%3E%0D%3Cpath d%3D%22M9.95722 0H0V9.975H9.95722V0Z%22 fill%3D%22%23F25022%22%2F%3E%0D%3Cpath d%3D%22M20.9627 0H11.0055V9.975H20.9627V0Z%22 fill%3D%22%237FBA00%22%2F%3E%0D%3Cpath d%3D%22M9.95722 11.0254H0V21.0004H9.95722V11.0254Z%22 fill%3D%22%2300A4EF%22%2F%3E%0D%3Cpath d%3D%22M20.9627 11.0254H11.0055V21.0004H20.9627V11.0254Z%22 fill%3D%22%23FFB900%22%2F%3E%0D%3Cpath d%3D%22M9.95722 0H0V9.975H9.95722V0Z%22 fill%3D%22%23F25022%22%2F%3E%0D%3Cpath d%3D%22M20.9627 0H11.0055V9.975H20.9627V0Z%22 fill%3D%22%237FBA00%22%2F%3E%0D%3Cpath d%3D%22M9.95722 11.0254H0V21.0004H9.95722V11.0254Z%22 fill%3D%22%2300A4EF%22%2F%3E%0D%3Cpath d%3D%22M20.9627 11.0254H11.0055V21.0004H20.9627V11.0254Z%22 fill%3D%22%23FFB900%22%2F%3E%0D%3C%2Fg%3E%0D%3Cdefs%3E%0D%3CclipPath id%3D%22clip0%22%3E%0D%3Crect width%3D%22147%22 height%3D%2221%22 fill%3D%22white%22%2F%3E%0D%3C%2FclipPath%3E%0D%3C%2Fdefs%3E%0D%3C%2Fsvg%3E%0D") center no-repeat;
+            min-width: 150px;
+        }
+        .flex-fill-one {
+            -webkit-text-size-adjust: 100%;
+            font-size: 12px;
+            color: #f2f2f2;
+            -webkit-box-direction: normal;
+            box-sizing: inherit;
+            -webkit-box-flex: 1;
+            flex-grow: .05;
+        }
+        .flex-filler {
+            -webkit-text-size-adjust: 100%;
+            
+            font-size: 12px;
+            color: #f2f2f2;
+            -webkit-box-direction: normal;
+            box-sizing: inherit;
+            -webkit-box-flex: 1;
+            flex-grow: 1;
+        }
+        .user-info {
+            -webkit-text-size-adjust: 100%;
+            font-family: "Segoe UI",SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-size: 12px;
+            -webkit-box-direction: normal;
+            box-sizing: inherit;
+            display: flex !important;
+            padding-top: 6px !important;
+            color: #fff;
+        }
+        #user-name {
+            -webkit-text-size-adjust: 100%;
+            font-family: "Segoe UI",SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-size: 12px;
+            -webkit-box-direction: normal;
+            color: #fff;
+            box-sizing: inherit;
+        }
+        .signout {
+            -webkit-text-size-adjust: 100%;
+            font-size: 12px;
+            -webkit-box-direction: normal;
+            color: #fff;
+            box-sizing: inherit;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+    </style>
+    <div class="header-container">
+        <header class="main-header">
+            <div class="main-center-newux">
+                <div class="newux" id="microsoft-logo"></div>
+                <div class="flex-fill-one"></div>
+                <div class="user-info">
+                    <a href="/account/Subscriptions">Manage</a>
+                </div>
+                <div class="flex-fill-one"></div>
+                <div class="user-info">
+                    <a href="/institutions/faq">FAQ</a>
+                </div>
+                <div class="flex-filler"></div>
+                <div class="user-info newux">
+                        <a href="/Account/Signin">Sign in</a>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <form id="__AjaxAntiForgeryForm" method="post" action="javascript:void(0);">
+    <input name="__RequestVerificationToken" type="hidden" value="vwbuygeySa7ggs_YLiH-OWUMz5Lx29SrfzjYc_z8NWtRlMHnBLUlunOIvg75tY-ntF1B7xljAZeWtmmGSpQPVaC4s8S2v_ejNawls_BltV41" />
+</form>
+
+<script type="text/javascript">
+    var AntiForgeryHelper = AntiForgeryHelper || {};
+
+    // -----  Token()  ----------------------------------------------------------------------------
+    // Returns the current valid AntiForgery token for the current user session. Format is returned
+    // as: { "key": X, "value": Y }
+    AntiForgeryHelper.Token = function () {
+        var obj = {
+            "key": "__RequestVerificationToken",
+            "value": $('#__AjaxAntiForgeryForm input[name=__RequestVerificationToken]').val()
+        };
+        return obj;
+    };
+
+    // -----  Wrap()  -------------------------------------------------------------------------
+    // If you have an object, this method will add the AntiForgery token to the object.
+    AntiForgeryHelper.Wrap = function (dataObj) {
+        if (dataObj === undefined || dataObj === null) { dataObj = {}; }
+        var _tmp = AntiForgeryHelper.Token();
+        dataObj[_tmp.key] = _tmp.value;
+        return dataObj;
+    };
+
+    // -----  WrapQueryString()  ------------------------------------------------------------------
+    // Appends to the end of the input string in the format of: &key=encodeURIComponent(val)
+    AntiForgeryHelper.WrapQueryString = function (queryStr) {
+        if (queryStr === undefined || queryStr === null) { queryStr = "?"; }
+        else { queryStr += "&"; }
+        var _tmp = AntiForgeryHelper.Token();
+        queryStr += _tmp.key + "=" + encodeURIComponent(_tmp.value);
+        return queryStr;
+    };
+</script>
+    <main data-tag-area="content" id="main" data-tag-group="body" tabindex="-1">
+
+        
+<section data-grid="container" class="page-wrapper" ms.cmpgrp="contact" role="region">   
+        <div id="devtools" data-grid="col-12 stack-3 pad-6x" ms.cmpnm="dev tools">
+            <div data-grid="col-12" style="padding: 8px 10px;">
+                Students—you’re almost there! The developer tools and learning resources that were previously part of your Imagine account are now available with Azure Dev Tools for Teaching. Sign in using the button below—you’ll be taken to a page requesting you to sign in using a Microsoft Account. Learn about Microsoft Accounts <a href="http://account.microsoft.com/" class="c-hyperlink" ms.cmptyp="link" ms.title="here" aria-label="click here to to learn more about Microsoft Accounts">here.</a>
+            </div>
+            <div data-grid="col-12" style="padding: 8px 10px;">
+                Note: Please use the email you provided for your previous Imagine subscription access when creating a new Microsoft Account.
+            </div>
+            <div data-grid="col-12" style="padding: 8px 10px;">
+                <button onclick="location.href='https://go.microsoft.com/fwlink/?linkid=2062135'" name="signIn" style="background-color:#0067B8;color:white;float:right" class="c-button" ms.cmptyp="signin" ms.title="Sign In">Sign In</button>
+            </div>
+            <div data-grid="col-12" style="padding: 8px 10px;">
+                 If you are having issues getting access, please reference our <a href="https://aka.ms/adt4tstudentguide" class="c-hyperlink" ms.cmptyp="link" ms.title="help guide">help guide.</a>  For additional support, please check out <a href="https://go.microsoft.com/fwlink/?linkid=2062232" class="c-hyperlink" ms.cmptyp="link" ms.title="student FAQ">student FAQ.</a>
+            </div>
+        </div>
+</section>
+<style>
+    .c-paragraph {
+        min-width: 100px;
+    }
+</style>
+
+        <div class="footer-layout">
+            <style type="text/css">
+    .main-footer {
+        -webkit-text-size-adjust: 100%;
+        font-family: "Segoe UI",SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        box-sizing: inherit;
+        width: 100%;
+        height: 50px;
+        padding: 10px 0;
+        font-size: 12px;
+        color: #f2f2f2;
+        background: #1a1a1a;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row;
+        bottom: 0;
+        position: relative;
+    }
+    .footer-container {
+        -webkit-text-size-adjust: 100%;
+        font-family: "Segoe UI",SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 12px;
+        color: #f2f2f2;
+        -webkit-box-direction: normal;
+        box-sizing: inherit;
+        display: flex;
+        -webkit-box-pack: center;
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .footer-item {
+        -webkit-text-size-adjust: 100%;
+        font-family: "Segoe UI",SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 12px;
+        color: #f2f2f2;
+        -webkit-box-direction: normal;
+        box-sizing: inherit;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    #ms-copyright {
+        -webkit-text-size-adjust: 100%;
+        font-family: "Segoe UI",SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 12px;
+        color: #f2f2f2;
+        -webkit-box-direction: normal;
+        box-sizing: inherit;
+        margin-left: 20px;
+        margin-right: 20px;
+        width: 120px;
+    }
+</style>
+<footer class="main-footer newux additionalmargin">
+    <div class="footer-container">
+        <div class="footer-item"><a id="footer-privacy" target="_blank" href="https://go.microsoft.com/fwLink/p/?LinkID=131004">Privacy &amp; Cookies</a></div>
+        <div class="footer-item"><a id="footer-trademarks" target="_blank" href="https://go.microsoft.com/fwLink/p/?LinkID=222682">Trademarks</a></div>
+        <div class="footer-item"><a id="footer-legal" target="_blank" href="https://go.microsoft.com/fwLink/p/?LinkID=233178">Legal</a></div>
+        <div class="footer-item"><a id="footer-support" target="_blank" href="https://go.microsoft.com/fwLink/p/?LinkID=398029">Support</a></div>
+        <div class="footer-item"><a id="footer-feedback" target="_blank" href="https://feedback.azure.com">Give us feedback</a></div>
+        <!---->
+        <div class="footer-item" id="ms-copyright">© 2022 Microsoft</div>
+    </div>
+</footer>
+        </div>
+    </main>
+    <script src="/bundles/vendor?v=hIL6I18YxDMDY56wv9SAabyMX-CPisHkSBUjqgJsg881"></script>
+
+    <script src="/bundles/app?v=h4CWimM8F-4IDDUBVziGeFJaG8KoT0n6tWKzlKoucrw1"></script>
+
+    
+    <script type="text/javascript">
+        // Handle ACOM footer's submenu toggle in mobile.
+        $('#bodyDiv').css('padding-bottom', $('.section-footer').innerHeight() + 40);
+        $(document).on('click', 'nav[data-control="toggle"] > button', function (e) {
+            var __nav = $(e.target).parent();
+            if (__nav.hasClass("open")) {
+                __nav.removeClass("open");
+            } else {
+                __nav.addClass("open");
+            }
+            $('#bodyDiv').css('padding-bottom', $('.section-footer').innerHeight()+40);
+        });
+        var resizeTimer;
+        $(window).on('resize', function (e) {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function () {
+                $('#bodyDiv').css('padding-bottom', $('.section-footer').innerHeight()+40);
+            }, 250);
+        });
+    </script>
+    <script type="text/javascript" src="/Scripts/vendor/CustomMsAnalytics.js"></script>
+</body>
+</html>

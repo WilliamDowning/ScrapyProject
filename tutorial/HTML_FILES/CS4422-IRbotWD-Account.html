@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kennesaw State University - Kennesaw State University Parking Portal</title>
+    <link rel="icon" type="image/ico" href="/inc/clientResources/images/favicon.ico" />
+    <link rel="index" href="/" />
+
+    <script src="/bundles/FlexPortScripts?v=F9PZq0Bt93juW0ty0BZINp6RsF1f8rUGrHxJ_disDsI1"></script>
+
+    <link href="/bundles/FlexPortStyles?v=c27YpMEKrZ__i9E-f6esPuYDpZFUULtnWRdHBCisRB01" rel="stylesheet"/>
+
+
+
+</head>
+
+<body>
+    <header>
+        <div id="wrapper" class="group">
+    <div id="header" class="group">
+        <div id="header-inner" class="col-12">
+            <div id="navigation" class="navbar navbar-default">
+                <div id="navMenu" class="navbar-header pull-left">
+                    <div id="navigation-mobile" class="navbar-header pull-left collapsed">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navwrap">
+                            <span class="sr-only">Toggle navigation</span>
+                            MENU
+                        </button>
+                    </div>
+
+                    <div class="navwrap navbar-collapse collapse">
+                        <ul id="dashboard" class="extra extra3">
+                            <li>
+                                <a href="/Account/Portal" style="color: #febc11">PARKING PORTAL</a>
+                            </li>
+                        </ul>
+
+                        <div id="navSegment1" class="extra extra2">
+<ul>
+            <li>
+                <a href="/Account/Citations">CITATIONS</a>
+            </li>
+</ul>
+                        </div>
+
+                        <div id="navSegment2" class=" extra pull-left">
+<ul>
+            <li>
+                <a href="/cmn/viewvehicles.aspx">VEHICLES</a>
+            </li>
+</ul>
+
+                        </div>
+
+                        <div id="extraMenu" class="extra extra3">
+                            <ul>
+                                <li class="dropdown multi-level">
+                                    <a href="#" id="moreMenuLink" class="dropdown-toggle" data-toggle="dropdown">MORE</a>
+                                    <ul id="moreMenu" class="dropdown-menu" role="menu">
+                                        <li class="dropdown extra">
+                                            <div id="navSegment1" class="pull-left">
+<ul>
+            <li>
+                <a href="/Account/Citations">CITATIONS</a>
+            </li>
+</ul>
+                                            </div>
+                                        </li>
+                                        <li class="dropdown extra2">
+                                            <div id="navSegment2" class="pull-left">
+<ul>
+            <li>
+                <a href="/cmn/viewvehicles.aspx">VEHICLES</a>
+            </li>
+</ul>
+
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="userInfo">
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="dropdown" id="navNotifications">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-bell"></span><span id="notificationCountBadge" class="badge badge-error notif-count hidden">0</span></a>
+                            <ul id="notificationMenu" class="dropdown-menu" role="menu">
+    <li data-notificiationid='NoNotifications'>
+        <a href="#">No Notifications</a>
+    </li>
+</ul>
+                        </li>
+
+                        <li class="dropdown" id="basketNav">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <span class="glyphicon glyphicon-shopping-cart"></span>
+        <span id="basketText">(0 ITEMS $0.00)</span>
+    </a>
+</li>
+
+                        <li class="dropdown" id="navUserInfo">
+                                    <div id="navUserFull">
+                                            <a style="display:inline-block; padding-right:0; width:auto;" href="/cmn/auth.aspx">LOGIN</a>
+                                        
+                                            <span style="display:inline-block;">&nbsp;&nbsp;-or-&nbsp;&nbsp;</span>
+                                        
+                                            <a style="display:inline-block; padding-left:0; width:auto;" href="/cmn/newuser.aspx">SIGNUP</a>
+                                    </div>
+                                    <div id="navUserCompact">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span></a>
+                                        <ul class="dropdown-menu userDropdown" role="menu">
+                                                <li><a href="/cmn/auth.aspx">LOGIN</a></li>
+                                            
+                                                <li><a href="/cmn/newuser.aspx">SIGNUP</a></li>
+                                        </ul>
+                                    </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div class="ebCarouselContainer" style="border-bottom-color: #febc11;">
+    <div id="ebCarousel" class="carousel slide" data-ride="carousel" data-interval="9000">
+            <div class="carousel-inner">
+
+                        <div class="item active">
+                            <div class="slider" style="background-image: url(&#39;/shared/Carousel/Image/e99493f7-9338-49cd-975e-5187e2de63a9&#39;)">
+                            </div>
+                        </div>
+            </div>
+    </div>
+</div>
+    </header>
+
+    <div class="container">
+        <noscript>
+            <div class="overlay" style="color:#fff; padding: 40vh 10vw; text-align: center;">
+                <p>JavaScript is required, but is either not supported or not enabled in your browser.</p>
+            </div>
+        </noscript>
+
+        <aside id="sessionExtenderContainer"></aside>
+
+<div class="flashMessageContainer col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+</div>
+
+<div class="row">
+    <div class="system-announcement-container col-sm-5 col-md-5 col-lg-5 text-center">
+    </div>
+</div>
+
+        
+<div class="row">
+    <div id="notificationAlerts" class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 text-center"></div>
+</div>
+
+<div id="pageInstructions" class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+        <h1 id="pageheader">Kennesaw State University Parking Portal</h1>
+    </div>
+
+    <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 text-center">
+        <p id="pageText">
+            Welcome to the Parking Portal. Use the dashboard to obtain and manage permits, add vehicles to your account, pay citations or submit an appeal.&nbsp;
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-8 col-md-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+                <div class="row dashboard-widget">
+
+
+    <section class="col-sm-6 col-md-6 col-lg-6 widget-secondary-actions">
+        <h3>CITATIONS</h3>
+        <div id="citationSearchForm">
+            <form action="/Account/Citations/Search" data-ajax="true" data-ajax-begin="showLoadingDialog(&#39;Searching...&#39;)" data-ajax-complete="ajaxComplete(xhr, status, &#39;Loading results...&#39;)" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#citationSearchForm" id="citationSearch" method="post" role="form"><input name="__RequestVerificationToken" type="hidden" value="1lwGLi54uJ_FL9LqIQ7crPZ2ienyrPH313bJu4Jzqt-u4sYLB3UKGlMX2ykaI-2PWkp0usikMdAfz91XtsEiFrgSlYhyFz3dJFcvtWYqiiE1" />    <div class="form-group">
+
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <label for="CitationNumber">Citation Number</label>
+
+
+                    <input class="form-control" data-val="true" data-val-notrequired="" id="citationSearchBox" name="CitationNumber" type="text" value="" />
+                </div>
+            </div>
+                <div class="row">
+                    <p class="col-sm-12 col-md-12 col-lg-12 text-center">-OR-</p>
+                </div>
+
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <label for="StateId">State</label>
+
+
+                    <select class="form-control" data-val="true" data-val-notrequired="" data-val-number="The field State must be a number." data-val-required="The State field is required." id="StateId" name="StateId"><option value="2">ALABAMA</option>
+<option value="1">ALASKA</option>
+<option value="4">ARIZONA </option>
+<option value="3">ARKANSAS</option>
+<option value="5">CALIFORNIA </option>
+<option value="6">COLORADO </option>
+<option value="7">CONNECTICUT</option>
+<option value="9">DELAWARE</option>
+<option value="8">DISTRICT OF COLUMBIA</option>
+<option value="10">FLORIDA</option>
+<option selected="selected" value="11">GEORGIA</option>
+<option value="12">HAWAII</option>
+<option value="14">IDAHO</option>
+<option value="15">ILLINOIS</option>
+<option value="16">INDIANA</option>
+<option value="13">IOWA</option>
+<option value="17">KANSAS</option>
+<option value="18">KENTUCKY</option>
+<option value="2001">KSU</option>
+<option value="19">LOUISIANA</option>
+<option value="22">MAINE</option>
+<option value="21">MARYLAND</option>
+<option value="20">MASSACHUSETTS</option>
+<option value="23">MICHIGAN</option>
+<option value="24">MINNESOTA</option>
+<option value="26">MISSISSIPPI</option>
+<option value="25">MISSOURI</option>
+<option value="27">MONTANA</option>
+<option value="30">NEBRASKA</option>
+<option value="34">NEVADA</option>
+<option value="31">NEW HAMPSHIRE</option>
+<option value="32">NEW JERSEY</option>
+<option value="33">NEW MEXICO</option>
+<option value="35">NEW YORK</option>
+<option value="28">NORTH CAROLINA</option>
+<option value="29">NORTH DAKOTA</option>
+<option value="36">OHIO</option>
+<option value="37">OKLAHOMA</option>
+<option value="38">OREGON</option>
+<option value="39">PENNSYLVANIA</option>
+<option value="42">RHODE ISLAND</option>
+<option value="40">SOUTH CAROLINA</option>
+<option value="41">SOUTH DAKOTA</option>
+<option value="43">TENNESSEE</option>
+<option value="44">TEXAS</option>
+<option value="45">UTAH</option>
+<option value="47">VERMONT</option>
+<option value="46">VIRGINIA </option>
+<option value="48">WASHINGTON</option>
+<option value="50">WEST VIRGINIA</option>
+<option value="49">WISCONSIN</option>
+<option value="51">WYOMING</option>
+<option value="52">ALBERTA</option>
+<option value="53">BRITISH COLUMBIA</option>
+<option value="54">MANITOBA</option>
+<option value="55">NEW BRUNSWICK</option>
+<option value="56">NEWFOUNDLAND AND LABRADOR</option>
+<option value="57">NORTHWEST TERRITORIES</option>
+<option value="58">NOVA SCOTIA</option>
+<option value="59">NUNAVUT</option>
+<option value="60">ONTARIO</option>
+<option value="61">PRINCE EDWARD ISLAND</option>
+<option value="62">QUEBEC</option>
+<option value="63">SASKATCHEWAN</option>
+<option value="64">YUKON</option>
+</select>
+                </div>
+
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <label for="PlateNumber">Plate Number</label>
+
+
+                    <input class="form-control" data-val="true" data-val-notrequired="" id="PlateNumber" name="PlateNumber" type="text" value="" />
+                </div>
+            </div>
+
+
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <button type="submit" class="btn btn-default btn-small btn-block">Search Citations</button>
+        </div>
+    </div>
+</form>
+        </div>
+    </section>
+
+                </div>
+     </div>
+</div>
+
+    <div class="col-sm-8 col-md-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+        <div class="row dashboard-footer-links">
+                <div class="col-sm-4 col-md-4 col-lg-4 text-center border-right">
+                    <ul class="list-group">
+                            <li class="list-group-item">
+                                    <a href="http://parking.kennesaw.edu/index.php" target="_self">Parking Home</a>
+                            </li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-4 col-md-4 col-lg-4 text-center ">
+                    <ul class="list-group">
+                            <li class="list-group-item">
+                                    <a href="https://parking.kennesaw.edu/rules_and_regulations.php" target="_self">Rules &amp; Regulations</a>
+                            </li>
+                    </ul>
+                </div>
+
+        </div>
+    </div>
+
+
+    </div>
+
+    <footer>
+        <div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <span style="color: #444444; font-family: helvetica neue, helvetica, calibri, arial, sans-serif; font-size: 14px; text-align: center;"><a href="/" target="_self">Parking Home</a>&nbsp; &nbsp;|&nbsp; &nbsp;<a href="https://parking.kennesaw.edu/rules_and_regulations.php" target="_self">Rules &amp; Regulations</a>&nbsp; &nbsp;|&nbsp; &nbsp;<a href="http://www.kennesaw.edu/privacy.php" target="_blank">Privacy Statement</a></span><span style="font-size: 13.3333px;">&nbsp; &nbsp;|&nbsp; &nbsp;<a href="http://talon.kennesaw.edu/" target="_self">Contact Us</a></span><span style="color: #444444; font-family: helvetica neue, helvetica, calibri, arial, sans-serif; font-size: 14px; text-align: center;"><a href="http://www.kennesaw.edu/privacy.php" target="_self"><br />
+<br />
+</a></span>
+        </div>
+    </div>
+<div class="t2mode">
+	<span class="t2modeData"></span>
+</div>
+
+<style type="text/css">
+	.t2mode span.t2modeData {
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		z-index: 10000;
+		color: #333;
+		font-size: 0.85em;
+		margin: 0;
+		padding: 0.25em;
+		background: none repeat scroll 0 0 rgba(204, 204, 204, 0.5);
+		border: 1px solid rgba(102, 102, 102, 0.5);
+		border-bottom-width: 0;
+	}
+	.t2mode span.t2modeData:hover {
+		background: none repeat scroll 0 0 rgb(204, 204, 204);
+	}
+	.t2mode span.t2modeData span {
+		border-right: 1px solid rgba(102, 102, 102, 0.5);
+		padding: 0.15em 0.5em 0.15em 0.25em;
+		display: inline-block;
+		white-space: nowrap;
+	}
+	.t2mode span.t2modeData span:last-child {
+		border-right-width: 0;
+	}
+</style>
+</div>
+    </footer>
+
+
+    <div id="WorkFlowRedirectPanel">
+
+</div>
+
+
+    <div class="overlay" id="ajaxLoader" style="display:none;">
+        <h2 class="loaderText"></h2>
+        <div class="loader"></div>
+    </div>
+
+
+
+
+
+    
+    <!-- TODO: [UI] Move these scripts into separate files -->
+    <script>
+        //pubsub.subscribe("PermitBalance", xyz);
+
+        pubsub.subscribe("PermitBalance", notificationRenderer.updateDashboardNotifications);
+
+        $(document).ready(function () {
+            pubsub.subscribe("PermitBalance", notificationRenderer.updateDashboardNotifications);
+        });
+
+        function addBalanceToCart(id) {
+            notificationActions.addPermitBalanceToCart(id);
+        }
+    </script>
+
+
+    <script>
+        function Redirect(error, status, response) {
+            window.location.href = urlHandler.getRoot() + response.statusText;
+        }
+
+        function UpdateBasket(response, status, error) {
+            $.ajax({
+                url: urlHandler.getRoot() + "Shared/Basket/BasketNavElement",
+                type: 'GET',
+                datatype: 'html',
+                cache: false,
+                success: function (data) {
+                    $("#basketNav").replaceWith(data);
+                    hideLoadingDialog();
+                }
+            });
+        }
+
+        $('#confirmPlate').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var uid = button.data('uid');
+            var modal = $(this);
+
+            if (uid !== undefined) {
+                modal.find('#CitationUid').val(uid);
+            }
+        });
+
+        $('#confirmPlate').on('shown.bs.modal', function () {
+            $('#PlateNumber').focus();
+        });
+    </script>
+</body>
+
+
+
+</html>
+
+
+

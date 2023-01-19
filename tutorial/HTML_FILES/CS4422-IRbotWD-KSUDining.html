@@ -1,0 +1,356 @@
+
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description">
+    <title>KSUDining Pay Now</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
+
+    <link href="/Content/css?220.0.0.880.220622" rel="stylesheet"/>
+
+    <link href="/Content/app-css?v=hNuNHyAzcYBHSZPf2Cc4sE1RWQDrfDJSuUJrFVyvY641?220.0.0.880.220622" rel="stylesheet"/>
+
+
+<link href="/ebpp/KSUDining/Content/Styles/KSUDining?220.0.0.880.220622220218" rel="stylesheet"/>
+
+    <script src="/bundles/modernizr"></script>
+
+    
+
+    <script src="/bundles/jquery?220.0.0.880.220622"></script>
+
+    <script src="/bundles/jqueryval?220.0.0.880.220622"></script>
+
+    <script src="/bundles/bootstrap?220.0.0.880.220622"></script>
+
+
+    <script>
+        Biller = {"AccountDescriptionConfiguration":0,"AccountLevelAddOnLabel":"Additional Payments","AccountLevelAddOns":[],"AccountPrincipalDesc":"Principal","AddAccountsMessage":"Adding this account to your payment plan will change the terms. Your payment will be {3}{0:F2}, but your new term is {1} month(s) and your last payment will be {3}{2:F2}.","AddonAccountCount":0,"AddonEditLabel":"Add/Edit","AddOnPaymentsLabel":"DONATE","AllowAddOnAccountPayments":false,"AllowAddOnPayments":false,"AllowBPX":false,"AllowBPXOnly":false,"AllowMailConfirmation":false,"AllowManualSupervisorApproval":false,"AllowMultiPay":false,"AllowPartialCreditMemos":false,"AllowPPD":false,"AllowPrintMultipleInvoices":false,"AllowRemoteSupervisorApproval":false,"AllowSurcharge":false,"AutoDebitLabel":"CSR Recurring Payment Plan","BillerInvoiceNumberLabel":"Event Name","BillPayInvoiceLabel":"Invoice","CreditCardDataProcessingLevel":3,"CreditMemo":false,"CreditMemoLabel":"","CurrencySymbol":"$","CustomerServiceNumber":"470-578-3937","DocPresentNewWindow":false,"FDICodeRequired":false,"FDPMaximumCount":0,"FDPMaximumDays":30,"HasFees":true,"HideTermsAndConditions":false,"HideTermsAndConditionsCheckBox":false,"HomeInvoiceLabel":"Invoice","IanaTimeZone":"America/New_York","IsACHFirstAccountType":true,"IsBillerInvoiceNumberRequired":true,"IsBlindPay":true,"IsCCFirstAccountType":false,"IsCouponBiller":false,"IsCreditMemoFreeformReasonRequired":false,"IsKeypadCardPresent":false,"IsNIRPayFreeformReasonRequired":true,"IsNIRPayRequired":true,"IsOverPayCodeRequired":false,"IsOverPayFreeformReasonRequired":false,"IsPinacleEnabled":false,"IsShortPayCodeRequired":false,"IsShortPayFreeformReasonRequired":false,"IsSwipeCardFirstAccountType":false,"LimitPaymentToBill":false,"MailAchConfirmationLetter":false,"MailCardConfirmationLetter":false,"MailChargeTypeConfirmationLetter":0,"MailConfirmationCSROption":1,"MailConfirmationIVROption":1,"MailConfirmationWebOption":1,"MaximumPayment":99999999.00,"MaxInvoicesMergePrint":25,"MaxInvoicesToPay":null,"MinimumPayment":1.00,"Name":"KSUDining","NotificationExpirationLimit":60,"NotificationWarningTimer":3,"PayAnyAmount":true,"PayAtleastBillAmount":false,"PayBillAmount":false,"PayCodeLabel":"Select an Option and Click the Icon to List Invoice Number(s)","PaymentConfirmationInvoiceLabel":"Number of Invoice","PaymentVerificationInvoiceLabel":"Invoice","PayMinimumAmountDue":false,"PayMinimumAmountToTotalAccountBalance":false,"PayNotMoreThanBillAmount":false,"ReadOnlyAddressInfo":false,"RecurringPaymentsLabel":"Recurring Payment","ReferenceNumberLabel":"Invoice Number","RequireFullPaymentOfBill":false,"RequiresCVVCode":true,"RequiresFDPPreAuth":true,"RequiresRPPreAuth":true,"Restrictions":[],"StatementDate":"Statement Date","UnEnrollTitle":"Un-Enroll Your User Profile","UserLevelAddOnPaymentLineItemLabel":"Donations"};
+        AllUSStates = "AA - Armed Forces Americas|AE - Armed Forces (Africa, Canada, Europe, Middle East)|AP - Armed Forces Pacific|AK - Alaska|AL - Alabama|AR - Arkansas|AZ - Arizona|CA - California|CO - Colorado|CT - Connecticut|DC - District of Columbia|DE - Delaware|FL - Florida|GA - Georgia|HI - Hawaii|IA - Iowa|ID - Idaho|IL - Illinois|IN - Indiana|KS - Kansas|KY - Kentucky|LA - Louisiana|MA - Massachusetts|ME - Maine|MD - Maryland|MI - Michigan|MN - Minnesota|MO - Missouri|MS - Mississippi|MT - Montana|NC - North Carolina|ND - North Dakota|NE - Nebraska|NH - New Hampshire|NJ - New Jersey|NM - New Mexico|NV - Nevada|NY - New York|OH - Ohio|OK - Oklahoma|OR - Oregon|PA - Pennsylvania|RI - Rhode Island|SC - South Carolina|SD - South Dakota|TN - Tennessee|TX - Texas|UT - Utah|VA - Virginia|VT - Vermont|WA - Washington|WI - Wisconsin|WV - West Virginia|WY - Wyoming|AS - American Samoa|GU - Guam|MP - Northern Mariana Islands|PR - Puerto Rico|VI - Virgin Islands|FM - Federated States of Micronesia|MH - Marshall Islands|PW - Palau|CZ - Canal Zone|PI - Philippine Islands|TT - Trust Territory of the Pacific Islands|CM - Commonwealth of the Northern Mariana Islands";
+        AllCanadaProvinces = "AB - Alberta|BC - British Columbia|MB - Manitoba|NB - New Brunswick|NL - Newfoundland and Labrador|NT - Northwest Territories|NS - Nova Scotia|NU - Nunavut|ON - Ontario|PE - Prince Edward Island|QC - Quebec|SK - Saskatchewan|YT - Yukon";
+        IsCSR = false;
+        IsSHOCSR = false;
+        IsLoggedIn = false;
+        IsSessionActive = false;
+        IsSupervisorApprovalAgent = false;
+        SessionTimeout = 1200;
+        PartnerBillerPath = "/ebpp/KSUDining/";
+        TabSessionID = "";
+        UserLocale = "en";
+        VerificationToken = "UBIBZja04Ukr76Aa6YAXrbE34UO-5RkTZZPXdvOaexEA7mWhZdxmNmpGln0Vj-_e__2zItiaeqF_GdUHY0F6AhMykk8YOLHnDq15N0JehDc1";
+    </script>
+
+    <script src="/bundles/utils?220.0.0.880.220622"></script>
+
+    <script src="/ebpp/KSUDining/Content/Strings?220.0.0.880.220622"></script>
+
+    <script src="/bundles/transactis?v=tzGihBuoSK5C7YnRUdmDjNk8Do8rNB7p-Xh1S5Av--E1?220.0.0.880.220622"></script>
+
+
+    
+
+
+
+
+</head>
+
+<body class="login biller- user-">
+    <div id="ajax-loading" role="dialog" aria-labelledby="waitmessage" aria-describedby="hint" tabindex="-1">
+        <span id="waitmessage">Please wait...</span><br />
+        <a role="button" href="#" id="cancel-ajax" aria-label="Cancel" tabindex="0">Cancel</a>
+        <span id="hint" class="hidden">Press escape to cancel</span>
+    </div>
+    <div id="ajax-external-data-request" role="dialog" aria-labelledby="dialog-title" aria-labelledby="external-data-request-message" tabindex="-1">
+        <i id="external-data-request-message-success-icon" class="fa fa-check-circle external-data-request-icon external-data-request-success" style="display:none" aria-hidden="true"></i><div id="external-data-request-message-success" class="external-data-request-message" style="display:none">Information Refresh Completed Successfully</div>
+        <i id="external-data-request-message-failure-icon" class="fa fa-exclamation-circle external-data-request-icon external-data-request-failire" style="display:none" aria-hidden="true"></i><div id="external-data-request-message-failure" class="external-data-request-message" style="display:none">Information Refresh Not Available</div>
+        <i id="external-data-request-message-error-icon" class="fa fa-exclamation-circle external-data-request-icon external-data-request-error" style="display:none" aria-hidden="true"></i><div id="external-data-request-message-error" class="external-data-request-message" style="display:none">Information Refresh Not Available</div>
+    </div>
+    <div class="wrap">
+        <div class="site-header">
+            <div class="container">
+                <div class="row">
+
+                    <div id="brand" class="col-md-3">
+                        <a class="brand" href="/ebpp/KSUDining/Dashboard"> <img src="/ebpp/KSUDining/Content/Logo?billerID=4065" alt="KSUDining Biller Logo" class="biller-logo"> </a>
+                    </div>
+
+                    <div class="col-md-9 hidden-mobile">
+                        <nav class="top-nav">
+                                <ul class="utilities list-inline">
+                                  
+                                                <li class="btn btn-link">
+                                                    <a href="/ebpp/KSUDining/?LoginType=Admin" class="text-theme-link">Admin Login</a>
+                                                </li>
+                                </ul>
+                        </nav>
+                    </div>
+
+
+                        <a role="navigation" href="#" class="hamburger js-nav-toggle text-theme-link hidden-desktop" aria-controls="mobile_nav_menu" aria-expanded="false">
+                            <i class="fa fa-2x fa-bars"></i>
+                        </a>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-nav-drawer" class="bg-theme-link-mobile hidden-desktop">
+            <div class="scroll-tray">
+                <nav class="mobile-nav">
+                    <ul class="list-unstyled" id="mobile_nav_menu">
+                                    <li>
+                                            <a href="/ebpp/KSUDining/?LoginType=Admin">Admin Login</a>
+                                    </li>
+
+                                            </ul>
+                        <div class="footer"> <a href="/ebpp/KSUDining/Apps/Logout.aspx" class="btn btn-block btn-default">Exit</a> </div>
+                </nav>
+            </div>
+            <a class="curtain js-nav-toggle" role="button" tabindex="0" title="Close Menu"> <i class="fa fa fa-times text-theme-link"></i> </a>
+        </div>
+
+        <div class="content-viewport">
+            <div class="focus">
+                <div id="alerts" class="container">
+                    
+                </div>
+                <div class="container body-container">
+                    
+
+
+
+<div class="focus">
+    <div class="container b">
+        <header class="main-header">
+            <div class="row hidden-desktop">
+                <div class="col-sm-12 welcome-message">Welcome to E-Bill Express from KSU - University Dining!</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="nav nav-tabs-underlined" role="tablist">
+                                <li class="active"><a href="#guest" data-toggle="tab" class="border-theme-dark-faded-mobile" id="paynow-tab" role="tab" aria-controls="guest">Pay Now</a></li>
+                        <li class="welcome-message hidden-mobile pull-right">Welcome to E-Bill Express from KSU - University Dining!</li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <div class="tab-content">
+            <section id="login" class="tab-pane " role="tabpanel" aria-labelledby="login-tab">
+                <h1 class="sr-only">Login Screen</h1>
+                <div class="row">
+                    <div class="col-md-6">
+                    </div>
+                </div>
+            </section>
+                <section id="guest" class="tab-pane active"  role="tabpanel" aria-labelledby="paynow-tab">
+                    <h1 class="sr-only">Pay Now</h1>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form id="guest-form" method="post" action="/ebpp/KSUDining/Login/PayAsGuest" data-toggle="validator" autocomplete="off">
+                                <input name="__RequestVerificationToken" type="hidden" value="VqMNBHOha4qluSm1u0f6JFDZJzyPpm5hbdFUCFfVpX6lEKB_4cfm1bOgCNHjr_ukdjztCocmYnQ9bqOlkJuLjZ7InI-Ci9crz-6CC4UN_Gk1" />
+                                <input name="BillerID" type="hidden" value="4065">
+                                <div class="popover-form-group">
+                                    <label for="AccountNumber">Invoice Number</label>
+                                                                        <input autocomplete="off" class="form-control nopaste" data-fieldlabel="Invoice Number" data-val="true" data-val-regex="Special characters are not allowed as input" data-val-regex-pattern="^[^\&lt;]+$" id="AccountNumber" maxlength="25" minlength="2" name="AccountNumber" required="true" type="text" value="" />
+                                    <span class="field-validation-valid" data-valmsg-for="AccountNumber" data-valmsg-replace="true"></span>
+                                </div>
+                                    <div class="form-group">
+
+                                        <label for="ConfirmAccountNumber">Confirm Invoice Number</label>
+                                        <input id="ConfirmAccountNumber" autocomplete="off" class="form-control nopaste" data-val="true" data-val-equalto="Both Invoice Number entries must match."
+                                               data-val-equalto-other="*.AccountNumber" name="ConfirmAccountNumber" required type="text" value="" data-fieldlabel="Invoice Number"
+                                               minlength="2" maxlength="25">
+                                        <span class="field-validation-valid" data-valmsg-for="ConfirmAccountNumber" data-valmsg-replace="true"></span>
+                                    </div>
+                                <div class="row rl-desktop">
+                                    <div class="col-md-12">
+                                        <div class="actions form-inline">
+                                                                                            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+                                                <div class="g-recaptcha" data-sitekey="6Ld6wwEVAAAAAHmIm6ZwaHdM9iMniklfwftBI7nh"></div>
+                                            <button id="pay-now-button" class="btn btn-success m-mobile">Pay Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+        </div>
+        <section class="marketing-ctas hidden-mobile">
+            <div class="row">
+                        <div class="col-md-4 col-sm-12">
+                            <div class="markeing-cta block panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">We hope you enjoyed your event!</h3>
+                                </div>
+                                <div class="panel-body marketing-msg">
+                                    <div class="marketing-msg-inner">Thank you for giving us the opportunity to serve you.  We hope that you enjoyed your event and that you will return to dine with us, again, soon!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <div class="markeing-cta block panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Paying multiple invoices?</h3>
+                                </div>
+                                <div class="panel-body marketing-msg">
+                                    <div class="marketing-msg-inner">You may enter any of your invoice numbers to begin.  During the payment process, you will be prompted to list all invoice numbers associated with your payment amount.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <div class="markeing-cta block panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Convenience Fee</h3>
+                                </div>
+                                <div class="panel-body marketing-msg">
+                                    <div class="marketing-msg-inner">This website is provided to offer a secure, easy way for you to pay your University Dining invoices.  A convenience fee of $3.99 for use of this service will be added to the total transaction amount charged.</div>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<div id="popover-dialogbox-reference_number" class="hide">
+    <div class="popover-question-section">
+        <div>
+            <span class="caption">
+                
+            </span>
+        </div>
+    </div>
+</div>
+
+<div id="popover-dialogbox-other_data" class="hide">
+    <div class="popover-question-section">
+        <div>
+            <span class="caption">
+                
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<div id="popover-dialogbox-password" class="hide">
+    <div class="popover-question-section">
+        <div>
+                <span class="caption">
+                    Enter your password.
+                </span>
+
+        </div>
+    </div>
+</div>
+
+<div id="modal-paynow-search" class="modal fade" role="dialog" aria-labelledby="accept-cancel-title" tabindex="-1" data-backdrop="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span class="hidden-print" aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h2>Search for Account</h2>
+            </div>
+            <div class="modal-body">
+                <form id="form-paynow-search" novalidate="novalidate" method="post" action="#">
+                    <div class="row">
+
+                    </div>
+                    <p class="generic-error">Please provide some data to perform an account search</p>
+                    <div class="help-block">
+                        <p class="caption">
+                            
+                        </p>
+                    </div>
+                    <div class="actions">
+                        <button class="btn btn-link btn-cancel" type="button" data-dismiss="modal">Cancel</button>
+                        <button class="btn btn-success" type="submit">Search</button>
+                    </div>
+                </form>
+                <div id="div-srch-results" class="hidden">
+                    <div id="div-srch-results-content"></div>
+                    <div class="actions mt-3">
+                        <button class="btn btn-link btn-cancel" type="button" data-dismiss="modal">Cancel</button>
+                        <button class="btn btn-success" type="button" id="btn-searchresult-goback">Go Back</button>
+                    </div>
+                </div>
+                <form id="form-paynow-results" action="/ebpp/KSUDining/Login/PayAsGuestSearch" novalidate="novalidate" method="post">
+                    <input name="__RequestVerificationToken" type="hidden" value="XBLNjt0tJANpEygFO1U8bAUcyBEDB1r8htjS5gmYRYc3tR4HbDtau9r5mq3dPV9ciugqUoxaUiTsj5Vb9AMgI0YWG8m7CRo_rdkku8kVJXg1" />
+                    <input type="hidden" id="PayNowResultName" name="Name" />
+                    <input type="hidden" id="PayNowResultAddress" name="Address" />
+                    <input type="hidden" id="PayNowResultAddress2" name="Address2" />
+                    <input type="hidden" id="PayNowResultBillingAccountID" name="BillingAccountID" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+            <div class="site-footer wrap">
+                <div class="container">
+
+                        <ul class="utilities list-inline">
+                            <li>    &copy; 2004-2022 Wells Fargo Bank All Rights Reserved. <span aria-hidden="true">|</span></li>
+                                    <li>    <a href="/ebpp/KSUDining/apps/ContactUs.aspx" class="text-theme-link">Contact Us</a></li>
+                                    <li>    <a href="/ebpp/KSUDining/apps/PrivacyPolicy.aspx" class="text-theme-link">Privacy Policy</a></li>
+                                    <li>    <a href="/ebpp/KSUDining/apps/HelpDesk.aspx" class="text-theme-link">FAQs</a></li>
+                                    <li>    <a href="/ebpp/KSUDining/apps/TermsofService.aspx " class="text-theme-link">How To Guide</a></li>
+
+                        </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="session-timeout" class="modal fade" role="dialog" aria-labelledby="timeout-title" tabindex="-1" data-backdrop="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="timeout-title">Session Expiring</h2>
+            </div>
+            <div class="modal-body">
+                <p>
+                    There has been no activity for some time. For your security, if you are unable to respond to this message within 2 minutes you will be logged out automatically.
+                </p>
+            </div>
+            <div class="modal-footer hidden-print">
+                <div class="actions">
+                    <button class="btn btn-success" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div id="error-modal" class="modal fade" role="dialog" tabindex="-1" data-backdrop="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer hidden-print">
+                <div class="actions">
+                    <button class="btn btn-success" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+    <script src="/Scripts/login.js?220.0.0.880.220622"></script>
+<script src="/Scripts/login-mouse-over.js?220.0.0.880.220622"></script>
+
+
+        
+    </div>
+
+</body>
+</html>

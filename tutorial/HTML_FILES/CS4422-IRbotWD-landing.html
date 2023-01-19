@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+
+        <title>Kennesaw State University IFC Fraternities | CampusDirector</title>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="../root/assets/js/pnm-image-and-file-uploads_1654623623.js"></script>
+        <script src="../assets/js/jquery.form.min.js"></script>
+        <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+        <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../assets/js/bootstrap-editable.min.js"></script>
+        <link href="../assets/css/font-awesome.min.css"  rel="stylesheet">
+        <script type="text/javascript" src="../assets/js/date.format.min.js"></script>
+        <script type="text/javascript" src="../assets/js/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="../assets/js/jquery.validate.additional_methods.js"></script>
+        <script type="text/javascript" src="../assets/js/placeholder.fix.min.js"></script>
+        <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="../root/assets/css/landing_style_1654623623.css" rel="stylesheet"/>
+        <link href="../root/assets/css/style_1654623623.css" rel="stylesheet"/>
+
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        <!-- HTML template for custom alerts -->
+
+<div id="alert" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="close_alert_button">×</button>
+    <h3 id="alert_header" class="modal_header">Alert Header</h3>
+  </div>
+  <div class="modal-body">
+    <p id="alert_body" >Alert body</p>
+  </div>
+  <div class="modal-footer">
+    <button class="button cd_button" data-dismiss="modal" aria-hidden="true" id="alert_cancel">Cancel</button>
+    <button class="strong button cd_button" id="alert_submit" data-dismiss="modal" >Ok</button>
+  </div>
+</div>        <div id="loading">
+            <div class="loading_contents">
+                <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+
+        <div class="row-fluid" style="background: #EAEBEB">
+            <div class="header-wrapper" name="top">
+                <div class="header-content">
+                    <div class="float-left">
+                        <table border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td class="header-site-logo" align="left" >
+                                    <a href="https://mycampusdirector2.com">
+                                        <img src="../assets/img/campusdirector_logo_wt.png">
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="float-right landing_login_wrapper"><a class="landing_login" href="../login/?group=1005">Log In</a></div>                </div>
+                <div class="top_message">
+                    <div id="view_as_message"> <a href="#" class="view_as_origin_button"><i class="fa fa-times-circle"></i></a> <b id="view_as_origin"> </b> you are using CampusDirector as  . <select id="view_as_selector"></select></div>
+                    <div id="top_message"> Loading... </div>
+                </div>
+            </div>
+
+            <div class="gap_bar"></div>
+            <div class="social_bar">  <a href="https://www.facebook.com/kennesaw.ifc.3" target="_blank" ><i class="fa fa-facebook "></i></a>  <a href="https://twitter.com/KSUIFC" target="_blank" ><i class="fa fa-twitter "></i></a>  <a href="https://www.instagram.com/kennesawifc/?hl=en"  target="_blank" ><i class="fa fa-instagram "></i></a></p>             </div>
+
+            <div class="page-wrapper">
+                <div class="timeline-header-wrapper card" style="margin-bottom: 30px;">
+                    <div class="cover-container">
+
+                        <div class="avatar-wrapper">
+                                                    </div>
+
+                        <div class="timeline-name-wrapper">
+                            
+                            <h3>Kennesaw State IFC</h3>
+                            <p >395 Cobb Avenue, NW; MD 0509 | Kennesaw, GA 30144 | 470-578-2838 | ksu.ifc.vprecruitment@gmail.com | <a href="https://greeklife.kennesaw.edu/councils-chapters/ifc.php" target="_blank">https://greeklife.kennesaw.edu/councils-chapters/ifc.php</a>                        </div>
+                    </div>
+
+                    <div class="reg_button_wrapper_top">
+                                                                                    <br>
+                                <a href="../signup/?group=1005" class="sign-up-button cd_button">
+                                    SIGN UP FOR RECRUITMENT
+                                </a>
+                                <br>
+                                <br>
+                                <br>
+                                <a href="../login/?group=1005">
+                                    Already have an account? LOG IN
+                                </a>
+                                                                            </div>
+                </div>
+
+                <div id="timeline-body" class="timeline-body card" style="margin-bottom: 30px;">
+                                                </div>
+        </div>
+    </div>
+
+    <script>
+        var current_user = "";
+        var pnm_user = "";
+        var current_chapter_group = "1005";
+        var current_council_type = "2";
+        var current_location_school = "221";
+        var only_show_councils_orgs = "1";
+        var square_or_circle_avatar = 00;
+                var group_image_profile = "chapter_groups-2387337ba1e0b0249ba90f55b2ba2521/image_profile/IFC Logo.jpg";
+        var referrer_name = ' ';
+        var referrer_email = '';
+        var referrer_id = '0';
+        var this_pnm_can_join_another_council = '0';
+
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.js"></script>
+    <script type="text/javascript" src="../root/assets/js/showalert_1654623623.js"></script>
+    <script type="text/javascript" src="../root/landing/script_1654623623.js"></script>
+    <script type="text/javascript" src="../root/scripts/view_as_1654623623.js"></script>
+    <div id="footer_section" class="section">
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span8 offset2">
+                <div class="row-fluid">
+                    <div class="span3">
+                        <div class="footer_list">
+                            <div class="footer_header">
+                                Get Started
+                            </div>
+                            <ul>
+                                                                    <li>
+                                        <a href="http://techniphi.com/request-a-demo/" class="request_demo_button">Request a Demo</a>
+                                    </li>
+                                    <li>
+                                        <a href="../signup">Sign Up</a>
+                                    </li>
+                                    <li>
+                                        <a href="../login">Login</a>
+                                    </li>
+                                    <li>
+                                        <a href="../scripts/logout.php">Logout</a>
+                                    </li>
+                                                                </ul>
+                        </div>
+                    </div>
+                    <div class="span3">
+                        <div class="footer_list">
+                            <div class="footer_header">
+                                Explore
+                            </div>
+                            <ul>
+                                <li>
+                                    <a href="../">Home</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="span3">
+                        <div class="footer_list">
+                            <div class="footer_header">
+                                Support
+                            </div>
+                            <ul>
+                                <li>
+                                    <a href="../support">Help & Support</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="span3">
+                        <div class="footer_list">
+                            <div class="footer_header">
+                                Company
+                            </div>
+                            <ul>
+                                <li>
+                                    <a href="http://techniphi.com">About</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div id="social">
+                        <a href="https://facebook.com/TechniPhi"><i class="fa fa-facebook icon_small"></i></a>
+                        <a href="https://twitter.com/techniphi"><i class="fa fa-twitter icon_small"></i></a>
+
+                    </div>
+                    <div id="copyright">
+                        <a href="https://techniphi.com" "><img src="../assets/img/TechniPhi.png" style="padding-left: 25px;" width="50" height="50" /></a><br>
+                        &copy; TechniPhi 2020
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script>
+!function(e,l,v,i,o,n){e[i]||(e[i]={}),e[i].account_id=n;var g,h;g=l.createElement(v),g.type="text/javascript",g.async=1,g.src=o+n,h=l.getElementsByTagName(v)[0],h.parentNode.insertBefore(g,h);e[i].q=[];e[i].on=function(z,y){e[i].q.push([z,y])}}(window,document,"script","_elev","https://cdn.elev.io/sdk/bootloader/v4/elevio-bootloader.js?cid=","5a2ebce154900");
+/*
+ * For passing user information, please see
+ * https://api-docs.elevio.help/en/articles/24
+ */
+</script>
+</body>
+</html>

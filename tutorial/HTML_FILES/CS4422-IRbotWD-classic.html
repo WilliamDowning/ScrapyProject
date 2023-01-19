@@ -1,0 +1,427 @@
+
+<!doctype html>
+<noscript>
+  <div class="centered">
+    <p>Please enable Javascript to continue on VINELink.com</p>
+  </div>
+</noscript>
+<html xmlns:ng="http://angularjs.org" id="ng-app" class="no-js" ng-app="myApp" ng-controller="MainCtrl" charset="utf-8">
+<head>
+
+  <title title="">VINELink</title>
+  <link rel="shortcut icon" href="{{$root.rootPath}}/favicon.ico" type="image/x-icon">
+  <meta name="description" content="VINELink is the online portal to VINE, America's leading victim notification network.">
+  <meta name="robots" content="noindex" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta charset="utf-8">
+  <!--<meta name="description" content="">-->
+  <!--<meta name="fragment" content="!">-->
+  <!--<meta name="viewport" content="width=device-width">-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"/>-->
+  <meta http-equiv="Cache-Control" content="no-cache">
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-responsive.css"/>
+  <link rel="stylesheet" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.css"/>
+  <link rel="stylesheet" href="styles/vinelink.css"/>
+<!--  <script src="scripts/newrelic/newrelic-browser_1.js"></script>-->
+
+  <!--[if lte IE 9]>
+  <script src="../bower_components/xdomain/dist/xdomain.js"></script>
+  <script>
+    console.log("im in IE land");
+    xdomain.slaves({
+      "http://devavineweb01.dev.appriss.com:8080": "/VineAppWebService/IE/proxy.html",
+      "http://qaavineweb01.qa.appriss.com:8080": "/VineAppWebService/IE/proxy.html"
+      //prep
+      //prod
+    });
+  </script>
+  <![endif]-->
+  <!--[if lte IE 9]>
+  <script src="../bower_components/html5shiv/dist/html5shiv.js"></script>
+  <script src="../bower_components/respond/dest/respond.src.js"></script>
+  <script src="../bower_components/json2/json2.js"></script>
+  <![endif]-->
+
+
+  <!-- endbuild -->
+
+
+</head>
+<body ng-controller="sessionEventsCtrl" ng-cloak>
+
+<div class="us-spinner-wrapper" us-spinner="{radius:30, width:8, length: 16, shadow: true}"></div>
+
+
+<div id="bodyDiv" ng-cloak>
+
+  <!--[if lte IE 9]>
+
+  <div class="centered">
+    <p>It appears you are using an unsupported browser.  To identify what browser and version you are currently using, visit the following site: <a target="_blank" href="http://whatbrowser.org">http://whatbrowser.org</a></p>
+    <p>We support the current and previous major version of all browsers on a rolling basis. We’re committed to developing a secure site. This site supports the following browsers:</p>
+<ul>
+  <li><a target="_blank" href="http://windows.microsoft.com/internet-explorer">Microsoft Internet Explorer</a></li>
+  <li><a target="_blank" href="http://www.google.com/chrome">Google Chrome</a></li>
+  <li><a target="_blank" href="https://www.firefox.com"> Mozilla Firefox</a></li>
+</ul>
+  Please choose a browser and update to the current version.  We apologize for any inconvenience.
+
+
+  </div>
+
+  <![endif]-->
+  <div id="supportIssue" class="container">
+    <div id="result">
+
+    </div>
+  </div>
+  <div id="bigOlBody">
+    <div ng-include="pageCtx.headerUrl"></div>
+    <!--<div id="ioschrome" style="display:none"><div style="padding-left: 25px"><h3 style="color:red"> For the best user experience on iPhone, iPad, and other iOS devices, please switch to Safari</a>. </h3></div></div>-->
+
+    <div id="ngVewDiv" ng-view></div>
+
+
+    <script type="text/ng-template" id="warning-dialog.html">
+      <div class="modal-header">
+        <h4>
+          <rbe label="{{$root.wordingsessiontimeoutwarning}}" viewable="{{$root.viewsessiontimeoutwarning}}"></rbe>
+        </h4>
+      </div>
+      <div idle-countdown="countdown" ng-init="countdown=5" class="modal-body">
+        <progressbar max="5" value="5" animate="false" class="progress-striped active">
+          <rbe label="{{$root.warningsessionsoonexpire1}}" viewable="{{$root.viewwarningsessionsoonexpire1}}"></rbe>
+          {{countdown}}
+          <rbe label="{{$root.labelseconds}}" viewable="{{$root.viewlabelseconds}}"></rbe>
+          .
+        </progressbar>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok('Cancel')">
+          <rbe label="{{$root.buttoncontinue}}" viewable="{{$root.viewbuttoncontinue}}"></rbe>
+        </button>
+      </div>
+
+    </script>
+    <script type="text/ng-template" id="timedout-dialog.html">
+      <div class="modal-header">
+        <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal"
+                aria-hidden="true">&times;</button>
+        <h3>
+          <rbe label="{{$root.titlesessiontimeout}}" viewable="{{$root.viewtitlesessiontimeout}}"></rbe>
+        </h3>
+      </div>
+      <div class="modal-body">
+        <p>
+          <rbe label="{{$root.wordingsessiontimeout}}" viewable="{{$root.viewwordingsessiontimeout}}"></rbe>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="close('Cancel')">
+          <rbe label="{{$root.buttonok}}" viewable="{{$root.viewbuttonok}}"></rbe>
+        </button>
+      </div>
+    </script>
+
+    <div ng-include="pageCtx.footerUrl"></div>
+  </div>
+
+</div>
+
+
+<!--<meta http-equiv="Pragma" content="no-cache">-->
+<script type="text/javascript">
+  var beamer_config = {
+    product_id: 'OsGuhibH14325', //DO NOT CHANGE: This is your product code on Beamer
+    button: false,
+    button_position: 'top-right',
+    standalone: true,
+    filter: 'national;classic',
+    selector: '#new-in-vine',
+    // counter: false,
+    callback:myFunction
+  };
+
+  function myFunction(callbackNumber){
+    document.cookie = "callbackNumber="+ callbackNumber;
+  };
+
+</script>
+<script src='https://app.getbeamer.com/js/beamer-embed.js' defer></script>
+<div ng-controller="GoogleAnalyticsCtrl" ng-init="init();"></div>
+
+<!--[if lte IE 8]>
+<script type="text/javascript">
+  //console.log("ie8 if");
+  document.createElement('ng-app');
+  document.createElement('ng-include');
+  document.createElement('ng-pluralize');
+  document.createElement('ng-view');
+  document.createElement('config');
+  document.createElement('court-icon');
+  document.createElement('maximum');
+  document.createElement('minimum');
+  document.createElement('editregistration-icon');
+  document.createElement('email-directive');
+  document.createElement('enable-input');
+  document.createElement('show-errors');
+  document.createElement('bs-dropdown');
+  document.createElement('our-nav');
+  document.createElement('offender-icon');
+  document.createElement('play-ccon');
+  document.createElement('probatiobparolee-icon');
+  document.createElement('rbeSearch-result');
+  document.createElement('rbe');
+  document.createElement('rbeSearch-result-nocolon');
+  document.createElement('rbeSearch-result-modal');
+  document.createElement('registrant-info');
+  document.createElement('same-as');
+  document.createElement('more-info-aliases');
+  document.createElement('moreinfo-altId');
+  document.createElement('more-info-charges');
+  document.createElement('more-info-court-event');
+  document.createElement('more-info');
+  document.createElement('more-info-mugshot');
+  document.createElement('sexoffender-icon');
+  document.createElement('site-phone');
+  document.createElement('sms-directive');
+  document.createElement('tty-directive');
+  document.createElement('vl-registrations-view');
+  document.createElement('vpo-icon');
+
+  //for css
+  document.createElement('ng:app');
+  document.createElement('ng:include');
+  document.createElement('ng:pluralize');
+  document.createElement('ng:view');
+  document.createElement('config');
+  document.createElement('court:icon');
+  document.createElement('maximum');
+  document.createElement('minimum');
+  document.createElement('editregistration:icon');
+  document.createElement('email:directive');
+  document.createElement('enable:input');
+  document.createElement('show:errors');
+  document.createElement('bs:dropdown');
+  document.createElement('our:nav');
+  document.createElement('offender:icon');
+  document.createElement('play:ccon');
+  document.createElement('probatiobparolee:icon');
+  document.createElement('rbeSearch:result');
+  document.createElement('rbe');
+  document.createElement('rbeSearch:result:nocolon');
+  document.createElement('registrant:info');
+  document.createElement('same:as');
+  document.createElement('more:info:aliases');
+  document.createElement('moreinfo:altId');
+  document.createElement('more:info:charges');
+  document.createElement('more:info:court:event');
+  document.createElement('more:info');
+  document.createElement('more:info:mugshot');
+  document.createElement('sexoffender:icon');
+  document.createElement('site:phone');
+  document.createElement('sms:directive');
+  document.createElement('tty:directive');
+  document.createElement('vl:registrations:view');
+  document.createElement('vpo:icon');
+
+
+</script>
+
+<![endif]-->
+
+<!-- build:js(.) scripts/oldieshim.js -->
+
+
+<!--[if lt IE 9]>
+<script src="bower_components/es5-shim/es5-shim.js"></script>
+<![endif]-->
+<!-- endbuild -->
+
+<!-- build:js(.) scripts/vendor.js -->
+
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/xdomain/dist/xdomain.js"></script>
+<script src="bower_components/xhr-xdr-adapter/src/xhr-xdr-adapter.js"></script>
+<script src="bower_components/postmessage.js/lib/postmessage.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/json3/lib/json3.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/jquery-ui/jquery-ui.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="bower_components/ngStorage/src/angularLocalStorage.js"></script>
+<script src="bower_components/json2/json2.js"></script>
+<script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+<script src="bower_components/respond/dest/respond.src.js"></script>
+<script src="bower_components/angular-modal-service/dst/angular-modal-service.js"></script>
+<script src="bower_components/ng-idle/angular-idle.js"></script>
+<script src="bower_components/angular-recaptcha/release/angular-recaptcha.js"></script>
+<script src="bower_components/spin.js/spin.js"></script>
+<script src="bower_components/angular-spinner/angular-spinner.js"></script>
+<script src="bower_components/angular-loading-spinner/angular-loading-spinner.js"></script>
+<script src="bower_components/angular-filter/dist/angular-filter.min.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/controllers/detect-private-browsing.js"></script>
+<script src="scripts/script.js"></script>
+<script src="scripts/constant/env_settingsConstant.js"></script>
+<script src="scripts/directive/nav.js"></script>
+<script src="scripts/services/offenderService.js"></script>
+<script src="scripts/directive/languageDropdownDirective.js"></script>
+<script src="scripts/controllers/languageDropdownController.js"></script>
+
+<script src="scripts/services/rbeService.js"></script>
+<script src="scripts/provider/rbeProvider.js"></script>
+
+<script src="scripts/services/SecService.js"></script>
+<script src="scripts/directive/rbeDirective.js"></script>
+<script src="scripts/directive/testDir.js"></script>
+<script src="scripts/directive/vlRegistrationsView.js"></script>
+<script src="scripts/directive/emailDirective.js"></script>
+<script src="scripts/directive/phonenumberDirective.js"></script>
+<script src="scripts/directive/smsDirective.js"></script>
+<script src="scripts/directive/ttyDirective.js"></script>
+<script src="scripts/directive/sameAsDirective.js"></script>
+<script src="scripts/controllers/datetimeController.js"></script>
+<script src="scripts/controllers/searchClearController.js"></script>
+<script src="scripts/controllers/advSearchController.js"></script>
+<script src="scripts/controllers/SuccessRegisterController.js"></script>
+<script src="scripts/controllers/offenderSearchButtonController.js"></script>
+<script src="scripts/controllers/sexoffenderSearchButtonController.js"></script>
+<script src="scripts/controllers/vpoSearchButtonController.js"></script>
+<script src="scripts/controllers/probationerSearchButtonController.js"></script>
+<script src="scripts/controllers/editRegistrationSearchButton.js"></script>
+<script src="scripts/controllers/caseSearchButtonController.js"></script>
+<script src="scripts/controllers/registerOffenderController.js"></script>
+<script src="scripts/controllers/registrantInfoController.js"></script>
+<script src="scripts/controllers/searchResultMainRBEController.js"></script>
+
+<script src="scripts/controllers/mobilePatrolController.js"></script>
+<script src="scripts/services/configService.js"></script>
+<script src="scripts/filter/phonenumberFilter.js"></script>
+<script src="scripts/directive/offenderIconDirective.js"></script>
+<script src="scripts/directive/sexoffenderIconDirective.js"></script>
+<script src="scripts/directive/courtIconDirective.js"></script>
+<script src="scripts/directive/probation_paroleesIconDirective.js"></script>
+<script src="scripts/directive/vpoIconDirective.js"></script>
+<script src="scripts/directive/editRegistrationIconDirective.js"></script>
+<script src="scripts/controllers/dropdownCtrl.js"></script>
+<script src="scripts/services/stateDropdownService.js"></script>
+<script src="scripts/controllers/stateDropdown.js"></script>
+<script src="scripts/directive/playIconDirective.js"></script>
+<script src="scripts/services/siteInfoService.js"></script>
+<script src="scripts/directive/RegistrantInfoDirective.js"></script>
+<script src="scripts/filter/linkFilter.js"></script>
+<script src="scripts/filter/customurlFilter.js"></script>
+<script src="scripts/filter/vlFilter.js"></script>
+<script src="scripts/directive/statepageDirective.js"></script>
+<script src="scripts/directive/footerLinksDirective.js"></script>
+
+
+<script src="scripts/services/searchService.js"></script>
+<script src="scripts/services/searchResultsService.js"></script>
+<script src="scripts/services/registerService.js"></script>
+<script src="scripts/services/victimAddressService.js"></script>
+<script src="scripts/services/localStorageService.js"></script>
+<script src="scripts/services/sessionStorageService.js"></script>
+<script src="scripts/services/updateRegistrationResultsService.js"></script>
+<script src="scripts/services/victimClassSearchService.js"></script>
+<script src="scripts/services/userDataService.js"></script>
+<script src="scripts/services/nonUserDataService.js"></script>
+<script src="scripts/services/victimAddressService.js"></script>
+<script src="scripts/services/victimClassSearchService.js"></script>
+<script src="scripts/services/agencyService.js"></script>
+<script src="scripts/services/quickHelpService.js"></script>
+<script src="scripts/services/stateLocalResourcesService.js"></script>
+
+
+<script src="scripts/controllers/searchController.js"></script>
+<script src="scripts/controllers/searchResultsController.js"></script>
+<script src="scripts/controllers/registerController.js"></script>
+<script src="scripts/controllers/confirmRegisterController.js"></script>
+<script src="scripts/controllers/updateRegistrationFormController.js"></script>
+<script src="scripts/controllers/updateRegistrationResultsController.js"></script>
+<script src="scripts/controllers/profileConfigController.js"></script>
+<script src="scripts/controllers/successUpdateRegistration.js"></script>
+<script src="scripts/controllers/notAvailableController.js"></script>
+<script src="scripts/filter/configFilter.js"></script>
+<script src="scripts/directive/customMaxDirective.js"></script>
+<script src="scripts/directive/customMinDirective.js"></script>
+<script src="scripts/directive/searchResultMoreInfoDirective.js"></script>
+<script src="scripts/provider/rbeconstant.js"></script>
+<script src="scripts/filter/sitedropdownfilter.js"></script>
+<script src="scripts/directive/searchResultMoreInfoChargeDirective.js"></script>
+<script src="scripts/directive/searchResultMoreInfoCourtEventDirective.js"></script>
+<script src="scripts/directive/searchResultMoreInfoAliasesDirective.js"></script>
+<script src="scripts/directive/searchResultMoreInfoAltIsDirective.js"></script>
+<script src="scripts/directive/searchResultMoreInfoMugshotDirective.js"></script>
+<script src="scripts/filter/unsafeFilter.js"></script>
+<script src="scripts/filter/urlFilter.js"></script>
+<script src="scripts/controllers/errorController.js"></script>
+<script src="scripts/controllers/appErrorController.js"></script>
+<script src="scripts/controllers/registerRBEController.js"></script>
+<script src="scripts/controllers/rbeSearchResultAgencyModal.js"></script>
+<script src="scripts/controllers/iconController.js"></script>
+<script src="scripts/controllers/statehomeButtonController.js"></script>
+<script src="scripts/controllers/StateResourcesController.js"></script>
+<script src="scripts/directive/stateResourceDirective.js"></script>
+<script src="scripts/directive/searchResultDirective.js"></script>
+<script src="scripts/filter/htmlFilter.js"></script>
+<script src="scripts/services/rbeCallService.js"></script>
+<script src="scripts/controllers/LocalResourceController.js"></script>
+<script src="scripts/directive/localResourceDirective.js"></script>
+<script src="scripts/controllers/NationalResourceController.js"></script>
+<script src="scripts/directive/customMaxNumberOnlyDirective.js"></script>
+<script src="scripts/directive/focusMeDirective.js"></script>
+<script src="scripts/filter/areaResourceFilter.js"></script>
+<script src="scripts/filter/siteResourceFilter.js"></script>
+<script src="scripts/controllers/sessionIdleController.js"></script>
+<script src="scripts/controllers/dynamicIconsController.js"></script>
+<script src="scripts/directive/truncateDirective.js"></script>
+<script src="scripts/directive/zipCodeDirective.js"></script>
+<script src="scripts/filter/zipcodeFilter.js"></script>
+<script src="scripts/constant/typeCongfigsConstant.js"></script>
+<script src="scripts/controllers/recaptchaController.js"></script>
+<script src="scripts/directive/cleanInputDirective.js"></script>
+<script src="scripts/directive/validateDate.js"></script>
+<script src="scripts/controllers/quickHelpController.js"></script>
+<script src="scripts/controllers/qHelpController.js"></script>
+<script src="scripts/services/analyticsService.js"></script>
+<script src="scripts/controllers/googleAnalytics.js"></script>
+<script src="scripts/services/googleAnalyticsService.js"></script>
+<script src="scripts/controllers/beamerController.js"></script>
+<!-- Include the JS ReCaptcha API -->
+<script src="//www.google.com/recaptcha/api.js?render=explicit&onload=vcRecaptchaApiLoaded" async defer></script>
+<script src="scripts/controllers/unauthorizedController.js"></script>
+<script src="scripts/services/rolloutService.js"></script>
+<script src="scripts/controllers/noSpanishController.js"></script>
+<script src="scripts/services/resourceLocationService.js"></script>
+<script src="scripts/controllers/returnLanguageController.js"></script>
+<script src="scripts/directive/searchResultMoreInfoAddressDirective.js"></script>
+<script src="scripts/controllers/profileAfterController.js"></script>
+<script src="scripts/controllers/registrantInfoControllerAfter.js"></script>
+<script src="scripts/directive/onFinishDirective.js"></script>
+
+<!-- endbuild -->
+<div ng-init="init();"></div>
+</body>
+</html>

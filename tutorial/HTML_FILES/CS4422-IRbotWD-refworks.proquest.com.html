@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html id="ng-app" class="basic unrecognized" ng-app="marketing" xmlns:ng="http://angularjs.org" prefix="og:http://ogp.me/ns#">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="google-site-verification" content="7GlSbPLSfdboZUvEYfGWz03hcxMwbZMR2hKp7QvFABE"/>
+<base href="/"></base>
+<title>{{route.data.pageTitle + " - RefWorks"}}</title>
+<base href="/"></base>
+<meta property="og:title" content="ProQuest RefWorks"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<link rel="apple-touch-icon" sizes="57x57" href="/public/favicons/refworks/apple-touch-icon-57x57.png?v=PYnpM67oYa"/>
+<link rel="apple-touch-icon" sizes="60x60" href="/public/favicons/refworks/apple-touch-icon-60x60.png?v=PYnpM67oYa"/>
+<link rel="apple-touch-icon" sizes="72x72" href="/public/favicons/refworks/apple-touch-icon-72x72.png?v=PYnpM67oYa"/>
+<link rel="apple-touch-icon" sizes="76x76" href="/public/favicons/refworks/apple-touch-icon-76x76.png?v=PYnpM67oYa"/>
+<link rel="apple-touch-icon" sizes="114x114" href="/public/favicons/refworks/apple-touch-icon-114x114.png?v=PYnpM67oYa"/>
+<link rel="apple-touch-icon" sizes="120x120" href="/public/favicons/refworks/apple-touch-icon-120x120.png?v=PYnpM67oYa"/>
+<link rel="apple-touch-icon" sizes="144x144" href="/public/favicons/refworks/apple-touch-icon-144x144.png?v=PYnpM67oYa"/>
+<link rel="apple-touch-icon" sizes="152x152" href="/public/favicons/refworks/apple-touch-icon-152x152.png?v=PYnpM67oYa"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/public/favicons/refworks/apple-touch-icon-180x180.png?v=PYnpM67oYa"/>
+<link rel="icon" type="image/png" href="/public/favicons/refworks/favicon-32x32.png?v=PYnpM67oYa" sizes="32x32"/>
+<link rel="icon" type="image/png" href="/public/favicons/refworks/favicon-194x194.png?v=PYnpM67oYa" sizes="194x194"/>
+<link rel="icon" type="image/png" href="/public/favicons/refworks/favicon-96x96.png?v=PYnpM67oYa" sizes="96x96"/>
+<link rel="icon" type="image/png" href="/public/favicons/refworks/android-chrome-192x192.png?v=PYnpM67oYa" sizes="192x192"/>
+<link rel="icon" type="image/png" href="/public/favicons/refworks/favicon-16x16.png?v=PYnpM67oYa" sizes="16x16"/>
+<link rel="manifest" href="/public/favicons/refworks/manifest.json?v=PYnpM67oYa"/>
+<link rel="shortcut icon" href="/public/favicons/refworks/favicon.ico?v=PYnpM67oYa"/>
+<meta name="msapplication-TileColor" content="#2d89ef"/>
+<meta name="msapplication-TileImage" content="/public/favicons/refworks/mstile-144x144.png?v=PYnpM67oYa"/>
+<meta name="theme-color" content="#ffffff"/>
+<meta name="google-site-verification" content="0tZ9cmMlLFI-LrJG7RMbpjMA6GLqDE2RZ3yBufbieK4"/>
+<meta name="msvalidate.01" content="B54EC5676FB4AB75038E53E1B4842433"/>
+<!--[if lt IE 9]>
+      <script src="/public/js/libraries/html5shiv.js"></script>
+    <![endif]-->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700&amp;subset=latin,cyrillic-ext,cyrillic,greek-ext,greek,vietnamese,latin-ext" type="text/css" rel="stylesheet"/>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
+<link href="/public/css/bootstrap-refworks.css" type="text/css" rel="stylesheet"/>
+<link href="/public/css/uxframework-refworks.css" type="text/css" rel="stylesheet"/>
+<link href="/public/css/app-refworks.css" type="text/css" rel="stylesheet"/>
+<link href="/public/css/marketing-style.css" type="text/css" rel="stylesheet"/>
+<link href="/public/js/libraries/select2-3.5.2/select2.css" type="text/css" rel="stylesheet"/>
+<link href="/public/js/libraries/select2-3.5.2/select2-bootstrap.css" type="text/css" rel="stylesheet"/>
+<!--[if lt IE 9]>
+      <link rel="stylesheet" type="text/css" href="/public/css/ie8.css"/>
+    <![endif]-->
+<!--[if lt IE 10]>
+      <link rel="stylesheet" type="text/css" href="/public/css/ie9.css"/>
+    <![endif]-->
+<!--[if lt IE 9]>
+      <script src="/public/js/libraries/respond.min.js"></script>
+    <![endif]-->
+<script src="/public/js/libraries/jquery-3.1.0.min.js"></script>
+<script src="/public/js/libraries/jquery.browser.min.js"></script>
+<script src="/public/js/pqd.js"></script>
+<script src="/public/js/list.js"></script>
+<script src="/public/js/tracking.js"></script>
+<script type='text/javascript'>//<![CDATA[
+PQD.base="https://refworks.proquest.com";PQD.nodeBaseURL="/api/2";PQD.shibbolethURL="https://shibboleth.refworks.proquest.com/"
+PQD.ipaBaseUrl="https://refworks.proquest.com/api-ipa";PQD.appName="refworks";PQD.browserLang="en";PQD.debuglang=false;PQD.service="Flow";
+//]]></script>
+<script src="/public/js/libraries/angular-1.2.28/angular.js"></script>
+<script src="/public/js/libraries/bootstrap.min.js"></script>
+<script src="/public/js/libraries/jquery-ui-1.9.2.js"></script>
+<script src="/public/js/libraries/underscore-min.js"></script>
+<script src="/public/js/libraries/amplify.min.js"></script>
+<script src="/public/js/libraries/jquery.placeholder-enhanced.min.js"></script>
+<script src="/public/js/libraries/jquery.scrollTo.js"></script>
+<script src="/public/js/libraries/angular-1.2.28/angular-animate.js"></script>
+<script src="/public/js/libraries/angular-1.2.28/angular-cookies.js"></script>
+<script src="/public/js/libraries/angular-1.2.28/angular-route.js"></script>
+<script src="/public/js/libraries/angular-1.2.28/angular-sanitize.js"></script>
+<script src="/public/js/libraries/angular-autoscroll.js"></script>
+<script src="/public/js/libraries/angular-gettext.js"></script>
+<script src="/public/js/libraries/angular-jsend.js"></script>
+<script src="/public/js/libraries/ui-bootstrap-tpls-0.11.0.min.js"></script>
+<script src="/public/js/libraries/angular-selectbox.js"></script>
+<script src="/public/js/alert.js"></script>
+<script src="/public/js/functional.js"></script>
+<script src="/public/js/request.js"></script>
+<script src="/public/js/i18n.js"></script>
+<script src="/public/js/ui-directives.js"></script>
+<script src="/public/js/rw-light-svc.js"></script>
+<script src="/public/js/document-svc.js"></script>
+<script src="/public/js/ref-type-fields-svc.js"></script>
+<script src="/public/js/search-module.js"></script>
+<script src="/public/js/collection-svc.js"></script>
+<script src="/public/js/attachments.actions.js"></script>
+<script src="/public/js/flux-dispatcher-bundle.js"></script>
+<script src="/public/js/duplicates-svc.js"></script>
+<script src="/public/js/projects-service.js"></script>
+<script src="/public/js/dialogs.js"></script>
+<script src="/public/js/dropdowns.js"></script>
+<script src="/public/js/translations.js"></script>
+<script src="/public/js/libraries/select2-3.5.2/select2.min.js"></script>
+<script src="/public/js/libraries/angular-select2.js"></script>
+<script src="/public/js/shibboleth-svc.js"></script>
+<script src="/public/js/refworks-marketing.js"></script>
+<script src="/public/js/translations.js"></script>
+<script src="/public/js/login-header-ctrl.js"></script>
+<meta itemprop="name" content="ProQuest RefWorks"/>
+<meta itemprop="description" content="Log into or sign up for the RefWorks reference management service, an easy-to-use tool for citation, bibliography, and reference management that simplifies the process of research, collaboration, data organization, and writing."/>
+<meta itemprop="image" content="https://refworks.proquest.com/public/img/RefWorks_OG_logo.png"/>
+<meta property="og:image" content="https://refworks.proquest.com/public/img/RefWorks_OG_logo.png"/>
+<meta property="og:description" content="Log into or sign up for the RefWorks reference management service, an easy-to-use tool for citation, bibliography, and reference management that simplifies the process of research, collaboration, data organization, and writing."/>
+<meta property="og:url" content="https://refworks.proquest.com/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="ProQuest RefWorks"/>
+<meta property="msapplication-TileImage" content="https://refworks.proquest.com/public/img/RefWorks_OG_logo.png"/>
+<meta property="twitter:card" content="summary_large_image"/>
+<meta property="twitter:domain" content="refworks.proquest.com"/>
+<meta property="twitter:url" content="https://refworks.proquest.com/"/>
+<meta property="twitter:title" content="ProQuest RefWorks"/>
+<meta property="twitter:description" content="Log into or sign up for the RefWorks reference management service, an easy-to-use tool for citation, bibliography, and reference management that simplifies the process of research, collaboration, data organization, and writing."/>
+<meta property="twitter:image" content="https://refworks.proquest.com/public/img/RefWorks_OG_logo.png"/>
+</head>
+<body id="Terms and Conditions" class="">
+<noscript></noscript>
+<div class="background" ng-controller="MarketingController" ng-class="viewBackground()">
+<nav id="other-header" class="navbar navbar-fixed-top navbar-fixed navbar-alt navbar-default" ng-controller="LoginHeaderController">
+<div class="container">
+<div class="navbar-header">
+<a class="login-header-logo" href="/" tabindex="-1">
+<img class="refworks-logo-img" src="/public/img/RefWorks-logo-blue.svg" alt="RefWorks logo"/>
+</a>
+</div>
+<ul class="nav navbar-nav navbar-nav-unresponsive navbar-right" ng-init="appName='RefWorks'">
+<li>
+<a href="{{path.indexOf('combined-login')&gt;-1?path:'/'}}" translate="translate" ng-class="{'active':isActiveView('login')||isActiveView('combined-login')}">Login</a>
+</li>
+<li>
+<a href="researcher/" translate="translate" ng-class="{'active':isActiveView('researcher')}">For Researchers</a>
+</li>
+<li>
+<a href="institution/" translate="translate" ng-class="{'active':isActiveView('institution')}">For Institutions</a>
+</li>
+<li class="dropdown">
+<a id="language-dropdown" class="dropdown-toggle" href="javascript:void(0)" title="{{'Change language' | translate}}" ng-cloak="ng-cloak">
+Language
+({{getLanguageCodeToDisplay(i18n.preferredLanguage)}})
+<i class="uxf-icon uxf-down-caret"></i>
+</a>
+<ul id="language-menu" class="dropdown-menu dropdown-menu dropdown-menu-arrow-right">
+<li id="lang-en">
+<a class="dropdown-menu-item" href="javascript:void(0)" ng-click="changeLanguage('en')">English</a>
+</li>
+<li id="lang-es">
+<a class="dropdown-menu-item" href="javascript:void(0)" ng-click="changeLanguage('es')">Español</a>
+</li>
+<li id="lang-fr">
+<a class="dropdown-menu-item" href="javascript:void(0)" ng-click="changeLanguage('fr')">Français</a>
+</li>
+<li id="lang-zh">
+<a class="dropdown-menu-item" href="javascript:void(0)" ng-click="changeLanguage('zh')">简体中文</a>
+</li>
+<li id="lang-zh-tw">
+<a class="dropdown-menu-item" href="javascript:void(0)" ng-click="changeLanguage('zh-tw')">繁體中文</a>
+</li>
+<li id="lang-ja">
+<a class="dropdown-menu-item" href="javascript:void(0)" ng-click="changeLanguage('ja')">日本語</a>
+</li>
+<li id="lang-ko">
+<a class="dropdown-menu-item" href="javascript:void(0)" ng-click="changeLanguage('ko')">한국어</a>
+</li>
+<li id="lang-de">
+<a class="dropdown-menu-item" href="javascript:void(0)" ng-click="changeLanguage('de')">Deutsch</a>
+</li>
+<li id="lang-it">
+<a class="dropdown-menu-item" href="javascript:void(0)" ng-click="changeLanguage('it')">Italiano</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+<div id="login-vert-align-container" class="container-fluid" ng-view="ng-view" autoscroll="true"></div>
+<script type="text/ng-template" id="login">
+  <div id="login_vert_align" class="jumbo row center-block" ng-controller="LoginController">
+    <div class="login-container single">
+      <h1 class="text-center" ng-hide="comboLogin" id="{{route.viewName}}">
+        <div id="login_heading_makeResearch" translate="translate">Making research easier</div>
+        <div class="instruction" translate="translate">Sign in to use RefWorks</div>
+      </h1>
+      <div ng-show="comboLogin">
+        <h3 class="text-center login-padding" ng-if="forRw3()">
+          <div class="rw3">
+            <div class="logo"></div>
+            <div class="new-ref-header" translate="translate">Sign in to New RefWorks</div>
+          </div>
+        </h3>
+        <h3 class="text-center login-padding" ng-if="!forRw3()">
+          <div class="rw2">
+            <div class="logo"></div>
+            <div class="old-ref-header" translate="translate">Sign in to Legacy RefWorks</div>
+          </div>
+        </h3>
+      </div>
+      <form id="form_landing_login" class="login-form" method="post" autocomplete="on">
+        <div class="regular-login">
+          <div class="form-group">
+            <input id="username" class="form-control" type="text" name="username" ng-model="username" pq-enter="login()" placeholder="{{userNameText()}}" aria-label="{{userNameText()}}"/>
+            <div class="help-block" ng-show="userError" translate="translate">{{userNameText()}}</div>
+          </div>
+          <div class="form-group">
+            <div class="input-group input-group-md">
+              <input id="pwd" class="form-control" type="password" name="password" ng-model="password" pq-enter="login()" placeholder="{{'Enter your password'|translate}}" aria-label="{{'Enter your password'|translate}}" ng-focus="pwHasFocus = true" ng-blur="pwHasFocus = false"/>
+              <span class="input-group-addon" ng-class="{'input-has-focus' : pwHasFocus}">
+                <input id="showpwd" type="checkbox" show-password="show-password"/>
+                <label for="showpwd" translate="translate">Show</label>
+              </span>
+            </div>
+            <div class="help-block error-text" ng-show="credentialsError" translate="translate">
+              Either your email or password does not match.
+            </div>
+            <div class="help-block text-left" ng-hide="!forRw3()">
+              <a class="forgot" href="/forgot/" target="_self" translate="translate">Forgot your password?</a>
+            </div>
+          </div>
+          <div class="form-group">
+            <button id="signin_marketing_button" class="btn btn-default btn-primary btn-full-width marketing-btn" ng-click="login()">
+              <span id="signin" translate="translate">Sign In</span>
+            </button>
+          </div>
+          <hr/>
+          <div id="shibboleth" class="form-group">
+            <div class="input-group input-group-md">
+              <span id="shibglobe" class="input-group-addon input-group-addon-alt">
+                <i class="uxf-icon uxf-globe"></i>
+              </span>
+              <select class="form-control" select2="select2" name="shibboleth" aria-label="{{'Use login from my institution'|translate}}" ng-change="useProvider()" ng-model="selectedProvider" ng-options="provider.name group by provider.group for provider in (getProviders() | orderBy:['group','name']) track by provider.url">
+                <option value="" hidden="hidden" translate="translate">Use login from my institution</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group" ng-hide="comboLogin">
+            <div class="text-center">
+              <a class="signup" target="_self" href="/signup/" ng-click="trackSignup()" translate="translate">
+                Create account
+              </a>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</script>
+<script type="text/ng-template" id="login">
+  <div id="login_vert_align" class="jumbo row center-block" ng-controller="LoginController">
+    <div class="login-container single">
+      <h1 class="text-center" ng-hide="comboLogin" id="{{route.viewName}}">
+        <div id="login_heading_makeResearch" translate="translate">Making research easier</div>
+        <div class="instruction" translate="translate">Sign in to use RefWorks</div>
+      </h1>
+      <div ng-show="comboLogin">
+        <h3 class="text-center login-padding" ng-if="forRw3()">
+          <div class="rw3">
+            <div class="logo"></div>
+            <div class="new-ref-header" translate="translate">Sign in to New RefWorks</div>
+          </div>
+        </h3>
+        <h3 class="text-center login-padding" ng-if="!forRw3()">
+          <div class="rw2">
+            <div class="logo"></div>
+            <div class="old-ref-header" translate="translate">Sign in to Legacy RefWorks</div>
+          </div>
+        </h3>
+      </div>
+      <form id="form_landing_login" class="login-form" method="post" autocomplete="on">
+        <div class="regular-login">
+          <div class="form-group">
+            <input id="username" class="form-control" type="text" name="username" ng-model="username" pq-enter="login()" placeholder="{{userNameText()}}" aria-label="{{userNameText()}}"/>
+            <div class="help-block" ng-show="userError" translate="translate">{{userNameText()}}</div>
+          </div>
+          <div class="form-group">
+            <div class="input-group input-group-md">
+              <input id="pwd" class="form-control" type="password" name="password" ng-model="password" pq-enter="login()" placeholder="{{'Enter your password'|translate}}" aria-label="{{'Enter your password'|translate}}" ng-focus="pwHasFocus = true" ng-blur="pwHasFocus = false"/>
+              <span class="input-group-addon" ng-class="{'input-has-focus' : pwHasFocus}">
+                <input id="showpwd" type="checkbox" show-password="show-password"/>
+                <label for="showpwd" translate="translate">Show</label>
+              </span>
+            </div>
+            <div class="help-block error-text" ng-show="credentialsError" translate="translate">
+              Either your email or password does not match.
+            </div>
+            <div class="help-block text-left" ng-hide="!forRw3()">
+              <a class="forgot" href="/forgot/" target="_self" translate="translate">Forgot your password?</a>
+            </div>
+          </div>
+          <div class="form-group">
+            <button id="signin_marketing_button" class="btn btn-default btn-primary btn-full-width marketing-btn" ng-click="login()">
+              <span id="signin" translate="translate">Sign In</span>
+            </button>
+          </div>
+          <hr/>
+          <div id="shibboleth" class="form-group">
+            <div class="input-group input-group-md">
+              <span id="shibglobe" class="input-group-addon input-group-addon-alt">
+                <i class="uxf-icon uxf-globe"></i>
+              </span>
+              <select class="form-control" select2="select2" name="shibboleth" aria-label="{{'Use login from my institution'|translate}}" ng-change="useProvider()" ng-model="selectedProvider" ng-options="provider.name group by provider.group for provider in (getProviders() | orderBy:['group','name']) track by provider.url">
+                <option value="" hidden="hidden" translate="translate">Use login from my institution</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group" ng-hide="comboLogin">
+            <div class="text-center">
+              <a class="signup" target="_self" href="/signup/" ng-click="trackSignup()" translate="translate">
+                Create account
+              </a>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</script>
+<script type="text/ng-template" id="combined-login">
+  <div id="combined-login" class="jumbo text-center" ng-controller="CombinedLoginController">
+    <div class="login-container">
+      <h1 id="{{route.viewName}}">
+        <div translate="translate">Which version of RefWorks would you like to use?</div>
+      </h1>
+      <div class="version-selection">
+        <div class="form-group version">
+          <div class="rw3">
+            <div class="version-description">
+              <div class="radio styled-radio">
+                <input id="rw3" aria-labelledby="rw3 rw3descr" type="radio" name="rw-version" ng-model="rwVersion" value="rw3" ng-change="setProviders('rw3')" tabindex="0"/>
+                <label class="newRefWorks" for="rw3" translate="translate">New RefWorks</label>
+                <div class="link" translate="translate">(https://refworks.proquest.com)</div>
+              </div>
+              <div id="rw3descr" class="description" translate="translate">You can easily import your entire RefWorks database into the new version. So the new RefWorks is preferred if you're not actively writing.</div>
+              <a class="comboLink" target="_self" href="/signup/" ng-click="trackSignup()" translate="translate">
+                Don't have an account yet? Create a new one.
+              </a>
+            </div>
+          </div>
+          <div class="rw2">
+            <div class="version-description">
+              <div class="radio styled-radio">
+                <input id="rw2" aria-labelledby="rw2 rw2descr" type="radio" name="rw-version" ng-model="rwVersion" value="rw2" ng-change="setProviders('rw2')" tabindex="0"/>
+                <label class="oldRefWorks" for="rw2" translate="translate">Legacy RefWorks</label>
+                <div class="link" translate="translate">(https://www.refworks.com)</div>
+              </div>
+              <div id="rw2descr" class="description" translate="translate">If you are in the middle of writing, stay with the old version until you finish. Citations in papers started in the legacy RefWorks are currently not compatible with the new version.</div>
+              <img src="https://www.refworks.com/refworks2/default.aspx?r=authentication::logout" style="display: none;"/>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div ng-include="'login'" ng-init="comboLogin=true"></div>
+          <form id="login_redirect_form" method="post" action="https://www.refworks.com/refworks/loginredirect.asp">
+            <input type="hidden" name="LoginName" ng-value="user.username"/>
+            <input type="hidden" name="Password" ng-value="user.password"/>
+            <input type="hidden" name="GroupCode" ng-value="user.group"/>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>
+<script type="text/ng-template" id="researcher">
+  <div class="row jumbo">
+    <div class="col-xs-8 col-xs-offset-2 text-center">
+      <h1 id="{{route.viewName}}">
+        <div translate="translate">Empowering you to do more</div>
+        <div class="instruction">
+          <span translate="translate">RefWorks makes research management and paper-writing easy. Start saving yourself time today, try RefWorks and be more productive.</span>
+          <br/>
+          <br/>
+          <a class="btn-lg btn-default btn-primary marketing-btn" href="/signup/" ng-click="trackSignup()" translate="translate" target="_self">Create account</a>
+        </div>
+      </h1>
+    </div>
+  </div>
+  <div class="copy">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 img-right">
+        <h1 translate="translate">Collect and Import</h1>
+        <p translate="translate">
+          RefWorks is simple – save with a single click.
+        </p>
+        <ul>
+          <li translate="translate">Save an unlimited number of references, full-text, and other research materials</li>
+          <li translate="translate">Import from online databases, catalogs, reference management tools, and your computer</li>
+          <li translate="translate">Quickly save references and full-text from any web page.</li>
+          <li translate="translate">Automatically complete citation data using comprehensive ProQuest databases.</li>
+        </ul>
+        <div class="placeholder collect-import">&nbsp;</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 img-left">
+        <h1 translate="translate">Manage your Research</h1>
+        <p translate="translate">RefWorks is robust – organize, retrieve, read, and annotate.</p>
+        <ul>
+          <li translate="translate">Organize your data with folders and tags</li>
+          <li translate="translate">Quickly search and find your references and full-text document.</li>
+          <li translate="translate">Read and annotate full-text documents with highlights and comments from anywhere</li>
+          <li translate="translate">Sync your data to Dropbox&trade; and have a local copy of your full-text</li>
+        </ul>
+        <div class="placeholder manage-research"></div>
+      </div>
+    </div>
+    <div class="row bg-blue">
+      <div class="col-xs-10 col-xs-offset-1 img-right">
+        <h1 class="bg-blue" translate="translate">Share and Collaborate</h1>
+        <p translate="translate">RefWorks is smooth – share folders and work with others simultaneously.</p>
+        <ul>
+          <li translate="translate">Collaborate on projects with shared full access to resources</li>
+          <li translate="translate">Allow collaborators granular levels of access.</li>
+          <li translate="translate">Take advantage of institutional and public folders</li>
+          <li translate="translate">Interactively read, comment, and annotate full-text with your collaborators</li>
+          <li translate="translate">Make collaborative writing easier with RefWorks integrated into Google Docs</li>
+        </ul>
+        <div class="placeholder share-collaborate"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 img-left">
+        <h1 translate="translate">Write and Cite</h1>
+        <p translate="translate">
+          RefWorks is accurate – select from thousands of customizable citation styles to use within authoring tools.
+        </p>
+        <ul>
+          <li translate="translate">Generate bibliographies and citations in a snap for any authoring tool</li>
+          <li translate="translate">Use our integrations to insert citations in Word and Google Docs</li>
+          <li translate="translate">Leverage thousands of pre-built citation styles and request new styles</li>
+          <li translate="translate">Customize citation styles or create your own from scratch with the citation style editor.</li>
+        </ul>
+        <div class="placeholder write-cite"></div>
+      </div>
+    </div>
+  </div>
+</script>
+<script type="text/ng-template" id="institution">
+  <div class="row jumbo">
+    <div class="col-xs-8 col-xs-offset-2 text-center">
+      <h1 id="{{route.viewName}}">
+        <div translate="translate">Empowering your institution to do more</div>
+        <div class="instruction" translate="translate">
+          RefWorks presents researchers with the most comprehensive capabilities, while providing administrators with unsurpassed controls and support.
+          <br/>
+          <br/>
+          <a class="btn-lg btn-default btn-primary marketing-btn" href="//www.proquest.com/contact/general-contact.html" target="_blank" translate="translate">Sign up for a trial</a>
+        </div>
+      </h1>
+    </div>
+  </div>
+  <div class="copy" ng-hide="showInstTrial">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 img-right">
+        <h1 translate="translate">Take control of your subscription</h1>
+        <p translate="translate">RefWorks delivers the administrative controls you need.</p>
+        <ul>
+          <li translate="translate">Administer and manage user accounts</li>
+          <li translate="translate">Protect copyright by controlling full-text sharing and external Dropbox&trade; syncing</li>
+          <li translate="translate">Enable authorized access to full text with your link resolver, or with our Summon&reg; integration</li>
+          <li translate="translate">Configure the default citation styles for your institution</li>
+          <li translate="translate">Leverage powerful analytics to gain deep insight into your institution’s folder usage</li>
+        </ul>
+        <div class="placeholder take-control"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 img-left">
+        <h1 translate="translate">Deliver a superior user experience</h1>
+        <p translate="translate">RefWorks allows you to provide a reliable service that researchers love.</p>
+        <ul>
+          <li translate="translate">Make it easy for your users to become productive through an intuitive interface</li>
+          <li translate="translate">Support researchers with multiple language options</li>
+          <li translate="translate">Access through the device of your choice without loss of functionality</li>
+          <li translate="translate">Eliminate install issues and use RefWorks anywhere</li>
+          <li translate="translate">Integrate with the tools you need</li>
+        </ul>
+        <div class="placeholder superior-experience"></div>
+      </div>
+    </div>
+    <div class="row bg-logo-gray-light">
+      <div class="col-xs-10 col-xs-offset-1 text-center">
+        <h1 translate="translate">Rely on us for support</h1>
+        <p translate="translate">Refworks includes the world class support that you need to succeed.</p>
+        <br/>
+        <ul class="list-inline">
+          <li class="col-xs-3 small">
+            <div class="uxf-icon uxf-mail mkt-icon"></div>
+            <br/>
+            <span translate="translate">Resolve any issues with personal technical support via the phone or email</span>
+          </li>
+          <li class="col-xs-3 small">
+            <div class="uxf-icon uxf-tools mkt-icon"></div>
+            <br/>
+            <span translate="translate">Get the most out of your subscription through live training</span>
+          </li>
+          <li class="col-xs-3 small">
+            <div class="uxf-icon uxf-sign mkt-icon"></div>
+            <br/>
+            <span translate="translate">Take advantage of online resources (ProQuest Support Center, instructional videos, LibGuides, and more)</span>
+          </li>
+          <li class="col-xs-3 small">
+            <div class="uxf-icon uxf-cloud-lightning mkt-icon"></div>
+            <br/>
+            <span translate="translate">Meet evolving needs with  new features and enhancements</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 img-right">
+        <h1 translate="translate">Save your students and researchers time</h1>
+        <p translate="translate">RefWorks supercharges your students’ and researchers’ productivity.</p>
+        <ul>
+          <li translate="translate">Collect research with simple and accurate features</li>
+          <li translate="translate">Produce accurate citations with Summon® validation and autocomplete</li>
+          <li translate="translate">Organize and manage references, and full-text, with robust tools</li>
+          <li translate="translate">Improve group projects and collaborative research with effective collaboration tools</li>
+          <li translate="translate">Produce papers with thousands of accurate and maintained citation styles</li>
+          <li translate="translate">Use with the most popular authoring tools</li>
+        </ul>
+        <div class="placeholder time-money"></div>
+      </div>
+    </div>
+  </div>
+</script>
+<script type="text/ng-template" id="forgot">
+  <div id="login_vert_align" class="jumbo row text-center" ng-controller="ForgotPasswordController">
+    <div class="signup-container">
+      <h1>
+        <span translate="translate">Forgot your password? No worries.</span>
+        <div class="instruction" translate="translate">Enter the email address you used to open the account and we'll send you a link to reset your password.</div>
+      </h1>
+      <form id="form_landing_login" class="login-form" role="form" method="POST" action="/registration/sendEmail.html">
+        <div class="form-group">
+          <input id="input_email" class="form-control" name="email" type="email" placeholder="{{'Email address'|translate}}"/>
+          <div class="help-block error-text" ng-show="message" ng-bind-html="message"></div>
+        </div>
+        <div class="form-group">
+          <input id="submit" class="btn btn-primary btn-full-width marketing-btn" type="submit" value="{{'Continue'|translate}}"/>
+        </div>
+      </form>
+    </div>
+  </div>
+</script>
+<script type="text/ng-template" id="reset">
+  <div id="login_vert_align" class="jumbo row text-center">
+    <div class="signup-container">
+      <h1>
+        <span translate="translate">Email Sent</span>
+        <div class="instruction" translate="translate">
+          We sent an email so that you can reset your password.
+        </div>
+      </h1>
+    </div>
+  </div>
+</script>
+<script type="text/ng-template" id="about">
+  <div class="row jumbo">
+    <div class="col-xs-8 col-xs-offset-2 text-center">
+      <h1>
+        <div translate="translate">About RefWorks</div>
+        <div class="instruction" translate="translate">
+          RefWorks is made by the Research Solutions team at ProQuest. Our mission is
+          to empower researchers to discover, grow, and thrive. We are passionate
+          about providing researchers and librarians alike with the tools to make their
+          work and research better, easier, more efficient, and more fun.
+        </div>
+      </h1>
+    </div>
+  </div>
+  <div class="copy">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 img-right">
+        <h1 translate="translate">Need help?</h1>
+        <p translate="translate">ProQuest sales and support is here for you.</p>
+        <ul>
+          <li>
+            <a href="http://www.proquest.com/contact/general-contact.html" target="sales">Contact ProQuest sales</a>
+          </li>
+          <li>
+            If you have an Ex Libris Support Account login:
+            <a href="https://exlidp.exlibrisgroup.com/" target="support">Submit a case</a>
+            <br/>
+            Email:
+            <a href="mailto:refworks.support@exlibrisgroup.com?subject=New RefWorks Support Request">refworks.support@exlibrisgroup.com</a>
+            <br/>
+            United States & Canada (toll free):
+            <a href="tel:18008893358">+1 800 889 3358</a>
+            <br/>
+            Outside North America:
+            <a href="tel:80049974111">+800 4997 4111</a>
+            or
+            <a href="tel:17347072513">+1 734 707 2513</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 img-right">
+        <h1 translate="translate">Open Source Projects</h1>
+        <p translate="translate">RefWorks uses, and helps to maintain various open source projects.</p>
+        <ul>
+          <li translate="translate">
+            <a href="http://github.com/proquest/pme">PME</a>
+          </li>
+          <li translate="translate">
+            <a href="http://github.com/zotero/translators">Zotero Translators</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <br/>
+      <br/>
+    </div>
+  </div>
+</script>
+<div id="challenge_policy_overlay" class="modal bs-modal-sm" data-backdrop="static" data-keyboard="false" ng-controller="LoginController" ng-init="ipaBaseUrl = &quot;https://refworks.proquest.com/api-ipa&quot;">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-body">
+<div class="challenge-body">
+<div class="challenge-icon"></div>
+<div class="challenge-content">
+<h1 translate="translate">Important Notice</h1>
+<div>
+<span translate="translate">Personal data (such as name, e-mail and other information connected to you) provided to ProQuest by you or your institution in connection with your institution's RefWorks subscription is used by ProQuest only for purposes of providing the RefWorks service.</span>
+<br/>
+<span translate="translate">For data protection and privacy regulation purposes, your institution is the data controller and ProQuest processes the data pursuant to a contract between ProQuest and your institution.</span>
+</div>
+</div>
+<div class="challenge-accept">
+<button class="accept-challenge btn btn-primary" aria-label="Consent button" type="button" ng-click="acceptPolicy()" translate="translate">Continue</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="remove_account_overlay" class="modal bs-modal-sm" ng-controller="LoginController" ng-init="ipaBaseUrl = &quot;https://refworks.proquest.com/api-ipa&quot;">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header dialog-header-custom">
+<button class="close" type="button" data-dismiss="modal">&times;</button>
+</div>
+<div class="modal-body">
+<div class="icon uxf-icon uxf-attention"></div>
+<div class="remove-content">
+<h1 translate="translate">Are you sure you want to remove your account?</h1>
+<div>
+<span translate="translate">If we remove your account, all your personal data, references, and documents will be permanently removed from our system.</span>
+<br/>
+<strong class="text-danger">
+**
+<span translate="translate">This action cannot be undone.</span>
+**
+</strong>
+</div>
+</div>
+</div>
+<div class="modal-footer">
+<div class="remove-accept">
+<button id="confirm-removal" class="btn btn-primary" aria-label="Remove account button" type="button" ng-click="removeAccount()" translate="translate">Remove Account</button>
+</div>
+<div class="remove-cancel">
+<button id="cancel-removal" class="btn btn-secondary" aria-label="Cancel button" type="button" data-dismiss="modal" translate="translate">Cancel</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="unable_submit" class="modal bs-modal-sm" data-backdrop="static" data-keyboard="false" ng-controller="LoginController">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-body">
+<div class="icon uxf-icon uxf-attention"></div>
+<div class="unable-content">
+<h1 translate="translate">Sorry, we were unable to submit your request.</h1>
+<div translate="translate">
+Please contact customer service or try again later.
+</div>
+</div>
+</div>
+<div class="modal-footer">
+<div class="unable-button">
+<button class="btn btn-secondary" aria-label="Log out of Refworks" type="button" ng-click="logout()" translate="translate">Log out of Refworks</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/ng-template" id="oauth">
+  <div id="login_vert_align" class="jumbo row text-center">
+    <h1 id="login-heading" class="blue">
+      <span translate="translate">Welcome back</span>
+      <div class="instruction grey" translate="translate">Sign in to use RefWorks</div>
+    </h1>
+    <form id="form_landing_login" class="login-form" name="login_form" method="POST" action="https://refworks.proquest.com/login/" role="form" pq-empty-focus="pq-empty-focus">
+      <div class="form-group">
+        <input id="input_username" class="form-control" type="email" name="username" value="" placeholder="{{'Email'|translate}}"/>
+        <div class="row_note"></div>
+      </div>
+      <div class="form-group">
+        <input id="input_password" class="form-control textPass" type="password" name="password" placeholder="{{'Password'|translate}}">
+          <div class="row_note"></div>
+        </input>
+        <div id="resetPsw" class="help-block text-left">
+          <a class="forgot" href="/forgot/" target="_self" translate="translate">Forgot your password?</a>
+        </div>
+      </div>
+      <input type="hidden" name="returnTo" value=""/>
+      <input type="hidden" name="client_id" value=""/>
+      <input type="hidden" name="redirect_uri" value=""/>
+      <input type="hidden" name="external_profileid" value=""/>
+      <div class="form-group centered">
+        <input id="signin-button" class="btn btn-primary btn-full-width marketing-btn" type="submit" name="submit" value="{{'Sign In'|translate}}"/>
+      </div>
+      <div id="shibboleth" class="form-group" ng-controller="LoginController">
+        <hr/>
+        <div class="input-group input-group-md">
+          <span id="shibglobe" class="input-group-addon input-group-addon-alt">
+            <i class="uxf-icon uxf-globe"></i>
+          </span>
+          <select class="form-control" select2="select2" name="shibboleth" ng-change="useProvider('false', '', '')" ng-model="selectedProvider" ng-options="provider.name group by provider.group for provider in (shibbolethProviders | orderBy:['group','name']) track by provider.url">
+            <option value="" hidden="hidden" translate="translate">Use login from my institution</option>
+          </select>
+        </div>
+      </div>
+      <a target="_self" href="/signup/" ng-click="trackSignup()">
+        <input class="btn btn-default" type="button" value="{{'No account? - Sign Up here'|translate}}"/>
+      </a>
+    </form>
+  </div>
+</script>
+<script type="text/ng-template" id="disabled">
+  <div id="login_vert_align" class="jumbo row text-center">
+    <div class="signup-container">
+      <h1>Disabled</h1>
+      <div class="instruction">
+        An administrator at your organization () has disabled your account.
+      </div>
+    </div>
+  </div>
+</script>
+<script type="text/ng-template" id="deactivated">
+  <div id="login_vert_align" class="jumbo row text-center">
+    <div class="signup-container">
+      <h1>RefWorks is not available at your institution</h1>
+      <div class="instruction">
+        Your institution is no longer subscribed to RefWorks. Talk to your librarian about getting a RefWorks subscription.
+      </div>
+    </div>
+  </div>
+</script>
+<script type="text/ng-template" id="shibboleth-error">
+  <div id="login_vert_align" class="jumbo row text-center">
+    <div class="signup-container shibboleth-error">
+      <h1 translate="translate">An error occurred with your institutional login</h1>
+      <div class="instruction">
+        <span translate="translate">Please contact your RefWorks administrator</span>
+      </div>
+    </div>
+  </div>
+</script>
+<script type="text/ng-template" id="cookie-policy">
+  <div class="researcher-background">
+    <div class="row jumbo">
+      <div class="col-xs-8 col-xs-offset-2 text-center">
+        <h1 id="{{route.viewName}}">
+          <div translate="translate">Cookie Policy</div>
+        </h1>
+      </div>
+    </div>
+    <div class="row copy gdpr">
+      <div class="col-xs-10 col-xs-offset-1">
+        <p>
+          For all ProQuest Sites, we also collect "cookies." A cookie is a tiny text document, which usually includes
+          anonymous information about the user. Generally, when you visit any website, that site's computer asks your
+          computer for permission to store this text document in a part of your hard drive specifically designated for
+          cookies. The use of cookies on the ProQuest Sites allows you to have a better user experience because cookies
+          help us understand your preferences. You may opt to turn off cookies, but you might not be able to access all
+          aspects of the ProQuest Site you are visiting.
+        </p>
+        <p>
+          The list below describes the cookies we use on this site and what we use them for. Currently we operate an
+          'implied consent' policy which means that we assume you are happy with this usage. If you are not happy, then
+          you should either not use this site, or you should delete the cookies after having visited the site, or you
+          should browse the site using your browser’s anonymous usage setting (called "Incognito" in Chrome, "InPrivate"
+          for Internet Explorer, "Private Browsing" in Firefox and Safari etc.) For more information on what cookies are, or
+          how to control or delete them, we recommend you visit
+          <a href="http://www.aboutcookies.org">http://www.aboutcookies.org</a>
+          for detailed guidance.
+        </p>
+        <p>
+          <b>
+            First Party Cookies
+          </b>
+          are cookies that are set by this website directly. We use cookies in a variety of different ways, including:
+        </p>
+        <p>
+          Site Performance cookies: This type of cookie remembers your preferences for tools found on ProQuest sites,
+          so you don't have to re-set them each time you visit. For example, our servers may automatically record, and
+          we may collect, information that your computer's browser sends whenever you visit any website. These server
+          logs may include information such as the home server (including the institution) of the user, database or
+          profiles accessed, searches performed, portions of site visited, web request(s), Internet Protocol address,
+          research history, keyword searched, materials accessed, downloaded or printed, usage information, browser type,
+          browser language, the date and time of your request(s) and one or more cookies that may uniquely identify your
+          computer's browser. Our servers do not record or recognize names or email addresses of the user.
+        </p>
+        <p>
+          <b>
+            Anonymous Analytics Cookies:
+          </b>
+          Every time a user visits our website, web analytics software provided by a third party generates an anonymous
+          analytics cookie. These cookies can tell us whether or not you have visited the site before. Your browser will
+          tell us if you have these cookies, and if you don't, we generate new ones. This allows us to track how many
+          individual unique users we have, and how often they visit the site. These cookies cannot be used to identify
+          individuals; they are used for statistical purposes only.
+        </p>
+        <p>
+          <b>
+            Geotargeting cookies:
+          </b>
+          These cookies are used by software which tries to determine what country you are in from information supplied
+          by your browser when it requests a web page. This cookie is completely anonymous, and is only used to help
+          target content.
+        </p>
+        <p>
+          <b>
+            Registration and Session cookies:
+          </b>
+          When you register with ProQuest Sites, we generate cookies that signal whether you are signed in or not.
+          Our servers use these cookies to work out which account you are signed in with, and if you are allowed access
+          to a particular service. It also allows us to associate any comments you post with your username. If you have
+          not selected 'keep me signed in,' your cookies get deleted when you either close your browser or shut down your
+          computer. While you are signed to ProQuest Sites, we combine information from your registration cookies with
+          analytics cookies, which we could use to identify which pages you have seen on the ProQuest Sites as an individual.
+        </p>
+        <p>
+          Examples include allowing you to store your password so that you may access the ProQuest Sites without having
+          to enter certain authenticating information each time, or to enable you to see, track and/or store such
+          information as your log in information, previous searches and/or research sessions, databases accessed, and
+          other information.
+        </p>
+        <p>
+          More information on session cookies and what they are used for at
+          <a href="http://www.allaboutcookies.org/cookies/session-cookies-used-for.html">http://www.allaboutcookies.org/cookies/session-cookies-used-for.html.</a>
+        </p>
+        <p>
+          <b>
+            Third Party Cookies
+          </b>
+        </p>
+        <p>
+          These are cookies set on your machine by external websites whose services are used on this site. Cookies of
+          this type are the sharing buttons across the site allow visitors to share content onto social networks. In
+          order to implement these buttons, and connect them to the relevant social networks and external sites,
+          there are scripts from domains outside of our website. You should be aware that these sites are likely to
+          be collecting information about what you are doing all around the internet, including on this website. You
+          should check the respective policies of each of these sites to see how exactly they use your information and
+          to find out how to opt out, or delete, such information.
+        </p>
+        <p>
+          On some pages of the ProQuest network, third parties may also set their own anonymous cookies, for the
+          purposes of tracking the success of their application, or customizing the application for you. Because of how
+          cookies work, ProQuest cannot access these cookies, nor can the third parties access the data in cookies used
+          by the ProQuest Sites.
+        </p>
+      </div>
+    </div>
+  </div>
+</script>
+<script type="text/ng-template" id="terms-and-conditions">
+  <div class="researcher-background">
+    <div class="row jumbo">
+      <div class="col-xs-8 col-xs-offset-2 text-center">
+        <h1 id="{{route.viewName}}">
+          <div translate="translate">Terms and Conditions</div>
+        </h1>
+      </div>
+    </div>
+    <div class="row copy gdpr">
+      <div class="col-xs-10 col-xs-offset-1">
+        <ol>
+          <li>
+            License Grant. Subject to the terms of this Agreement, ProQuest LLC and its affiliates (“ProQuest”) hereby
+            grant to Customer a non-exclusive, non-transferable license (the “License”) for Customer and its Authorized
+            Users to access and use the products and services listed on Customer’s approved Order Form (the “Service”)
+            solely at Customer’s principal location and those locations identified on the Order Form or a separate schedule
+            (“Additional Sites”). Additional locations may be added as Additional Sites upon written notice to ProQuest
+            and payment of additional fees, if applicable. Access and use of the Service is only for the internal, research
+            purposes of Customer and/or its Authorized Users as further described in Exhibit A (Permitted Uses).
+            Customer does not acquire any intellectual property ownership in the Service or any associated software,
+            systems, documentation, content, other materials and/or improvements made thereto, including improvements
+            based upon customer feedback. All such rights and interests remain in ProQuest and its licensors.
+          </li>
+          <li>
+            Authorized Users. Unless otherwise detailed on the Order Form, “Authorized User” means only: (a) For public
+            libraries: library staff, individual residents of Customer’s reasonably defined geographic area served, and
+            walk-in patrons while they are on-site; (b) For schools and other academic institutions: currently enrolled
+            students, faculty, staff, and visiting scholars, as well as walk-in patrons while they are on-site; and (c)
+            For other types of organizations: employees and independent contractors, while performing their work. Authorized
+            Users excludes Customer’s corporate affiliates, academic bookstores, and alumni unless those users are expressly
+            included and reflected on the Order Form or Additional Sites Schedule.
+          </li>
+          <li>
+            Secure/Remote Access. All access and use of the Service must be made via a secure network and secure
+            authentication methods. Use of the Service by remote access is allowed unless otherwise stated on the
+            Order Form. Customer will strictly limit any remote access to its Authorized Users through the use of
+            secure methods of user verification. Customer will promptly notify ProQuest if Customer believes security
+            has been compromised. Posting or sharing of passwords, or otherwise enabling access for the benefit of
+            non-subscribing institutions or users, is strictly prohibited.
+          </li>
+          <li>
+            Updates to the Service. ProQuest will provide reasonable notice of any substantial modifications of
+            information, databases, materials, capabilities, or services within the Service by email to Customer’s
+            representatives who sign up to receive updates. These changes shall be subject to the terms and conditions
+            of this Agreement, and shall not materially alter use of the Service in an adverse manner.
+          </li>
+          <li>
+            Supplemental Terms. Some content included in the Service has terms of use applicable solely to such
+            content. Content-specific terms are clearly displayed with the associated content or embedded in the
+            systems and technologies incorporated into the Service. Where third-party databases or content are subject
+            to supplemental terms, such terms shall be clearly referenced on the Order Form. Such supplemental terms
+            shall not materially alter use of the Service.
+          </li>
+          <li>
+            Variations in Content. The content provided as part of the Service is primarily owned and supplied to
+            ProQuest under agreement with third party licensors, and is subject to the continuation and extent of the
+            license granted under such agreements. ProQuest shall have the right, in its reasonable and good faith
+            discretion, to remove or modify materials in the Service because (a) ProQuest’s right to distribute such
+            materials lapses, (b) such materials contain errors or could be subject to an infringement or other adverse
+            claim by a third party, or (c) particular content collections have changed due to editorial selection,
+            coordination, or arrangement of materials.
+          </li>
+          <li>
+            Fees and Payments. Customer agrees to pay the fees for the Service shown on the Order Form within 30 days
+            of receipt of ProQuest’s invoice unless otherwise specified on the Order Form. Fees are based in part on
+            Customer’s population served, Authorized Users and Additional Sites at the time of the order or such other
+            license parameters as may be listed on the Order Form. If any one or a combination of these elements
+            materially increases (e.g., if the Customer acquires a new affiliate), a fee increase commensurate with
+            such change may be required before access and use of the Service is provided to or for the benefit of the
+            additional user population and/or Additional Sites. Firm U.S. Government orders require a valid purchase
+            order and advance payment or payment in accordance with FAR 52.213.2.
+          </li>
+          <li>
+            U.S. Government Restricted Rights. Services include materials that are commercial technical data and/or
+            computer databases and/or commercial computer software, as applicable, which were developed exclusively at
+            private expense by ProQuest LLC, 789 E. Eisenhower Parkway, Ann Arbor, MI 48108. U.S. Government rights to
+            use, modify, reproduce, release, perform, display, or disclose these technical data and/or computer databases
+            and/or computer software are subject to the limited rights restrictions of DFARS SUBPART 252.227-7202-3
+            (December 2011) Rights in Computer Software and Computer Software Documentation and/or subject to the
+            restrictions of DFARS 252.227-7019 (Sep 2011) Validation of Asserted Restrictions – Computer Software, as
+            applicable for U.S. Department of Defense procurements and the limited rights restrictions of FAR 52.227-14 (
+            December 2007) Rights in Data-General, FAR 52-227-20(c)(2-3) (December 2007) Rights in Data-SBIR Program
+            and/or subject to the restricted rights provisions of FAR 52.227-15 (December 2007) Representation of
+            Limited Rights Data and Restricted Computer Software and FAR 52.227-19 (Dec 2007) Commercial Computer
+            Software-Restricted Rights, as applicable, and any applicable agency FAR Supplements, for non-Department
+            of Defense Federal procurement.
+          </li>
+          <li>
+            Term. Customer’s access to a particular Service shall continue for the period on the Order Form, plus any
+            agreed renewal period(s). This Agreement shall continue in force for so long as Customer subscribes to at
+            least one Service. Thereafter, the following survive: Sections 9–11 and 13-16, and any perpetual archive
+            licenses (“PAL”) (subject to all relevant use restrictions and security requirements).
+          </li>
+          <li>
+            Termination for Breach. If a party breaches a material term of this Agreement and does not cure within 30
+            days from written notice, the other party may immediately terminate this Agreement in whole or as to the
+            affected Service. If this Agreement is terminated in whole or in part for Customer’s breach, (a) ProQuest
+            shall disable access to any terminated Service, (b) Customer shall destroy any files, information, data or
+            software derived from any terminated Service in its possession or control, and certify destruction upon
+            request, and (c) ProQuest reserves the right to pursue all available legal remedies.
+          </li>
+          <li>
+            Remedial Action. Without limiting the above, ProQuest may suspend delivery of the Service if it reasonably
+            determines that Customer’s or an Authorized User’s failure to comply with this Agreement may cause
+            irreparable harm to it or its licensors. If delivery is suspended, ProQuest will work in good faith to
+            restore Customer’s access as soon as possible after the failure to comply has been remedied in full.
+          </li>
+          <li>
+            Service Level. If the Service or content are hosted by ProQuest, ProQuest will use commercially reasonable
+            efforts to provide access to the Service on a continuous 24/7 basis (except for regularly scheduled
+            maintenance) and free from viruses or other harmful software. ProQuest shall not be liable for any failure
+            or delay or interruption in the Service or failure of any equipment or telecommunications resulting from any
+            cause beyond ProQuest’s reasonable control. Customer is responsible for providing all required information
+            for account set up and activation, and for its own telecommunications connections and related third-party charges.
+          </li>
+          <li>
+            Limited Warranty and Disclaimer of Warranty. ProQuest warrants that the Service will perform substantially
+            as documented on ProQuest’s public websites (the “ProQuest Websites”). EXCEPT AS EXPRESSLY WARRANTED HEREIN,
+            THE SERVICE IS PROVIDED “AS IS” AND “AS AVAILABLE.” PROQUEST AND ITS LICENSORS DISCLAIM ALL OTHER WARRANTIES,
+            EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION, THOSE PERTAINING TO: MERCHANTABILITY, NON-INFRINGEMENT,
+            FITNESS FOR A PARTICULAR PURPOSE, AVAILABILITY, ACCURACY, TIMELINESS, CORRECTNESS, RELIABILITY, CURRENCY,
+            OR COMPLETENESS OF THE SERVICE OR ANY INFORMATION OR RESULTS OBTAINED THROUGH THE SERVICE, EVEN IF ASSISTED
+            BY PROQUEST. PROQUEST SPECIFICALLY DISCLAIMS ANY RESPONSIBILITY FOR DETERMINING THE COMPATIBILITY OF ANY
+            HARDWARE OR SOFTWARE NOT SUPPLIED BY PROQUEST WITH THE SERVICE AND PROVIDES NO WARRANTY WITH RESPECT TO THE
+            OPERATION OF SUCH HARDWARE OR SOFTWARE WITH THE SERVICE.
+          </li>
+          <li>
+            Limitation of Liability. THE MAXIMUM AGGREGATE LIABILITY OF PROQUEST AND ITS LICENSORS ARISING OUT OF OR
+            RELATED TO THE SERVICE OR THIS AGREEMENT SHALL BE LIMITED TO THE TOTAL AMOUNT OF FEES RECEIVED BY PROQUEST
+            FROM CUSTOMER FOR THE RELEVANT SERVICE IN THE 12 MONTHS IMMEDIATELY PRECEDING THE EVENTS GIVING RISE TO THE
+            CLAIMS. IN NO EVENT SHALL PROQUEST OR ITS LICENSORS BE LIABLE TO CUSTOMER OR ITS AUTHORIZED USERS FOR (a)
+            ANY INDIRECT, INCIDENTAL, CONSEQUENTIAL, PUNITIVE OR SPECIAL DAMAGES; OR (b) ANY CLAIM RELATED TO CUSTOMER’S
+            OR ITS AUTHORIZED USERS’ USE OF COVER IMAGES OR USER-GENERATED CONTENT PROVIDED AS PART OF THE SERVICE; OR (c)
+            UNAUTHORIZED USE OF THE SERVICE.
+          </li>
+          <li>
+            Place. ProQuest’s principal place of business, where this contract is formed and all services will be
+            deemed performed, is 789 E. Eisenhower Pkwy, Ann Arbor, MI 48108.
+          </li>
+          <li>
+            Entire Agreement. This Agreement consists of these Terms and Conditions, any applicable Order Form
+            referencing these Terms and Conditions, and any Exhibits or Addenda attached hereto or referencing this
+            Agreement (including the Exhibit A (Permitted Uses), and constitutes the entire agreement between the
+            parties hereto with respect to its subject matter and supersedes all previous and contemporaneous agreements
+            between the parties with respect to the same subject matter and may not be amended, except in a writing signed
+            by the parties. The terms of Customer’s purchase orders, if any, are for Customer’s convenience and do not
+            supersede or supplement any term or condition of this Agreement.
+          </li>
+        </ol>
+        Exhibit A: Permitted Uses
+        <ol>
+          <li>
+            Online Research Services. Services designed to facilitate online research may be used for Customer’s
+            internal research or educational purposes as outlined below provided that doing so does not violate an
+            express provision of this Agreement
+            <ol type="a">
+              <li>
+                Research and Analysis. Customer and its Authorized Users are permitted to display and use reasonable
+                portions of information contained in the Service for educational or research purposes, including
+                illustration, explanation, example, comment, criticism, teaching, or analysis.
+              </li>
+              <li>
+                Digital and Print Copies. Customer and its Authorized Users may download or create printouts of a
+                reasonable portion of articles or other works represented in the Service (i) for its own internal or
+                personal use as allowed under the doctrines of "fair use" and "fair dealing”; (ii) when required by
+                law for use in legal proceedings or (iii) to furnish such information to a third party for the purpose
+                of, or in anticipation of, regulatory approval or purpose provided that the recipient is advised that
+                the copies are not for redistribution. All downloading, printing and/or electronic storage of materials
+                retrieved through the Service must be retrieved directly from the on-line system for each and every
+                print or digital copy.
+              </li>
+              <li>
+                Electronic Reserves, Coursepacks, and Intranet Use. Provided that Customer does not circumvent any
+                features or functionality of the Service, Customer may include durable links to articles or other
+                works (or portions thereof) contained in the Service in electronic reserves systems, online course
+                packs and/or intranet sites so long as access to such materials are limited to Authorized Users.
+              </li>
+              <li>
+                Fair Use/Fair Dealing. Customer and its Authorized Users may use the materials contained within the
+                Service consistent with the doctrines of "fair use" or "fair dealing" as defined under the laws of
+                the United States or England, respectively.
+              </li>
+              <li>
+                Academic Institutions, Schools, and Public Libraries. If Customer is an academic institution, school,
+                or public library:
+                <ol type="a">
+                  <li>
+                    Interlibrary Loan (ILL). Library Customer may loan digital or print copies of materials retrieved
+                    from the Service to other libraries, provided that (i) loans are not done in a manner or magnitude
+                    that would replace the receiving library’s own subscription to the Service or purchase of the underlying
+                    work (e.g., newspaper, magazine, book), (ii) Customer complies with any special terms governing specific
+                    content or licensors as described in this Agreement, (iii) with respect to ebooks, copying is limited
+                    to small portions of a book, and (iv) Customer complies with all laws and regulations regarding ILL.
+                  </li>
+                  <li>
+                    Scholarly Sharing. Customer and its Authorized Users may provide to a third party colleague minimal,
+                    insubstantial amounts of materials retrieved from the Service for personal use or scholarly, educational
+                    research use in hard copy or electronically, provided that in no case is any such sharing done in a
+                    manner or magnitude as to act as a replacement for the recipient's or recipient educational
+                    institution's own subscription to either the Service or the purchase of the underlying work.
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+          <li>
+            All Streaming Video and Audio Products. Audio and Video files are delivered to Customer and its Authorized
+            Users via streaming service over the Internet. Customer and its Authorized Users shall not download or
+            otherwise copy the streaming videos or audio contained in the Service. In the case of content that can
+            potentially be publicly performed, Customer must secure permission from ProQuest’s Licensor and/or the
+            copyright holder for any public performance other than reasonable classroom and educational uses.
+          </li>
+          <li>
+            MARC Records. MARC records may be placed in Customer’s online public access catalog (OPAC) or shared online
+            catalog (e.g., WorldCat) unless otherwise specified on the Order Form with respect to a particular Service.
+          </li>
+          <li>
+            Scholar/Researcher Profiles. The data contained within scholar profiles are for use in facilitating research
+            and collaboration amongst colleagues. Neither Customer nor its Authorized Users may export or otherwise
+            exploit the scholar profiles for mass mailings or similar marketing purposes.
+          </li>
+          <li>
+            Electronic Resource Discovery, Access, and Management. For electronic resource discovery (e.g., Summon, 360 Link),
+            access and/or management services, the Customer reserves all right, title and interest in all Customer specific
+            data it contributes to the Service (which may include but is not limited to Customer created metadata,
+            bibliographic information, holdings and circulation data) and grants ProQuest permission to use such data
+            in raw form for the limited purpose of operating and improving the Service and such information may only be
+            provided to third parties in aggregate form. Raw usage data containing information relating to the identity
+            of specific users shall not be provided to any third party without Customer’s permission. Provided that
+            uch access, use, and/or sharing does not violate an express provision of this Agreement, Customer and its
+            Authorized Users are permitted to: (a) access the Service and information derived from the Service in order
+            to discover, manage and provide access to library resources owned or licensed by Customer, (b) create, store
+            and retain any reports and lists delivered by the Service, (c) share data about Customer’s own library holdings
+            that is retrieved from such Service with third party applications, so long as prior written notice is provided to
+            ProQuest and all pricing information is kept confidential to the fullest extent permitted by applicable law;
+            and (d) display metadata, bibliographic and holdings information in the library catalog available on Customer’s
+            library website.
+          </li>
+          <li>
+            Library Catalog Enrichment Service. For library catalog enrichment Services (e.g., Syndetics), Customer
+            may use the enrichment elements for the sole purpose of augmenting Customer’s own library OPAC or website.
+            Customer may not convert Service metadata records into MARC format, nor distribute or display the enrichment elements
+            in any third party applications, catalogs or websites.
+          </li>
+          <li>
+            Purchased Content. For perpetual archive licenses (“PAL”) (as specified on the ProQuest Websites or Order Form),
+            Customer pays a one-time fee for a perpetual license to the designated materials (the “Purchased Content”),
+            and an annual “Continuing Service Fee.”
+            <ol type="a">
+              <li>
+                Perpetual License. The License to Purchased Content and any updates Customer receives is perpetual, and
+                may only be revoked if Customer materially breaches this Agreement, or if the licensed materials contain
+                errors or could be subject to an infringement or other adverse claim by a third party.
+              </li>
+              <li>
+                Continuing Services. In consideration of the Continuing Service Fee, ProQuest will provide Customer and
+                its Authorized Users with online access to the Purchased Content, plus any included updates, on a
+                proprietary platform designed to enhance the research experience (a “ProQuest Platform”). ProQuest will
+                maintain systems and technology that help Customer comply with use restrictions and security standards
+                required by ProQuest’s licensors.
+              </li>
+              <li>
+                File Delivery. If Customer loses the ability to access its Purchased Content online through ProQuest
+                (e.g., if ProQuest discontinues online access services), or if the Purchased Content is otherwise
+                eligible for local loading, Customer may obtain digital copies upon certifying that it will secure and
+                restrict use of the Purchased Content as contemplated under this Agreement, using systems and technology
+                at least as protective as ProQuest’s. In the case of Audio, any local access must be restricted by DRM and
+                be limited to one (1) simultaneous user (unless the Customer tracks the necessary playbacks and makes all
+                royalty payments to copyright holders for mechanical and performance rights). All use of the materials
+                delivered continue to be subject to this Agreement. File transfer costs, if any, are Customer’s responsibility.
+              </li>
+              <li>
+                Locally Loaded Purchased Content - Data Mining. Subject to any content-specific restrictions, Customer
+                and its Authorized Users may extract and compile data from locally-loaded copies of the Purchased Content
+                solely for Customer’s teaching, learning, and research purposes.
+              </li>
+            </ol>
+          </li>
+          <li>
+            Acquisition Models. For certain Services, Customer may elect to have user activity trigger the purchase of
+            content. Purchase preferences and Service eligibility for these models are described on the ProQuest Websites.
+            Examples of these types of purchase models include Patron Driven Acquisition (PDA), Demand Driven Acquisition (DDA),
+            Evidenced Based Acquisition, Access-To-Own (ATO), and Build By Choice.
+          </li>
+          <li>
+            Analytics. Some Services contain library collection analysis capabilities related to library holdings, or
+            functionality that allows Authorized Users to create reports, lists, or alerts. Customer and Authorized Users
+            may create, download, store and retain any such analytics or lists delivered by the Service. ProQuest may use
+            library holdings and other information in the Service for comparison and metrics purposes and in order to better
+            understand the customers’ needs.
+          </li>
+          <li>
+            Restrictions. Except as expressly permitted above, Customer and its Authorized Users shall not:
+            <ol type="a">
+              <li>
+                Translate, reverse engineer, disassemble, decompile, discover, or modify ProQuest’s software;
+              </li>
+              <li>
+                Remove any copyright and other proprietary notices placed upon the Service or any materials retrieved
+                from the Service by ProQuest or its licensors;
+              </li>
+              <li>
+                Circumvent any use limitation or protection device contained in or placed upon the Service or any
+                materials retrieved from the Service;
+              </li>
+              <li>
+                Perform penetration tests or use the Service to execute denial of service attacks;
+              </li>
+              <li>
+                Perform automated searches against ProQuest’s systems (except for non-burdensome federated search services),
+                including automated “bots,” link checkers or other scripts;
+              </li>
+              <li>
+                Provide access to or use of the Services by or for the benefit of any unauthorized school, library,
+                organization, or user;
+              </li>
+              <li>
+                Publish, broadcast, sell, use or provide access to the Service or any materials retrieved from the Service
+                in any manner that will infringe the copyright or other proprietary rights of ProQuest or its licensors;
+              </li>
+              <li>
+                Use the Service to create products or perform services which compete or interfere with those of ProQuest
+                or its licensors;
+              </li>
+              <li>
+                Text mine, data mine or harvest metadata from the Service;
+              </li>
+              <li>
+                Communicate or redistribute materials retrieved from the Service; or
+              </li>
+              <li>
+                Download all or parts of the Service in a systematic or regular manner or so as to create a collection
+                of materials comprising all or a material subset of the Service, in any form.
+              </li>
+              <li>
+                Store any information on the Service that violates applicable law or the rights of any third party.
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</script>
+</div>
+<div class="footer footer-dark">
+<div class="container">
+<div class="row">
+<div class="col-xs-12">
+<ul class="footer-links" ng-init="appName='RefWorks'">
+<li>
+<a id="aboutuslink_footer" href="/about-us/" translate="translate">About Us</a>
+</li>
+<li>
+<a id="contactuslink_footer" href="javascript:void(0);" onclick="window.open('https://supportcase.exlibrisgroup.com/s/refworks','name','width=460,height=720')" translate="translate">Contact Us</a>
+</li>
+<li>
+<a id="proquestproductslink_footer" href="//www.proquest.com/" target="_blank" translate="translate">ProQuest Products</a>
+</li>
+<li>
+<a id="accessibilitystatementlink_footer" href="https://knowledge.exlibrisgroup.com/RefWorks/Product_Materials/Accessibility_Statement" target="_blank" translate="translate">Accessibility Statement</a>
+</li>
+<li>
+<a id="termsandconditionslink_footer" href="/terms-and-conditions/" translate="translate">Terms and Conditions</a>
+</li>
+<li>
+<a id="privacypolicylink_footer" href="/privacy-policy/" translate="translate">Privacy Policy</a>
+</li>
+<li>
+<a id="cookiepolicylink_footer" href="/cookie-policy/" translate="translate">Cookie Policy</a>
+</li>
+<div class="copyright">
+<span translate="translate">Copyright © 2022,</span>
+<span translate="translate">ProQuest LLC. All rights reserved</span>
+</div>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<script type='text/javascript'>//<![CDATA[
+PQD.site="oz";var dev_s_account="proq-oz-dev";
+//]]></script>
+</body>
+</html>

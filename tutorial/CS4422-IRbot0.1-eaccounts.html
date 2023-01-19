@@ -1,0 +1,293 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="masterHtmlElement" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><link id="BasicFileCss" rel="Stylesheet" type="text/css" href="/eAccounts/Content/Basic.css" /><link id="BasicCustomCss" rel="Stylesheet" type="text/css" href="/eAccounts/CssFile.ashx?v=00000000-0000-0000-0000-000000000000" /><title>
+	KSU MyCard Manager KSU MyCard Manager
+</title><link id="Link1" rel="shortcut icon" href="favicon.ico" type="image/x-icon" /><link id="Link2" rel="icon" href="favicon.ico" type="image/ico" /></head>
+<body id='AnonymousHomePage' >
+    <noscript>
+        <div class="Feedback">
+            <h2>Javascript is disabled on your browser.</h2><p>Please enable JavaScript on your browser or upgrade to a Javascript-capable browser to use this site.</p>
+        </div>
+    </noscript>
+    <link rel="Stylesheet" type="text/css" id="jQueryUI" href="/eAccounts/Content/themes/smoothness/jquery-ui.css" />
+    <link rel="Stylesheet" type="text/css" id="Link3" href="/eAccounts/Content/themes/telerik_eAccount2/Button.eAccount2.css"/>
+    <link rel="Stylesheet" type="text/css" id="Link4" href="/eAccounts/Content/themes/telerik_eAccount2/Calendar.eAccount2.css"/>
+    <link rel="Stylesheet" type="text/css" id="Link5" href="/eAccounts/Content/themes/telerik_eAccount2/ComboBox.eAccount2.css"/>
+    <link rel="Stylesheet" type="text/css" id="Link6" href="/eAccounts/Content/themes/telerik_eAccount2/Grid.eAccount2.css"/>
+    <link rel="Stylesheet" type="text/css" id="Link7" href="/eAccounts/Content/themes/telerik_eAccount2/Input.eAccount2.css"/>
+    <link rel="Stylesheet" type="text/css" id="Link8" href="/eAccounts/Content/themes/telerik_eAccount2/ListBox.eAccount2.css"/>
+    <link rel="Stylesheet" type="text/css" id="Link9" href="/eAccounts/Content/themes/telerik_eAccount2/Menu.eAccount2.css"/>
+    <link rel="Stylesheet" type="text/css" id="Link10" href="/eAccounts/Content/themes/telerik_eAccount2/Scheduler.eAccount2.css"/>
+    <link rel="Stylesheet" type="text/css" id="Link11" href="/eAccounts/Content/themes/telerik_eAccount2/Slider.eAccount2.css"/>
+    <script src="/eAccounts/Scripts/jquery.min.js" type="text/javascript"></script>
+    <script src="/eAccounts/Scripts/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="/eAccounts/Scripts/eAccountCommon.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function createCookie(name, value, days) {
+            var expires;
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toGMTString();
+            }
+            else expires = "";
+            document.cookie = name + "=" + value + expires + "; secure; path=/";
+        }
+
+        function readCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        function eraseCookie(name) {
+            createCookie(name, "", -1);
+        }
+
+        function areCookiesEnabled() {
+            var r = false;
+            createCookie("testing", "Hello", 1);
+            if (readCookie("testing") != null) {
+                r = true;
+                eraseCookie("testing");
+            }
+            return r;
+        }
+
+        $(function () {
+            if (!areCookiesEnabled()) {
+                $("#cookiesNotEnabled").show();
+                $("#cookiesNotEnabled").attr('aria-hidden', 'false');
+            }
+        });
+
+    </script>
+    <div id="cookiesNotEnabled" class="Feedback" style="display:none;" aria-hidden="true">
+        <h2>Cookies are disabled on your browser.</h2><p>Please enable Cookies on your browser or upgrade to a Cookie-capable browser to use this site.</p>
+    </div>
+    <form name="form1" method="post" action="./AnonymousHome.aspx" id="form1" role="main" tabindex="-1">
+<input type="hidden" name="RadScriptManager1_TSM" id="RadScriptManager1_TSM" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="LOrAaQLGaWn1bUCvgLZtYf0MZklwpI8a6NPZtY4Uo7kr9aQ36+zvLFwOOOIKVfn4DGyr/oarcafuvVvbiuHaTR0hCvInTXw4JNtAStMTLrs2sLLyV2pCJA6rzJuA05hcDNCSQ9zLW0g4X1u85TY2Km94pZVjX+GaLQ4cZMwjfww5zSnvzM28snd1KTr3r3amDxanx6yyzDvKrkYo0HtzJYAr300CpXF2R8JQS4ZGrjSl3qnmWye1B3gNQva+2xyZUhcTpXUMkN/Mh1YtnVUYrIjx+redDa1I/arIIi9eHZG2UhdPlLDqWk2JYsVYtgktDs/6PyV9mOMvN4er0Z1a3t6mkqSHySrCbiLLe18Ipk1y4TiQyYG/6aTFWSc4i9DtAn9LBQWqguREKks0m9s14mjZ5j1gCnYkIvLNmQPveJAB/k2P9PYpwAH8ZAz5+UFyPkvyiw0haaHdQiRQ55eU6lxIpcck7c9IqlShN7fLjxtohPhAKyfLN8k4KGf7xLez/DTTFWGKAVEQeJzy18vebasGetStZ5HOicJ6gFiaJI6F6RMwqgJusBvdiekslkgjKcLvPyaSZA+BG+8SUC8owmCIkzh09cpgIVdfx5dHWP0Q3pHmWmKdhLpOssqhqNjnzjBsmSKiG7hyzwpX5fnSuI09d8aPCwpWJxmwB3aQPzzU2bQlu272DBIN7Wvw8l0FXOsgFr81xNqCzSnCVMF35EQH5SIwYg8ihAy9EBvJHYBpC8sYoCO6UkbIl2lplKGliT1jmSlKkE7rWdAeRFstLkSPsgTWneR774YyguINh8Jc4M8mi9G7yPnjiNorHp+12zNb4JVX+HoEWDwbzc3uQpLoYyWea4ro5kZS6vgij89f6gXtjfRJBd9Dy6Rpks1nrvTKNhg5SVNevTLfEHtyUo5vL4FH1PYXZcQDvelx7hM4ugPA2bZLXyfAljegxu2PwXiZiHWDUYipAQysu0vfAEN5i+Kl0K8IfapqpAWCxW7JxAhTSs5aRPbl8jqG3Tw/fH50wOzL2+7MAl+tpayAkTPpFBiQeBaZ6PRlas2pBKyx+FldP7SWX5TjVgvXhQ/4lz1iin1YKjIIxbRBIfx/BZClDWGtvqFAPHVB/xr11zmQSefqQslKvqZbIXYsPrkxzQtqluYoYV3dGStN3QU3edmDc5YTD5rO9wdB6F+m3Wyr3c+ws+FA8gmYwY4BWP+lOtOz24qFkxM6uOygM7MAoIyupjbzN72AkVuYAeti5KF+i8euA29rKRu/G8uFcDvK8kk5u9HNrV3+/wsU7hC6qXR1nnH9JSeSFU6f8s2xN2PMHRY4o7guK8/yVTDfgbbZ2PQzDZ/268muJPJi+tYEIOdYyX8iMGTtPl37DfZoWQEH6NrEc4qZ3jhlXeh/ZNzps6wz5oRTUWG9VP07ECnVLVe+boJ4moZqHDweDPQMFkqUWTAwmerZqnSYAsN0XZk4EE42lUIz/1mcXb0eemRgIoV5FNWNM+W6+YNaB7fdBeWkvBPChBCMGqDdTcukrzizQ2nttA==" />
+
+
+<script src="/eAccounts/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=RadScriptManager1_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3bSz7NKobxxTA1ydRR7hUvilqzUcRU73EhUgcgLBYP4dK1Zr6RJEq+uBIg3LslAKwjsUvGucK2bEOja2/e6yw65JYFgmaN0pRMgxgSl9pN7qMHg1SSBWCEKUJZnvc0vy65rUBc/G4P2HFza1+KIaDBykTubPyQo6tUIzBnAYM8moNND0VYbiUFyeLmFg983wieU5Qqxzbo18W3EXBZQGZphsbNouRzy3brZVyWK/2yv96jzamNsnPXoGdgBGqJITf53mdWxA==" type="text/javascript"></script>
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="8B2465F0" />
+<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="Js97wsRh6xOGdqASmnO9oJ0nFbpYccjCGeBmxjK4zzc9bG8+8xskqXjq/brVmc9nUaxGLUWdQZHEjHionqTJWtVDeICtmwTG7+0lBBOlWXvpD+ywdxeGgwl2KBlzK4x8tLWSD0DBi9PuAruyy5VBPSQ4tqXklKZ0zbPotqnvyxCj4Sl+GzypK+Aj3BblJYpVYDym2Hp/hl37TJeiaeZgTMe6KxR8ZvFLuexyE+vXzlzYauMuFWTIGBvdtDoxrEJ+X5zN91ht6XFPJ55Mq8QVok6ArLgcbp2zN55gPoldvwA9VGy2" />
+    
+    <!--RadDateTime control fixes to set Focus on the Cal icon or Time icon after they are used-->
+    <script type="text/javascript">
+        function OnDateSelected(datePickerInstance, args) {
+            if (datePickerInstance.CalendarSelectionInProgress) {
+                if (datePickerInstance._popupButton != null) {
+                    datePickerInstance._popupButton.focus();
+                }
+            }
+            else {
+                if (datePickerInstance._timePopupButton != null) {
+                    datePickerInstance._timePopupButton.focus();
+                }
+            }
+        }
+
+        function OnDateClick(datePickerInstance, args) {
+            var day = args.get_renderDay();
+            if (day.IsSelected) {
+                day.IsSelected = false;
+                var popupButtonId = datePickerInstance._titleID.replace('_calendar_Title', "_popupButton");
+                var popup = document.getElementById(popupButtonId);
+                if (popup != null) {
+                    document.getElementById(popupButtonId).focus();
+                }
+            }
+        }
+
+        function OnDatePopupOpening(datePickerInstance, args) {
+            var inputBoxId = datePickerInstance._popupContainerID.replace('_calendar_wrapper', "_dateInput");
+            var inputBox = document.getElementById(inputBoxId);
+            if (inputBox != null) {
+                document.getElementById(inputBoxId).focus();
+            }
+        }
+
+        function OnTimePopupOpening(timpePickerInstance, args) {
+            var inputBoxId = timpePickerInstance._popupControlID.replace('_popupButton', "_dateInput");
+            var inputBox = document.getElementById(inputBoxId);
+            if (inputBox != null) {
+                document.getElementById(inputBoxId).focus();
+            }
+        }
+    </script>
+    <!-- START:HEADER -->
+    
+    <div id="LoginHeader1" class="loginHeader1"></div>
+    <div id="LoginHeader2" class="loginHeader2"></div>
+    <!-- END:HEADER -->
+    <!-- START:MENU -->
+    
+    <!-- END:MENU -->
+    
+    <!-- START:AJAX Error Handling -->
+    <div id="ajaxError" class="Feedback" style="display:none;">
+       <span id="AjaxErrorMessageLabel"></span>
+    </div>
+    <script type="text/javascript">
+        Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(ajaxRequestBegin);
+        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(ajaxRequestEnd);
+
+        function ajaxRequestBegin(sender, args) {
+            $("#ajaxError").hide();
+        }
+
+        function ajaxRequestEnd(sender, args) {
+            if (args.get_error() != undefined && args.get_error().httpStatusCode == '500') {
+                var errorMessage = args.get_error().message;
+                var errorName = args.get_error().name;
+                args.set_errorHandled(true);
+
+                $get('AjaxErrorMessageLabel').innerHTML = errorMessage.replace(errorName + ":", "");
+                $("#ajaxError").show();
+            }
+            else if (args.get_response() != undefined && args.get_response().get_timedOut() == true) {
+
+                args.set_errorHandled(true);
+                $get('AjaxErrorMessageLabel').innerHTML = "Request timed out.  Please try again later."
+                $("#ajaxError").show();
+            }
+        }
+    </script>
+    <!-- END:AJAX Error Handling -->
+    <!-- START:MAINCONTAINER -->
+    <div id="mainContainer">
+        <div id="MiddlePanel" class="MiddlePanel">
+            <div id="Content" class="Content" >
+                
+    <div id="MainContent_AnonymousHomeWrapper" role="main">
+	
+    <script type="text/javascript">
+        function Clear() {
+            var obj = document.getElementById('Feedback');
+            if (obj != null) {
+                obj.className = 'FeedbackHide';
+            }
+        }
+    </script>
+    
+    <div id="LoginLogoLarge"><img id="MainContent_loginLogo" src="ResourceFile.ashx?id=logoLarge&amp;v=00000000-0000-0000-0000-000000000000" alt="Transact logo" border="0" /></div>
+    <div id="signInNotify">
+        Signing in..
+        <img id="HomeBusyImage" src="App_Images/ajax-loader.gif" alt="System Processing" border="0" />
+    </div>
+    <div id="MainContent_SignOnPanel">
+		
+        <div id="LogOnPanel" class="LogOn" tabindex="0">
+            <h1 id="signInIntro" class="formIntroText">
+                <null></null>
+            </h1>
+            <div class="form">
+                <div id="signInSummary" class="Summary">
+                    Please sign in with your KSU Duo account to manage your Talon Card as well as Dining Dollars and KCash accounts.
+                </div>
+               
+                <!-- Sign-In realm -->
+                
+
+                <!-- username -->
+                <div class="formLine">
+                    
+                    
+                </div>
+
+                <!-- password -->
+                <div class="formLine">
+                    
+                    
+                </div>
+            
+                <!-- submit button -->
+                <div class="formLine">
+                        <input type="submit" name="ctl00$MainContent$SignInButton" value="Sign In!" id="MainContent_SignInButton" class="button" />
+                        
+                </div>
+
+                
+            </div>
+        </div>
+    
+	</div>
+    <div id="MainContent_GuestDepositPanel" role="contentinfo">
+		
+        <div id="GuestDepositContainer" class="Panel BeneficiaryInformation" tabindex="0">
+            <div id="guestDepositIntro">
+               Make a guest deposit
+            </div>
+            <div class="form">
+                <div id="beneficiarySummary" class="Summary">
+                    To make a guest deposit, please enter the beneficiary's information. (all fields are required)
+                </div>
+                <div id="MainContent_BeneficiaryFirstName_row" class="formLine">
+                    First/Preferred Name
+                    <input name="ctl00$MainContent$BeneficiaryFirstName" type="text" maxlength="60" id="MainContent_BeneficiaryFirstName" DataKey="BeneficiaryFirstName" aria-label="First/Preferred Name" /><p><span></span><p><span></span>
+                </div>
+                
+                
+
+                <div id="MainContent_BeneficiaryLastName_row" class="formLine">
+                        Last/Family Name
+                        <input name="ctl00$MainContent$BeneficiaryLastName" type="text" maxlength="60" id="MainContent_BeneficiaryLastName" DataKey="BeneficiaryLastName" aria-label="Last/Family Name" /><p><span></span><p><span></span>
+                </div>
+
+                <div id="MainContent_BeneficiaryEmail_row" class="formLine">
+                        Email Address
+                        <input name="ctl00$MainContent$BeneficiaryEmail" type="text" maxlength="60" id="MainContent_BeneficiaryEmail" DataKey="BeneficiaryEmail" aria-label="Email Address" /><p><span></span><p><span></span>
+                </div>
+
+                
+
+                
+
+                <div class="formLine">
+                        <input type="submit" name="ctl00$MainContent$GuestDepositButton" value="Contribute" id="MainContent_GuestDepositButton" class="button" />
+                </div>
+            </div>
+        </div>
+
+    
+	</div>
+    
+</div>
+    
+
+            </div>
+        </div>
+    </div>
+    <!-- END:MAINCONTAINER -->
+    <!-- START:FOOTER -->
+    <div id="footerContainer">
+        <div class="footerText" role="complementary">
+            <link rel="apple-touch-icon" href="https://kcashmanager.kennesaw.edu/images/apple-touch-icon-precomposed.png"><p class="orgName">About KCash</p>All students have two university accounts associated with their ID cards that can be used exclusively on-campus. <strong>KCash</strong> consists of a general declining balance account that allows you to purchase anything on campus anywhere that accepts KCash debit. The funds in this account do not expire and will roll over year-to-year. However, After 12 months of account inactivity, your account will be cleared and any remaining balance will revert to KSU. <strong>Dining Dollars</strong> is the second account associated with KCash that you can load funds into in the same manner. With Dining Dollars, students are able to purchase tax-free food at campus eateries. Dining Dollars can only be used on food purchases at campus dining venues. <strong>IMPORTANT: Fall and spring Dining Dollars are valid during the fall and spring contract periods and any unused funds from the current academic year expire at the close of each spring contract period. Summer Dining Dollars are valid during the summer only and unused funds expire at the close of the summer contract period</strong>.
+        </div>
+        <div id="SiteMapMenuFooter" class="footerMenu" role="navigation" aria-label="Site Map Footer">
+	<div class="footerLinks"><div><P class="orgName"> Site Info </P><ul><li><a href="AnonymousHome.aspx#default"> KSU MyCard Manager </a></li></ul></div></div><div class="footerLinks"><div><P class="orgName"><a href="AnonymousHomePassword.aspx"> Password Recovery </a></P></div></div>
+</div>
+        <div class="copyright" role="contentinfo">
+            <img title=" Visa, Mastercard and Amex!" id="creditCardLogo" alt="Visa, Mastercard, AMEX logos" src="https://www.merchantequip.com/images/logos/visa-mc-amex-113x23.gif" height="23" width="113"><br>Copyright © 2015. Kennesaw State University Auxiliary Services and Programs
+        </div>
+    </div>
+    <!-- END:FOOTER -->
+    
+
+<script type="text/javascript">
+//<![CDATA[
+window.__TsmHiddenField = $get('RadScriptManager1_TSM');//]]>
+</script>
+<input type="hidden" name="__ncforminfo" value="Z0mycstWFXNtfhd2_YFEkLlBsqHK2yGl4N4avOIxBdoIjufV5PWVmycGKft9B7E1K7CKSVoUYIhognY46_ekZ8ZlvWOIQgPjcTA1HsGwlJt_OKEqWjLxi3Rcr4ic2re5t79yJ-dXqeMxTlb_1kODMMlcoUFInevIrUac5uJVAuMoReTuZ4LfP0ae6SIG9Dh0fFBgl5C53vPYDvEiTYMdlCY-TxAlZqSF"/></form>
+</body>
+</html>

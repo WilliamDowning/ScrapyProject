@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/transitional.dtd">
+<HTML lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Pragma" name="Cache-Control" content="no-cache">
+<meta http-equiv="Cache-Control" name="Cache-Control" content="no-cache">
+<LINK REL="stylesheet" HREF="/css/web_defaultapp.css" TYPE="text/css">
+<LINK REL="stylesheet" HREF="/css/web_defaultprint.css" TYPE="text/css" media="print">
+<title>Dynamic Schedule</title>
+<meta http-equiv="Content-Script-Type" name="Default_Script_Language" content="text/javascript">
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+<!-- Hide JavaScript from older browsers 
+window.onunload = function() {submitcount=0;}
+var submitcount=0;
+function checkSubmit() {
+if (submitcount == 0)
+   {
+   submitcount++;
+   return true;
+   }
+else
+   {
+alert("Your changes have already been submitted.");
+   return false;
+   }
+}
+//  End script hiding -->
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+<!-- Hide JavaScript from older browsers 
+//  Function to open a window
+function windowOpen(window_url) {
+   helpWin = window.open(window_url,'','toolbar=yes,status=no,scrollbars=yes,menubar=yes,resizable=yes,directories=no,location=no,width=350,height=400');
+   if (document.images) { 
+       if (helpWin) helpWin.focus()
+   }
+}
+//  End script hiding -->
+</SCRIPT>
+</head>
+<body>
+<div class="headerwrapperdiv">
+<div class="pageheaderdiv1">
+<a href="#main_content" onMouseover="window.status='Go to Main Content'; return true" onMouseout="window.status=''; return true" OnFocus="window.status='Go to Main Content'; return true" onBlur="window.status=''; return true" class="skiplinks">Go to Main Content</a>
+<h1> </h1></DIV><div class="headerlinksdiv">
+</DIV>
+<table  CLASS="plaintable" SUMMARY="This table displays Menu Items and Banner Search textbox."
+         WIDTH="100%">
+<tr>
+<TD CLASS="pldefault">
+<div class="headerlinksdiv2">
+&nbsp;
+</div>
+</TD>
+<TD CLASS="pldefault"><p class="rightaligntext" /p>
+<SPAN class="pageheaderlinks">
+<a href="APP_UITS.P_OWLEXPRESS_HELP_LINK" accesskey="H" onClick="popup = window.open('APP_UITS.P_OWLEXPRESS_HELP_LINK', 'PopupPage','height=500,width=450,scrollbars=yes,resizable=yes'); return false" target="_blank" onMouseOver="window.status='';  return true" onMouseOut="window.status=''; return true"onFocus="window.status='';  return true" onBlur="window.status=''; return true"  class="submenulinktext2">HELP</a>
+|
+<a href="twbkwbis.P_Logout" accesskey="3" class="submenulinktext2">EXIT</a>
+</span>
+</TD>
+</tr>
+</table>
+</DIV>
+<div class="pagetitlediv">
+<table  CLASS="plaintable" SUMMARY="This table displays title and static header displays."
+   WIDTH="100%">
+<tr>
+<TD CLASS="pldefault">
+<h2>Dynamic Schedule</h2>
+</TD>
+<TD CLASS="pldefault">
+&nbsp;
+</TD>
+<TD CLASS="pldefault"><p class="rightaligntext" /p>
+<div class="staticheaders">
+</div>
+</TD>
+</tr>
+<tr>
+<TD class="bg3" width="100%" colSpan=3><img src="/wtlgifs/web_transparent.gif" alt="Transparent Image" CLASS="headerImg" TITLE="Transparent Image"  NAME="web_transparent" HSPACE=0 VSPACE=0 BORDER=0 HEIGHT=3 WIDTH=10 /></TD>
+</tr>
+</table>
+<a name="main_content"></a>
+</DIV>
+<div class="pagebodydiv">
+<!--  ** END OF twbkwbis.P_OpenDoc **  -->
+<div class="infotextdiv"><table  CLASS="infotexttable" SUMMARY="This layout table contains information that may be helpful in understanding the content and functionality of this page.  It could be a brief set of instructions, a description of error messages, or other special information."><tr><td CLASS="indefault"><SPAN class="infotext"> This site reflects an up-to-date list of course offerings by term.  Users have the option to search by subject, course number, title, instructional method (Fully Online or Hybrid), credit, campus, level, part-of-term, instructor, start and end times, and days of the week.
+<br>
+
+</p> Select the term from the dropdown list below and click on the Submit button. <br><br></SPAN></td></tr></table><p></DIV>
+<form action="/prodban/bwckgens.p_proc_term_date" method="post" onSubmit="return checkSubmit()">
+<input type="hidden" name="p_calling_proc" value="bwckschd.p_disp_dyn_sched" />
+<table  CLASS="dataentrytable" summary="This layout table is used for term selection." width="100%"><caption class="captiontext">Search by Term: </caption>
+<tr>
+<TD CLASS="dedefault"><LABEL for=term_input_id><SPAN class="fieldlabeltextinvisible">Term</SPAN></LABEL>
+<select name="p_term" size="1"  BYPASS_ESC=>"Y" ID="term_input_id">
+<OPTION VALUE="">None</OPTION>
+<OPTION VALUE="202208">Fall Semester 2022</OPTION>
+<OPTION VALUE="202205">Summer Semester 2022 (View only)</OPTION>
+<OPTION VALUE="202201">Spring Semester 2022 (View only)</OPTION>
+<OPTION VALUE="202108">Fall Semester 2021 (View only)</OPTION>
+<OPTION VALUE="202105">Summer Semester 2021 (View only)</OPTION>
+<OPTION VALUE="202101">Spring Semester 2021 (View only)</OPTION>
+<OPTION VALUE="202008">Fall Semester 2020 (View only)</OPTION>
+<OPTION VALUE="202005">Summer Semester 2020 (View only)</OPTION>
+<OPTION VALUE="202001">Spring Semester 2020 (View only)</OPTION>
+<OPTION VALUE="201908">Fall Semester 2019 (View only)</OPTION>
+<OPTION VALUE="201905">Summer Semester 2019 (View only)</OPTION>
+<OPTION VALUE="201901">Spring Semester 2019 (View only)</OPTION>
+<OPTION VALUE="201808">Fall Semester 2018 (View only)</OPTION>
+<OPTION VALUE="201805">Summer Semester 2018 (View only)</OPTION>
+<OPTION VALUE="201801">Spring Semester 2018 (View only)</OPTION>
+<OPTION VALUE="201708">Fall Semester 2017 (View only)</OPTION>
+<OPTION VALUE="201705">Summer Semester 2017 (View only)</OPTION>
+<OPTION VALUE="201701">Spring Semester 2017 (View only)</OPTION>
+</select>
+</TD>
+</tr>
+</table>
+<br />
+<br />
+<input type="submit" value="Submit" />
+<input type="reset" VALUE="Reset" />
+</form>
+
+<!--  ** START OF twbkwbis.P_CloseDoc **  -->
+<table  CLASS="plaintable" SUMMARY="This is table displays line separator at end of the page."
+                                             WIDTH="100%" cellSpacing=0 cellPadding=0 border=0><tr><TD class="bgtabon" width="100%" colSpan=2><img src="/wtlgifs/web_transparent.gif" alt="Transparent Image" CLASS="headerImg" TITLE="Transparent Image"  NAME="web_transparent" HSPACE=0 VSPACE=0 BORDER=0 HEIGHT=3 WIDTH=10 /></TD></tr></table>
+<a href="#top" onMouseover="window.status='Skip to top of page'; return true" onMouseout="window.status=''; return true" OnFocus="window.status='Skip to top of page'; return true" onBlur="window.status=''; return true" class="skiplinks">Skip to top of page</a>
+</DIV>
+<div class="footerbeforediv">
+
+</DIV>
+<div class="footerafterdiv">
+
+</DIV>
+<div class="globalafterdiv">
+
+</DIV>
+<div class="globalfooterdiv">
+
+</DIV>
+<div class="pagefooterdiv">
+<SPAN class="releasetext">Release: 8.7.2.4</SPAN>
+</DIV>
+<div class="poweredbydiv">
+</DIV>
+<DIV class="div1"></DIV>
+<DIV class="div2"></DIV>
+<DIV class="div3"></DIV>
+<DIV class="div4"></DIV>
+<DIV class="div5"></DIV>
+<DIV class="div6"></DIV>
+<div class="banner_copyright"> <br><h5>© 2022 Ellucian Company L.P. and its affiliates.<br></h5></div>
+</body>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35519161-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</html>

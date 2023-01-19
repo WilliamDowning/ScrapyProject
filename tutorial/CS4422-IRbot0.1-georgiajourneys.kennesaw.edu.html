@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html lang="en"  class="ie ie6 lte9 lte8 lte7 no-js"> <![endif]-->
+<!--[if IE 7 ]><html lang="en"  class="ie ie7 lte9 lte8 lte7 no-js"> <![endif]-->
+<!--[if IE 8 ]><html lang="en"  class="ie ie8 lte9 lte8 no-js"> <![endif]-->
+<!--[if IE 9 ]><html lang="en"  class="ie ie9 lte9 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class="notie no-js"> <!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,viewport-fit=cover">
+
+<link rel="alternate" type="application/rss+xml" title="Omeka RSS Feed" href="/items/browse?output=rss2" /><link rel="alternate" type="application/atom+xml" title="Omeka Atom Feed" href="/items/browse?output=atom" />
+    
+<title>Georgia Journeys</title>
+<meta name="description" content="Stories of WWII veterans, home front workers, and Holocaust survivors with a connection to the state of Georgia. " />
+
+<!-- FB Open Graph stuff -->
+<meta property="og:title" content="Georgia Journeys"/>
+<meta property="og:image" content="https://georgiajourneys.kennesaw.edu/files/theme_uploads/85d13dfb19394a13b1faa140179597d3.png"/>
+<meta property="og:site_name" content="Georgia Journeys"/>
+<meta property="og:description" content="Stories of WWII veterans, home front workers, and Holocaust survivors with a connection to the state of Georgia. "/>
+
+<!-- Twitter Card stuff-->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Georgia Journeys">
+<meta name="twitter:description" content="Stories of WWII veterans, home front workers, and Holocaust survivors with a connection to the state of Georgia. ">
+<meta name="twitter:image" content="https://georgiajourneys.kennesaw.edu/files/theme_uploads/85d13dfb19394a13b1faa140179597d3.png">
+ 
+
+<!-- Apple Stuff -->
+<link rel="apple-touch-icon-precomposed" href="/themes/curatescape/images/Icon.png"/>
+
+<!-- Windows stuff -->
+<meta name="msapplication-TileColor" content="#ffffff"/>
+<meta name="msapplication-TileImage" content="/themes/curatescape/images/Icon.png"/>
+
+<!-- Icon -->
+<link rel="shortcut icon" href="/themes/curatescape/images/favicon.ico"/>
+<link rel="icon" href="/themes/curatescape/images/Icon.png"/> 
+<link rel='mask-icon' href='/themes/curatescape/images/favicon.svg' color='#1EAEDB'> <!-- Safari -->
+
+<!-- Plugin Stuff -->
+
+<!-- Fonts -->
+<script>
+	WebFontConfig = {
+		google: { families: [ 'Raleway:latin', 'Playfair+Display:latin' ] }	};
+   (function(d) {
+      var wf = d.createElement('script'), s = d.scripts[0];
+      wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+      wf.async = true;
+      s.parentNode.insertBefore(wf, s);
+   })(document);
+</script>	
+
+<!-- Assets -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+	/*!
+	loadJS: load a JS file asynchronously. 
+	[c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). 
+	Licensed MIT 
+	*/
+	(function(w){var loadJS=function(src,cb,ordered){"use strict";var tmp;var ref=w.document.getElementsByTagName("script")[0];var script=w.document.createElement("script");if(typeof(cb)==='boolean'){tmp=ordered;ordered=cb;cb=tmp;}
+	script.src=src;script.async=!ordered;ref.parentNode.insertBefore(script,ref);if(cb&&typeof(cb)==="function"){script.onload=cb;}
+	return script;};if(typeof module!=="undefined"){module.exports=loadJS;}
+	else{w.loadJS=loadJS;}}(typeof global!=="undefined"?global:this));
+	
+	/*!
+	loadCSS: load a CSS file asynchronously.
+	[c]2014 @scottjehl, Filament Group, Inc.
+	Licensed MIT
+	*/
+	function loadCSS(href,before,media){"use strict";var ss=window.document.createElement("link");var ref=before||window.document.getElementsByTagName("script")[0];var sheets=window.document.styleSheets;ss.rel="stylesheet";ss.href=href;ss.media="only x";ref.parentNode.insertBefore(ss,ref);function toggleMedia(){var defined;for(var i=0;i<sheets.length;i++){if(sheets[i].href&&sheets[i].href.indexOf(href)>-1){defined=true;}}
+	if(defined){ss.media=media||"all";}
+	else{setTimeout(toggleMedia);}}
+	toggleMedia();return ss;}
+</script>
+<link href="/themes/curatescape/javascripts/leaflet/leaflet.css?v=3.2.2" media="" rel="stylesheet" type="text/css" >
+<link href="/plugins/Geolocation/views/shared/css/geolocation-marker.css?v=3.2.2" media="" rel="stylesheet" type="text/css" ><link href="https://georgiajourneys.kennesaw.edu/themes/curatescape/css/screen.css?v=3.4.4" media="all" rel="stylesheet"><script type="text/javascript" src="/themes/curatescape/javascripts/leaflet/leaflet.js?v=3.2.2"></script>
+<script type="text/javascript" src="/plugins/Geolocation/views/shared/javascripts/leaflet/leaflet-providers.js?v=3.2.2"></script>
+<script type="text/javascript" src="/plugins/Geolocation/views/shared/javascripts/map.js?v=3.2.2"></script>
+<script>
+	// Async CSS 	
+	loadCSS('/themes/curatescape/fonts/font-awesome/css/font-awesome.min.css'); // font awesome css
+	loadCSS('/themes/curatescape/javascripts/jquery.mmenu/mmenu.css'); // mmenu css
+	loadCSS('/themes/curatescape/javascripts/photoswipe/dist/photoswipe.all.min.css'); // photoswipe css
+	// Async JS 
+	loadJS('/themes/curatescape/javascripts/global.js'); // global.js
+		
+</script>
+
+<!-- Custom CSS via theme config -->
+<style>
+		a{
+			color: #6F8C85
+		}
+		a:hover,
+		.item-hero .item-hero-text .byline a,
+		.pswp__caption a,
+		body#home section#home-popular-tags ul.popularity li a:hover,
+		body#items.tags section#tags ul.popularity li a:hover{
+			color: #B17F54
+		}	
+		body#items.show .hTagcloud li a,
+		.button.button-primary, 
+		button.button-primary, 
+		input[type="submit"].button-primary, 
+		input[type="reset"].button-primary, 
+		input[type="button"].button-primary {
+		    background-color: #6F8C85;
+		    border-color: #6F8C85;
+		}	
+		body#items.show .hTagcloud li a:hover, body#items.show .hTagcloud li a:focus,	
+		.button.button-primary:hover, .button.button-primary:focus,
+		button.button-primary:hover, button.button-primary:focus,
+		input[type="submit"].button-primary:hover, input[type="submit"].button-primary:focus,
+		input[type="reset"].button-primary:hover, input[type="reset"].button-primary:focus,
+		input[type="button"].button-primary:hover,input[type="button"].button-primary:focus {
+		    background-color: #B17F54;
+		    border-color: #B17F54;
+		}
+		.secondary-nav ul li.active a, body#tours .secondary-nav ul li a:first-child{
+			color: #6F8C85;
+			border-bottom: 4px solid #B17F54;			
+		}	
+		body#home li.popular a,body#items.tags li.popular a{color: #6F8C85;}
+		body#home li.v-popular a,body#items.tags li.v-popular a{color: #516e67;}
+		body#home li.vv-popular a,body#items.tags li.vv-popular a{color: #56736c;}
+		body#home li.vvv-popular a,body#items.tags li.vvv-popular a{color: #5b7871;}
+		body#home li.vvvv-popular a,body#items.tags li.vvvv-popular a{color: #607d76;}
+		body#home li.vvvvv-popular a,body#items.tags li.vvvvv-popular a{color: #B17F54;}
+		body#home li.vvvvvv-popular a,body#items.tags li.vvvvvv-popular a{color: #a27045;}
+		body#home li.vvvvvvv-popular a,body#items.tags li.vvvvvvv-popular a{color: #9d6b40;}
+		body#home li.vvvvvvvv-popular a,body#items.tags li.vvvvvvvv-popular a{color: #98663b;}
+		.media-list > a:hover{
+			background-color:#6F8C85
+		}
+	/* Theme Option: User CSS */ /* Change map cluster colors */
+
+.leaflet-marker-pane .marker-cluster-small { background-color: rgba(152, 186, 178, 0.6); }
+.leaflet-marker-pane .marker-cluster-small div { background-color: rgba(111, 140, 133, 0.6); }
+
+.leaflet-marker-pane .marker-cluster-medium { background-color: rgba(209, 167, 132, 0.6); }
+.leaflet-marker-pane .marker-cluster-medium div { background-color: rgba(177, 127, 84, .6); }
+
+/* Hide "Get Directions" on map */
+.map-actions .directions { display: none; }
+
+/* Move map thumbnails to top */
+#hm-map .curatescape-infowindow-image { background-position: top; }</style>
+<!-- Theme Display Settings -->
+
+</head>
+<body id="home" class="home curatescape" style="background-image: url(https://georgiajourneys.kennesaw.edu/files/theme_uploads/d92d935451cc7499a9d9338f085a4618.jpg)"> 
+<nav aria-label="Skip Navigation"><a id="skip-nav" href="#content">Skip to main content</a></nav>
+<noscript>
+	<div id="no-js-message">
+		<span>For full functionality please enable JavaScript in your browser settings. <a target="_blank" href="https://goo.gl/koeeaJ">Need Help?</a></span>
+	</div>
+</noscript>
+
+<div id="page-content">
+		<header class="container header-nav">
+		  
+<div id="navigation">
+	<nav aria-label="Main Navigation">
+		<a href="https://georgiajourneys.kennesaw.edu" id="home-logo"><img src="https://georgiajourneys.kennesaw.edu/files/theme_uploads/85d13dfb19394a13b1faa140179597d3.png" alt="Georgia Journeys"/></a>
+		<div class="spacer"></div>
+		<div class="flex flex-end flex-grow flex-nav-container  ">
+						<div class="flex priority">
+	  			<a href="/items/browse/" class="button button-primary">Stories</a>
+	  				  				<a href="/tours/browse/" class="button button-primary">Journeys</a>
+	  						</div>
+						<div class="flex search-plus flex-grow">
+  			<!--input class="nav-search u-full-width" type="search" placeholder="Search"-->
+  			<form id="header-search-form" action="/items/browse?sort_field=relevance" method="get">
+<fieldset>
+
+<input type="text" name="search" id="header-search" value="" aria-label="Search - Top" class="textinput search" placeholder="Search"></fieldset>
+
+<input type="hidden" name="sort_field" value="relevance" id="header-search-relevance"><input type="submit" class="submit visuallyhidden" name="submit_header-search" id="submit_search_advanced_header-search" value="Submit"></form>  			<a title="Menu" id="menu-button" href="#offscreen-menu" class="button icon"><i data-title="Menu" class="fa fa-bars fa-lg" aria-hidden="true"></i></a>	
+			</div>
+		</div>
+	</nav>
+</div>
+	</header>
+	
+	
+	<div id="wrap" class="container">
+			
+
+	<div id="content" role="main">
+	<section class="map">
+		<h2 hidden class="hidden">Map</h2>
+		<nav aria-label="Skip Interactive Map"><a id="skip-map" href="#homepage">Skip Interactive Map</a></nav>
+		<figure>
+				<script>
+		// PHP Variables
+		var type =  'focusarea';
+		var color = '#6F8C85';
+		var featured_color = '#B17F54';
+		var root = 'https://georgiajourneys.kennesaw.edu';
+		var source ='https://georgiajourneys.kennesaw.edu/items/browse?output=mobile-json';
+		var center =[38,-77];
+		var zoom = 5;
+		var defaultItemZoom=14;
+		var featuredStar = 0;
+		var useClusters = 1; 
+		var clusterTours = 0; 
+		var clusterIntensity = 15; 
+		var alwaysFit = 0; 
+		var markerSize = 'm'; 
+		var mapBounds; // keep track of changing bounds
+		var root_url = 'https://georgiajourneys.kennesaw.edu';
+		var geolocation_icon = '/themes/curatescape/images/geolocation.png';
+		var mapLayerThemeSetting = 'CARTO';
+		var leafletjs='/themes/curatescape/javascripts/leaflet.maki.combined.min.js'+'?v=1.1';
+		var leafletcss='/themes/curatescape/javascripts/leaflet/leaflet.min.css'+'?v=1.1';	
+		var leafletClusterjs='/themes/curatescape/javascripts/leaflet.markercluster/leaflet.markercluster.js'+'?v=1.1';
+		var leafletClustercss='/themes/curatescape/javascripts/leaflet.markercluster/leaflet.markercluster.min.css'+'?v=1.1';
+		var mapbox_tile_layer='streets-satellite';
+		var mapbox_access_token='';
+		var mapbox_layer_title='Streets Satellite';
+		
+		// End PHP Variables
+		
+		var isSecure = window.location.protocol == 'https:' ? true : false;	
+
+		jQuery(document).ready(function() {
+			loadCSS( leafletcss );
+			if(useClusters==true) loadCSS( leafletClustercss );
+			
+			loadJS( leafletjs, function(){
+				console.log('Leaflet ready...');
+				
+				var terrain = L.tileLayer('//stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{retina}.jpg', {
+						attribution: '<a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> | Map Tiles by <a href="http://stamen.com/">Stamen Design</a>',
+						retina: (L.Browser.retina) ? '@2x' : '',
+					});		
+				var carto = L.tileLayer('//cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{retina}.png', {
+				    	attribution: '<a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> | <a href="https://cartodb.com/attributions">CartoDB</a>',
+						retina: (L.Browser.retina) ? '@2x' : '',
+					});
+				var voyager = L.tileLayer('//cartodb-basemaps-{s}.global.ssl.fastly.net/rastertiles/voyager/{z}/{x}/{y}{retina}.png', {
+				    	attribution: '<a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> | <a href="https://cartodb.com/attributions">CartoDB</a>',
+						retina: (L.Browser.retina) ? '@2x' : '',
+					});					
+				var mapbox = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/'+mapbox_tile_layer+'/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+				    	attribution: '<a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> | <a href="https://www.mapbox.com/feedback/">Mapbox</a>',
+						accessToken: mapbox_access_token,
+						tileSize: 512,
+						zoomOffset: -1,
+					});	
+					
+				var defaultMapLayer;	
+				switch(mapLayerThemeSetting){
+					case 'TERRAIN':
+						defaultMapLayer=terrain;
+						break;
+					case 'CARTO':
+						defaultMapLayer=carto;
+						break;
+					case 'CARTO_VOYAGER':
+						defaultMapLayer=voyager;
+						break;						
+					case 'MAPBOX_TILES':
+						defaultMapLayer=mapbox;
+						break;	
+					default:
+						defaultMapLayer=wikimedia;				
+				}
+								
+				// helper for title attributes with encoded HTML
+				function convertHtmlToText(value) {
+				    var d = document.createElement('div');
+				    d.innerHTML = value;
+				    return d.innerText;
+				}				
+
+				var mapDisplay =function(){
+					// Build the base map
+					var map = L.map('curatescape-map-canvas',{
+						layers: defaultMapLayer,
+						minZoom: 3,
+						scrollWheelZoom: false,
+					}).setView(center, zoom);
+					
+					
+					// Geolocation controls
+					if( !isSecure || !navigator.geolocation){			
+						console.warn('Geolocation is not available over insecure origins on this browser.');
+					}else{
+						var geolocationControl = L.control({position: 'topleft'});
+						geolocationControl.onAdd = function (map) {
+						    var div = L.DomUtil.create('div', 'leaflet-control leaflet-control-geolocation');
+						    div.innerHTML = '<a class="leaflet-control-geolocation-toggle" href="#" aria-label="Geolocation" title="Geolocation" role="button"><i class="fa fa fa-location-arrow" aria-hidden="true"></i></a>'; 
+						    return div;
+						};
+						geolocationControl.addTo(map);				
+					}
+					
+					// Fullscreen controls
+					var fullscreenControl = L.control({position: 'topleft'});
+					fullscreenControl.onAdd = function (map) {
+					    var div = L.DomUtil.create('div', 'leaflet-control leaflet-control-fullscreen');
+					    div.innerHTML = '<a class="leaflet-control-fullscreen-toggle" href="#" aria-label="Fullscreen" title="Fullscreen" role="button"><i class="fa fa-expand" aria-hidden="true"></i></a>'; 
+					    return div;
+					};
+					fullscreenControl.addTo(map);
+					
+					// Layer controls
+					var allLayers={
+						"Street":(defaultMapLayer == terrain) ? voyager : defaultMapLayer,
+						"Terrain":terrain,
+					};
+					if(mapbox_access_token){
+						allLayers[mapbox_layer_title]=mapbox;
+					}
+					L.control.layers(allLayers).addTo(map);		
+					
+					
+										
+					
+					// Center marker and popup on open
+					map.on('popupopen', function(e) {
+						// find the pixel location on the map where the popup anchor is
+					    var px = map.project(e.popup._latlng); 
+					    // find the height of the popup container, divide by 2, subtract from the Y axis of marker location
+					    px.y -= e.popup._container.clientHeight/2;
+					    // pan to new center
+					    map.panTo(map.unproject(px),{animate: true}); 
+					});				
+					// Add Markers
+					var addMarkers = function(data){				
+					    function icon(color,markerInner){ 
+					        return L.MakiMarkers.icon({
+					        	icon: markerInner, 
+								color: color, 
+								size: markerSize,
+								accessToken: "pk.eyJ1IjoiZWJlbGxlbXBpcmUiLCJhIjoiY2ludWdtOHprMTF3N3VnbHlzODYyNzh5cSJ9.w3AyewoHl8HpjEaOel52Eg"
+					    		});	
+					    }				
+						if(typeof(data.items)!="undefined"){ // tours and other multi-item maps
+							
+							var group=[];
+							if(useClusters==true){
+								var markers = L.markerClusterGroup({
+									spiderfyOnMaxZoom: false, // should be an option?
+									zoomToBoundsOnClick:true,
+									disableClusteringAtZoom: clusterIntensity,
+									polygonOptions: {
+										'stroke': false,
+										'color': '#000',
+										'fillOpacity': .1
+									}
+								});
+							}
+							
+					        jQuery.each(data.items,function(i,item){
+								var appendQueryParams=(type=='tour') ? '?tour='+data.id+'&index='+i : '';
+						        var address = item.address ? item.address : '';
+								var c = (item.featured==1 && featured_color) ? featured_color : color;
+								var inner = (item.featured==1 && featuredStar) ? "star" : "circle";
+						        if(typeof(item.thumbnail)!="undefined"){
+							        var image = '<a href="'+root_url+'/items/show/'+item.id+'" class="curatescape-infowindow-image '+(!item.thumbnail ? 'no-img' : '')+'" style="background-image:url('+item.thumbnail+');"></a>';
+							    }else{
+								    var image = '';
+							    }
+							    var number = (type=='tour') ? '<span class="number">'+(i+1)+'</span>' : '';
+						        var html = image+number+'<span><a class="curatescape-infowindow-title" href="'+root_url+'/items/show/'+item.id+appendQueryParams+'">'+item.title+'</a><br>'+'<div class="curatescape-infowindow-address">'+address.replace(/(<([^>]+)>)/ig,"")+'</div></span>';
+																
+								var marker = L.marker([item.latitude,item.longitude],{
+									icon: icon(c,inner),
+									title: convertHtmlToText(item.title),
+									alt: convertHtmlToText(item.title),
+									}).bindPopup(html);
+								
+								group.push(marker);  
+								
+								if(useClusters==true) markers.addLayer(marker);
+					
+					        });
+					        
+					        if(useClusters==true && type!=='tour' || type=='tour' && clusterTours==true){
+						        map.addLayer(markers);
+						        mapBounds = markers.getBounds();
+						    }else{
+					        	group=new L.featureGroup(group); 
+								group.addTo(map);	
+								mapBounds = group.getBounds();				    
+						    }
+					        
+							// Fit map to markers as needed			        
+					        if((type == 'queryresults'|| type == 'tour') || alwaysFit==true){
+						        if(useClusters==true){
+							        map.fitBounds(markers.getBounds());
+							    }else{
+								    map.fitBounds(group.getBounds());
+							    }
+					        }
+					        
+					        
+						}else{ // single items
+							map.setView([data.latitude,data.longitude],defaultItemZoom);	
+					        var address = data.address ? data.address : data.latitude+','+data.longitude;
+					
+					        var image = (typeof(data.thumbnail)!="undefined") ? '<a href="" class="curatescape-infowindow-image '+(!data.thumbnail ? 'no-img' : '')+'" style="background-image:url('+data.thumbnail+');" title="'+data.title+'"></a>' : '';
+					
+					        var html = image+'<div class="curatescape-infowindow-address single-item"><span class="icon-map-marker" aria-hidden="true"></span> '+address.replace(/(<([^>]+)>)/ig,"")+'</div>';
+							
+							var marker = L.marker([data.latitude,data.longitude],{
+								icon: icon(color,"circle"),
+								title: convertHtmlToText(data.title),
+								alt: convertHtmlToText(data.title),
+								}).bindPopup(html);					
+							
+							marker.addTo(map);
+
+							mapBounds = map.getBounds();
+						
+						}
+						
+					}		
+					
+					if(type=='story'){
+						var data = jQuery.parseJSON(source);
+						if(data){
+							addMarkers(data);
+						}
+						
+					}else if(type=='tour'){
+						var data = jQuery.parseJSON(source);
+						addMarkers(data);
+						
+					}else if(type=='focusarea'){
+						jQuery.getJSON( source, function(data) {
+							var data = data;
+							addMarkers(data);
+						});
+						
+					}else if(type=='queryresults'){
+						jQuery.getJSON( source, function(data) {
+							var data = data;
+							addMarkers(data);
+						});
+						
+					}else{
+						jQuery.getJSON( source, function(data) {
+							var data = data;
+							addMarkers(data);
+						});
+					}
+					
+					/* Map Action Buttons */
+					
+					// Fullscreen
+					jQuery('.leaflet-control-fullscreen-toggle').click(function(e){
+						e.preventDefault();
+						jQuery("body").toggleClass("fullscreen-map");
+						jQuery(".leaflet-control-fullscreen-toggle i").toggleClass('fa-expand').toggleClass('fa-compress');
+						map.invalidateSize();
+					});
+					jQuery(document).keyup(function(e) {
+						if ( e.keyCode == 27 ){ // exit fullscreen
+							if(jQuery('body').hasClass('fullscreen-map')) jQuery('.leaflet-control-fullscreen-toggle').click();
+						}
+					});
+					
+					// Geolocation
+					jQuery('.leaflet-control-geolocation-toggle').click(
+						function(e){
+						e.preventDefault();	
+						var options = {
+							enableHighAccuracy: true,
+							maximumAge: 30000,
+							timeout: 15000
+						};
+						jQuery(".leaflet-control-geolocation-toggle").addClass("working");
+						navigator.geolocation.getCurrentPosition(
+							function(pos) {
+								var userLocation = [pos.coords.latitude, pos.coords.longitude];					
+								// adjust map view
+								if(type=='story'|| type=='tour' || type == 'queryresults'){
+									if(jQuery(".leaflet-popup-close-button").length) jQuery(".leaflet-popup-close-button")[0].click(); // close popup
+									var newBounds = new L.LatLngBounds(mapBounds,new L.LatLng(pos.coords.latitude, pos.coords.longitude));
+									map.fitBounds(newBounds);
+								}else{
+									map.panTo(userLocation);
+								}
+								// add/update user location indicator
+								if(typeof(userMarker)==='undefined') {
+									userMarker = new L.circleMarker(userLocation,{
+									  radius: 8,
+									  fillColor: "#4a87ee",
+									  color: "#ffffff",
+									  weight: 3,
+									  opacity: 1,
+									  fillOpacity: 0.8,
+									}).addTo(map);
+									jQuery(".leaflet-control-geolocation-toggle").removeClass("working");
+								}else{
+									userMarker.setLatLng(userLocation);
+									jQuery(".leaflet-control-geolocation-toggle").removeClass("working");
+								}
+							}, 
+							function(error) {
+								console.log(error);
+								var errorMessage = error.message ? ' Error message: "' + error.message + '"' : 'Oops! We were unable to determine your current location.';
+								jQuery(".leaflet-control-geolocation-toggle").removeClass("working");
+								alert(errorMessage);
+							}, 
+							options);
+					});	
+					
+					// enable mouse scrollwheel zoom if the user has interacted with the map
+					map.once('focus', function() { map.scrollWheelZoom.enable(); });					
+							
+				}
+
+
+
+
+				if(useClusters==true){
+					loadJS( leafletClusterjs, function(){
+						console.log('Clustering ready...')
+						mapDisplay();
+					});
+				}else{
+					mapDisplay();
+				}
+
+				
+			});
+		
+
+
+		});
+    </script>
+        
+	<!-- Map Container -->
+	<div class="curatescape-map">
+		<div id="curatescape-map-canvas" class="hero"></div>
+	</div>
+		
+		</figure>
+	</section>	
+	<article id="homepage" class="page show">
+		<section id="about"><div class="about-text"><article><header><h2>Georgia Journeys</h2><span class="sponsor">A project by <span class="sponsor-name">Museum of History and Holocaust Education</span></span></header><div class="about-main"><p><em>Georgia Journeys</em> traces the stories of veterans, home front workers, and Holocaust survivors who have a strong connection to Georgia. The stories are based mainly on oral testimony given by participants in the Museum of History and Holocaust Education at Kennesaw State University's <em>Legacy Series</em> oral history project. This testimony is occasionally supplemented by first-person quotations from published memoir, letters, and oral histories recorded with other institutions.  <br /><br />This site is powered by Omeka + Curatescape, a humanities-centered web and mobile framework available for both Android and iOS devices.</p><a class="button u-full-width" href="/about">Read more About Us</a></div></article></div></section>	<section id="home-tours"><h3 class="result-type-header">Start a Journey</h3><article class="item-result " data-tour-id="1"><div><h3 class="home-tour-title"><a href="https://georgiajourneys.kennesaw.edu/tours/show/1">Jane Tucker</a></h3><span class="total">7 Locations</span> ~ <span>Curated by Museum of History and Holocaust Education</span></div></article><article class="item-result " data-tour-id="2"><div><h3 class="home-tour-title"><a href="https://georgiajourneys.kennesaw.edu/tours/show/2">Lorenzo Wallace</a></h3><span class="total">7 Locations</span> ~ <span>Curated by Museum of History and Holocaust Education</span></div></article><article class="item-result " data-tour-id="3"><div><h3 class="home-tour-title"><a href="https://georgiajourneys.kennesaw.edu/tours/show/3">Herbert Kohn</a></h3><span class="total">13 Locations</span> ~ <span>Curated by Museum of History and Holocaust Education</span></div></article><article class="item-result " data-tour-id="4"><div><h3 class="home-tour-title"><a href="https://georgiajourneys.kennesaw.edu/tours/show/4">Andre Kessler</a></h3><span class="total">21 Locations</span> ~ <span>Curated by Museum of History and Holocaust Education</span></div></article><article class="item-result " data-tour-id="5"><div><h3 class="home-tour-title"><a href="https://georgiajourneys.kennesaw.edu/tours/show/5">Norbert Friedman</a></h3><span class="total">28 Locations</span> ~ <span>Curated by Museum of History and Holocaust Education</span></div></article><p class="view-more-link"><a class="button" href="https://georgiajourneys.kennesaw.edu/tours/browse/">Browse all <span>36 Journeys</span></a></p></section><section id="featured-stories"><h3 class="result-type-header">Featured Stories</h3><article class="featured-story-result no-tint"><div class="featured-decora-outer"><div class="featured-decora-bg" style="background-image:url(https://georgiajourneys.kennesaw.edu/files/fullsize/5c201d1bcb6fd14ec0cf6af177382046.jpg)"><div class="featured-decora-text"><div class="featured-decora-text-inner"><header><h3><a href="/items/show/15"><a href="/items/show/15" class="permalink">Jewish Germans</a></a></h3><span class="featured-item-author"><div class="byline">By <a href="/items/browse?search=&advanced[0][element_id]=39&advanced[0][type]=is+exactly&advanced[0][terms]=Herbert Kohn">Herbert Kohn</a></div></span></header><div class="item-description">“I have a family tree that goes back to 1490, so we lived in Germany a—500 years my family, over 500 years.  We were steeped in German culture, European culture: music, art, literature, Goethe, Schiller.  Both of my grandparents and my father fought…</div></div></div></div></div></article><article class="featured-story-result no-tint"><div class="featured-decora-outer"><div class="featured-decora-bg" style="background-image:url(https://georgiajourneys.kennesaw.edu/files/fullsize/8891887d5cbf24dfa420ff03d5b82b00.jpg)"><div class="featured-decora-text"><div class="featured-decora-text-inner"><header><h3><a href="/items/show/399"><a href="/items/show/399" class="permalink">The Navy</a></a></h3><span class="featured-item-author"><div class="byline">By <a href="/items/browse?search=&advanced[0][element_id]=39&advanced[0][type]=is+exactly&advanced[0][terms]=Edith Bond">Edith Bond</a></div></span></header><div class="item-description">“I was patriotic. People were patriotic back then. People loved their country and they were patriotic and were really afraid that we were going to lose it because we had, we were fighting two wars... People really cared about what happened and I&hellip;</div></div></div></div></div></article><article class="featured-story-result no-tint"><div class="featured-decora-outer"><div class="featured-decora-bg" style="background-image:url(https://georgiajourneys.kennesaw.edu/files/fullsize/2af631e18938ea63be456275746787c7.jpg)"><div class="featured-decora-text"><div class="featured-decora-text-inner"><header><h3><a href="/items/show/382"><a href="/items/show/382" class="permalink">In the Air</a></a></h3><span class="featured-item-author"><div class="byline">By <a href="/items/browse?search=&advanced[0][element_id]=39&advanced[0][type]=is+exactly&advanced[0][terms]=Carl Vinson">Carl Vinson</a></div></span></header><div class="item-description">“I figured it all out, and took them along for two reasons: First, I figured that with all those big Air Force people aboard, the pilot would be very careful when we got up in the sky. And second, I wanted to make sure that if the plane did come&hellip;</div></div></div></div></div></article><p class="view-more-link"><a class="button" href="/items/browse?featured=1">Browse Featured Stories</a></p></section><section id="home-popular-tags"><h3 class="result-type-header">Popular Tags</h3><div class="hTagcloud"><ul class="popularity"><li class="vvvvvvvv-popular"><a href="/items/browse?tags=Wartime">Wartime</a></li>
+<li class="vvvvv-popular"><a href="/items/browse?tags=Postwar">Postwar</a></li>
+<li class="vvvvv-popular"><a href="/items/browse?tags=Europe">Europe</a></li>
+<li class="vvv-popular"><a href="/items/browse?tags=1944-1945">1944-1945</a></li>
+<li class="vv-popular"><a href="/items/browse?tags=Jews">Jews</a></li>
+<li class="vv-popular"><a href="/items/browse?tags=Prewar">Prewar</a></li>
+<li class="vv-popular"><a href="/items/browse?tags=Family">Family</a></li>
+<li class="vv-popular"><a href="/items/browse?tags=1942-1943">1942-1943</a></li>
+<li class="v-popular"><a href="/items/browse?tags=Education">Education</a></li>
+<li class="v-popular"><a href="/items/browse?tags=Military">Military</a></li>
+<li class="v-popular"><a href="/items/browse?tags=1940-1941">1940-1941</a></li>
+<li class="v-popular"><a href="/items/browse?tags=Immigration">Immigration</a></li>
+<li class="popular"><a href="/items/browse?tags=Children">Children</a></li>
+<li class="popular"><a href="/items/browse?tags=1946-1949">1946-1949</a></li>
+<li class="popular"><a href="/items/browse?tags=Soldiers">Soldiers</a></li>
+<li class="popular"><a href="/items/browse?tags=1950-1955">1950-1955</a></li>
+<li class="popular"><a href="/items/browse?tags=African+Americans">African Americans</a></li>
+<li class="popular"><a href="/items/browse?tags=American+South">American South</a></li>
+<li class="popular"><a href="/items/browse?tags=1938-1939">1938-1939</a></li>
+<li class="popular"><a href="/items/browse?tags=Women">Women</a></li>
+<li class="popular"><a href="/items/browse?tags=Georgia+Standards+of+Excellence">Georgia Standards of Excellence</a></li>
+<li class="popular"><a href="/items/browse?tags=Workers">Workers</a></li>
+<li class="popular"><a href="/items/browse?tags=Refugees">Refugees</a></li>
+<li class="popular"><a href="/items/browse?tags=Navy">Navy</a></li>
+<li class="popular"><a href="/items/browse?tags=Segregation">Segregation</a></li>
+<li class="popular"><a href="/items/browse?tags=Concentration+Camps">Concentration Camps</a></li>
+<li class="popular"><a href="/items/browse?tags=Politics">Politics</a></li>
+<li class="popular"><a href="/items/browse?tags=Economy">Economy</a></li>
+<li class="popular"><a href="/items/browse?tags=U.S.+Army">U.S. Army</a></li>
+<li class="popular"><a href="/items/browse?tags=Ships">Ships</a></li>
+<li class="popular"><a href="/items/browse?tags=Transportation">Transportation</a></li>
+<li class="popular"><a href="/items/browse?tags=Airplanes">Airplanes</a></li>
+<li class="popular"><a href="/items/browse?tags=Religion">Religion</a></li>
+<li class="popular"><a href="/items/browse?tags=Labor">Labor</a></li>
+<li class="popular"><a href="/items/browse?tags=1970-1975">1970-1975</a></li>
+<li class="popular"><a href="/items/browse?tags=Marriage">Marriage</a></li>
+<li class="popular"><a href="/items/browse?tags=1961-1965">1961-1965</a></li>
+<li class="popular"><a href="/items/browse?tags=Veteran">Veteran</a></li>
+<li class="popular"><a href="/items/browse?tags=Food">Food</a></li>
+<li class="popular"><a href="/items/browse?tags=1932-1933">1932-1933</a></li>
+</ul></div><p class="view-more-link"><a class="button" href="/items/tags/">Browse all 194 tags</a></p></section>	</article>
+	</div> <!-- end content -->
+
+
+	
+	</div><!--end wrap-->
+	
+	<footer class="main container">
+		<nav id="footer-nav" aria-label="Footer Navigation">
+		    <ul class="navigation">
+    <li>
+        <a href="http://georgiajourneys.kennesaw.edu/">Home</a>
+    </li>
+    <li>
+        <a href="/tours">Journeys</a>
+    </li>
+    <li>
+        <a href="/exhibits">Exhibits</a>
+    </li>
+    <li>
+        <a href="/explore">Explore</a>
+    </li>
+    <li>
+        <a href="/about">About</a>
+    </li>
+</ul> 
+		    <form id="footer-search-form" action="/items/browse?sort_field=relevance" method="get">
+<fieldset>
+
+<input type="text" name="search" id="footer-search" value="" aria-label="Search - Footer" class="textinput search" placeholder="Search"></fieldset>
+
+<input type="hidden" name="sort_field" value="relevance" id="footer-search-relevance"><input type="submit" class="submit visuallyhidden" name="submit_footer-search" id="submit_search_advanced_footer-search" value="Submit"></form>		    <a href="/items/show/288" class="random-story-link random-button button"><i class='fa fa-random fa-lg' aria-hidden='true'></i> View A Random Story</a>		    	    </nav>	
+	 
+		<div class="default">
+			<div class="link-icons  no-label no-color"><a target="_blank" rel="noopener" title="Email" href="mailto:alanger@kennesaw.edu" class="button social icon email"><i class="fa fa-lg fa-envelope" aria-hidden="true"><span> Email</span></i></a></div>			<div id="copyright">&copy; 2022 Museum of History and Holocaust Education</div> 
+			<div id="powered-by">Powered by <a href="http://omeka.org/">Omeka</a> + <a href="http://curatescape.org">Curatescape</a></div>
+		</div>
+		
+				
+		<div class="custom"></div>
+	
+			
+		
+		<!-- Google Analytics -->
+		<script>
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-51702902-6']);
+			_gaq.push(['_trackPageview']);
+			
+			(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+	  	</script>	
+			
+	</footer>
+</div> <!-- end page-content -->
+
+<div hidden class="hidden">
+	<!-- Mmenu Markup -->
+	<form id="sidebar-search-form" action="/items/browse?sort_field=relevance" method="get">
+<fieldset>
+
+<input type="text" name="search" id="sidebar-search" value="" aria-label="Search - Drawer" class="textinput search" placeholder="Search"></fieldset>
+
+<input type="hidden" name="sort_field" value="relevance" id="sidebar-search-relevance"><input type="submit" class="submit visuallyhidden" name="submit_sidebar-search" id="submit_search_advanced_sidebar-search" value="Submit"></form>	<nav aria-label="Drawer Navigation" id="offscreen-menu">
+		<ul class="navigation">
+    <li>
+        <a href="http://georgiajourneys.kennesaw.edu/">Home</a>
+    </li>
+    <li>
+        <a href="/tours">Journeys</a>
+    </li>
+    <li>
+        <a href="/exhibits">Exhibits</a>
+    </li>
+    <li>
+        <a href="/explore">Explore</a>
+    </li>
+    <li>
+        <a href="/about">About</a>
+    </li>
+</ul>	</nav>
+</div>
+	
+</body>
+</html>

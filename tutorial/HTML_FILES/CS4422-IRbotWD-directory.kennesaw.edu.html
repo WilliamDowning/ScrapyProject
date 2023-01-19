@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="KSU Campus Directory" />
+        <meta name="author" content="Kennesaw State University" />
+        <link rel="icon" sizes="192x192" href="/Content/imgs/favicon-192x192.png" />
+        <title>Campus Directory</title>
+
+        <link href="/Content/css?v=b4o27QUKgBkCGedjerkW6oqYHr9XAkFMZNgzfPemQEs1" rel="stylesheet"/>
+
+
+        <!--<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">-->
+        <!--<link href="~/css/bootstrap-toggle.min.css" rel="stylesheet">-->
+
+        <script src="/Scripts/jquery.min.js"></script>
+        <script src="/Scripts/bootstrap-toggle.min.js"></script>
+        <script src="/Scripts/bootstrap.bundle.min.js"></script>
+
+        
+
+        <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+
+                <script src="/Scripts/pbsite.js?v=0"></script>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $("#searchTerm").val("")
+                        .promise().done(function () {
+                            $("#searchBtn").trigger("click");
+                        });
+
+                    $(document).on('hide.bs.modal', '#captchaModal', function (e) {
+                        grecaptcha.reset();
+                        $("#studentDetailDisplay").empty();
+                    });
+                });
+            </script>
+
+        <script type="text/javascript">
+
+            function processRecaptcha() {
+                var response = grecaptcha.getResponse();
+                if (response.length == 0) {
+                    alert("Please complete the CAPTCHA to continue.");
+                }
+                else {
+                    $('input[name="captchaResponse"]').val(response);
+                    var selectedNetId = $('input[name="selectedNetId"]').val();
+                    var captchaReturnToken = $('input[name="captchaResponse"]').val();
+                    queryString = selectedNetId + ',' + captchaReturnToken
+                    studentDetail = getStudentDetail(queryString);
+                }
+            }
+
+            function getStudentDetail(queryString) {
+                $.ajax({
+                    type: "POST",
+                    url: "Search/Students",
+                    data: { "queryType": "netId", "queryParameter": queryString },
+                }).done(function (response) {
+                    var data = JSON.stringify(response);
+                    var students = JSON.parse(data);
+                    var html = "<table style='width:100%;'>";
+                    html = html + "<tr><td><b>Name</b></td><td>" + students[0]['name'] + "</td></tr>";
+                    html = html + "<tr><td><b>Major</b></td><td>" + students[0]['major'] + "</td></tr>";
+                    html = html + "<tr><td><b>Email Address</b></td><td><a href='mailto:" + students[0]['emailAddress'] + "'>" + students[0]['emailAddress'] + "</a></td></tr>";
+                    html = html + "</table>";
+                    $("#studentDetailDisplay").html(html);
+                })
+                .fail(function (error) {
+                    console.log("error");
+                })
+                .always(function () {
+                    console.log("captcha complete");
+                });
+                $('.h-captcha').hide();
+            };
+
+            // get netId for selected Student into the modal dialog
+            $(document).on("click", ".open-StudentDetailDialog", function () {
+                var netId = $(this).data('id');
+                $(".modal-body #selectedNetId").val(netId);
+                $('.h-captcha').show();
+            });
+        </script>
+    </head>
+    <body>
+        <header>
+            <div class="ksu-black logo">
+                <img src="/Content/imgs/logo.png" height="70" alt="KSUlogo" />
+            </div>
+            <div style="background-color:#F1E6B2; min-height:5px;"></div>
+            <nav class="navbar navbar-expand-lg navbar-dark ksu-black">
+                <a class="navbar-brand" href="#">Campus Directory</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse show" id="navbarTogglerDemo02">
+                    <div class="form-inline my-2 my-sm-2">
+                        <div class="input-group mr-3">
+                            <input class="form-control my-2 my-sm-2" type="text" id="searchTerm" name="searchTerm" placeholder="Search Faculty/Staff">
+                            <div class="input-group-append">
+                                <button class="btn btn-mountain-beige my-2 my-sm-2" id="searchBtn" type="button">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-group btn-group-toggle my-2 my-sm-2" id="radioScope" data-toggle="buttons">
+                        <label class="btn btn-outline-warning active">
+                            <input type="radio" name="options-searchContext" id="option-searchContext-people" autocomplete="off" value="0"> <i class="fa fa-user-alt"></i> Faculty/Staff
+                        </label>
+                        <label class="btn btn-outline-warning">
+                            <input type="radio" name="options-searchContext" id="option-searchContext-departments" autocomplete="off" value="1"> <i class="fa fa-building"></i> Departments
+                        </label>
+                        <label class="btn btn-outline-warning">
+                            <input type="radio" name="options-searchContext" id="option-searchContext-students" autocomplete="off" checked value="2"> <i class="fa fa-user-alt"></i> Students
+                        </label>
+                    </div>
+                    <div class="ml-auto"></div>
+                                <button type="button" id="loginBtn" class="btn btn-default mr-2" data-toggle="modal" data-target="#loginModal">Sign In</button>
+
+
+                    
+                    
+                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#helpModal"><i class="fa fa-question-circle"></i></button>
+                    
+                </div>
+            </nav>
+        </header>
+
+        <div class="container-fluid">
+
+            <!-- Modal -->
+            <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <h5 class="modal-title">Faculty and Staff Service Desk</h5>
+                            Phone: (470) 578-6999 <br>
+                            Email: <a href="mailto:service@kennesaw.edu">service@kennesaw.edu</a> <br><br>
+                            <h5 class="modal-title">Student Technology Services</h5>
+                            Phone: (470) 578-3555 <br>
+                            Email: <a href="mailto:studenthelpdesk@kennesaw.edu">studenthelpdesk@kennesaw.edu</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+
+            <main role="main" class="pb-3 pt-3">
+                
+        <table class="table table-hover d-none" id="PeopleSearchResults">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Department</th>
+                    <th scope="col" nowrap>Mail Drop</th>
+                </tr>
+            </thead>
+            <tbody id="PeopleSearchResultItems">
+            </tbody>
+        </table>
+        <table class="table table-hover d-none" id="StudentSearchResults">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Major</th>
+                </tr>
+            </thead>
+            <tbody id="StudentSearchResultItems">
+            </tbody>
+        </table>
+        <table class="table table-hover d-none" id="DepartmentSearchResults">
+            <thead>
+                <tr>
+                    <th scope="col">Department</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Fax</th>
+                    <th scope="col">Website</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Maildrop</th>
+                    <th scope="col">Employees</th>
+                </tr>
+            </thead>
+            <tbody id="DepartmentSearchResultItems"></tbody>
+        </table>
+        <div id="CardContainer" class="container-fluid">
+        </div>
+        <br />
+        <table width="100%">
+            <tr>
+                <td style="padding:15px; line-height:25px">
+                    Access to secure information within the Campus Directory is limited to students, faculty and staff of Kennesaw State University. If you are a KSU student, faculty, or staff member and need to access additional directory information, please login using your NetID and password to view secured information.
+                    <br /><br /> If you need to speak with a member of the faculty or staff, please call 470-578-6000 to be connected through the KSU operator.
+                </td>
+            </tr>
+        </table>
+
+            </main>
+
+        </div>
+
+        <div class="modal fade" tabindex="-1" role="dialog" id="sessionModal" data-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Session Timeout</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Your Campus Directory session expired. Please Sign In again.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="javascript:location.reload()">Refresh</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                <!-- Login Modal -->
+                <div class="modal fade" id="loginModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <form action="/Home/Login" method="post" id="frmLogin" name="loginForm">
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <div class="form-group d-flex justify-content-center">
+                                        <img src="/Content/imgs/login_logo.png" style="width:130px; height:135px" alt="KSUlogo" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="netid">Net ID</label>
+                                        <input type="text" class="form-control" id="NetId" name="netid" pattern="[A-Za-z0-9.]*" placeholder="jdoe1"
+                                               oninvalid="this.setCustomValidity('Please enter your NetID without [at]kennesaw.edu portion.')"
+                                               oninput="this.setCustomValidity('')">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control" id="Password" name="password">
+                                    </div>
+                                </div>
+
+                                <input name="__RequestVerificationToken" type="hidden" value="fTCICGlXtBfk-qsGmJH1Qr0Uy9hVs13-ACSuYaYKuiz4lqeAIbLcGXwU8DkAeyR65N3ivrhSDUCG6tl8VGlIbK0NXLkQTh7SqD3HbhOdByE1" />
+
+                                <input type="hidden" name="searchTermFeedback" id="searchTermFeedback" />
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-mountain-beige">Sign In</button>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+        <div class="modal fade" id="captchaModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="#" method="post" id="frmCaptcha" name="captchaForm">
+                        <div class="modal-header">
+                            Student Details
+                            <button class="close" data-dismiss="modal">×</button>
+                        </div>            
+                        <div class="modal-body">
+                            
+                            <div class="form-group">
+                                <input type="hidden" id="selectedNetId" name="selectedNetId">
+                                <input type="hidden" id="captchaResponse" name="captchaResponse">
+                                
+                                <div class="h-captcha"
+                                     data-callback="processRecaptcha"
+                                     data-sitekey="cc11a239-6126-40a7-9377-22429f38b615"
+                                     style="transform: scale(1.00); margin-left: 50px; margin-bottom: 35px; margin-top: 35px;">
+                                </div>
+                                <div id="studentDetailDisplay" name="studentDetailDisplay"></div>
+                            </div>
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                    
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <footer class="border-top footer">
+            <div class="container text-center">
+                &copy; Copyright Kennesaw State University 2022. All Rights Reserved. Administered by University Information Technology Services.
+            </div>
+        </footer>
+
+        <script type="text/javascript">
+
+                $('#loginBtn').click(function() {
+
+                    $.get('/Home/RefreshToken', function (html) {
+
+                        var tokenValue = $('<div />').html(html).find('input[type="hidden"]').val();
+                        $("[name='__RequestVerificationToken']").val(tokenValue);
+                    });
+                });
+        </script>
+    </body>
+</html>

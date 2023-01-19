@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<title dir='ltr'>Healthy Happenings from  Wellbeing@KSU | Revue</title>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<meta content='Healthy Happenings from  Wellbeing@KSU - A comprehensive health and wellbeing program to support you with options and tools so you can achieve your full poten' name='description'>
+<meta content='newsletter, email, digest, curation' name='keywords'>
+<!--[if lt IE 9]>
+<script src="//d3jbm9h03wxzi9.cloudfront.net/assets/html5shiv-bb669dd537dfdfb80f5581532f95e3d93d4e161976d46f6a8ea5c49c57cafbc8.js"></script>
+<![endif]-->
+<link rel="stylesheet" media="all" href="//d3jbm9h03wxzi9.cloudfront.net/assets/application-dc40f70a20eb8677a07bfeaf417f3c5e3af8e7b98ec1aad78232e260247d505c.css" nonce="JgV+Fy3f/L18NRUJI7Az7A==" />
+<script src="//d3jbm9h03wxzi9.cloudfront.net/assets/application-5d1df2ae1babd7a45ae7db720d7568447a79da2aa3f37db919c4f46e706c85d8.js" nonce="JgV+Fy3f/L18NRUJI7Az7A==" defer="defer"></script>
+<script nonce="JgV+Fy3f/L18NRUJI7Az7A==">
+//<![CDATA[
+document.addEventListener('DOMContentLoaded', function() {
+  I18n.defaultLocale = "en";
+  I18n.locale = "en";
+});
+
+
+
+//]]>
+</script><link href='//d3jbm9h03wxzi9.cloudfront.net/assets/favicon-4bca5727fc21fa6ee2a6ae554a6c236825acdd046c481ffce5748911f8b1f4a3.ico' rel='icon' size='16x16'>
+<link href='//d3jbm9h03wxzi9.cloudfront.net/assets/favicon-4bca5727fc21fa6ee2a6ae554a6c236825acdd046c481ffce5748911f8b1f4a3.ico' rel='icon' size='32x32'>
+<link color='#E15718' href='//d3jbm9h03wxzi9.cloudfront.net/assets/icon-3ef15b89ab8676cd48dac6b7878bbc0e564d4e4167ea590f1f49d8e596d1ee4b.svg' rel='mask-icon'>
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="pREzJxJGAFqsWQIqfg097m/kb6D5PxjKTKd0m4SG7dcUcIP0iORIEcIyKICMVxgjaVx2sS6rOwEoYZEnV0XbLQ==" />
+<meta name="csp-nonce" content="JgV+Fy3f/L18NRUJI7Az7A==" />
+
+<script nonce="JgV+Fy3f/L18NRUJI7Az7A==">
+//<![CDATA[
+  function getQueryParam(url, param) {
+    // Expects a raw URL
+    param = param.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+    var regexS = "[\\?&]" + param + "=([^&#]*)",
+    regex = new RegExp( regexS ),
+    results = regex.exec(url);
+    if (results === null || (results && typeof(results[1]) !== 'string' && results[1].length)) {
+      return '';
+    } else {
+      return decodeURIComponent(results[1]).replace(/\+/g, ' ');
+    }
+  };
+
+  function geUtmParams() {
+    var campaign_keywords = 'utm_source utm_medium utm_campaign utm_content utm_term'.split(' ')
+    , kw = ''
+    , params = {}
+    , first_params = {}
+    , result = {};
+
+    var index;
+    for (index = 0; index < campaign_keywords.length; ++index) {
+      kw = getQueryParam(document.URL, campaign_keywords[index]);
+      if (kw.length) {
+        params[campaign_keywords[index] + ' [last touch]'] = kw;
+      }
+    }
+    for (index = 0; index < campaign_keywords.length; ++index) {
+      kw = getQueryParam(document.URL, campaign_keywords[index]);
+      if (kw.length) {
+        first_params[campaign_keywords[index]] = kw;
+      }
+    };
+
+    result.first_params = first_params;
+    result.params = params;
+
+    return result;
+  }
+
+  function extractReferrer(referrer) {
+    campaign = geUtmParams().first_params["utm_campaign"];
+    ref = getQueryParam(document.URL, 'ref');
+
+    if(!campaign && !ref) {
+      if (/www\.getrevue\.co\/profile\/(.*?)\/issue/.test(window.location.href)) {
+        return 'Revue Profile Issue'
+      } else if(/www\.getrevue\.co\/profile/.test(window.location.href)) {
+        return 'Revue Profile'
+      }
+    }
+
+    if(!!campaign) {
+      return campaign;
+    } else if (referrer.search('https?://(.*)google.([^/?]*)') === 0) {
+      return 'Google';
+    } else if (referrer.search('https?://(.*)bing.([^/?]*)') === 0) {
+      return 'Bing';
+    } else if (referrer.search('https?://(.*)yahoo.([^/?]*)') === 0) {
+      return 'Yahoo';
+    } else if (referrer.search('https?://(.*)facebook.([^/?]*)') === 0) {
+      return 'Facebook';
+    } else if (referrer.search('https?://(.*)twitter.([^/?]*)') === 0 || referrer.search('https?://(.*)t.co/') === 0) {
+      return 'Twitter';
+    } else if (referrer.search('https?://(.*)linkedin.([^/?]*)') === 0) {
+      return 'LinkedIn'
+    } else if (referrer == '$direct' || (!referrer || /^\s*$/.test(referrer))) {
+      return '$direct';
+    } else if (referrer.search('https?://(.*)getrevue.co') == 0) {
+      if(/\/app\//.test(referrer)) {
+        return 'Revue App';
+      } else if (/\/profile\/(.*?)\/issue/.test(referrer)) {
+        return 'Revue Profile Issue'
+      } else if (/\/profile\//.test(referrer)) {
+        return 'Revue Profile'
+      } else if (/blog\.getrevue\.co/.test(referrer)) {
+        return 'Revue Blog'
+      } else {
+        return 'Revue Page'
+      }
+    } else if (referrer.search('https?://(.*)rev.vu([^/?]*)') === 0) {
+      return 'Revue Item';
+    } else if (!!ref) {
+      return ref;
+    } else {
+      tld = new RegExp('\.(asn\.au|com\.au|net\.au|id\.au|org\.au|edu\.au|gov\.au|csiro\.au|act\.au|nsw\.au|nt\.au|qld\.au|sa\.au|tas\.au|vic\.au|wa\.au|co\.at|or\.at|priv\.at|ac\.at|avocat\.fr|aeroport\.fr|veterinaire\.fr|co\.hu|film\.hu|lakas\.hu|ingatlan\.hu|sport\.hu|hotel\.hu|ac\.il|co\.il|org\.il|net\.il|k12\.il|gov\.il|muni\.il|idf\.il|ac\.za|gov\.za|law\.za|mil\.za|nom\.za|school\.za|net\.za|co\.uk|org\.uk|me\.uk|ltd\.uk|plc\.uk|net\.uk|sch\.uk|ac\.uk|gov\.uk|mod\.uk|nhs\.uk|police\.uk)')
+      a = document.createElement('a');
+      a.href = referrer;
+      ref = a.hostname;
+      if(tld.test(ref)) {
+        return ref.replace(tld, '').split('.').pop()
+      } else {
+        return ref.split('.').reverse()[1];
+      }
+    }
+  };
+
+  function getReferrer() {
+    ref = document.referrer;
+    return extractReferrer(ref);
+  }
+
+  function mixpanelLoaded() {
+    try {
+      // Set ref
+      initial_ref = mixpanel.get_property('$initial_referrer');
+      mixpanel.register_once({"Source": extractReferrer(initial_ref)});
+      // mixpanel.people.set_once({"Source": extractReferrer(initial_ref)});
+      // mixpanel.people.set_once({"$created": new Date().toISOString()});
+
+      // Set distinct id
+      var member_distinct_id_element = document.querySelector('#member_distinct_id');
+      member_distinct_id_element.value = mixpanel.get_distinct_id();
+    } catch(e) {}
+  };
+
+//]]>
+</script>
+<script nonce="JgV+Fy3f/L18NRUJI7Az7A==">
+//<![CDATA[
+(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
+mixpanel.init("2087bc32dd14049d6de8a339112517d9", {loaded: mixpanelLoaded, ip: false});
+//]]>
+</script>
+
+<script nonce="JgV+Fy3f/L18NRUJI7Az7A==">
+//<![CDATA[
+  var utm = geUtmParams();
+  mixpanel.register(utm.params);
+
+//]]>
+</script>
+<meta content='300' property='twitter:maxage'>
+<meta content='168592' property='twitter:revue:account:id'>
+<meta content='Healthy Happenings from  Wellbeing@KSU' property='twitter:newsletter:title'>
+<meta content='A comprehensive health and wellbeing program to support you with options and tools so you can achieve your full potential in college and beyond focusing on the holistic you.' property='twitter:newsletter:description'>
+<meta content='https://www.getrevue.co/profile/wellbeingatksu?via=twitter-card' property='twitter:newsletter:profile:url'>
+<meta content='24' property='twitter:newsletter:issue:count'>
+<meta content='true' property='twitter:newsletter:publication:card'>
+<meta content='https://imgix.revue.co/profiles/images/000/168/941/original/u4T3R30N.jpg?ixlib=rails-3.1.0' property='twitter:newsletter:image:src'>
+<meta content='https://www.getrevue.co/profile/wellbeingatksu/issues/healthy-happenings-from-wellbeing-ksu-august-16-31-710529?via=twitter-card' property='twitter:newsletter:sample:issue:url'>
+<meta content='https://www.getrevue.co/profile/wellbeingatksu/issues/healthy-happenings-from-wellbeing-ksu-may-2022-1137817?via=twitter-card' property='twitter:newsletter:latest:issue:url'>
+<meta content='1351647989564141568' property='twitter:user:id'>
+<meta content='summary' property='twitter:card'>
+<meta content='@wellbeingatksu' property='twitter:site'>
+<meta content='1073732649320413' property='fb:app_id'>
+<meta content='https://www.getrevue.co/profile/wellbeingatksu' property='og:url'>
+<meta content='profile' property='og:type'>
+<meta content='Healthy Happenings from  Wellbeing@KSU - Revue' property='og:title'>
+<meta content='A comprehensive health and wellbeing program to support you with options and tools so you can achieve your full potential in college and beyond focusing on the holistic you.' property='og:description'>
+<meta content='https://s3.amazonaws.com/revue/profiles/images/000/168/941/thumb/u4T3R30N.jpg?1615471083' property='og:image'>
+<meta content='168' property='og:image:width'>
+<meta content='168' property='og:image:height'>
+<link href='https://www.getrevue.co/profile/wellbeingatksu?format=rss' rel='alternate' title='RSS' type='application/rss+xml'>
+
+
+</head>
+<body class='profiles show' data-page='ProfilesShow'>
+<script nonce="JgV+Fy3f/L18NRUJI7Az7A==">
+//<![CDATA[
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-58968534-1', 'auto');
+ga('set', 'anonymizeIp', true);
+ga('send', 'pageview');
+
+//]]>
+</script>
+<style>
+  #profile-nav {border-color: #ffc629 !important;}
+  #profile-nav.expanded li a.active {color: #ffc629 !important; border-color: #ffc629 !important;}
+  #profile-nav.expanded svg {fill: #ffc629 !important;}
+  #profile-logo {background-color: #ffc629 !important;}
+  #nav-back {color: #ffc629 !important;}
+  #nav-back:after {border-color: #ffc629 !important;}
+  section#profile-signup h1 {color: #ffc629 !important;}
+  section#profile-signup h2 a {color: #3498DB !important;}
+  section#profile-signup ol a {color: #3498DB !important;}
+  .subscribe-form__submit {background-color: #ffc629 !important;}
+  #issues-list .issue-title h1 a span.subject {color: #3498DB !important;}
+  #issues-list span.icon-star {color: #3498DB !important;}
+  section#issues #issues-covers a.issue-cover article {background-color: #ffc629 !important;}
+  .tooltip .tooltip-inner {background-color: #ffc629 !important;}
+  .tooltip .tooltip-arrow {border-top-color: #ffc629 !important;}
+  #profile-premium p a {color: #3498DB !important;}
+  #profile-premium .btn-primary {border-color: #ffc629 !important; color: #ffc629 !important;}
+  #profile-premium .btn-primary:hover, #profile-premium .btn-primary:active, #profile-premium .btn-primary:focus {background-color: #ffc629 !important; color: #FFF !important}
+  ::-moz-selection {background-color: #ffc629 !important;}
+  ::selection {background-color: #ffc629 !important;}
+</style>
+<div id='profile-nav'>
+<a id="profile-logo" href="https://www.getrevue.co/?ref=Revue+Profile"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" baseProfile="basic" id="Layer_1" x="0px" y="0px" width="69px" height="28px" viewBox="0 0 69 28" xml:space="preserve">
+  <path d="M64.5293352,10.7041667 C65.0574432,10.6932778 65.3370748,10.9435278 65.3487341,11.5175278 C65.4141025,14.6482778 61.2060582,14.9296389 61.2060582,14.9296389 C61.4291136,13.3777778 62.6296371,10.7436389 64.5293352,10.7041667 L64.5293352,10.7041667 Z M67.1731247,18.3427222 C66.183615,19.4257778 64.9358809,20.2513889 63.5530139,20.2803611 C60.9010055,20.3353889 61.2215402,16.9429167 61.2215402,16.9429167 C61.2215402,16.9429167 68.9206787,17.2128056 68.8088643,11.8327222 C68.7618449,9.56880556 66.6052604,8.54427778 64.6474571,8.58491667 C60.6521468,8.66833333 57.2805125,12.3923333 57.3781828,17.0982778 C57.3877396,17.5509444 57.4292161,17.9754167 57.5007008,18.3722778 C56.9821496,19.0516667 56.0666094,20.0699722 55.2370803,20.0699722 C54.781795,20.0699722 54.6111108,19.6655278 54.6111108,19.2105278 C54.6111108,15.7544722 56.2048006,12.3516944 56.2048006,10.3425 C56.2048006,9.12255556 55.3743158,8.77313889 54.3454321,8.77313889 C53.0770554,8.77313889 52.3717645,9.60088889 52.3717645,9.60088889 C53.0636759,11.5056667 50.6058615,20.0699722 48.0218975,20.0699722 C47.4106454,20.0699722 47.3039917,19.5891111 47.3039917,19.1971111 C47.3039917,16.6306389 48.8831551,12.3316667 48.8831551,10.4099722 C48.8831551,9.13286111 48.0360416,8.75369444 47.0310499,8.75369444 C45.8419945,8.75369444 45.0539418,9.60088889 45.0539418,9.60088889 C45.9052604,11.2443333 43.6670609,17.5278056 43.6670609,19.3456667 C43.6670609,21.1633333 44.6720526,22.5985278 46.4427341,22.5985278 C49.3199003,22.5985278 50.9894709,18.98225 50.9894709,18.98225 C50.9894709,18.98225 50.6058615,22.5985278 54.0992493,22.5985278 C55.8911468,22.5985278 57.3170194,21.0725278 58.0666537,20.0585 C58.9885014,21.7876944 60.7930139,22.6360556 63.2355374,22.5855 C64.9924571,22.54875 66.2531884,22.0451389 67.2291274,21.1678056 C68.7343213,19.8129167 67.7318144,17.7308056 67.1731247,18.3427222 L67.1731247,18.3427222 Z" id="logo-3"></path>
+  <path d="M26.7737202,10.6613889 C27.2463989,10.6401944 27.5780194,10.8772222 27.6036316,11.4508333 C27.7467922,14.6338889 23.4097313,14.9679444 23.4097313,14.9679444 C23.595133,13.4112222 25.0563657,10.7385833 26.7737202,10.6613889 L26.7737202,10.6613889 Z M40.7751773,8.25183333 C39.5069917,8.25183333 38.5365956,9.352 38.5365956,10.5278056 C38.5365956,12.46525 40.1209197,12.5216389 40.0922493,14.0808889 C40.0631967,15.6401389 37.5797701,20.0656944 35.9027452,20.0656944 C35.2813629,20.0656944 35.1850305,19.4376389 35.1850305,19.1428611 C35.1850305,16.1589167 36.764385,11.9 36.764385,10.4646111 C36.764385,9.11166667 35.9434571,8.76633333 34.9608283,8.76633333 C33.6624432,8.76633333 32.9456842,9.59233333 32.9456842,9.59233333 C33.3958089,10.5264444 32.953903,12.7576944 32.4514072,14.90125 C31.5830776,17.3673889 28.768795,20.3318889 26.2513463,20.3453056 C22.962856,20.3620278 23.4431801,16.8923611 23.4431801,16.8923611 C23.4431801,16.8923611 31.1772964,17.0648333 30.9355097,11.6886389 C30.8334432,9.42666667 28.6531579,8.45425 26.6968837,8.54233333 C22.7048227,8.72180556 19.5250886,12.5216389 19.7366759,17.2235 C19.9035374,20.9350556 22.6740499,22.7052778 25.6234654,22.5730556 C28.2326593,22.4552222 30.1816704,21.2733889 31.5830776,19.8959444 C31.766759,21.4402222 32.7354349,22.5901667 34.5905983,22.5901667 C39.4282438,22.5901667 43.2540166,15.6076667 43.2540166,11.2779722 C43.2540166,9.69344444 42.4260166,8.25183333 40.7751773,8.25183333 L40.7751773,8.25183333 Z" id="logo-2"></path>
+  <path d="M28.5526205,23.9979444 C27.8781025,24.3351111 26.6978393,24.9295278 24.176759,24.9295278 C16.3352244,24.9295278 14.7163047,14.8510833 14.7163047,14.8510833 C14.7163047,14.8510833 20.6525983,12.3402222 20.6525983,7.24869444 C20.6525983,2.14919444 16.5122161,0 12.3303573,0 C7.68422992,0 2.5235651,2.50327778 0.296451524,7.35233333 C-1.10954294,10.4138611 2.93030194,11.3689722 3.13080332,10.4148333 C3.78850139,7.28272222 7.27940443,2.35063889 12.3638061,2.35063889 C15.0450582,2.35063889 16.6133269,4.12183333 16.6133269,7.24947222 C16.6133269,11.1274722 12.1436177,13.1708889 10.1611579,13.8335556 C11.0426759,9.77763889 11.3523158,8.55438889 11.3523158,7.83455556 C11.3523158,6.24166667 10.4319972,5.97605556 9.4931385,5.97605556 C8.35492521,5.97605556 7.53285042,6.81061111 7.53285042,6.81061111 C8.19054848,8.01188889 7.07985873,12.2853889 6.59685873,14.0175 C6.01179224,16.1165278 5.20539058,19.2188889 4.69945429,21.1909444 C4.19351801,23.1635833 7.71806094,22.6329444 7.95411357,22.0507778 C8.21138227,21.4172778 8.88800277,19.0950278 9.5005928,16.6561111 C10.5281385,16.3356667 11.706108,15.8806667 11.706108,15.8806667 C12.2212188,19.3026944 14.9691773,28 22.8107119,28 C29.5392632,28 29.1092078,23.7198889 28.5526205,23.9979444" id="logo-1"></path>
+</svg>
+</a></div>
+
+<article id='profile'>
+<div class='container'>
+<section id='profile-info'>
+<section id='profile-image'>
+<figure title='Healthy Happenings from  Wellbeing@KSU'><img alt="Healthy Happenings from  Wellbeing@KSU" src="https://s3.amazonaws.com/revue/profiles/images/000/168/941/thumb/u4T3R30N.jpg?1615471083" /></figure>
+</section>
+<section id='profile-signup'>
+<header>
+<hgroup>
+<h1 title='Healthy Happenings from  Wellbeing@KSU'>Healthy Happenings from  Wellbeing@KSU</h1>
+<h2 title='Healthy Happenings from  Wellbeing@KSU - A comprehensive health and wellbeing program to support you with options and tools so you can achieve your full potential in college and beyond focusing on the holistic you.'><p>A comprehensive health and wellbeing program to support you with options and tools so you can achieve your full potential in college and beyond focusing on the holistic you.</p></h2>
+</hgroup>
+</header>
+<section id='profile-stats'>
+<span class='stat-social'><a href="#archive">24 issues</a></span>
+<span class='socials'><span class='stat-social website'>
+<a class="website" target="_blank" href="https://studentaffairs.kennesaw.edu/wellbeing/"><span class='icon-world'></span>
+</a></span>
+<span class='stat-social twitter'>
+<a class="twitter" target="_blank" href="https://twitter.com/wellbeingatksu"><span class='icon-twitter'></span>
+</a></span>
+<span class='stat-social facebook'>
+<a class="facebook" target="_blank" href="https://facebook.com/wellbeingatksu"><span class='icon-facebook'></span>
+</a></span>
+<span class='stat-social instagram'>
+<a class="instagram" target="_blank" href="https://instagram.com/wellbeingatksu"><span class='icon-instagram'></span>
+</a></span>
+</span>
+</section>
+<form class="subscribe-form" id="eprBZLY8_new_member" action="/profile/wellbeingatksu/add_subscriber" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="2LN1qb51VqFLqpuPmVmNyhpRHisGDwZ+zig8gHZDRP9p0sV6JNce6iXBsSVrA6gHHOkHOtGbJbWq7tk8pYByBQ==" /><input type="hidden" name="member[distinct_id]" id="member_distinct_id" />
+<input value="profile-page-header" type="hidden" name="member[subscribe_element]" id="member_subscribe_element" />
+<div class='subscribe-form__fields'>
+<div class='subscribe-form__copy'>
+<label class="subscribe-form__label" for="member_email">Subscribe to our newsletter</label>
+<label class='subscribe-form__sublabel'>By subscribing, you agree with Revue’s <a target="_blank" href="https://www.getrevue.co/terms?locale=en&amp;ref=Revue+Profile">Terms of Service</a> and <a target="_blank" href="https://www.getrevue.co/privacy?locale=en&amp;ref=Revue+Profile">Privacy Policy</a> and understand that Healthy Happenings from  Wellbeing@KSU will receive your email address.</label>
+</div>
+<div class='subscribe-form__input'>
+<div class='input-group'>
+<input class="form-control subscribe-form__email" placeholder="Your email address..." title="Subscribe to the newsletter of Healthy Happenings from  Wellbeing@KSU" type="email" name="member[email]" id="member_email" />
+<div class='input-group-btn'><script src="https://www.recaptcha.net/recaptcha/api.js" async defer  nonce='JgV+Fy3f/L18NRUJI7Az7A=='></script>
+<input type="submit" data-sitekey="6LcRA6wZAAAAAEYg1KFtJ_b70PaAcaJwppkQihHs" data-callback="m9zLv5YpCaptchaCallback" class="g-recaptcha btn btn-primary subscribe-form__submit" title="Subscribe to the newsletter of Healthy Happenings from  Wellbeing@KSU" value="Subscribe now"/>
+</div>
+</div>
+</div>
+</div>
+<div class='subscribe-form__error'>
+<span class='error-message'>
+
+
+</span>
+</div>
+<div style='width: 1px; height: 1px; overflow: hidden;'>
+<input type="text" name="confirm_Oc0kj2" id="confirm_Oc0kj2" autocomplete="off" />
+</div>
+
+</form><script nonce="JgV+Fy3f/L18NRUJI7Az7A==">
+//<![CDATA[
+window["m9zLv5YpCaptchaCallback"] = function() {
+  document.getElementById("eprBZLY8_new_member").submit();
+};
+
+
+//]]>
+</script>
+</section>
+</section>
+</div>
+</article>
+<div class='container' id='archive'>
+<section id='issues'>
+<header>
+<h1 title='Healthy Happenings from  Wellbeing@KSU - Previous issues'>Previous issues</h1>
+</header>
+<div id='issues-covers'>
+<a title="Healthy Happenings from  Wellbeing@KSU - Healthy Happenings from  Wellbeing@KSU - May 2022" target="" rel="" class="issue-cover" href="/profile/wellbeingatksu/issues/healthy-happenings-from-wellbeing-ksu-may-2022-1137817"><article style='background-image: url(&#39;https://s3.amazonaws.com/revue/items/images/015/616/392/mail/i-MnT6d2T-X2.jpeg?1651504740&#39;);'>
+<div class='issue-subject'>
+<h1>Healthy Happenings from  Wellbeing@KSU - May 2022</h1>
+<time datetime='2022-05-02T12:10:28-04:00'>
+<span class='issue-nr'>
+<span>#24</span>
+</span>
+May  2, 2022
+</time>
+</div>
+</article>
+</a><a title="Healthy Happenings from  Wellbeing@KSU - Healthy Happenings from  Wellbeing@KSU - April 16-30" target="" rel="" class="issue-cover" href="/profile/wellbeingatksu/issues/healthy-happenings-from-wellbeing-ksu-april-16-30-1113062"><article style='background-image: url(&#39;https://s3.amazonaws.com/revue/items/images/015/007/687/mail/f78dfc31-6f0d-4bec-abaa-9f86f504a3cf2782f891-c0a2-4198-9b6f-f156aa73a232.png?1648741216&#39;);'>
+<div class='issue-subject'>
+<h1>Healthy Happenings from  Wellbeing@KSU - April 16-30</h1>
+<time datetime='2022-04-16T16:10:00-04:00'>
+<span class='issue-nr'>
+<span>#23</span>
+</span>
+Apr 16, 2022
+</time>
+</div>
+</article>
+</a><a title="Healthy Happenings from  Wellbeing@KSU - Healthy Happenings from  Wellbeing@KSU - April 1- 15" target="" rel="" class="issue-cover" href="/profile/wellbeingatksu/issues/healthy-happenings-from-wellbeing-ksu-april-1-15-1095793"><article style='background-image: url(&#39;https://s3.amazonaws.com/revue/items/images/015/005/722/mail/0322_STD_AskProfessor_Feature.png?1648737903&#39;);'>
+<div class='issue-subject'>
+<h1>Healthy Happenings from  Wellbeing@KSU - April 1- 15</h1>
+<time datetime='2022-04-01T07:00:07-04:00'>
+<span class='issue-nr'>
+<span>#22</span>
+</span>
+Apr  1, 2022
+</time>
+</div>
+</article>
+</a>
+</div>
+<div id='issues-holder'>
+<div id='issues-list'>
+<ul><li>
+<article class='issue'>
+<div class='issue-nr'>#21</div>
+<div class='issue-date'>
+<time datetime='2022-03-21T08:00:05-04:00'>Mar 21, 2022</time>
+</div>
+<div class='issue-title'>
+<h1>
+<a title="Healthy Happenings from  Wellbeing@KSU - Healthy Happenings from  Wellbeing@KSU - March 21-31" target="" rel="" href="/profile/wellbeingatksu/issues/healthy-happenings-from-wellbeing-ksu-march-21-31-1056397"><span class='subject'>Healthy Happenings from  Wellbeing@KSU - March 21-31</span>
+<span class='description'>
+&nbsp;–&nbsp;
+Make your health a priority! Some fantastic events are happening on campus, including the annual Heal
+</span>
+</a></h1>
+</div>
+</article>
+</li>
+<li>
+<article class='issue'>
+<div class='issue-nr'>#20</div>
+<div class='issue-date'>
+<time datetime='2022-03-03T17:04:07-05:00'>Mar  3, 2022</time>
+</div>
+<div class='issue-title'>
+<h1>
+<a title="Healthy Happenings from  Wellbeing@KSU - Healthy Happenings from  Wellbeing@KSU - March 1-20" target="" rel="" href="/profile/wellbeingatksu/issues/healthy-happenings-from-wellbeing-ksu-march-1-20-1039606"><span class='subject'>Healthy Happenings from  Wellbeing@KSU - March 1-20</span>
+<span class='description'>
+&nbsp;–&nbsp;
+March is National Nutrition Month! Meet with a KSU Dietitian for nutrition counseling to start your j
+</span>
+</a></h1>
+</div>
+</article>
+</li>
+<li>
+<article class='issue'>
+<div class='issue-nr'>#19</div>
+<div class='issue-date'>
+<time datetime='2022-02-14T13:20:28-05:00'>Feb 14, 2022</time>
+</div>
+<div class='issue-title'>
+<h1>
+<a title="Healthy Happenings from  Wellbeing@KSU - Healthy Happenings from  Wellbeing@KSU - Feb. 14-28" target="" rel="" href="/profile/wellbeingatksu/issues/healthy-happenings-from-wellbeing-ksu-feb-14-28-1017293"><span class='subject'>Healthy Happenings from  Wellbeing@KSU - Feb. 14-28</span>
+<span class='description'>
+&nbsp;–&nbsp;
+It&#39;s National Condom Week and Love Your Body Week! Stop one of the MANY events happening on campus. 
+</span>
+</a></h1>
+</div>
+</article>
+</li>
+<li>
+<article class='issue'>
+<div class='issue-nr'>#18</div>
+<div class='issue-date'>
+<time datetime='2022-02-01T09:15:23-05:00'>Feb  1, 2022</time>
+</div>
+<div class='issue-title'>
+<h1>
+<a title="Healthy Happenings from  Wellbeing@KSU - Healthy Happenings from  Wellbeing@KSU - Feb. 1-13" target="" rel="" href="/profile/wellbeingatksu/issues/healthy-happenings-from-wellbeing-ksu-feb-1-13-995690"><span class='subject'>Healthy Happenings from  Wellbeing@KSU - Feb. 1-13</span>
+<span class='description'>
+&nbsp;–&nbsp;
+It&#39;s the 5th Annual Owl Creed Week, and Wellbeing@KSU has some great Healthy Happenings to share with
+</span>
+</a></h1>
+</div>
+</article>
+</li>
+<li>
+<article class='issue'>
+<div class='issue-nr'>#17</div>
+<div class='issue-date'>
+<time datetime='2022-01-19T12:18:50-05:00'>Jan 19, 2022</time>
+</div>
+<div class='issue-title'>
+<h1>
+<a title="Healthy Happenings from  Wellbeing@KSU - Healthy Happenings from  Wellbeing@KSU - January" target="" rel="" href="/profile/wellbeingatksu/issues/healthy-happenings-from-wellbeing-ksu-january-907329"><span class='subject'>Healthy Happenings from  Wellbeing@KSU - January</span>
+<span class='description'>
+&nbsp;–&nbsp;
+Welcome back, Owls! Kick-off the New Year right with these Healthy Happenings and resources available
+</span>
+</a></h1>
+</div>
+</article>
+</li>
+<li>
+<article class='issue'>
+<div class='issue-nr'>#16</div>
+<div class='issue-date'>
+<time datetime='2021-11-30T11:13:29-05:00'>Nov 30, 2021</time>
+</div>
+<div class='issue-title'>
+<h1>
+<a title="Healthy Happenings from  Wellbeing@KSU - Healthy Happenings from  Wellbeing@KSU - December" target="" rel="" href="/profile/wellbeingatksu/issues/healthy-happenings-from-wellbeing-ksu-december-881226"><span class='subject'>Healthy Happenings from  Wellbeing@KSU - December</span>
+<span class='description'>
+&nbsp;–&nbsp;
+Finish out the year strong! Take a moment to pause in between study sessions for finals. You got this
+</span>
+</a></h1>
+</div>
+</article>
+</li>
+<li>
+<article class='issue'>
+<div class='issue-nr'>#15</div>
+<div class='issue-date'>
+<time datetime='2021-11-16T08:00:05-05:00'>Nov 16, 2021</time>
+</div>
+<div class='issue-title'>
+<h1>
+<a title="Healthy Happenings from  Wellbeing@KSU - Healthy Happenings from  Wellbeing@KSU - Nov. 15-30" target="" rel="" href="/profile/wellbeingatksu/issues/healthy-happenings-from-wellbeing-ksu-nov-15-30-837858"><span class='subject'>Healthy Happenings from  Wellbeing@KSU - Nov. 15-30</span>
+<span class='description'>
+&nbsp;–&nbsp;
+Enjoy your Thanksgiving holidays and check out these Healthy Happenings and wellness tips.  
+</span>
+</a></h1>
+</div>
+</article>
+</li>
+<li>
+<article class='issue'>
+<div class='issue-nr'>#14</div>
+<div class='issue-date'>
+<time datetime='2021-11-01T10:27:56-04:00'>Nov  1, 2021</time>
+</div>
+<div class='issue-title'>
+<h1>
+<a title="Healthy Happenings from  Wellbeing@KSU - Healthy Happenings from  Wellbeing@KSU - Nov. 1-14" target="" rel="" href="/profile/wellbeingatksu/issues/healthy-happenings-from-wellbeing-ksu-nov-1-14-816360"><span class='subject'>Healthy Happenings from  Wellbeing@KSU - Nov. 1-14</span>
+<span class='description'>
+&nbsp;–&nbsp;
+Fall is in full swing. Enjoy the cooler weather and get some fresh air! Here are the healthy happenin
+</span>
+</a></h1>
+</div>
+</article>
+</li>
+<li>
+<article class='issue'>
+<div class='issue-nr'>#13</div>
+<div class='issue-date'>
+<time datetime='2021-10-18T09:14:23-04:00'>Oct 18, 2021</time>
+</div>
+<div class='issue-title'>
+<h1>
+<a title="Healthy Happenings from  Wellbeing@KSU - Healthy Happenings from Wellbeing@KSU - Oct. 18-31" target="" rel="" href="/profile/wellbeingatksu/issues/healthy-happenings-from-wellbeing-ksu-oct-18-31-791414"><span class='subject'>Healthy Happenings from Wellbeing@KSU - Oct. 18-31</span>
+<span class='description'>
+&nbsp;–&nbsp;
+Don&#39;t let stress haunt you this spooky season. Check out the ghoulishly great events to help you dest
+</span>
+</a></h1>
+</div>
+</article>
+</li>
+<li>
+<article class='issue'>
+<div class='issue-nr'>#12</div>
+<div class='issue-date'>
+<time datetime='2021-10-01T10:00:04-04:00'>Oct  1, 2021</time>
+</div>
+<div class='issue-title'>
+<h1>
+<a title="Healthy Happenings from  Wellbeing@KSU - Healthy Happenings from  Wellbeing@KSU - Oct. 1-17" target="" rel="" href="/profile/wellbeingatksu/issues/healthy-happenings-from-wellbeing-ksu-oct-1-17-763236"><span class='subject'>Healthy Happenings from  Wellbeing@KSU - Oct. 1-17</span>
+<span class='description'>
+&nbsp;–&nbsp;
+October 3-10 is Mental Health Matters Week at KSU. Make your mental health a priority and visit the M
+</span>
+</a></h1>
+</div>
+</article>
+</li>
+<li>
+<article class='issue'>
+<div class='issue-nr'>#11</div>
+<div class='issue-date'>
+<time datetime='2021-09-13T09:30:05-04:00'>Sep 13, 2021</time>
+</div>
+<div class='issue-title'>
+<h1>
+<a title="Healthy Happenings from  Wellbeing@KSU - Healthy Happenings from  Wellbeing@KSU - Sept. 13-30" target="" rel="" href="/profile/wellbeingatksu/issues/healthy-happenings-from-wellbeing-ksu-sept-13-30-746559"><span class='subject'>Healthy Happenings from  Wellbeing@KSU - Sept. 13-30</span>
+<span class='description'>
+&nbsp;–&nbsp;
+This week is Sexual Health Awareness Week (14-19), and there are many great ways to make sure you sta
+</span>
+</a></h1>
+</div>
+</article>
+</li>
+<li>
+<article class='issue'>
+<div class='issue-nr'>#10</div>
+<div class='issue-date'>
+<time datetime='2021-09-01T11:49:17-04:00'>Sep  1, 2021</time>
+</div>
+<div class='issue-title'>
+<h1>
+<a title="Healthy Happenings from  Wellbeing@KSU - Healthy Happenings from  Wellbeing@KSU - Sept. 1-12" target="" rel="" href="/profile/wellbeingatksu/issues/healthy-happenings-from-wellbeing-ksu-sept-1-12-726662"><span class='subject'>Healthy Happenings from  Wellbeing@KSU - Sept. 1-12</span>
+<span class='description'>
+&nbsp;–&nbsp;
+Phew! The first few weeks of classes are in the books, and by now, you&#39;ve settled into a routine! Che
+</span>
+</a></h1>
+</div>
+</article>
+</li>
+<li>
+<article class='issue'>
+<div class='issue-nr'>#9</div>
+<div class='issue-date'>
+<time datetime='2021-08-17T13:45:13-04:00'>Aug 17, 2021</time>
+</div>
+<div class='issue-title'>
+<h1>
+<a title="Healthy Happenings from  Wellbeing@KSU - Healthy Happenings from  Wellbeing@KSU - August 16-31" target="" rel="" href="/profile/wellbeingatksu/issues/healthy-happenings-from-wellbeing-ksu-august-16-31-710529"><span class='subject'>Healthy Happenings from  Wellbeing@KSU - August 16-31</span>
+<span class='description'>
+&nbsp;–&nbsp;
+Welcome back, Owls! We are here for you and all your Health and Well-being needs. Make sure to stop b
+</span>
+</a></h1>
+</div>
+</article>
+</li>
+<li>
+<article class='issue'>
+<div class='issue-nr'>#8</div>
+<div class='issue-date'>
+<time datetime='2021-08-02T10:00:07-04:00'>Aug  2, 2021</time>
+</div>
+<div class='issue-title'>
+<h1>
+<a title="Healthy Happenings from  Wellbeing@KSU - Healthy Happenings from  Wellbeing@KSU - August 1-15" target="" rel="" href="/profile/wellbeingatksu/issues/healthy-happenings-from-wellbeing-ksu-august-1-15-692775"><span class='subject'>Healthy Happenings from  Wellbeing@KSU - August 1-15</span>
+<span class='description'>
+&nbsp;–&nbsp;
+Whether you&#39;re moving into the dorms or making the final touches to your fall schedule, take the time
+</span>
+</a></h1>
+</div>
+</article>
+</li>
+<li>
+<article class='issue'>
+<div class='issue-nr'>#7</div>
+<div class='issue-date'>
+<time datetime='2021-07-16T08:18:18-04:00'>Jul 16, 2021</time>
+</div>
+<div class='issue-title'>
+<h1>
+<a title="Healthy Happenings from  Wellbeing@KSU - Healthy Happenings from  Wellbeing@KSU - July 17-31" target="" rel="" href="/profile/wellbeingatksu/issues/healthy-happenings-from-wellbeing-ksu-july-17-31-676124"><span class='subject'>Healthy Happenings from  Wellbeing@KSU - July 17-31</span>
+<span class='description'>
+&nbsp;–&nbsp;
+Self-care and peach cobbler, just a few of the great resources for you in this week&#39;s newsletter. 
+</span>
+</a></h1>
+</div>
+</article>
+</li>
+<li>
+<article class='issue'>
+<div class='issue-nr'>#6</div>
+<div class='issue-date'>
+<time datetime='2021-07-01T09:30:03-04:00'>Jul  1, 2021</time>
+</div>
+<div class='issue-title'>
+<h1>
+<a title="Healthy Happenings from  Wellbeing@KSU - Healthy Happenings from  Wellbeing@KSU - July 1-16" target="" rel="" href="/profile/wellbeingatksu/issues/healthy-happenings-from-wellbeing-ksu-july-1-16-653941"><span class='subject'>Healthy Happenings from  Wellbeing@KSU - July 1-16</span>
+<span class='description'>
+&nbsp;–&nbsp;
+July is National Ice Cream Month! What better way to enjoy the hot summer days than with a tasty ice 
+</span>
+</a></h1>
+</div>
+</article>
+</li>
+<li>
+<article class='issue'>
+<div class='issue-nr'>#5</div>
+<div class='issue-date'>
+<time datetime='2021-06-14T08:00:04-04:00'>Jun 14, 2021</time>
+</div>
+<div class='issue-title'>
+<h1>
+<a title="Healthy Happenings from  Wellbeing@KSU - Healthy Happenings from  Wellbeing@KSU - June 14-30" target="" rel="" href="/profile/wellbeingatksu/issues/healthy-happenings-from-wellbeing-ksu-june-14-30-638686"><span class='subject'>Healthy Happenings from  Wellbeing@KSU - June 14-30</span>
+<span class='description'>
+&nbsp;–&nbsp;
+Break out your sunscreen and bicycle; it&#39;s time for summer fun in the sun! Don&#39;t forget this month is
+</span>
+</a></h1>
+</div>
+</article>
+</li>
+</ul>
+</div>
+</div>
+<a id="load-more" data-remote="true" data-method="post" data-params="{&quot;p&quot;:1}" data-disable-with="Hang on..." data-list-selector="#issues-list ul" href="/profile/wellbeingatksu/issues">Show more issues</a>
+</section>
+</div>
+
+<div class='container'>
+<footer class='border terms'>
+<div class='footer-privacy'>
+<a target="_blank" href="https://www.getrevue.co/privacy/platform?locale=en&amp;ref=Revue+Profile">Privacy Policy</a>
+<br>
+<a target="_blank" href="https://www.getrevue.co/terms?locale=en&amp;ref=Revue+Profile">Terms of Service</a>
+</div>
+<div class='footer-custom'>
+</div>
+<div class='footer-powered'>
+<a target="_blank" href="https://www.getrevue.co/?ref=Revue+Profile"><span>Powered by</span>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" baseProfile="basic" id="Layer_1" x="0px" y="0px" width="69px" height="28px" viewBox="0 0 69 28" xml:space="preserve">
+  <path d="M64.5293352,10.7041667 C65.0574432,10.6932778 65.3370748,10.9435278 65.3487341,11.5175278 C65.4141025,14.6482778 61.2060582,14.9296389 61.2060582,14.9296389 C61.4291136,13.3777778 62.6296371,10.7436389 64.5293352,10.7041667 L64.5293352,10.7041667 Z M67.1731247,18.3427222 C66.183615,19.4257778 64.9358809,20.2513889 63.5530139,20.2803611 C60.9010055,20.3353889 61.2215402,16.9429167 61.2215402,16.9429167 C61.2215402,16.9429167 68.9206787,17.2128056 68.8088643,11.8327222 C68.7618449,9.56880556 66.6052604,8.54427778 64.6474571,8.58491667 C60.6521468,8.66833333 57.2805125,12.3923333 57.3781828,17.0982778 C57.3877396,17.5509444 57.4292161,17.9754167 57.5007008,18.3722778 C56.9821496,19.0516667 56.0666094,20.0699722 55.2370803,20.0699722 C54.781795,20.0699722 54.6111108,19.6655278 54.6111108,19.2105278 C54.6111108,15.7544722 56.2048006,12.3516944 56.2048006,10.3425 C56.2048006,9.12255556 55.3743158,8.77313889 54.3454321,8.77313889 C53.0770554,8.77313889 52.3717645,9.60088889 52.3717645,9.60088889 C53.0636759,11.5056667 50.6058615,20.0699722 48.0218975,20.0699722 C47.4106454,20.0699722 47.3039917,19.5891111 47.3039917,19.1971111 C47.3039917,16.6306389 48.8831551,12.3316667 48.8831551,10.4099722 C48.8831551,9.13286111 48.0360416,8.75369444 47.0310499,8.75369444 C45.8419945,8.75369444 45.0539418,9.60088889 45.0539418,9.60088889 C45.9052604,11.2443333 43.6670609,17.5278056 43.6670609,19.3456667 C43.6670609,21.1633333 44.6720526,22.5985278 46.4427341,22.5985278 C49.3199003,22.5985278 50.9894709,18.98225 50.9894709,18.98225 C50.9894709,18.98225 50.6058615,22.5985278 54.0992493,22.5985278 C55.8911468,22.5985278 57.3170194,21.0725278 58.0666537,20.0585 C58.9885014,21.7876944 60.7930139,22.6360556 63.2355374,22.5855 C64.9924571,22.54875 66.2531884,22.0451389 67.2291274,21.1678056 C68.7343213,19.8129167 67.7318144,17.7308056 67.1731247,18.3427222 L67.1731247,18.3427222 Z" id="logo-3"></path>
+  <path d="M26.7737202,10.6613889 C27.2463989,10.6401944 27.5780194,10.8772222 27.6036316,11.4508333 C27.7467922,14.6338889 23.4097313,14.9679444 23.4097313,14.9679444 C23.595133,13.4112222 25.0563657,10.7385833 26.7737202,10.6613889 L26.7737202,10.6613889 Z M40.7751773,8.25183333 C39.5069917,8.25183333 38.5365956,9.352 38.5365956,10.5278056 C38.5365956,12.46525 40.1209197,12.5216389 40.0922493,14.0808889 C40.0631967,15.6401389 37.5797701,20.0656944 35.9027452,20.0656944 C35.2813629,20.0656944 35.1850305,19.4376389 35.1850305,19.1428611 C35.1850305,16.1589167 36.764385,11.9 36.764385,10.4646111 C36.764385,9.11166667 35.9434571,8.76633333 34.9608283,8.76633333 C33.6624432,8.76633333 32.9456842,9.59233333 32.9456842,9.59233333 C33.3958089,10.5264444 32.953903,12.7576944 32.4514072,14.90125 C31.5830776,17.3673889 28.768795,20.3318889 26.2513463,20.3453056 C22.962856,20.3620278 23.4431801,16.8923611 23.4431801,16.8923611 C23.4431801,16.8923611 31.1772964,17.0648333 30.9355097,11.6886389 C30.8334432,9.42666667 28.6531579,8.45425 26.6968837,8.54233333 C22.7048227,8.72180556 19.5250886,12.5216389 19.7366759,17.2235 C19.9035374,20.9350556 22.6740499,22.7052778 25.6234654,22.5730556 C28.2326593,22.4552222 30.1816704,21.2733889 31.5830776,19.8959444 C31.766759,21.4402222 32.7354349,22.5901667 34.5905983,22.5901667 C39.4282438,22.5901667 43.2540166,15.6076667 43.2540166,11.2779722 C43.2540166,9.69344444 42.4260166,8.25183333 40.7751773,8.25183333 L40.7751773,8.25183333 Z" id="logo-2"></path>
+  <path d="M28.5526205,23.9979444 C27.8781025,24.3351111 26.6978393,24.9295278 24.176759,24.9295278 C16.3352244,24.9295278 14.7163047,14.8510833 14.7163047,14.8510833 C14.7163047,14.8510833 20.6525983,12.3402222 20.6525983,7.24869444 C20.6525983,2.14919444 16.5122161,0 12.3303573,0 C7.68422992,0 2.5235651,2.50327778 0.296451524,7.35233333 C-1.10954294,10.4138611 2.93030194,11.3689722 3.13080332,10.4148333 C3.78850139,7.28272222 7.27940443,2.35063889 12.3638061,2.35063889 C15.0450582,2.35063889 16.6133269,4.12183333 16.6133269,7.24947222 C16.6133269,11.1274722 12.1436177,13.1708889 10.1611579,13.8335556 C11.0426759,9.77763889 11.3523158,8.55438889 11.3523158,7.83455556 C11.3523158,6.24166667 10.4319972,5.97605556 9.4931385,5.97605556 C8.35492521,5.97605556 7.53285042,6.81061111 7.53285042,6.81061111 C8.19054848,8.01188889 7.07985873,12.2853889 6.59685873,14.0175 C6.01179224,16.1165278 5.20539058,19.2188889 4.69945429,21.1909444 C4.19351801,23.1635833 7.71806094,22.6329444 7.95411357,22.0507778 C8.21138227,21.4172778 8.88800277,19.0950278 9.5005928,16.6561111 C10.5281385,16.3356667 11.706108,15.8806667 11.706108,15.8806667 C12.2212188,19.3026944 14.9691773,28 22.8107119,28 C29.5392632,28 29.1092078,23.7198889 28.5526205,23.9979444" id="logo-1"></path>
+</svg>
+</a></div>
+</footer>
+</div>
+
+<div class='component__spacer--is-large'></div>
+
+
+
+</body>
+</html>

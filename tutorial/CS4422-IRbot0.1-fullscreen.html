@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+                    <title>Refuge or Refusal: Stories of American Identity and Immigration Heritage &middot; Meet History</title>
+
+    <link rel="alternate" type="application/rss+xml" title="Omeka RSS Feed" href="/items/browse?output=rss2" /><link rel="alternate" type="application/atom+xml" title="Omeka Atom Feed" href="/items/browse?output=atom" />
+    <!-- Plugin Stuff -->
+
+    
+
+    <!-- Stylesheets -->
+    <link href="/plugins/Neatline/views/shared/css/dist/production/neatline-public.css?v=3.0.3" media="all" rel="stylesheet" type="text/css" >
+<link href="/plugins/NeatlineText/views/shared/css/dist/text-public.css?v=3.0.3" media="all" rel="stylesheet" type="text/css" >
+<link href="/plugins/Geolocation/views/shared/javascripts/leaflet/leaflet.css?v=3.2.2" media="" rel="stylesheet" type="text/css" >
+<link href="/plugins/Geolocation/views/shared/css/geolocation-marker.css?v=3.2.2" media="" rel="stylesheet" type="text/css" >
+<link href="/application/views/scripts/css/iconfonts.css?v=3.0.3" media="all" rel="stylesheet" type="text/css" >
+<link href="/themes/default/css/style.css?v=3.0.3" media="all" rel="stylesheet" type="text/css" >
+<link href="//fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic" media="all" rel="stylesheet" type="text/css" >
+        <style>
+        body {
+            background-color: #FFFFFF;
+            color: #444444;
+        }
+        #site-title a:link, #site-title a:visited,
+        #site-title a:active, #site-title a:hover {
+            color: #000000;
+                    }
+        a:link {
+            color: #888888;
+        }
+        a:visited {
+            color: #b0b0b0;
+        }
+        a:hover, a:active, a:focus {
+            color: #606060;
+        }
+
+        .button, button,
+        input[type="reset"],
+        input[type="submit"],
+        input[type="button"],
+        .pagination_next a,
+        .pagination_previous a {
+          background-color: #000000;
+          color: #FFFFFF !important;
+        }
+
+        #search-form input[type="text"] {
+            border-color: #000000        }
+
+        #collection-items .item img,
+        .browse .item-img,
+        .browse .image,
+        .browse #content .item img,
+        .browse .item #content img,
+        .browse .image img,
+        #home .image img {
+            height: 100px;
+        }
+
+        @media (max-width:768px) {
+            #primary-nav li {
+                background-color: #282828;
+            }
+
+            #primary-nav li ul li {
+                background-color: #141414;
+            }
+
+            #primary-nav li li li {
+                background-color: #000000;
+            }
+
+            #primary-nav li a {
+                color: #FFFFFF;
+            }
+        }
+    </style>
+    <!-- JavaScripts -->
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+    //<!--
+    window.jQuery || document.write("<script type=\"text\/javascript\" src=\"\/application\/views\/scripts\/javascripts\/vendor\/jquery.js?v=3.0.3\" charset=\"utf-8\"><\/script>")    //-->
+</script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript">
+    //<!--
+    window.jQuery.ui || document.write("<script type=\"text\/javascript\" src=\"\/application\/views\/scripts\/javascripts\/vendor\/jquery-ui.js?v=3.0.3\" charset=\"utf-8\"><\/script>")    //-->
+</script>
+<script type="text/javascript" src="/application/views/scripts/javascripts/vendor/jquery.ui.touch-punch.js"></script>
+<script type="text/javascript">
+    //<!--
+    jQuery.noConflict();    //-->
+</script>
+<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?v=3&amp;key="></script>
+<script type="text/javascript" src="/plugins/Neatline/views/shared/javascripts/dist/production/neatline-public.js?v=3.0.3"></script>
+<script type="text/javascript" src="/plugins/Neatline/views/shared/javascripts/neatline-bootstrap.js?v=3.0.3"></script>
+<script type="text/javascript" src="/plugins/NeatlineText/views/shared/javascripts/dist/text-public.js?v=3.0.3"></script>
+<script type="text/javascript" src="/plugins/Neatline/views/public/javascripts/fullscreen.js?v=3.0.3"></script>
+<script type="text/javascript" src="/plugins/Geolocation/views/shared/javascripts/leaflet/leaflet.js?v=3.2.2"></script>
+<script type="text/javascript" src="/plugins/Geolocation/views/shared/javascripts/leaflet/leaflet-providers.js?v=3.2.2"></script>
+<script type="text/javascript" src="/plugins/Geolocation/views/shared/javascripts/map.js?v=3.2.2"></script>
+<script type="text/javascript" src="/themes/default/javascripts/vendor/modernizr.js?v=3.0.3"></script>
+<!--[if (gte IE 6)&(lte IE 8)]><script type="text/javascript" src="/application/views/scripts/javascripts/vendor/selectivizr.js?v=3.0.3"></script><![endif]-->
+<script type="text/javascript" src="/application/views/scripts/javascripts/vendor/respond.js?v=3.0.3"></script>
+<script type="text/javascript" src="/application/views/scripts/javascripts/vendor/jquery-accessibleMegaMenu.js?v=3.0.3"></script>
+<script type="text/javascript" src="/application/views/scripts/javascripts/globals.js?v=3.0.3"></script>
+<script type="text/javascript" src="/themes/default/javascripts/default.js?v=3.0.3"></script></head>
+<body class="neatline fullscreen">
+
+
+<div id="neatline" class="Text">
+  <div id="neatline-map" class="neatline-block"></div>
+</div>
+
+<!-- Globals constants. -->
+<script type="text/javascript">
+  Neatline.g = {"neatline":{"exhibit":{"owner_id":6,"added":"2018-11-13 15:23:03","modified":"2020-10-23 08:52:19","published":"2018-11-13 16:02:55","item_query":null,"spatial_layers":"OpenStreetMap","spatial_layer":"OpenStreetMap","image_layer":null,"image_height":null,"image_width":null,"zoom_levels":20,"wms_address":null,"wms_layers":null,"widgets":"Text","title":"Refuge or Refusal: Stories of American Identity and Immigration Heritage","slug":"refuge-or-refusal-stories-of-american-identity-and-immigration-heritage","narrative":"<p>This Website shares how visitors to&nbsp;<em>Refuge or Refusal: Turning Points in U.S. Immigration History,<\/em>&nbsp;created by the Museum of History and Holocaust Education (MHHE)&nbsp;at Kennesaw State University, answered three&nbsp;questions:&nbsp;<\/p>\r\n\r\n<ul>\r\n\t<li>How do you define American identity?<\/li>\r\n\t<li>How long have you&nbsp;or your family been in the United States?&nbsp;<\/li>\r\n\t<li>What role, if any, does immigration play in your story?<\/li>\r\n<\/ul>\r\n\r\n<p>We invite you to contribute your own answers to these questions by clicking&nbsp;<a data-auth=\"NotApplicable\" href=\"https:\/\/goo.gl\/forms\/gmTQjOGS4aX4e01D3\" rel=\"noopener noreferrer\" target=\"_blank\">here<\/a>.<\/p>\r\n\r\n<p>We also asked visitors to share what motivated them or their families to seek a new home, if known. The dots on the map are color-coded accordingly.<\/p>\r\n\r\n<ol>\r\n\t<li><font color=\"blue\">Blue<\/font>: Unknown<\/li>\r\n\t<li><font color=\"yellow\">Yellow<\/font>: Seeking Economic Opportunity<\/li>\r\n\t<li><font color=\"green\">Green<\/font>: Seeking Education<\/li>\r\n\t<li><font color=\"purple\">Purple<\/font>: Seeking Religious Freedom<\/li>\r\n\t<li><font color=\"pink\">Pink<\/font>: Fleeing Persecution<\/li>\r\n\t<li><font color=\"red\">Red<\/font>: Fleeing War\/Conflict<\/li>\r\n\t<li><font color=\"brown\">Brown<\/font>: Fleeting Natural\/Environmental Disaster<\/li>\r\n\t<li><font color=\"orange\">Orange<\/font>: Both Seeking Opportunities and Fleeing Problems<\/li>\r\n<\/ol>\r\n\r\n<p>&nbsp;<\/p>\r\n","spatial_querying":1,"public":1,"styles":null,"map_focus":"-3509988.3383664,2428863.0104521","map_zoom":3,"map_min_zoom":null,"map_max_zoom":null,"map_restricted_extent":null,"accessible_url":null,"id":27,"simile_default_date":null,"simile_interval_unit":"YEAR","simile_interval_pixels":100,"simile_tape_height":10,"simile_track_height":30,"parent_id":27},"record_api":"\/neatline\/records","exhibit_api":"\/neatline\/exhibits\/27","item_search_api":"\/items\/browse","item_body_api":"\/neatline\/items","wms_mime":"image\/png","per_page":50,"styles":{"presenter":"StaticBubble","fill_color":"#00aeff","fill_color_select":"#00aeff","stroke_color":"#000000","stroke_color_select":"#000000","fill_opacity":"0.3","fill_opacity_select":"0.4","stroke_opacity":"0.9","stroke_opacity_select":"1.0","stroke_width":"2","point_radius":"10"},"spatial_layers":[{"title":"OpenStreetMap","id":"OpenStreetMap","type":"OpenStreetMap"}],"strings":{"record":{"save":{"success":"The record was saved successfully!","error":"There was an error - the record was not saved."},"remove":{"success":"The record was deleted successfully!","error":"There was an error - the record was not deleted."},"add":{"success":"The record was created successfully!","error":"There was an error - the record was not saved."},"placeholders":{"title":"[Untitled]"}},"exhibit":{"save":{"success":"The exhibit was saved successfully!","error":"There was an error - exhibit was not saved."}},"styles":{"save":{"success":"The styles were saved successfully!","error":"There was an error - the styles were not saved."}},"svg":{"parse":{"success":"SVG parsed successfully!","error":"There was an error - SVG could not be parsed."}}},"openlayers_theme":"\/plugins\/Neatline\/views\/shared\/images\/dark\/"},"simile":{"strings":{"settings":{"save":{"success":"The timeline settings were saved successfully!","error":"There was an error - the timeline settings were not saved."}}}},"text":{"records":[]},"waypoints":{"strings":{"order":{"save":{"success":"The waypoint order was saved successfully!","error":"There was an error - the waypoint order was not saved."},"placeholders":{"empty":"No waypoints have been added yet!"}}},"order_api":"\/neatline-waypoints"}}</script>
+
+<!-- Underscore templates. -->
+
+<script id="static-bubble-template" type="text/template">
+
+  <!-- Close "X". -->
+  <a name="close" class="close">&times;</a>
+
+  <!-- Title. -->
+  <div class="title" rv-html="record:title"></div>
+
+  <!-- Body / Item. -->
+  <div class="content body" rv-html="record:body" rv-show="record:body"></div>
+  <hr class="content" rv-show="record:item" />
+  <div class="content item" rv-html="record:item" rv-show="record:item"></div>
+
+</script>
+
+<!-- Plugin templates. -->
+
+<div id="neatline-narrative">
+  <p>This Website shares how visitors to&nbsp;<em>Refuge or Refusal: Turning Points in U.S. Immigration History,</em>&nbsp;created by the Museum of History and Holocaust Education (MHHE)&nbsp;at Kennesaw State University, answered three&nbsp;questions:&nbsp;</p>
+
+<ul>
+	<li>How do you define American identity?</li>
+	<li>How long have you&nbsp;or your family been in the United States?&nbsp;</li>
+	<li>What role, if any, does immigration play in your story?</li>
+</ul>
+
+<p>We invite you to contribute your own answers to these questions by clicking&nbsp;<a data-auth="NotApplicable" href="https://goo.gl/forms/gmTQjOGS4aX4e01D3" rel="noopener noreferrer" target="_blank">here</a>.</p>
+
+<p>We also asked visitors to share what motivated them or their families to seek a new home, if known. The dots on the map are color-coded accordingly.</p>
+
+<ol>
+	<li><font color="blue">Blue</font>: Unknown</li>
+	<li><font color="yellow">Yellow</font>: Seeking Economic Opportunity</li>
+	<li><font color="green">Green</font>: Seeking Education</li>
+	<li><font color="purple">Purple</font>: Seeking Religious Freedom</li>
+	<li><font color="pink">Pink</font>: Fleeing Persecution</li>
+	<li><font color="red">Red</font>: Fleeing War/Conflict</li>
+	<li><font color="brown">Brown</font>: Fleeting Natural/Environmental Disaster</li>
+	<li><font color="orange">Orange</font>: Both Seeking Opportunities and Fleeing Problems</li>
+</ol>
+
+<p>&nbsp;</p>
+</div>
+
+</body>
+</html>

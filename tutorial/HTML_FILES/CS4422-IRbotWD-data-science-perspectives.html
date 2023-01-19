@@ -1,0 +1,907 @@
+<!DOCTYPE html><html prefix="og: http://ogp.me/ns#"  dir="ltr" lang="en-US"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="applicable-device" content="pc,mobile">
+
+    <script id="perfkit">window.initialPageRequestTime = +new Date();</script>
+    <link rel="preconnect" href="https://amp-api.podcasts.apple.com" crossorigin="">
+<link rel="preconnect" href="https://is1-ssl.mzstatic.com" crossorigin="">
+<link rel="preconnect" href="https://is2-ssl.mzstatic.com" crossorigin="">
+<link rel="preconnect" href="https://is3-ssl.mzstatic.com" crossorigin="">
+<link rel="preconnect" href="https://is4-ssl.mzstatic.com" crossorigin="">
+<link rel="preconnect" href="https://is5-ssl.mzstatic.com" crossorigin="">
+<link rel="preconnect" href="https://xp.apple.com" crossorigin="">
+<link rel="preconnect" href="https://js-cdn.music.apple.com" crossorigin="">
+<link rel="preconnect" href="https://www.apple.com" crossorigin="">
+    
+<meta name="web-experience-app/config/environment" content="%7B%22appVersion%22%3A1%2C%22modulePrefix%22%3A%22web-experience-app%22%2C%22environment%22%3A%22production%22%2C%22rootURL%22%3A%22%2F%22%2C%22locationType%22%3A%22history-hash-router-scroll%22%2C%22historySupportMiddleware%22%3Atrue%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22Date%22%3Afalse%7D%2C%22_APPLICATION_TEMPLATE_WRAPPER%22%3Afalse%2C%22_DEFAULT_ASYNC_OBSERVERS%22%3Atrue%2C%22_JQUERY_INTEGRATION%22%3Afalse%2C%22_TEMPLATE_ONLY_GLIMMER_COMPONENTS%22%3Atrue%7D%2C%22APP%22%3A%7B%22PROGRESS_BAR_DELAY%22%3A3000%2C%22CLOCK_INTERVAL%22%3A1000%2C%22LOADING_SPINNER_SPY%22%3Atrue%2C%22BREAKPOINTS%22%3A%7B%22large%22%3A%7B%22min%22%3A1069%2C%22max%22%3A1440%2C%22content%22%3A980%7D%2C%22medium%22%3A%7B%22min%22%3A735%2C%22max%22%3A1068%2C%22content%22%3A692%7D%2C%22small%22%3A%7B%22min%22%3A320%2C%22max%22%3A734%2C%22content%22%3A280%7D%7D%2C%22buildVariant%22%3A%22podcasts%22%2C%22name%22%3A%22web-experience-app%22%2C%22version%22%3A%222234.1.0%2Bcdeabd23%22%7D%2C%22MEDIA_API%22%3A%7B%22token%22%3A%22eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkNSRjVITkJHUFEifQ.eyJpc3MiOiI4Q1UyNk1LTFM0IiwiaWF0IjoxNjYwMTYwNDA5LCJleHAiOjE2Njc0MTgwMDksInJvb3RfaHR0cHNfb3JpZ2luIjpbImFwcGxlLmNvbSJdfQ.RwgwhE35rgdzrA6--e_u_daVv9FD658fzDHsdoglbU6cNgK3cuCatGN1O8U9Jn-5Gjdzvf9ktUR46VbVgUJqvw%22%7D%2C%22i18n%22%3A%7B%22defaultLocale%22%3A%22en-gb%22%2C%22useDevLoc%22%3Afalse%2C%22pathToLocales%22%3A%22dist%2Flocales%22%7D%2C%22MEDIA_ARTWORK%22%3A%7B%22BREAKPOINTS%22%3A%7B%22large%22%3A%7B%22min%22%3A1069%2C%22max%22%3A1440%2C%22content%22%3A980%7D%2C%22medium%22%3A%7B%22min%22%3A735%2C%22max%22%3A1068%2C%22content%22%3A692%7D%2C%22small%22%3A%7B%22min%22%3A320%2C%22max%22%3A734%2C%22content%22%3A280%7D%7D%7D%2C%22API%22%3A%7B%22MZStore%22%3A%22https%3A%2F%2Fitunes.apple.com%22%2C%22PodcastHost%22%3A%22https%3A%2F%2Famp-api.podcasts.apple.com%22%2C%22globalElementsPath%22%3A%22%2Fglobal-elements%22%7D%2C%22fastboot%22%3A%7B%22hostWhitelist%22%3A%5B%7B%7D%5D%7D%2C%22ember-short-number%22%3A%7B%22locales%22%3A%5B%22ar-dz%22%2C%22ar-bh%22%2C%22ar-eg%22%2C%22ar-iq%22%2C%22ar-jo%22%2C%22ar-kw%22%2C%22ar-lb%22%2C%22ar-ly%22%2C%22ar-ma%22%2C%22ar-om%22%2C%22ar-qa%22%2C%22ar-sa%22%2C%22ar-sd%22%2C%22ar-sy%22%2C%22ar-tn%22%2C%22ar-ae%22%2C%22ar-ye%22%2C%22he-il%22%2C%22iw-il%22%2C%22ca-es%22%2C%22cs-cz%22%2C%22da-dk%22%2C%22de-ch%22%2C%22de-de%22%2C%22el-gr%22%2C%22en-au%22%2C%22en-ca%22%2C%22en-gb%22%2C%22en-us%22%2C%22es-419%22%2C%22es-es%22%2C%22es-mx%22%2C%22es-xl%22%2C%22et-ee%22%2C%22fi-fi%22%2C%22fr-ca%22%2C%22fr-fr%22%2C%22hi-in%22%2C%22hr-hr%22%2C%22hu-hu%22%2C%22id-id%22%2C%22is-is%22%2C%22it-it%22%2C%22iw-il%22%2C%22ja-jp%22%2C%22ko-kr%22%2C%22lt-lt%22%2C%22lv-lv%22%2C%22ms-my%22%2C%22nl-nl%22%2C%22no-no%22%2C%22no-nb%22%2C%22nb-no%22%2C%22pl-pl%22%2C%22pt-br%22%2C%22pt-pt%22%2C%22ro-ro%22%2C%22ru-ru%22%2C%22sk-sk%22%2C%22sv-se%22%2C%22th-th%22%2C%22tr-tr%22%2C%22uk-ua%22%2C%22vi-vi%22%2C%22vi-vn%22%2C%22zh-cn%22%2C%22zh-hans%22%2C%22zh-hant%22%2C%22zh-hk%22%2C%22zh-tw%22%2C%22ar%22%2C%22ca%22%2C%22cs%22%2C%22da%22%2C%22de%22%2C%22el%22%2C%22en%22%2C%22es%22%2C%22fi%22%2C%22fr%22%2C%22he%22%2C%22hi%22%2C%22hr%22%2C%22hu%22%2C%22id%22%2C%22is%22%2C%22it%22%2C%22ja%22%2C%22ko%22%2C%22lt%22%2C%22lv%22%2C%22ms%22%2C%22nb%22%2C%22nl%22%2C%22no%22%2C%22pl%22%2C%22pt%22%2C%22ro%22%2C%22ru%22%2C%22sk%22%2C%22sv%22%2C%22th%22%2C%22tr%22%2C%22uk%22%2C%22vi%22%2C%22zh%22%5D%7D%2C%22ember-cli-mirage%22%3A%7B%22enabled%22%3Afalse%2C%22usingProxy%22%3Afalse%2C%22useDefaultPassthroughs%22%3Atrue%7D%2C%22BREAKPOINTS%22%3A%7B%22large%22%3A%7B%22min%22%3A1069%2C%22max%22%3A1440%2C%22content%22%3A980%7D%2C%22medium%22%3A%7B%22min%22%3A735%2C%22max%22%3A1068%2C%22content%22%3A692%7D%2C%22small%22%3A%7B%22min%22%3A320%2C%22max%22%3A734%2C%22content%22%3A280%7D%7D%2C%22METRICS%22%3A%7B%22variant%22%3A%22web%22%2C%22baseFields%22%3A%7B%22appName%22%3A%22web-experience-app%22%2C%22constraintProfiles%22%3A%5B%22AMPWeb%22%5D%7D%2C%22clickstream%22%3A%7B%22enabled%22%3Atrue%2C%22topic%22%3A%5B%22xp_amp_web_exp%22%5D%2C%22autoTrackClicks%22%3Atrue%7D%2C%22performance%22%3A%7B%22enabled%22%3Atrue%2C%22topic%22%3A%22xp_amp_podcasts_perf%22%7D%7D%2C%22MEDIA_SHELF%22%3A%7B%22GRID_CONFIG%22%3A%7B%22books-brick-row%22%3A%7B%22small%22%3A1%2C%22medium%22%3A2%2C%22large%22%3A3%7D%7D%2C%22BREAKPOINTS%22%3A%7B%22large%22%3A%7B%22min%22%3A1069%2C%22max%22%3A1440%2C%22content%22%3A980%7D%2C%22medium%22%3A%7B%22min%22%3A735%2C%22max%22%3A1068%2C%22content%22%3A692%7D%2C%22small%22%3A%7B%22min%22%3A320%2C%22max%22%3A734%2C%22content%22%3A280%7D%7D%7D%2C%22SASSKIT_GENERATOR%22%3A%7B%22VIEWPORT_CONFIG%22%3A%7B%22BREAKPOINTS%22%3A%7B%22large%22%3A%7B%22min%22%3A1069%2C%22max%22%3A1440%2C%22content%22%3A980%7D%2C%22medium%22%3A%7B%22min%22%3A735%2C%22max%22%3A1068%2C%22content%22%3A692%7D%2C%22small%22%3A%7B%22min%22%3A320%2C%22max%22%3A734%2C%22content%22%3A280%7D%7D%7D%7D%2C%22features%22%3A%7B%22BUILD_VARIANT_APPS%22%3Afalse%2C%22BUILD_VARIANT_BOOKS%22%3Afalse%2C%22BUILD_VARIANT_FITNESS%22%3Afalse%2C%22BUILD_VARIANT_PODCASTS%22%3Atrue%2C%22BUILD_VARIANT_DEFAULT%22%3Afalse%2C%22TV%22%3Afalse%2C%22PODCASTS%22%3Atrue%2C%22BOOKS%22%3Afalse%2C%22APPS%22%3Afalse%2C%22ARTISTS%22%3Afalse%2C%22DEEPLINK_ROUTE%22%3Afalse%2C%22EMBER_DATA%22%3Afalse%2C%22CHARTS%22%3Afalse%2C%22FITNESS%22%3Afalse%2C%22SHARE_UI%22%3Atrue%2C%22SEPARATE_RTL_STYLESHEET%22%3Atrue%7D%2C%22ember-cli-content-security-policy%22%3A%7B%22policy%22%3A%22default-src%20'none'%3B%20img-src%20'self'%20https%3A%2F%2F*.apple.com%20https%3A%2F%2F*.mzstatic.com%20data%3A%3B%20style-src%20'self'%20https%3A%2F%2F*.apple.com%20'unsafe-inline'%3B%20font-src%20'self'%20https%3A%2F%2F*.apple.com%3B%20media-src%20'self'%20https%3A%2F%2F*.apple.com%20blob%3A%20http%3A%2F%2F*%20https%3A%2F%2F*%3B%20connect-src%20'self'%20https%3A%2F%2F*.apple.com%20https%3A%2F%2F*.mzstatic.com%3B%20script-src%20'self'%20https%3A%2F%2F*.apple.com%20'unsafe-eval'%20'sha256-4ywTGAe4rEpoHt8XkjbkdOWklMJ%2F1Py%2Fx6b3%2FaGbtSQ%3D'%3B%20frame-src%20'self'%20https%3A%2F%2F*.apple.com%20itmss%3A%20itms-appss%3A%20itms-bookss%3A%20itms-itunesus%3A%20itms-messagess%3A%20itms-podcasts%3A%20itms-watchs%3A%20macappstores%3A%20musics%3A%20apple-musics%3A%20podcasts%3A%20videos%3A%3B%22%2C%22reportOnly%22%3Afalse%7D%2C%22exportApplicationGlobal%22%3Afalse%7D">
+<!-- EMBER_CLI_FASTBOOT_TITLE --><link rel="stylesheet preload" name="fonts" href="//www.apple.com/wss/fonts?families=SF+Pro,v2|SF+Pro+Icons,v1|SF+Pro+Rounded,v1|New+York+Small,v1|New+York+Medium,v1" as="style"><link rel="stylesheet" type="text/css" href="/global-elements/2210.1.0/en_US/ac-global-nav.6ab06e7ad3aaf025138951b5c958ae3b.css" data-global-elements-nav-styles>
+<link rel="stylesheet" type="text/css" href="/global-elements/2210.1.0/en_US/ac-global-footer.7fb24d229e183ab411ed7662850ce5a0.css" data-global-elements-footer-styles>
+<meta name="ac-gn-search-suggestions-enabled" content="false" data-global-elements-search-suggestions-enabled />
+    <title>
+      ‎Data Science Perspectives on Apple Podcasts
+    </title>
+      <meta name="keywords" content="Data Science Perspectives, @@artistName@@, podcast show, listen, download, apple podcasts">
+
+      <meta name="description" content="In Bill’s roles as Chief Analytics Officer for both Teradata and The Int'l Institute For Analytics, he was lucky enough to meet with analytics executives in hundreds of large companies around the world. Now with Kennesaw State U's School of Data Science and Analytics, he interviews executives he’s m…">
+
+      <link rel="canonical" href="https://podcasts.apple.com/us/podcast/data-science-perspectives/id1584986358">
+
+<!---->
+<!---->
+<!---->
+      <meta name="apple:content_id" content="1584986358">
+
+      <script name="schema:podcast-show" type="application/ld+json">
+        {"@context":"http://schema.org","@type":"CreativeWork","name":"Data Science Perspectives","author":"Bill Franks","description":"In Bill’s roles as Chief Analytics Officer for both Teradata and The Int'l Institute For Analytics, he was lucky enough to meet with analytics executives in hundreds of large companies around the world. Now with Kennesaw State U's School of Data Science and Analytics, he interviews executives he’s m…","datePublished":"Jun 16, 2022","offers":[{"@type":"Offer","price":"Free"}],"review":[],"workExample":[{"@type":"AudioObject","name":"Season 4, Episode 6 - Wes Chaar, Chief Data &amp; Analytics Officer at Fyllo","datePublished":"Jun 23, 2022","description":"A discussion with Wes Chaar, Chief Data &amp; Analytics Officer at Fyllo. Former Catalina, Turner Broadcasting, and Delta Airlines\n\n#analytics #datascience #leadership #machinelearning #ai #artificialintelligence #Fyllo #Catalina #TurnerBroadcastingSystems #DeltaAirlines #Sabre","duration":"PT414H43M20S","requiresSubscription":"no"},{"@type":"AudioObject","name":"Season 4, Episode 5 - Rasmus Wegener, Senior Partner, Bain &amp; Company","datePublished":"Jun 16, 2022","description":"A discussion with Rasmus Wegener, Senior Partner, Bain &amp; Company.  #analytics #datascience #leadership #machinelearning #ai #artificialintelligence #bain #consulting","duration":"PT479H10M","requiresSubscription":"no"},{"@type":"AudioObject","name":"Season 4, Episode 4 - Anne Robinson, Chief Strategy Officer, Kinaxis","datePublished":"Jun 2, 2022","description":"A discussion with Anne Robinson, Chief Strategy Officer, Kinaxis. Also prior roles at Verizon and Cisco  #analytics #datascience #leadership #machinelearning #ai #artificialintelligence #kinaxis #cisco #verizon","duration":"PT410H50M","requiresSubscription":"no"},{"@type":"AudioObject","name":"Season 4, Episode 3 - Melinda Borrero, Director, Enterprise Analytics","datePublished":"May 26, 2022","description":"A discussion with Melinda Borrero, Director, Enterprise Analytics Consulting, Chick-fil-A. Also prior roles at Ipsos, Kantar, and GFK   #analytics #datascience #leadership #machinelearning #ai #artificialintelligence #chickfila #chick-fil-a #ipsos #kantar #GFK","duration":"PT450H","requiresSubscription":"no"},{"@type":"AudioObject","name":"Season 4, Episode 2 - Craig Brabec, Chief Data &amp; Analytics Officer, McDonald's","datePublished":"May 19, 2022","description":"A discussion with Craig Brabec, Chief Data &amp; Analytics Officer, McDonald's.  Former executive roles at Ford, McKesson, Caterpillar. #analytics #datascience #leadership #machinelearning #ai #artificialintelligence #McDonalds #McKesson #Ford #Caterpillar","duration":"PT498H36M40S","requiresSubscription":"no"},{"@type":"AudioObject","name":"Season 4, Episode 1 - Mike Stefanick, Managing Director, EY","datePublished":"May 12, 2022","description":"A discussion with Mike Stefanick, Managing Director, EY.  Former executive roles at SAS, IBM, and Equifax. #analytics #datascience #leadership #machinelearning #ai #artificialintelligence #EY #SAS #IBM #Equifax","duration":"PT445H33M20S","requiresSubscription":"no"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":5,"reviewCount":1}}
+      </script>
+
+        <meta property="al:ios:app_store_id" content="525463029">
+        <meta property="al:ios:app_name" content="Apple Podcasts">
+
+        <meta property="og:title" content="‎Data Science Perspectives on Apple Podcasts">
+        <meta property="og:description" content="‎Business · 2022">
+        <meta property="og:site_name" content="Apple Podcasts">
+        <meta property="og:url" content="https://podcasts.apple.com/us/podcast/data-science-perspectives/id1584986358">
+        <meta property="og:image" content="https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/1200x630wp.png">
+        <meta property="og:image:alt" content="Data Science Perspectives on Apple Podcasts">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:image:secure_url" content="https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/1200x630wp.png">
+        <meta property="og:type" content="product.group">
+        <meta property="og:locale" content="en_US">
+
+        <meta name="twitter:title" content="‎Data Science Perspectives on Apple Podcasts">
+        <meta name="twitter:description" content="‎Business · 2022">
+        <meta name="twitter:site" content="@ApplePodcasts">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:image" content="https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/1200x600wp.png">
+        <meta name="twitter:image:alt" content="Data Science Perspectives on Apple Podcasts">
+
+<!---->
+    <meta name="version" content="2234.1.0">
+    <script src="https://js-cdn.music.apple.com/musickit/v2/amp/musickit.js?t=1660160482311"></script>
+
+    <link integrity="" rel="stylesheet" href="/assets/web-experience-app-real-18a9d08949f3d8d37b6ef7cf63f4d143.css" data-rtl="/assets/web-experience-rtl-app-16f1d12ded5651c4aae739b44cb347ab.css">
+
+    
+  </head>
+  <body class="no-js no-touch">
+    <script type="x/boundary" id="fastboot-body-start"></script><aside id="ac-gn-segmentbar" class="ac-gn-segmentbar" lang="en-US" dir="ltr" data-strings="{ &apos;exit&apos;: &apos;Exit&apos;, &apos;view&apos;: &apos;{%STOREFRONT%} Store Home&apos;, &apos;segments&apos;: { &apos;smb&apos;: &apos;Business Store Home&apos;, &apos;eduInd&apos;: &apos;Education Store Home&apos;, &apos;other&apos;: &apos;Store Home&apos; } }"></aside>
+<input type="checkbox" id="ac-gn-menustate" class="ac-gn-menustate">
+<nav id="ac-globalnav" class="no-js" role="navigation" aria-label="Global" data-hires="false" data-analytics-region="global nav" lang="en-US" dir="ltr" data-www-domain="www.apple.com" data-store-locale="us" data-store-root-path="/us" data-store-api="https://www.apple.com/[storefront]/shop/bag/status" data-search-locale="en_US" data-search-suggestions-api="https://www.apple.com/search-services/suggestions/" data-search-defaultlinks-api="https://www.apple.com/search-services/suggestions/defaultlinks/">
+	<div class="ac-gn-content">
+		<ul class="ac-gn-header">
+			<li class="ac-gn-item ac-gn-menuicon">
+				<a href="#ac-gn-menustate" role="button" class="ac-gn-menuanchor ac-gn-menuanchor-open" id="ac-gn-menuanchor-open">
+					<span class="ac-gn-menuanchor-label">Global Nav Open Menu</span>
+				</a>
+				<a href="#" role="button" class="ac-gn-menuanchor ac-gn-menuanchor-close" id="ac-gn-menuanchor-close">
+					<span class="ac-gn-menuanchor-label">Global Nav Close Menu</span>
+				</a>
+				<label class="ac-gn-menuicon-label" for="ac-gn-menustate" aria-hidden="true">
+					<span class="ac-gn-menuicon-bread ac-gn-menuicon-bread-top">
+						<span class="ac-gn-menuicon-bread-crust ac-gn-menuicon-bread-crust-top"></span>
+					</span>
+					<span class="ac-gn-menuicon-bread ac-gn-menuicon-bread-bottom">
+						<span class="ac-gn-menuicon-bread-crust ac-gn-menuicon-bread-crust-bottom"></span>
+					</span>
+				</label>
+			</li>
+			<li class="ac-gn-item ac-gn-apple">
+				<a class="ac-gn-link ac-gn-link-apple" href="https://www.apple.com/" data-analytics-title="apple home" id="ac-gn-firstfocus-small">
+					<span class="ac-gn-link-text">Apple</span>
+				</a>
+			</li>
+			<li class="ac-gn-item ac-gn-bag ac-gn-bag-small" id="ac-gn-bag-small">
+				<div class="ac-gn-bag-wrapper">
+					<a class="ac-gn-link ac-gn-link-bag" href="https://www.apple.com/us/shop/goto/bag" data-analytics-title="bag" data-analytics-click="bag" aria-label="Shopping Bag" data-string-badge="Shopping Bag with item count :">
+						<span class="ac-gn-link-text">Shopping Bag</span>
+					</a>
+					<span class="ac-gn-bag-badge" aria-hidden="true" data-analytics-title="bag" data-analytics-click="bag">
+						<span class="ac-gn-bag-badge-separator"></span>
+						<span class="ac-gn-bag-badge-number"></span>
+						<span class="ac-gn-bag-badge-unit">+</span>
+					</span>
+				</div>
+				<span class="ac-gn-bagview-caret ac-gn-bagview-caret-large"></span>
+			</li>
+		</ul>
+		<div class="ac-gn-search-placeholder-container" role="search">
+			<div class="ac-gn-search ac-gn-search-small">
+				<a id="ac-gn-link-search-small" class="ac-gn-link" href="https://www.apple.com/us/search" data-analytics-title="search" data-analytics-intrapage-link aria-label="Search apple.com">
+					<div class="ac-gn-search-placeholder-bar">
+						<div class="ac-gn-search-placeholder-input">
+							<div class="ac-gn-search-placeholder-input-text" aria-hidden="true">
+								<div class="ac-gn-link-search ac-gn-search-placeholder-input-icon"></div>
+								<span class="ac-gn-search-placeholder">Search apple.com</span>
+							</div>
+						</div>
+						<div class="ac-gn-searchview-close ac-gn-searchview-close-small ac-gn-search-placeholder-searchview-close">
+							<span class="ac-gn-searchview-close-cancel" aria-hidden="true">Cancel</span>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+		<ul class="ac-gn-list">
+			<li class="ac-gn-item ac-gn-apple">
+				<a class="ac-gn-link ac-gn-link-apple" href="https://www.apple.com/" data-analytics-title="apple home" id="ac-gn-firstfocus">
+					<span class="ac-gn-link-text">Apple</span>
+				</a>
+			</li>
+			<li class="ac-gn-item ac-gn-item-menu ac-gn-store">
+				<a class="ac-gn-link ac-gn-link-store" href="https://www.apple.com/us/shop/goto/store" data-analytics-title="store">
+					<span class="ac-gn-link-text">Store</span>
+				</a>
+			</li>
+			<li class="ac-gn-item ac-gn-item-menu ac-gn-mac">
+				<a class="ac-gn-link ac-gn-link-mac" href="https://www.apple.com/mac/" data-analytics-title="mac">
+					<span class="ac-gn-link-text">Mac</span>
+				</a>
+			</li>
+			<li class="ac-gn-item ac-gn-item-menu ac-gn-ipad">
+				<a class="ac-gn-link ac-gn-link-ipad" href="https://www.apple.com/ipad/" data-analytics-title="ipad">
+					<span class="ac-gn-link-text">iPad</span>
+				</a>
+			</li>
+			<li class="ac-gn-item ac-gn-item-menu ac-gn-iphone">
+				<a class="ac-gn-link ac-gn-link-iphone" href="https://www.apple.com/iphone/" data-analytics-title="iphone">
+					<span class="ac-gn-link-text">iPhone</span>
+				</a>
+			</li>
+			<li class="ac-gn-item ac-gn-item-menu ac-gn-watch">
+				<a class="ac-gn-link ac-gn-link-watch" href="https://www.apple.com/watch/" data-analytics-title="watch">
+					<span class="ac-gn-link-text">Watch</span>
+				</a>
+			</li>
+			<li class="ac-gn-item ac-gn-item-menu ac-gn-airpods">
+				<a class="ac-gn-link ac-gn-link-airpods" href="https://www.apple.com/airpods/" data-analytics-title="airpods">
+					<span class="ac-gn-link-text">AirPods</span>
+				</a>
+			</li>
+			<li class="ac-gn-item ac-gn-item-menu ac-gn-tvhome">
+				<a class="ac-gn-link ac-gn-link-tvhome" href="https://www.apple.com/tv-home/" data-analytics-title="tv and home">
+					<span class="ac-gn-link-text">TV &amp; Home</span>
+				</a>
+			</li>
+			<li class="ac-gn-item ac-gn-item-menu ac-gn-onlyonapple">
+				<a class="ac-gn-link ac-gn-link-onlyonapple" href="https://www.apple.com/services/" data-analytics-title="only on apple">
+					<span class="ac-gn-link-text">Only on Apple</span>
+				</a>
+			</li>
+			<li class="ac-gn-item ac-gn-item-menu ac-gn-accessories">
+				<a class="ac-gn-link ac-gn-link-accessories" href="https://www.apple.com/us/shop/goto/buy_accessories" data-analytics-title="accessories">
+					<span class="ac-gn-link-text">Accessories</span>
+				</a>
+			</li>
+			<li class="ac-gn-item ac-gn-item-menu ac-gn-support">
+				<a class="ac-gn-link ac-gn-link-support" href="https://support.apple.com" data-analytics-title="support">
+					<span class="ac-gn-link-text">Support</span>
+				</a>
+			</li>
+			<li class="ac-gn-item ac-gn-item-menu ac-gn-search" role="search">
+				<a id="ac-gn-link-search" class="ac-gn-link ac-gn-link-search" href="https://www.apple.com/us/search" data-analytics-title="search" data-analytics-intrapage-link aria-label="Search apple.com"></a>
+			</li>
+			<li class="ac-gn-item ac-gn-bag" id="ac-gn-bag">
+				<div class="ac-gn-bag-wrapper">
+					<a class="ac-gn-link ac-gn-link-bag" href="https://www.apple.com/us/shop/goto/bag" data-analytics-title="bag" data-analytics-click="bag" aria-label="Shopping Bag" data-string-badge="Shopping Bag with item count : {%BAGITEMCOUNT%}">
+						<span class="ac-gn-link-text">Shopping Bag</span>
+					</a>
+					<span class="ac-gn-bag-badge" aria-hidden="true" data-analytics-title="bag" data-analytics-click="bag">
+						<span class="ac-gn-bag-badge-separator"></span>
+						<span class="ac-gn-bag-badge-number"></span>
+						<span class="ac-gn-bag-badge-unit">+</span>
+					</span>
+				</div>
+				<span class="ac-gn-bagview-caret ac-gn-bagview-caret-large"></span>
+			</li>
+		</ul>
+		<aside id="ac-gn-searchview" class="ac-gn-searchview" role="search" data-analytics-region="search">
+			<div class="ac-gn-searchview-content">
+				<div class="ac-gn-searchview-bar">
+					<div class="ac-gn-searchview-bar-wrapper">
+						<form id="ac-gn-searchform" class="ac-gn-searchform" action="https://www.apple.com/us/search" method="get">
+							<div class="ac-gn-searchform-wrapper">
+								<input id="ac-gn-searchform-input" class="ac-gn-searchform-input" type="text" aria-label="Search apple.com" placeholder="Search apple.com" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="true" aria-owns="quicklinks suggestions">
+								<input id="ac-gn-searchform-src" type="hidden" name="src" value="itunes_serp">
+								<button id="ac-gn-searchform-submit" class="ac-gn-searchform-submit" type="submit" disabled aria-label="Submit Search"> </button>
+								<button id="ac-gn-searchform-reset" class="ac-gn-searchform-reset" type="reset" disabled aria-label="Clear Search">
+									<span class="ac-gn-searchform-reset-background"></span>
+								</button>
+							</div>
+						</form>
+						<button id="ac-gn-searchview-close-small" class="ac-gn-searchview-close ac-gn-searchview-close-small" aria-label="Cancel Search">
+							<span class="ac-gn-searchview-close-cancel" aria-hidden="true">
+								Cancel
+							</span>
+						</button>
+					</div>
+				</div>
+				<aside id="ac-gn-searchresults" class="ac-gn-searchresults" data-string-quicklinks="Quick Links" data-string-suggestions="Suggested Searches" data-string-noresults></aside>
+			</div>
+			<button id="ac-gn-searchview-close" class="ac-gn-searchview-close" aria-label="Cancel Search">
+				<span class="ac-gn-searchview-close-wrapper">
+					<span class="ac-gn-searchview-close-left"></span>
+					<span class="ac-gn-searchview-close-right"></span>
+				</span>
+			</button>
+		</aside>
+		<aside class="ac-gn-bagview" data-analytics-region="bag">
+			<div class="ac-gn-bagview-scrim">
+				<span class="ac-gn-bagview-caret ac-gn-bagview-caret-small"></span>
+			</div>
+			<div class="ac-gn-bagview-content" id="ac-gn-bagview-content">
+			</div>
+		</aside>
+	</div>
+</nav>
+<div class="ac-gn-blur"></div>
+<div id="ac-gn-curtain" class="ac-gn-curtain"></div>
+<div id="ac-gn-placeholder" class="ac-nav-placeholder"></div>
+<div class="ember-view">
+  <!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+
+
+  <main class="selfclear is-podcasts-theme">
+    
+<!---->
+
+  <input id="localnav-menustate" class="localnav-menustate" type="checkbox">
+
+<nav id="localnav" class="css-sticky we-localnav localnav   we-localnav--podcasts" data-sticky>
+  <div class="localnav-wrapper">
+    <div class="localnav-background we-localnav__background"></div>
+    <div class="localnav-content we-localnav__content">
+      <div class="localnav-title we-localnav__title">
+        <a href="https://www.apple.com/apple-podcasts/" data-we-link-to-exclude><span class="we-localnav__title__product" data-test-we-localnav-store-title>Apple Podcasts</span></a> <span class="we-localnav__title__qualifier" data-test-we-localnav-preview-title>Preview</span>
+      </div>
+      <div class="localnav-menu we-localnav__menu we-localnav__menu--podcasts">
+<!---->        <div class="localnav-actions we-localnav__actions">
+<!---->            <div class="localnav-action localnav-action-button we-localnav__action">
+            </div>
+                  </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<span class="we-localnav__shim" aria-hidden="true"></span>
+<label id="localnav-curtain" for="localnav-menustate"></label>
+
+
+<!---->
+
+
+<div class="animation-wrapper is-visible">
+  
+    <div class="l-content-width section section--hero product-hero">
+      <section>
+  <div class="l-row">
+    <div class="l-column medium-5 large-4 small-valign-top small-hide medium-show-inlineblock">
+        <picture class="we-artwork we-artwork--downloaded product-artwork product-artwork--bottom-separator product-artwork--captioned we-artwork--fullwidth" style="--background-color: #f7f7f7;" id="ember44979">
+
+        <source srcset="https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/268x0w.webp 268w, https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/276x0w.webp 276w, https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/313x0w.webp 313w, https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/536x0w.webp 536w, https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/552x0w.webp 552w, https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/626x0w.webp 626w" sizes="(max-width: 734px) 268px, (min-width: 735px) and (max-width: 1068px) 276px, 313px" type="image/webp">
+
+      <source srcset="https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/268x0w.jpg 268w, https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/276x0w.jpg 276w, https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/313x0w.jpg 313w, https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/536x0w.jpg 536w, https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/552x0w.jpg 552w, https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/626x0w.jpg 626w" sizes="(max-width: 734px) 268px, (min-width: 735px) and (max-width: 1068px) 276px, 313px" type="image/jpeg">
+
+      <img src="/assets/artwork/1x1-42817eea7ade52607a760cbee00d1495.gif" decoding="async" class="we-artwork__image ember44979 " alt role="presentation" height="268" width="268">
+
+
+  <style>
+    .ember44979, #ember44979::before {
+           width: 268px;
+           height: 268px;
+         }
+         .ember44979::before {
+           padding-top: 100%;
+         }
+@media (min-width: 735px) {
+           .ember44979, #ember44979::before {
+           width: 276px;
+           height: 276px;
+         }
+         .ember44979::before {
+           padding-top: 100%;
+         }
+         }
+@media (min-width: 1069px) {
+           .ember44979, #ember44979::before {
+           width: 313px;
+           height: 313px;
+         }
+         .ember44979::before {
+           padding-top: 100%;
+         }
+         }
+  </style>
+</picture>
+
+
+      <div class="product-artwork__caption small-hide medium-show">
+          <p>24 episodes</p>
+      </div>
+
+      <div class="product-hero-desc product-hero-desc--spacer-bottom-large product-hero-desc--side-bar">
+          <section class="product-hero-desc__section">
+              <div class="we-truncate we-truncate--multi-line we-truncate--interactive " dir>
+        
+
+        <p dir="false" data-test-bidi>In Bill’s roles as Chief Analytics Officer for both Teradata and The Int&#39;l Institute For Analytics, he was lucky enough to meet with analytics executives in hundreds of large companies around the world. Now with Kennesaw State U&#39;s School of Data Science and Analytics, he interviews executives he’s met to learn about how their careers unfolded, what skills they look for when hiring, what trends they think are coming next, and more! If you want an inside view into what some of today’s top data science names are thinking about, this series is for you! Video versions here: https://bit.ly/3jiMPKp</p>
+    
+
+
+<!----></div>
+
+
+          </section>
+      </div>
+    </div>
+
+    <div class="l-column small-12 medium-7 large-8 small-valign-top">
+      <div class="l-row">
+        <div class="l-column small-5 medium-hide small-valign-top">
+            <picture class="we-artwork we-artwork--downloaded product-artwork product-artwork--bottom-separator we-artwork--fullwidth" style="--background-color: #f7f7f7;" id="ember44980">
+
+        <source srcset="https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/268x0w.webp 268w, https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/276x0w.webp 276w, https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/313x0w.webp 313w, https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/536x0w.webp 536w, https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/552x0w.webp 552w, https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/626x0w.webp 626w" sizes="(max-width: 734px) 268px, (min-width: 735px) and (max-width: 1068px) 276px, 313px" type="image/webp">
+
+      <source srcset="https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/268x0w.jpg 268w, https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/276x0w.jpg 276w, https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/313x0w.jpg 313w, https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/536x0w.jpg 536w, https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/552x0w.jpg 552w, https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/626x0w.jpg 626w" sizes="(max-width: 734px) 268px, (min-width: 735px) and (max-width: 1068px) 276px, 313px" type="image/jpeg">
+
+      <img src="/assets/artwork/1x1-42817eea7ade52607a760cbee00d1495.gif" decoding="async" loading="lazy" class="we-artwork__image ember44980  we-artwork__image--lazyload" alt role="presentation" height="268" width="268">
+
+
+  <style>
+    .ember44980, #ember44980::before {
+           width: 268px;
+           height: 268px;
+         }
+         .ember44980::before {
+           padding-top: 100%;
+         }
+@media (min-width: 735px) {
+           .ember44980, #ember44980::before {
+           width: 276px;
+           height: 276px;
+         }
+         .ember44980::before {
+           padding-top: 100%;
+         }
+         }
+@media (min-width: 1069px) {
+           .ember44980, #ember44980::before {
+           width: 313px;
+           height: 313px;
+         }
+         .ember44980::before {
+           padding-top: 100%;
+         }
+         }
+  </style>
+</picture>
+
+        </div>
+
+        <div class="l-column small-7 medium-12 small-valign-top">
+          <header class="product-header product-header--padded-start podcast-header">
+            <h1>
+              <span class="product-header__title" aria-label="Data Science Perspectives">
+                Data Science Perspectives
+              </span>
+
+              <span class="product-header__identity podcast-header__identity">
+                    Bill Franks
+              </span>
+            </h1>
+
+            <ul class="product-header__list podcast-header__list">
+              <li class="product-header__list__item">
+                <ul class="inline-list">
+                  <li class="inline-list__item inline-list__item--bulleted">
+                    Business
+                  </li>
+                </ul>
+              </li>
+
+                <li class="product-header__list__item">
+                  <ul class="inline-list inline-list--mobile-compact">
+                    <li class="inline-list__item">
+                      <figure class="we-star-rating" aria-label="5 out of 5">
+  <span class="we-star-rating-stars-outlines">
+    <span class="we-star-rating-stars we-star-rating-stars-5"></span>
+  </span>
+    <figcaption class="we-rating-count star-rating__count">5.0 • 1 Rating</figcaption>
+</figure>
+
+                    </li>
+                  </ul>
+                </li>
+            </ul>
+
+            <div class="small-hide medium-show">
+              <div class="product-header__routes podcast-header__routes">
+                <p class="product-header__routes__cta">
+                    <div class="we-button__container">
+    <!---->
+
+<!---->  </div>
+
+                </p>
+
+                <div class="we-share we-share--allows-embed we-share--header">
+  <button class="we-share__trigger icon icon-sharrow" aria-label="Open sharing menu" aria-expanded="false" aria-haspopup="menu" type="button">
+  </button>
+
+<!----></div>
+              </div>
+            </div>
+          </header>
+        </div>
+      </div>
+
+      <div class="product-hero-desc product-hero-desc--small medium-hide">
+          <section class="product-hero-desc__section">
+              <div class="we-truncate we-truncate--multi-line we-truncate--interactive " dir>
+        
+
+        <p dir="false" data-test-bidi>In Bill’s roles as Chief Analytics Officer for both Teradata and The Int&#39;l Institute For Analytics, he was lucky enough to meet with analytics executives in hundreds of large companies around the world. Now with Kennesaw State U&#39;s School of Data Science and Analytics, he interviews executives he’s met to learn about how their careers unfolded, what skills they look for when hiring, what trends they think are coming next, and more! If you want an inside view into what some of today’s top data science names are thinking about, this series is for you! Video versions here: https://bit.ly/3jiMPKp</p>
+    
+
+
+<!----></div>
+
+
+          </section>
+      </div>
+
+      <div class="medium-hide">
+        <div class="product-header__routes product-header__routes--wrap product-header__routes--desc">
+          <p class="product-header__routes__cta">
+              <div class="we-button__container">
+    <!---->
+
+<!---->  </div>
+
+          </p>
+
+          <div class="we-share we-share--allows-embed we-share--header">
+  <button class="we-share__trigger icon icon-sharrow" aria-label="Open sharing menu" aria-expanded="false" aria-haspopup="menu" type="button">
+  </button>
+
+<!----></div>
+        </div>
+      </div>
+
+      <div class="product-hero__tracks">
+  <div class="section section--bordered">
+    <ol class="tracks tracks--linear-show">
+        <li class="tracks__track tracks__track--podcast">
+  <div class="l-row">
+    <div class="l-column  small-valign-top tracks__track__content">
+      <ul class="inline-list inline-list--truncate-single-line tracks__track__eyebrow">
+        <li class="inline-list__item inline-list__item--margin-inline-start-large tracks__track__eyebrow-item">
+          <time data-test-we-datetime datetime="2022-06-23T13:38:04.000Z" aria-label="June 23, 2022" class="" >JUN 23, 2022</time>
+        </li>
+<!---->      </ul>
+        <a href="https://podcasts.apple.com/us/podcast/season-4-episode-6-wes-chaar-chief-data-analytics-officer/id1584986358?i=1000567504169" class="link tracks__track__link--block" data-metrics-click="{&quot;actionType&quot;:&quot;navigate&quot;,&quot;actionUrl&quot;:&quot;https://podcasts.apple.com/us/podcast/season-4-episode-6-wes-chaar-chief-data-analytics-officer/id1584986358?i=1000567504169&quot;,&quot;targetType&quot;:&quot;card&quot;,&quot;targetId&quot;:&quot;1000567504169&quot;}" data-episode-id="1000567504169">
+          Season 4, Episode 6 - Wes Chaar, Chief Data &amp; Analytics Officer at Fyllo
+        </a>
+      <h2 class="tracks__track__headline spread">
+          <span class="we-truncate we-truncate--multi-line " dir>
+        
+
+                    <p data-test-bidi>Season 4, Episode 6 - Wes Chaar, Chief Data &amp; Analytics Officer at Fyllo</p>
+
+    
+
+
+<!----></span>
+
+
+      </h2>
+
+          <div class="we-truncate we-truncate--multi-line  tracks__track__copy" dir>
+        
+
+        <p dir="false" data-test-bidi>A discussion with Wes Chaar, Chief Data &amp; Analytics Officer at Fyllo. Former Catalina, Turner Broadcasting, and Delta Airlines<br /><br />#analytics #datascience #leadership #machinelearning #ai #artificialintelligence #Fyllo #Catalina #TurnerBroadcastingSystems #DeltaAirlines #Sabre</p>
+    
+
+
+<!----></div>
+
+
+
+      <ul class="tracks__track__meta inline-list inline-list--truncate-single-line tracks__track__subcopy ">
+<!---->
+<!----><!---->
+          <li class="inline-list__item inline-list__item--margin-inline-start-small">24 min</li>
+<!---->      </ul>
+
+<!---->
+<!---->    </div>
+  </div>
+</li>
+
+        <li class="tracks__track tracks__track--podcast">
+  <div class="l-row">
+    <div class="l-column  small-valign-top tracks__track__content">
+      <ul class="inline-list inline-list--truncate-single-line tracks__track__eyebrow">
+        <li class="inline-list__item inline-list__item--margin-inline-start-large tracks__track__eyebrow-item">
+          <time data-test-we-datetime datetime="2022-06-16T13:07:45.000Z" aria-label="June 16, 2022" class="" >JUN 16, 2022</time>
+        </li>
+<!---->      </ul>
+        <a href="https://podcasts.apple.com/us/podcast/season-4-episode-5-rasmus-wegener-senior-partner-bain/id1584986358?i=1000566638515" class="link tracks__track__link--block" data-metrics-click="{&quot;actionType&quot;:&quot;navigate&quot;,&quot;actionUrl&quot;:&quot;https://podcasts.apple.com/us/podcast/season-4-episode-5-rasmus-wegener-senior-partner-bain/id1584986358?i=1000566638515&quot;,&quot;targetType&quot;:&quot;card&quot;,&quot;targetId&quot;:&quot;1000566638515&quot;}" data-episode-id="1000566638515">
+          Season 4, Episode 5 - Rasmus Wegener, Senior Partner, Bain &amp; Company
+        </a>
+      <h2 class="tracks__track__headline spread">
+          <span class="we-truncate we-truncate--multi-line " dir>
+        
+
+                    <p data-test-bidi>Season 4, Episode 5 - Rasmus Wegener, Senior Partner, Bain &amp; Company</p>
+
+    
+
+
+<!----></span>
+
+
+      </h2>
+
+          <div class="we-truncate we-truncate--multi-line  tracks__track__copy" dir>
+        
+
+        <p dir="false" data-test-bidi>A discussion with Rasmus Wegener, Senior Partner, Bain &amp; Company.  #analytics #datascience #leadership #machinelearning #ai #artificialintelligence #bain #consulting</p>
+    
+
+
+<!----></div>
+
+
+
+      <ul class="tracks__track__meta inline-list inline-list--truncate-single-line tracks__track__subcopy ">
+<!---->
+<!----><!---->
+          <li class="inline-list__item inline-list__item--margin-inline-start-small">28 min</li>
+<!---->      </ul>
+
+<!---->
+<!---->    </div>
+  </div>
+</li>
+
+        <li class="tracks__track tracks__track--podcast">
+  <div class="l-row">
+    <div class="l-column  small-valign-top tracks__track__content">
+      <ul class="inline-list inline-list--truncate-single-line tracks__track__eyebrow">
+        <li class="inline-list__item inline-list__item--margin-inline-start-large tracks__track__eyebrow-item">
+          <time data-test-we-datetime datetime="2022-06-02T13:12:42.000Z" aria-label="June 2, 2022" class="" >JUN 2, 2022</time>
+        </li>
+<!---->      </ul>
+        <a href="https://podcasts.apple.com/us/podcast/season-4-episode-4-anne-robinson-chief-strategy-officer/id1584986358?i=1000564972376" class="link tracks__track__link--block" data-metrics-click="{&quot;actionType&quot;:&quot;navigate&quot;,&quot;actionUrl&quot;:&quot;https://podcasts.apple.com/us/podcast/season-4-episode-4-anne-robinson-chief-strategy-officer/id1584986358?i=1000564972376&quot;,&quot;targetType&quot;:&quot;card&quot;,&quot;targetId&quot;:&quot;1000564972376&quot;}" data-episode-id="1000564972376">
+          Season 4, Episode 4 - Anne Robinson, Chief Strategy Officer, Kinaxis
+        </a>
+      <h2 class="tracks__track__headline spread">
+          <span class="we-truncate we-truncate--multi-line " dir>
+        
+
+                    <p data-test-bidi>Season 4, Episode 4 - Anne Robinson, Chief Strategy Officer, Kinaxis</p>
+
+    
+
+
+<!----></span>
+
+
+      </h2>
+
+          <div class="we-truncate we-truncate--multi-line  tracks__track__copy" dir>
+        
+
+        <p dir="false" data-test-bidi>A discussion with Anne Robinson, Chief Strategy Officer, Kinaxis. Also prior roles at Verizon and Cisco  #analytics #datascience #leadership #machinelearning #ai #artificialintelligence #kinaxis #cisco #verizon</p>
+    
+
+
+<!----></div>
+
+
+
+      <ul class="tracks__track__meta inline-list inline-list--truncate-single-line tracks__track__subcopy ">
+<!---->
+<!----><!---->
+          <li class="inline-list__item inline-list__item--margin-inline-start-small">24 min</li>
+<!---->      </ul>
+
+<!---->
+<!---->    </div>
+  </div>
+</li>
+
+        <li class="tracks__track tracks__track--podcast">
+  <div class="l-row">
+    <div class="l-column  small-valign-top tracks__track__content">
+      <ul class="inline-list inline-list--truncate-single-line tracks__track__eyebrow">
+        <li class="inline-list__item inline-list__item--margin-inline-start-large tracks__track__eyebrow-item">
+          <time data-test-we-datetime datetime="2022-05-26T15:10:50.000Z" aria-label="May 26, 2022" class="" >MAY 26, 2022</time>
+        </li>
+<!---->      </ul>
+        <a href="https://podcasts.apple.com/us/podcast/season-4-episode-3-melinda-borrero-director-enterprise/id1584986358?i=1000564016264" class="link tracks__track__link--block" data-metrics-click="{&quot;actionType&quot;:&quot;navigate&quot;,&quot;actionUrl&quot;:&quot;https://podcasts.apple.com/us/podcast/season-4-episode-3-melinda-borrero-director-enterprise/id1584986358?i=1000564016264&quot;,&quot;targetType&quot;:&quot;card&quot;,&quot;targetId&quot;:&quot;1000564016264&quot;}" data-episode-id="1000564016264">
+          Season 4, Episode 3 - Melinda Borrero, Director, Enterprise Analytics
+        </a>
+      <h2 class="tracks__track__headline spread">
+          <span class="we-truncate we-truncate--multi-line " dir>
+        
+
+                    <p data-test-bidi>Season 4, Episode 3 - Melinda Borrero, Director, Enterprise Analytics</p>
+
+    
+
+
+<!----></span>
+
+
+      </h2>
+
+          <div class="we-truncate we-truncate--multi-line  tracks__track__copy" dir>
+        
+
+        <p dir="false" data-test-bidi>A discussion with Melinda Borrero, Director, Enterprise Analytics Consulting, Chick-fil-A. Also prior roles at Ipsos, Kantar, and GFK   #analytics #datascience #leadership #machinelearning #ai #artificialintelligence #chickfila #chick-fil-a #ipsos #kantar #GFK</p>
+    
+
+
+<!----></div>
+
+
+
+      <ul class="tracks__track__meta inline-list inline-list--truncate-single-line tracks__track__subcopy ">
+<!---->
+<!----><!---->
+          <li class="inline-list__item inline-list__item--margin-inline-start-small">27 min</li>
+<!---->      </ul>
+
+<!---->
+<!---->    </div>
+  </div>
+</li>
+
+        <li class="tracks__track tracks__track--podcast">
+  <div class="l-row">
+    <div class="l-column  small-valign-top tracks__track__content">
+      <ul class="inline-list inline-list--truncate-single-line tracks__track__eyebrow">
+        <li class="inline-list__item inline-list__item--margin-inline-start-large tracks__track__eyebrow-item">
+          <time data-test-we-datetime datetime="2022-05-19T12:58:40.000Z" aria-label="May 19, 2022" class="" >MAY 19, 2022</time>
+        </li>
+<!---->      </ul>
+        <a href="https://podcasts.apple.com/us/podcast/season-4-episode-2-craig-brabec-chief-data-analytics/id1584986358?i=1000562570908" class="link tracks__track__link--block" data-metrics-click="{&quot;actionType&quot;:&quot;navigate&quot;,&quot;actionUrl&quot;:&quot;https://podcasts.apple.com/us/podcast/season-4-episode-2-craig-brabec-chief-data-analytics/id1584986358?i=1000562570908&quot;,&quot;targetType&quot;:&quot;card&quot;,&quot;targetId&quot;:&quot;1000562570908&quot;}" data-episode-id="1000562570908">
+          Season 4, Episode 2 - Craig Brabec, Chief Data &amp; Analytics Officer, McDonald's
+        </a>
+      <h2 class="tracks__track__headline spread">
+          <span class="we-truncate we-truncate--multi-line " dir>
+        
+
+                    <p data-test-bidi>Season 4, Episode 2 - Craig Brabec, Chief Data &amp; Analytics Officer, McDonald's</p>
+
+    
+
+
+<!----></span>
+
+
+      </h2>
+
+          <div class="we-truncate we-truncate--multi-line  tracks__track__copy" dir>
+        
+
+        <p dir="false" data-test-bidi>A discussion with Craig Brabec, Chief Data &amp; Analytics Officer, McDonald&#39;s.  Former executive roles at Ford, McKesson, Caterpillar. #analytics #datascience #leadership #machinelearning #ai #artificialintelligence #McDonalds #McKesson #Ford #Caterpillar</p>
+    
+
+
+<!----></div>
+
+
+
+      <ul class="tracks__track__meta inline-list inline-list--truncate-single-line tracks__track__subcopy ">
+<!---->
+<!----><!---->
+          <li class="inline-list__item inline-list__item--margin-inline-start-small">29 min</li>
+<!---->      </ul>
+
+<!---->
+<!---->    </div>
+  </div>
+</li>
+
+        <li class="tracks__track tracks__track--podcast">
+  <div class="l-row">
+    <div class="l-column  small-valign-top tracks__track__content">
+      <ul class="inline-list inline-list--truncate-single-line tracks__track__eyebrow">
+        <li class="inline-list__item inline-list__item--margin-inline-start-large tracks__track__eyebrow-item">
+          <time data-test-we-datetime datetime="2022-05-12T13:16:42.000Z" aria-label="May 12, 2022" class="" >MAY 12, 2022</time>
+        </li>
+<!---->      </ul>
+        <a href="https://podcasts.apple.com/us/podcast/season-4-episode-1-mike-stefanick-managing-director-ey/id1584986358?i=1000560762066" class="link tracks__track__link--block" data-metrics-click="{&quot;actionType&quot;:&quot;navigate&quot;,&quot;actionUrl&quot;:&quot;https://podcasts.apple.com/us/podcast/season-4-episode-1-mike-stefanick-managing-director-ey/id1584986358?i=1000560762066&quot;,&quot;targetType&quot;:&quot;card&quot;,&quot;targetId&quot;:&quot;1000560762066&quot;}" data-episode-id="1000560762066">
+          Season 4, Episode 1 - Mike Stefanick, Managing Director, EY
+        </a>
+      <h2 class="tracks__track__headline spread">
+          <span class="we-truncate we-truncate--multi-line " dir>
+        
+
+                    <p data-test-bidi>Season 4, Episode 1 - Mike Stefanick, Managing Director, EY</p>
+
+    
+
+
+<!----></span>
+
+
+      </h2>
+
+          <div class="we-truncate we-truncate--multi-line  tracks__track__copy" dir>
+        
+
+        <p dir="false" data-test-bidi>A discussion with Mike Stefanick, Managing Director, EY.  Former executive roles at SAS, IBM, and Equifax. #analytics #datascience #leadership #machinelearning #ai #artificialintelligence #EY #SAS #IBM #Equifax</p>
+    
+
+
+<!----></div>
+
+
+
+      <ul class="tracks__track__meta inline-list inline-list--truncate-single-line tracks__track__subcopy ">
+<!---->
+<!----><!---->
+          <li class="inline-list__item inline-list__item--margin-inline-start-small">26 min</li>
+<!---->      </ul>
+
+<!---->
+<!---->    </div>
+  </div>
+</li>
+
+    </ol>
+
+<!---->
+      <ul class="tracklist-footer">
+        <li class="tracklist-footer__item">
+          © Bill Franks
+        </li>
+      </ul>
+  </div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+          <section class="section section--bordered">
+      <div class="section__nav">
+        <h2 class="section__headline">
+          Customer Reviews
+        </h2>
+
+        <!---->
+      </div>
+
+        <div class="we-customer-ratings lockup">
+  <div class="l-row">
+    <div class="we-customer-ratings__stats l-column small-4 medium-6 large-4">
+      <div class="we-customer-ratings__averages"><span class="we-customer-ratings__averages__display">5.0</span> out of 5</div>
+        <div class="we-customer-ratings__count small-hide medium-show">1 Rating</div>
+    </div>
+    <div class=" l-column small-8 medium-6 large-4">
+      <figure class="we-star-bar-graph">
+          <div class="we-star-bar-graph__row">
+            <span class="we-star-bar-graph__stars we-star-bar-graph__stars--5"></span>
+            <div class="we-star-bar-graph__bar">
+              <div class="we-star-bar-graph__bar__foreground-bar" style="width: 100%;"></div>
+            </div>
+          </div>
+          <div class="we-star-bar-graph__row">
+            <span class="we-star-bar-graph__stars we-star-bar-graph__stars--4"></span>
+            <div class="we-star-bar-graph__bar">
+              <div class="we-star-bar-graph__bar__foreground-bar" style="width: 0%;"></div>
+            </div>
+          </div>
+          <div class="we-star-bar-graph__row">
+            <span class="we-star-bar-graph__stars we-star-bar-graph__stars--3"></span>
+            <div class="we-star-bar-graph__bar">
+              <div class="we-star-bar-graph__bar__foreground-bar" style="width: 0%;"></div>
+            </div>
+          </div>
+          <div class="we-star-bar-graph__row">
+            <span class="we-star-bar-graph__stars we-star-bar-graph__stars--2"></span>
+            <div class="we-star-bar-graph__bar">
+              <div class="we-star-bar-graph__bar__foreground-bar" style="width: 0%;"></div>
+            </div>
+          </div>
+          <div class="we-star-bar-graph__row">
+            <span class="we-star-bar-graph__stars "></span>
+            <div class="we-star-bar-graph__bar">
+              <div class="we-star-bar-graph__bar__foreground-bar" style="width: 0%;"></div>
+            </div>
+          </div>
+      </figure>
+        <p class="we-customer-ratings__count medium-hide">1 Rating</p>
+    </div>
+  </div>
+</div>
+
+
+
+      <div class="l-row l-row--peek">
+        <!---->
+      </div>
+    </section>
+
+
+      <!---->
+
+      <!---->
+
+      <!---->
+    </div>
+
+
+<!----></div>
+
+
+
+  </main>
+</div><footer id="ac-globalfooter" class="no-js" role="contentinfo" lang="en-US" dir="ltr"><div class="ac-gf-content"><section class="ac-gf-footer">
+	<div class="ac-gf-footer-shop" x-ms-format-detection="none">
+		More ways to shop: <a href="https://www.apple.com/retail/" data-analytics-title="find an apple store">Find an Apple Store</a> or <a href="https://locate.apple.com/" data-analytics-title="other retailers or resellers" data-analytics-exit-link>other retailer</a> near you. <span class="nowrap">Or call 1-800-MY-APPLE.</span>
+	</div>
+	<div class="ac-gf-footer-locale">
+		<a class="ac-gf-footer-locale-link" href="https://www.apple.com/choose-country-region/" title="Choose your country or region" aria-label="Choose your country or region" data-analytics-title="choose your country">Choose your country or region</a>
+	</div>
+	<div class="ac-gf-footer-legal">
+		<div class="ac-gf-footer-legal-copyright">Copyright &#xA9; 2022 Apple Inc. All rights reserved.
+		</div>
+		<div class="ac-gf-footer-legal-links">
+			<a class="ac-gf-footer-legal-link" href="https://www.apple.com/legal/privacy/" data-analytics-title="privacy policy">Privacy Policy</a>
+			<a class="ac-gf-footer-legal-link" href="https://www.apple.com/legal/internet-services/terms/site.html" data-analytics-title="terms of use">Terms of Use</a>
+			<a class="ac-gf-footer-legal-link" href="https://www.apple.com/us/shop/goto/help/sales_refunds" data-analytics-title="sales and refunds">Sales and Refunds</a>
+			<a class="ac-gf-footer-legal-link" href="https://www.apple.com/legal/" data-analytics-title="legal">Legal</a>
+			<a class="ac-gf-footer-legal-link" href="https://www.apple.com/sitemap/" data-analytics-title="site map">Site Map</a>
+		</div>
+	</div>
+</section>
+</div></footer>
+<script type="fastboot/shoebox" id="shoebox-language-code">"en-us"</script><script type="fastboot/shoebox" id="shoebox-ember-localizer">{"en-us":{"WEA.Common.Accessibility.LocalNavClose":"Local Nav Close Menu","WEA.Common.Accessibility.LocalNavOpen":"Local Nav Open Menu","WEA.Common.Authentication.Login":"Sign In","WEA.Common.Authentication.Logout":"Sign Out","WEA.Common.AverageRating":"@@rating@@ out of @@ratingTotal@@","WEA.Common.Close":"Close","WEA.Common.Comma":", ","WEA.Common.DotSeparator":"@@string1@@ · @@string2@@","WEA.Common.Duration":"Duration","WEA.Common.Ellipsis.Animated":"\u003cspan\u003e.\u003c/span\u003e\u003cspan\u003e.\u003c/span\u003e\u003cspan\u003e.\u003c/span\u003e","WEA.Common.Errors.404":"The content you’ve requested isn’t currently available.","WEA.Common.Errors.404.Title":"Content Not Available","WEA.Common.FileSize.GB":"@@count@@ GB","WEA.Common.FileSize.GB.AX.one":"1 gigabyte","WEA.Common.FileSize.GB.AX.other":"@@count@@ gigabytes","WEA.Common.FileSize.GB.Unit":"GB","WEA.Common.FileSize.KB":"@@count@@ KB","WEA.Common.FileSize.KB.AX.one":"1 kilobyte","WEA.Common.FileSize.KB.AX.other":"@@count@@ kilobytes","WEA.Common.FileSize.KB.Unit":"KB","WEA.Common.FileSize.MB":"@@count@@ MB","WEA.Common.FileSize.MB.AX.one":"1 megabyte","WEA.Common.FileSize.MB.AX.other":"@@count@@ megabytes","WEA.Common.FileSize.MB.Unit":"MB","WEA.Common.FileSize.byte.Unit":"byte","WEA.Common.FileSize.byte.one":"1 byte","WEA.Common.FileSize.byte.other":"@@count@@ bytes","WEA.Common.Free":"Free","WEA.Common.Get":"GET","WEA.Common.Hours.Unit.Short":"hr","WEA.Common.Hours.abbr.one":"1 hr","WEA.Common.Hours.abbr.other":"@@count@@ hr","WEA.Common.Hours.one":"1 Hour","WEA.Common.Hours.other":"@@count@@ Hours","WEA.Common.Languages.AD":"AD","WEA.Common.Languages.AudioTrack":"AudioTrack","WEA.Common.Languages.CC":"CC","WEA.Common.Languages.Dolby51":"Dolby Digital 5.1","WEA.Common.Languages.Dolby51Plus":"Dolby Digital Plus 5.1","WEA.Common.Languages.Dolby71Plus":"Dolby Digital Plus 7.1","WEA.Common.Languages.DolbyAtmos":"Dolby Atmos","WEA.Common.Languages.SDH":"SDH","WEA.Common.Languages.Subtitled":"Subtitled","WEA.Common.Languages.hasAudioDescription":"AD","WEA.Common.Languages.hasClosedCaptioning":"CC","WEA.Common.Languages.hasDolby":"Dolby 5.1","WEA.Common.Languages.hasDolby71":"Dolby Digital Plus 7.1","WEA.Common.Languages.hasDolbyAtmos":"Dolby Atmos","WEA.Common.Languages.hasSDH":"SDH","WEA.Common.Languages.hasStereo":"Stereo","WEA.Common.Languages.hasSubtitles":"Subtitles","WEA.Common.Languages.languageDescriptor":"@@languageName@@ (@@languageMeta@@)","WEA.Common.LearnMore":"Learn More","WEA.Common.Listen":"Listen","WEA.Common.Loading":"Loading","WEA.Common.Meta.FB.genericDescription.Books":"From mysteries to memoirs, enjoy books and audiobooks on your iPhone, iPad, iPod touch, or Apple Watch. Read free samples of ebooks and listen to free audiobook previews. Get recent bestsellers, all-time favorites, and more on Apple Books—all ready to instantly download.","WEA.Common.Meta.FB.siteName.AM":"Apple Music","WEA.Common.Meta.FB.siteName.AppleTV":"Apple TV","WEA.Common.Meta.FB.siteName.Apps":"App Store","WEA.Common.Meta.FB.siteName.Books":"Apple Books","WEA.Common.Meta.FB.siteName.MacApps":"Mac App Store","WEA.Common.Meta.FB.siteName.Podcasts":"Apple Podcasts","WEA.Common.Meta.FB.siteName.iTunes":"iTunes","WEA.Common.Meta.Twitter.genericDescription.Books":"From mysteries to memoirs, enjoy books and audiobooks on your iPhone, iPad, iPod touch, or Apple Watch. Read free samples of ebooks and listen to free audiobook previews. Get recent bestsellers, all-time favorites, and more on Apple Books—all ready to instantly download.","WEA.Common.Meta.Twitter.site.AM":"@appleMusic","WEA.Common.Meta.Twitter.site.Apps":"@AppStore","WEA.Common.Meta.Twitter.site.Books":"@AppleBooks","WEA.Common.Meta.Twitter.site.iTunes":"@iTunes","WEA.Common.Minutes.Unit.Short":"min","WEA.Common.Minutes.abbr.one":"1 min","WEA.Common.Minutes.abbr.other":"@@count@@ min","WEA.Common.Minutes.one":"1 Minute","WEA.Common.Minutes.other":"@@count@@ Minutes","WEA.Common.More":"more","WEA.Common.NowPlaying":"NOW PLAYING","WEA.Common.Number":"@@count@@","WEA.Common.OG.SiteName.AppleBooks":"Apple Books","WEA.Common.OG.SiteName.TV":"Apple TV","WEA.Common.OG.SiteName.iTunes":"iTunes","WEA.Common.OpensIn.AppleBooks":"Opens In Apple Books","WEA.Common.Paid":"Paid","WEA.Common.Pause":"PAUSE","WEA.Common.Pause.Alternate":"PAUSE","WEA.Common.Percentage":"@@percentage@@%","WEA.Common.Platforms.AppleTv":"Apple TV","WEA.Common.Platforms.Bundles":"Bundles","WEA.Common.Platforms.Mac":"Mac","WEA.Common.Platforms.Watch":"Apple Watch","WEA.Common.Platforms.iMessage":"iMessage","WEA.Common.Platforms.iPad":"iPad","WEA.Common.Platforms.iPadiPhone":"iPad \u0026 iPhone","WEA.Common.Platforms.iPhone":"iPhone","WEA.Common.Play":"Play","WEA.Common.Play.Alternate":"PLAY","WEA.Common.Playback.Progress":"Playback Progress","WEA.Common.Playback.Skip.Ahead":"Skip Ahead","WEA.Common.Playback.Skip.Back":"Skip Back","WEA.Common.Preview":"PREVIEW","WEA.Common.Preview.VideoName":"Preview @@videoName@@","WEA.Common.Ratings.one":"1 Rating","WEA.Common.Ratings.other":"@@count@@ Ratings","WEA.Common.Ratings.zero":"No Ratings","WEA.Common.Related":"Related","WEA.Common.Released":"Released: @@releaseDate@@","WEA.Common.Roles.AsCharacter":"as @@characterName@@","WEA.Common.Roles.Type.Actor":"Actor","WEA.Common.Roles.Type.Advisor":"Advisor","WEA.Common.Roles.Type.Cast":"Cast","WEA.Common.Roles.Type.Creator":"Creator","WEA.Common.Roles.Type.Director":"Director","WEA.Common.Roles.Type.Guest":"Guest","WEA.Common.Roles.Type.GuestStar":"Guest Star","WEA.Common.Roles.Type.Host":"Host","WEA.Common.Roles.Type.Music":"Music","WEA.Common.Roles.Type.Performer":"Performer","WEA.Common.Roles.Type.Producer":"Producer","WEA.Common.Roles.Type.Voice":"Voice","WEA.Common.Roles.Type.Writer":"Writer","WEA.Common.Seconds.abbr.one":"1 sec","WEA.Common.Seconds.abbr.other":"@@count@@ sec","WEA.Common.Seconds.one":"1 Second","WEA.Common.Seconds.other":"@@count@@ Seconds","WEA.Common.SeeAll.Button":"See All","WEA.Common.SeeAll.Title.Generic":"@@parentName@@ - @@sectionTitle@@","WEA.Common.SeeAll.Title.Item":"@@itemName@@ - @@productName@@ - @@sectionTitle@@","WEA.Common.SeeAll.Title.Product":"@@artistName@@ — @@sectionTitle@@","WEA.Common.SeeDetails.Button":"See Details","WEA.Common.SentenceDelimiter":".","WEA.Common.SeparatorDuration":"@@hours@@ @@minutes@@","WEA.Common.SeparatorDuration.Short":"@@string1@@:@@string2@@","WEA.Common.SeparatorGeneric":"@@string1@@, @@string2@@","WEA.Common.Share.CloseMenu.AX":"Close sharing menu","WEA.Common.Share.Embed.AX":"Copy the embed code for the @@contentType@@ @@mediaTitle@@ by @@name@@","WEA.Common.Share.EmbedCopied":"Embed Code Copied","WEA.Common.Share.Link.AX":"Copy a link to the @@contentType@@ @@mediaTitle@@ by @@name@@","WEA.Common.Share.LinkCopied":"Link Copied","WEA.Common.Share.OpenMenu.AX":"Open sharing menu","WEA.Common.Share.Social.AX":"Share the @@contentType@@ @@mediaTitle@@ by @@name@@ on @@network@@","WEA.Common.Shuffle":"Shuffle","WEA.Common.TV.CTA.AM":"Watch on Mac, PC, or Android with Apple Music","WEA.Common.TV.CTA.AX":"Watch on Apple TV","WEA.Common.Time.AvailableIn":"AVAILABLE IN @@minutes@@ MIN","WEA.Common.Time.DayOfTheWeek.Friday":"FRI @@time@@","WEA.Common.Time.DayOfTheWeek.Monday":"MON @@time@@","WEA.Common.Time.DayOfTheWeek.Saturday":"SAT @@time@@","WEA.Common.Time.DayOfTheWeek.Sunday":"SUN @@time@@","WEA.Common.Time.DayOfTheWeek.Thursday":"THU @@time@@","WEA.Common.Time.DayOfTheWeek.Tuesday":"TUE @@time@@","WEA.Common.Time.DayOfTheWeek.Wednesday":"WED @@time@@","WEA.Common.Time.StartsIn":"STARTS IN @@minutes@@ MIN","WEA.Common.Time.Today":"TODAY @@time@@","WEA.Common.Time.Tomorrow":"TOMORROW @@time@@","WEA.Common.Time.Tonight":"TONIGHT @@time@@","WEA.Common.TogglePlay":"Play/Pause","WEA.Common.TrackList.Album":"ALBUM","WEA.Common.TrackList.Artist":"ARTIST","WEA.Common.TrackList.Price":"PRICE","WEA.Common.TrackList.Time":"TIME","WEA.Common.TrackList.TimeRemaining":"Time remaining","WEA.Common.TrackList.Track":"TITLE","WEA.Common.VideoSubType.concert":"CONCERT","WEA.Common.VideoSubType.episode":"EPISODE","WEA.Common.VideoSubType.episodebonus":"EPISODE BONUS","WEA.Common.VideoSubType.feature":"FEATURE","WEA.Common.VideoSubType.seasonbonus":"SEASON BONUS","WEA.Common.VideoSubType.short":"SHORT","WEA.Common.VideoSubType.specialty":"SPECIALTY","WEA.Common.VideoSubType.tvextra":"EXTRA","WEA.Common.VideoSubType.tvinterview":"INTERVIEW","WEA.Common.VideoSubType.tvtrailer":"TRAILER","WEA.Common.View":"VIEW","WEA.Common.Yes":"Yes","WEA.DeepLinkPages.Social.Invite.Description.AM":"Discover music with friends","WEA.DeepLinkPages.Social.Invite.Title.AM":"Start Sharing on Apple Music","WEA.DeepLinkPages.Social.Subscribe.Description.AM":"Play and download all the music you want.","WEA.DeepLinkPages.Social.Subscribe.Title.AM":"Try Apple Music","WEA.Error.Carrier.Install.AM":"To Start listening, install Apple Music on your device","WEA.Error.Carrier.Installed":"Already have the app?","WEA.Error.Carrier.Open.Action":"Get it on @@appname@@","WEA.Error.Generic.AppleMusicLogo.Text":"Apple Music","WEA.Error.Generic.GooglePlay":"Google Play","WEA.Error.Generic.Install.AM":"If this link does not work, you might need to @@installLink@@.","WEA.Error.Generic.Install.AM.Link.Text":"install Apple Music","WEA.Error.Generic.Meta.PageKeywords":"Apple Music","WEA.Error.Generic.Meta.PageKeywords.AppleBooks":"Apple Books","WEA.Error.Generic.Meta.PageKeywords.iTunes":"iTunes Store","WEA.Error.Generic.Meta.PageTitle":"Connecting to Apple Music.","WEA.Error.Generic.Open.AM":"Open in Apple Music","WEA.Error.Generic.Open.Action.AM":"Open in","WEA.Error.Generic.Subtitle":"If you don’t have iTunes, @@downloadLink@@. If you have iTunes and it doesn’t open automatically, try opening it from your dock or Windows task bar.","WEA.Error.Generic.Subtitle.DownloadLink.Text":"download it for free","WEA.Error.Generic.Subtitle.DownloadLink.URL":"http://www.apple.com/itunes/download/","WEA.Error.Generic.Title":"Connecting to Apple Music","WEA.Error.Generic.Title.AppleBooks":"Connecting to Apple Books","WEA.Error.Generic.Title.Apps":"Connecting to App Store","WEA.Error.Generic.Title.Connecting":"Connecting","WEA.Error.Generic.Title.Podcasts":"Connecting to Apple Podcasts","WEA.Error.Generic.Title.iTunes":"Connecting to the iTunes Store.","WEA.Error.NativeMissing.AM.Subtitle":"You need iTunes to use Apple Music","WEA.Error.NativeMissing.Other.AM":"Get Apple Music on iOS, Android, Mac, and Windows","WEA.Error.NativeMissing.Other.LearnMore.link":"https://www.apple.com/itunes/download/","WEA.Error.NativeMissing.Other.iTunes":"Get iTunes on iOS, Android, Mac, and Windows","WEA.Error.NativeMissing.iTunes.Download.link":"https://www.apple.com/itunes/download/","WEA.Error.NativeMissing.iTunes.Download.text":"Download iTunes","WEA.Error.NativeMissing.iTunes.TV.Subtitle":"Download iTunes below to start watching.","WEA.Error.NativeMissing.iTunes.Title":"We could not find iTunes on your computer.","WEA.Error.NotFound.Meta.Title":"This content can’t be found.","WEA.Error.NotFound.general":"The page you're looking for cannot be found.","WEA.GroupingPages.CTA.GoToWebsite":"Go To","WEA.LocalNav.CTA.AppName.TV":"Apple TV app","WEA.LocalNav.CTA.DownloadiTunes":"Download iTunes","WEA.LocalNav.CTA.DownloadiTunes.url":"https://www.apple.com/itunes/download/","WEA.LocalNav.CTA.FreeTrial":"Try It Now","WEA.LocalNav.CTA.FreeTrial.url":"https://itunes.apple.com/subscribe?app=music","WEA.LocalNav.CTA.iTunesStore.TV":"Learn More","WEA.LocalNav.Preview.AM":"Preview","WEA.LocalNav.Preview.AppStore":"Preview","WEA.LocalNav.Preview.Books":"Preview","WEA.LocalNav.Preview.MAS":"Preview","WEA.LocalNav.Preview.Podcasts":"Preview","WEA.LocalNav.Preview.TV":"Preview","WEA.LocalNav.Preview.iBooks":"Preview","WEA.LocalNav.Preview.iTunes":"Preview","WEA.LocalNav.Store.AM":"Apple Music","WEA.LocalNav.Store.AppStore":"App Store","WEA.LocalNav.Store.Books":"Apple Books","WEA.LocalNav.Store.MAS":"Mac App Store","WEA.LocalNav.Store.Podcasts":"Apple Podcasts","WEA.LocalNav.Store.TV":"Apple TV","WEA.LocalNav.Store.iBooks":"Apple Books","WEA.LocalNav.Store.iTunes":"iTunes","WEA.LocalNav.Title.Preview.AM":"@@product@@ @@qualifier@@","WEA.LocalNav.Title.Preview.AppStore":"@@product@@ @@qualifier@@","WEA.LocalNav.Title.Preview.Books":"@@product@@ @@qualifier@@","WEA.LocalNav.Title.Preview.MAS":"@@product@@ @@qualifier@@","WEA.LocalNav.Title.Preview.Podcasts":"@@product@@ @@qualifier@@","WEA.LocalNav.Title.Preview.TV":"@@product@@ @@qualifier@@","WEA.LocalNav.Title.Preview.iBooks":"@@product@@ @@qualifier@@","WEA.LocalNav.Title.Preview.iTunes":"@@product@@ @@qualifier@@","WEA.MusicPages.Riaa.Explicit.AX":"Parental Advisory: Explicit Lyrics.","WEA.PaddleNav.Next.AX":"Next","WEA.PaddleNav.Previous.AX":"Previous","WEA.PodcastChannelPages.CTA.AX":"View on Apple Podcasts","WEA.PodcastChannelPages.CTA.Action":"View on","WEA.PodcastChannelPages.FB.siteName.podcast-channel":"Apple Podcasts","WEA.PodcastChannelPages.Meta.Keywords":"Listen, @@podcastChannelName@@, apple podcasts","WEA.PodcastChannelPages.Meta.Title":"@@podcastChannelName@@ on Apple Podcasts","WEA.PodcastChannelPages.MinimumRequirement":"Requires macOS 11.1 or higher","WEA.PodcastChannelPages.ReleaseFrequency":"@@frequency@@","WEA.PodcastChannelPages.ShowCount.one":"@@count@@ Show","WEA.PodcastChannelPages.ShowCount.other":"@@count@@ Shows","WEA.PodcastChannelPages.SubHeader.Separator":"•","WEA.PodcastChannelPages.SubTitle":"Podcasts Channel","WEA.PodcastEpisodePages.EpisodeNotes":"Episode Notes","WEA.PodcastEpisodePages.FB.siteName.podcast-episode":"Apple Podcasts","WEA.PodcastEpisodePages.Meta.Description":"Show @@podcastShowName@@, Ep @@episodeName@@ - @@publishedDate@@","WEA.PodcastEpisodePages.Meta.Title":"@@podcastShowName@@: @@episodeName@@ on Apple Podcasts","WEA.PodcastEpisodePages.More":"More Episodes","WEA.PodcastEpisodePages.PageKeywords":"Listen, @@episodeName@@, @@podcastShowName@@, download, apple podcasts","WEA.PodcastEpisodePages.Website":"Episode Website","WEA.PodcastPages.CTA.Podcasts.AX":"Listen on Apple Podcasts","WEA.PodcastPages.CTA.Podcasts.Action":"Listen on","WEA.PodcastPages.CTA.Podcasts.App":"Apple Podcasts","WEA.PodcastPages.CTA.Podcasts.Free.MinRequirement":"Requires macOS 11.4 or higher","WEA.PodcastPages.CTA.Podcasts.Subscribe.MinRequirement":"Requires subscription and macOS 11.4 or higher","WEA.PodcastPages.CustomerReviews.Title":"Customer Reviews","WEA.PodcastPages.Episodes.one":"1 episode","WEA.PodcastPages.Episodes.other":"@@count@@ episodes","WEA.PodcastPages.Explicit.AX":"Explicit","WEA.PodcastPages.FB.siteName.show":"Apple Podcasts","WEA.PodcastPages.ListenersAlsoSubscribed":"You Might Also Like","WEA.PodcastPages.Meta.Title":"@@podcastShowName@@ on Apple Podcasts","WEA.PodcastPages.MoreBy":"More by @@podcastArtist@@","WEA.PodcastPages.PageKeywords":"@@podcastShowName@@, @@artistName@@, podcast show, listen, download, apple podcasts","WEA.PodcastPages.Pause.Podcast.AX":"Pause current podcast","WEA.PodcastPages.Play.Podcast.AX":"Play ‘@@podcastName@@’ by @@podcastArtist@@","WEA.PodcastPages.ShowMoreEpisodes.one":"Show 1 More Episode","WEA.PodcastPages.ShowMoreEpisodes.other":"Show @@count@@ More Episodes","WEA.PodcastPages.TopInCategory.Title":"Top Podcasts In @@categoryName@@","WEA.PodcastPages.Twitter.site.show":"@ApplePodcasts","WEA.StarRating.Separator":" • ","WFA.Common.Meta.Twitter.site":"@Apple"}}</script><script type="fastboot/shoebox" id="shoebox-media-api-cache-amp-podcasts">{".v1.catalog.us.podcasts.1584986358.l.en-us.extend.userrating.2cavailableepisodecount.include.artists.2cchannel.2cepisodes.2cgenres.2clisteners-also-subscribed.2creviews.limit.5bepisodes.5d.6":"{\"x\":1661445031058,\"d\":[{\"id\":\"1584986358\",\"type\":\"podcasts\",\"href\":\"/v1/catalog/us/podcasts/1584986358?l=en-US\",\"attributes\":{\"offers\":[{\"kind\":\"get\",\"type\":\"STDQ\"}],\"copyright\":\"© Bill Franks\",\"availableEpisodeCount\":24,\"genreNames\":[\"Business\",\"Podcasts\"],\"kind\":\"episodic\",\"seasonNumbers\":[1,2,3,4],\"description\":{\"standard\":\"In Bill’s roles as Chief Analytics Officer for both Teradata and The Int'l Institute For Analytics, he was lucky enough to meet with analytics executives in hundreds of large companies around the world. Now with Kennesaw State U's School of Data Science and Analytics, he interviews executives he’s met to learn about how their careers unfolded, what skills they look for when hiring, what trends they think are coming next, and more! If you want an inside view into what some of today’s top data science names are thinking about, this series is for you! Video versions here: https://bit.ly/3jiMPKp\"},\"artwork\":{\"width\":3000,\"height\":3000,\"url\":\"https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/{w}x{h}bb.{f}\",\"bgColor\":\"f7f7f7\",\"textColor1\":\"0a0809\",\"textColor2\":\"241f23\",\"textColor3\":\"393739\",\"textColor4\":\"4e4a4d\"},\"languageTag\":\"en-US\",\"completed\":false,\"url\":\"https://podcasts.apple.com/us/podcast/data-science-perspectives/id1584986358\",\"userRating\":{\"value\":5,\"ratingCount\":1,\"ratingCountList\":[0,0,0,0,1],\"ariaLabelForRatings\":\"5.0 stars\"},\"releaseDateTime\":\"2022-06-16T13:07:00Z\",\"trackCount\":24,\"displayType\":\"free\",\"createdDate\":\"2021-09-08\",\"websiteUrl\":\"https://bill-franks.com\",\"name\":\"Data Science Perspectives\",\"contentRating\":\"clean\",\"artistName\":\"Bill Franks\",\"subscribable\":true,\"subscriptionUrl\":\"https://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/subscribePodcast?cc=us\u0026id=1584986358\"},\"relationships\":{\"episodes\":{\"href\":\"/v1/catalog/us/podcasts/1584986358/episodes?l=en-US\",\"next\":\"/v1/catalog/us/podcasts/1584986358/episodes?l=en-US\u0026offset=6\",\"data\":[{\"id\":\"1000567504169\",\"type\":\"podcast-episodes\",\"href\":\"/v1/catalog/us/podcast-episodes/1000567504169?l=en-US\",\"attributes\":{\"offers\":[{\"kind\":\"get\",\"type\":\"STDQ\"}],\"copyright\":\"Bill Franks\",\"contentAdvisory\":\"\",\"genreNames\":[\"Business\"],\"kind\":\"full\",\"topics\":[],\"mediaKind\":\"audio\",\"description\":{\"standard\":\"A discussion with Wes Chaar, Chief Data \u0026 Analytics Officer at Fyllo. Former Catalina, Turner Broadcasting, and Delta Airlines\\n\\n#analytics #datascience #leadership #machinelearning #ai #artificialintelligence #Fyllo #Catalina #TurnerBroadcastingSystems #DeltaAirlines #Sabre\",\"short\":\"\"},\"artwork\":{\"width\":3000,\"height\":3000,\"url\":\"https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/{w}x{h}bb.{f}\",\"bgColor\":\"f7f7f7\",\"textColor1\":\"0a0809\",\"textColor2\":\"241f23\",\"textColor3\":\"393739\",\"textColor4\":\"4e4a4d\"},\"seasonNumber\":4,\"episodeNumber\":6,\"url\":\"https://podcasts.apple.com/us/podcast/season-4-episode-6-wes-chaar-chief-data-analytics-officer/id1584986358?i=1000567504169\",\"releaseDateTime\":\"2022-06-23T13:38:04Z\",\"websiteUrl\":\"https://anchor.fm/datascienceperspectives/episodes/Season-4--Episode-6---Wes-Chaar--Chief-Data--Analytics-Officer-at-Fyllo-e1cs5u1\",\"durationInMilliseconds\":1493000,\"name\":\"Season 4, Episode 6 - Wes Chaar, Chief Data \u0026 Analytics Officer at Fyllo\",\"guid\":\"031b67e8-bf5e-4536-9796-599587c74b6e\",\"artistName\":\"Bill Franks\",\"contentRating\":\"clean\",\"subscribable\":true,\"assetUrl\":\"https://anchor.fm/s/6957bfc0/podcast/play/46060929/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2022-0-12%2Fb52eebc1-143c-8b79-864d-1f73f0c0fff9.mp3\"}},{\"id\":\"1000566638515\",\"type\":\"podcast-episodes\",\"href\":\"/v1/catalog/us/podcast-episodes/1000566638515?l=en-US\",\"attributes\":{\"offers\":[{\"kind\":\"get\",\"type\":\"STDQ\"}],\"contentAdvisory\":\"\",\"copyright\":\"Bill Franks\",\"genreNames\":[\"Business\"],\"topics\":[],\"kind\":\"full\",\"mediaKind\":\"audio\",\"description\":{\"standard\":\"A discussion with Rasmus Wegener, Senior Partner, Bain \u0026 Company.  #analytics #datascience #leadership #machinelearning #ai #artificialintelligence #bain #consulting\",\"short\":\"\"},\"seasonNumber\":4,\"artwork\":{\"width\":3000,\"height\":3000,\"url\":\"https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/{w}x{h}bb.{f}\",\"bgColor\":\"f7f7f7\",\"textColor1\":\"0a0809\",\"textColor2\":\"241f23\",\"textColor3\":\"393739\",\"textColor4\":\"4e4a4d\"},\"episodeNumber\":5,\"url\":\"https://podcasts.apple.com/us/podcast/season-4-episode-5-rasmus-wegener-senior-partner-bain/id1584986358?i=1000566638515\",\"releaseDateTime\":\"2022-06-16T13:07:45Z\",\"websiteUrl\":\"https://anchor.fm/datascienceperspectives/episodes/Season-4--Episode-5---Rasmus-Wegener--Senior-Partner--Bain--Company-e1hvtvn\",\"durationInMilliseconds\":1725000,\"name\":\"Season 4, Episode 5 - Rasmus Wegener, Senior Partner, Bain \u0026 Company\",\"guid\":\"5c4a7d61-5321-41dc-8ce8-c23f4e62b922\",\"contentRating\":\"clean\",\"artistName\":\"Bill Franks\",\"subscribable\":true,\"assetUrl\":\"https://anchor.fm/s/6957bfc0/podcast/play/51426743/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2022-4-2%2F8eb89376-727b-7b3f-09aa-c78e9df788eb.mp3\"}},{\"id\":\"1000564972376\",\"type\":\"podcast-episodes\",\"href\":\"/v1/catalog/us/podcast-episodes/1000564972376?l=en-US\",\"attributes\":{\"offers\":[{\"kind\":\"get\",\"type\":\"STDQ\"}],\"copyright\":\"Bill Franks\",\"contentAdvisory\":\"\",\"genreNames\":[\"Business\"],\"kind\":\"full\",\"topics\":[],\"mediaKind\":\"audio\",\"description\":{\"standard\":\"A discussion with Anne Robinson, Chief Strategy Officer, Kinaxis. Also prior roles at Verizon and Cisco  #analytics #datascience #leadership #machinelearning #ai #artificialintelligence #kinaxis #cisco #verizon\",\"short\":\"\"},\"artwork\":{\"width\":3000,\"height\":3000,\"url\":\"https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/{w}x{h}bb.{f}\",\"bgColor\":\"f7f7f7\",\"textColor1\":\"0a0809\",\"textColor2\":\"241f23\",\"textColor3\":\"393739\",\"textColor4\":\"4e4a4d\"},\"seasonNumber\":4,\"episodeNumber\":4,\"url\":\"https://podcasts.apple.com/us/podcast/season-4-episode-4-anne-robinson-chief-strategy-officer/id1584986358?i=1000564972376\",\"releaseDateTime\":\"2022-06-02T13:12:42Z\",\"websiteUrl\":\"https://anchor.fm/datascienceperspectives/episodes/Season-4--Episode-4---Anne-Robinson--Chief-Strategy-Officer--Kinaxis-e1hvtui\",\"durationInMilliseconds\":1479000,\"name\":\"Season 4, Episode 4 - Anne Robinson, Chief Strategy Officer, Kinaxis\",\"guid\":\"dcfc6c48-d7d7-48c8-af84-b553e3509db8\",\"artistName\":\"Bill Franks\",\"contentRating\":\"clean\",\"subscribable\":true,\"assetUrl\":\"https://anchor.fm/s/6957bfc0/podcast/play/51426706/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2022-4-2%2F05c1c726-ca3d-dbf9-3823-225d2da33ea3.mp3\"}},{\"id\":\"1000564016264\",\"type\":\"podcast-episodes\",\"href\":\"/v1/catalog/us/podcast-episodes/1000564016264?l=en-US\",\"attributes\":{\"offers\":[{\"kind\":\"get\",\"type\":\"STDQ\"}],\"copyright\":\"Bill Franks\",\"contentAdvisory\":\"\",\"genreNames\":[\"Business\"],\"kind\":\"full\",\"topics\":[],\"mediaKind\":\"audio\",\"description\":{\"standard\":\"A discussion with Melinda Borrero, Director, Enterprise Analytics Consulting, Chick-fil-A. Also prior roles at Ipsos, Kantar, and GFK   #analytics #datascience #leadership #machinelearning #ai #artificialintelligence #chickfila #chick-fil-a #ipsos #kantar #GFK\",\"short\":\"\"},\"artwork\":{\"width\":3000,\"height\":3000,\"url\":\"https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/{w}x{h}bb.{f}\",\"bgColor\":\"f7f7f7\",\"textColor1\":\"0a0809\",\"textColor2\":\"241f23\",\"textColor3\":\"393739\",\"textColor4\":\"4e4a4d\"},\"seasonNumber\":4,\"episodeNumber\":3,\"url\":\"https://podcasts.apple.com/us/podcast/season-4-episode-3-melinda-borrero-director-enterprise/id1584986358?i=1000564016264\",\"releaseDateTime\":\"2022-05-26T15:10:50Z\",\"websiteUrl\":\"https://anchor.fm/datascienceperspectives/episodes/Season-4--Episode-3---Melinda-Borrero--Director--Enterprise-Analytics-e1hvttj\",\"durationInMilliseconds\":1620000,\"name\":\"Season 4, Episode 3 - Melinda Borrero, Director, Enterprise Analytics\",\"guid\":\"59a6552c-2767-408b-8a54-3e58a816b593\",\"artistName\":\"Bill Franks\",\"contentRating\":\"clean\",\"subscribable\":true,\"assetUrl\":\"https://anchor.fm/s/6957bfc0/podcast/play/51426675/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2022-4-2%2Fa3017112-6f22-dafb-08fc-4143b8b5c3ce.mp3\"}},{\"id\":\"1000562570908\",\"type\":\"podcast-episodes\",\"href\":\"/v1/catalog/us/podcast-episodes/1000562570908?l=en-US\",\"attributes\":{\"offers\":[{\"kind\":\"get\",\"type\":\"STDQ\"}],\"contentAdvisory\":\"\",\"copyright\":\"Bill Franks\",\"genreNames\":[\"Business\"],\"topics\":[],\"kind\":\"full\",\"mediaKind\":\"audio\",\"description\":{\"standard\":\"A discussion with Craig Brabec, Chief Data \u0026 Analytics Officer, McDonald's.  Former executive roles at Ford, McKesson, Caterpillar. #analytics #datascience #leadership #machinelearning #ai #artificialintelligence #McDonalds #McKesson #Ford #Caterpillar\",\"short\":\"\"},\"seasonNumber\":4,\"artwork\":{\"width\":3000,\"height\":3000,\"url\":\"https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/{w}x{h}bb.{f}\",\"bgColor\":\"f7f7f7\",\"textColor1\":\"0a0809\",\"textColor2\":\"241f23\",\"textColor3\":\"393739\",\"textColor4\":\"4e4a4d\"},\"episodeNumber\":2,\"url\":\"https://podcasts.apple.com/us/podcast/season-4-episode-2-craig-brabec-chief-data-analytics/id1584986358?i=1000562570908\",\"releaseDateTime\":\"2022-05-19T12:58:40Z\",\"websiteUrl\":\"https://anchor.fm/datascienceperspectives/episodes/Season-4--Episode-2---Craig-Brabec--Chief-Data--Analytics-Officer--McDonalds-e1hvtrb\",\"durationInMilliseconds\":1795000,\"name\":\"Season 4, Episode 2 - Craig Brabec, Chief Data \u0026 Analytics Officer, McDonald's\",\"guid\":\"9ddf497a-cc9a-4f19-9c71-4a40e9af4d1f\",\"contentRating\":\"clean\",\"artistName\":\"Bill Franks\",\"subscribable\":true,\"assetUrl\":\"https://anchor.fm/s/6957bfc0/podcast/play/51426603/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2022-4-2%2F70693f29-b839-1afb-57c0-13be538db862.mp3\"}},{\"id\":\"1000560762066\",\"type\":\"podcast-episodes\",\"href\":\"/v1/catalog/us/podcast-episodes/1000560762066?l=en-US\",\"attributes\":{\"offers\":[{\"kind\":\"get\",\"type\":\"STDQ\"}],\"copyright\":\"Bill Franks\",\"contentAdvisory\":\"\",\"genreNames\":[\"Business\"],\"kind\":\"full\",\"topics\":[],\"mediaKind\":\"audio\",\"description\":{\"standard\":\"A discussion with Mike Stefanick, Managing Director, EY.  Former executive roles at SAS, IBM, and Equifax. #analytics #datascience #leadership #machinelearning #ai #artificialintelligence #EY #SAS #IBM #Equifax\",\"short\":\"\"},\"artwork\":{\"width\":3000,\"height\":3000,\"url\":\"https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/8b/eb/c2/8bebc2ae-6705-015f-77a6-626d51569bbc/mza_11147789053376373696.jpg/{w}x{h}bb.{f}\",\"bgColor\":\"f7f7f7\",\"textColor1\":\"0a0809\",\"textColor2\":\"241f23\",\"textColor3\":\"393739\",\"textColor4\":\"4e4a4d\"},\"seasonNumber\":4,\"episodeNumber\":1,\"url\":\"https://podcasts.apple.com/us/podcast/season-4-episode-1-mike-stefanick-managing-director-ey/id1584986358?i=1000560762066\",\"releaseDateTime\":\"2022-05-12T13:16:42Z\",\"websiteUrl\":\"https://anchor.fm/datascienceperspectives/episodes/Season-4--Episode-1---Mike-Stefanick--Managing-Director--EY-e1hvtq1\",\"durationInMilliseconds\":1604000,\"name\":\"Season 4, Episode 1 - Mike Stefanick, Managing Director, EY\",\"guid\":\"2e862ddd-7e42-473a-aea2-f49768ce8655\",\"artistName\":\"Bill Franks\",\"contentRating\":\"clean\",\"subscribable\":true,\"assetUrl\":\"https://anchor.fm/s/6957bfc0/podcast/play/51426561/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2022-4-2%2Ff9cb8ed9-bcb6-3631-f97a-69706f1ab783.mp3\"}}]},\"reviews\":{\"href\":\"/v1/catalog/us/podcasts/1584986358/reviews?l=en-US\",\"data\":[]},\"channel\":{\"href\":\"/v1/catalog/us/podcasts/1584986358/channel?l=en-US\",\"data\":[]},\"genres\":{\"href\":\"/v1/catalog/us/podcasts/1584986358/genres?l=en-US\",\"data\":[{\"id\":\"1321\",\"type\":\"genres\",\"href\":\"/v1/catalog/us/genres/1321?l=en-US\",\"attributes\":{\"parentName\":\"Podcasts\",\"name\":\"Business\",\"parentId\":\"26\",\"url\":\"https://itunes.apple.com/us/genre/id1321\"}}]},\"artists\":{\"href\":\"/v1/catalog/us/podcasts/1584986358/artists?l=en-US\",\"data\":[]},\"listeners-also-subscribed\":{\"href\":\"/v1/catalog/us/podcasts/1584986358/listeners-also-subscribed?l=en-US\",\"data\":[],\"meta\":{\"metrics\":{\"reco_shelfCategoryId\":\"mapi.category.podcasts_cab\",\"reco_displayType\":\"CAB\",\"reco_eligible\":\"0\",\"reco_algoId\":\"V1\"}}}}}]}",".v1.catalog.us.charts.types.podcasts.genre.1321":"{\"x\":1661445031101,\"d\":{\"podcasts\":[{\"chart\":\"top-subscriber\",\"name\":\"Top Subscriber Shows\",\"orderId\":\"top-subscriber:podcasts\",\"href\":\"/v1/catalog/us/charts?chart=top-subscriber\u0026genre=1321\u0026types=podcasts\",\"data\":[]},{\"chart\":\"top\",\"name\":\"Top Shows\",\"orderId\":\"top:podcasts\",\"next\":\"/v1/catalog/us/charts?chart=top\u0026genre=1321\u0026offset=20\u0026types=podcasts\",\"data\":[{\"id\":\"77001367\",\"type\":\"podcasts\",\"href\":\"/v1/catalog/us/podcasts/77001367\",\"attributes\":{\"offers\":[{\"kind\":\"get\",\"type\":\"STDQ\"}],\"copyright\":\"© Copyright 2022\",\"genreNames\":[\"Investing\",\"Podcasts\",\"Business\",\"Education\",\"Self-Improvement\"],\"kind\":\"episodic\",\"releaseFrequency\":\"Updated Daily\",\"seasonNumbers\":[],\"description\":{\"standard\":\"Take control of your life and money once and for all. The Ramsey Show offers up straight talk from Dave Ramsey and his team of co-hosts. Millions listen in as callers from all walks of life learn how to get out of debt and start building for the future. Check out one of Apple’s most popular podcasts! For more information, visit www.ramseysolutions.com\"},\"artwork\":{\"width\":1500,\"height\":1500,\"url\":\"https://is4-ssl.mzstatic.com/image/thumb/Podcasts112/v4/b1/22/b5/b122b5fd-c5d1-10ef-eef1-7717a25f8466/mza_11641095006305808153.jpg/{w}x{h}bb.{f}\",\"bgColor\":\"014a82\",\"textColor1\":\"fdd84d\",\"textColor2\":\"fbc836\",\"textColor3\":\"cabc58\",\"textColor4\":\"c9af45\"},\"completed\":false,\"languageTag\":\"en-US\",\"url\":\"https://podcasts.apple.com/us/podcast/the-ramsey-show/id77001367\",\"releaseDateTime\":\"2022-08-24T22:00:00Z\",\"trackCount\":182,\"displayType\":\"free\",\"createdDate\":\"2005-07-26\",\"websiteUrl\":\"https://www.ramseysolutions.com/shows/the-ramsey-show\",\"name\":\"The Ramsey Show\",\"contentRating\":\"clean\",\"artistName\":\"Ramsey Network\",\"subscribable\":true,\"subscriptionUrl\":\"https://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/subscribePodcast?cc=us\u0026id=77001367\"}},{\"id\":\"290783428\",\"type\":\"podcasts\",\"href\":\"/v1/catalog/us/podcasts/290783428\",\"attributes\":{\"offers\":[{\"kind\":\"get\",\"type\":\"PLUS\"},{\"kind\":\"get\",\"type\":\"STDQ\"},{\"kind\":\"subscribe\",\"type\":\"PSUB\"}],\"copyright\":\"© Copyright 2015-2021 NPR - For Personal Use Only\",\"genreNames\":[\"Business\",\"Podcasts\",\"News\"],\"kind\":\"episodic\",\"releaseFrequency\":\"Updated Semiweekly\",\"seasonNumbers\":[],\"description\":{\"standard\":\"The economy explained. Imagine you could call up a friend and say, \\\"Meet me at the bar and tell me what's going on with the economy.\\\" Now imagine that's actually a fun evening.\\n\\nGot money on your mind? Try Planet Money+ — a new way to support the show you love, get a sponsor-free feed of the podcast, *and* get access to bonus content. A subscription also gets you access to The Indicator and Planet Money Summer School, both without ads. Learn more at plus.npr.org/planetmoney.\"},\"artwork\":{\"width\":1400,\"height\":1400,\"url\":\"https://is1-ssl.mzstatic.com/image/thumb/Podcasts122/v4/74/a7/0f/74a70f36-6cd8-3448-70c8-4d13c2d5eee4/mza_2477439662027258814.jpg/{w}x{h}bb.{f}\",\"bgColor\":\"096858\",\"textColor1\":\"ffffff\",\"textColor2\":\"e7f1fa\",\"textColor3\":\"cde0dd\",\"textColor4\":\"bbd6da\"},\"completed\":false,\"languageTag\":\"en-US\",\"url\":\"https://podcasts.apple.com/us/podcast/planet-money/id290783428\",\"releaseDateTime\":\"2022-08-24T23:33:00Z\",\"trackCount\":364,\"displayType\":\"hybrid\",\"createdDate\":\"2008-09-09\",\"websiteUrl\":\"https://www.npr.org/podcasts/510289/planet-money\",\"name\":\"Planet Money\",\"artistName\":\"NPR\",\"subscribable\":true,\"subscriptionUrl\":\"https://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/subscribePodcast?cc=us\u0026id=290783428\"}},{\"id\":\"1559564016\",\"type\":\"podcasts\",\"href\":\"/v1/catalog/us/podcasts/1559564016\",\"attributes\":{\"offers\":[{\"kind\":\"get\",\"type\":\"STDQ\"}],\"copyright\":\"© 2022 iHeartPodcasts\",\"genreNames\":[\"Business\",\"Podcasts\",\"Education\",\"Self-Improvement\"],\"kind\":\"episodic\",\"releaseFrequency\":\"Updated Daily\",\"seasonNumbers\":[1],\"description\":{\"standard\":\"Ever notice that we will talk about everything before we talk about money? Sex? No problem. Politics? Bring it on. Money? Totally taboo. But not for long! Nicole Lapin--the only financial expert you don’t need a dictionary to understand, New York Times best selling author of Rich Bitch, and host of Money Rehab--is here to rehab your wallet, so you can get your financial life together once and for all. Episodes are just ten minutes-ish... no frills, just bite-sized tips and tricks so you don’t waste any time. And Nicole wants to hear from YOU! Email the money questions you want answered to MoneyRehab@NicoleLapin.com and Nicole will help–and you could even join Nicole on the show for a one-on-one intervention.\"},\"artwork\":{\"width\":3000,\"height\":3000,\"url\":\"https://is5-ssl.mzstatic.com/image/thumb/Podcasts112/v4/96/b9/44/96b9449e-496d-deb8-52a5-f0476cbd3d6c/mza_17823380839770969093.jpg/{w}x{h}bb.{f}\",\"bgColor\":\"ecf5f0\",\"textColor1\":\"040505\",\"textColor2\":\"0b262d\",\"textColor3\":\"333534\",\"textColor4\":\"384f54\"},\"completed\":false,\"languageTag\":\"en-US\",\"url\":\"https://podcasts.apple.com/us/podcast/money-rehab-with-nicole-lapin/id1559564016\",\"releaseDateTime\":\"2022-08-25T07:00:00Z\",\"trackCount\":385,\"displayType\":\"free\",\"createdDate\":\"2021-03-22\",\"websiteUrl\":\"https://www.iheart.com/podcast/139-money-rehab-with-nicole-la-80272408/\",\"name\":\"Money Rehab with Nicole Lapin\",\"contentRating\":\"explicit\",\"artistName\":\"iHeartPodcasts\",\"subscribable\":true,\"subscriptionUrl\":\"https://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/subscribePodcast?cc=us\u0026id=1559564016\"}},{\"id\":\"1070322219\",\"type\":\"podcasts\",\"href\":\"/v1/catalog/us/podcasts/1070322219\",\"attributes\":{\"offers\":[{\"kind\":\"get\",\"type\":\"STDQ\"}],\"copyright\":\"© All rights reserved.\",\"genreNames\":[\"Management\",\"Podcasts\",\"Business\",\"History\"],\"kind\":\"episodic\",\"seasonNumbers\":[],\"description\":{\"standard\":\"Retired Navy SEAL, Jocko Willink and Director, Echo Charles discuss discipline and leadership in business, war, relationships and everyday life.\"},\"artwork\":{\"width\":1400,\"height\":1400,\"url\":\"https://is5-ssl.mzstatic.com/image/thumb/Podcasts115/v4/d6/36/58/d636583c-74b6-3d47-2f49-5b3690a4afc0/mza_17018694818923485829.jpg/{w}x{h}bb.{f}\"},\"completed\":false,\"url\":\"https://podcasts.apple.com/us/podcast/jocko-podcast/id1070322219\",\"releaseDateTime\":\"2022-08-24T07:00:00Z\",\"trackCount\":453,\"displayType\":\"free\",\"createdDate\":\"2015-12-22\",\"websiteUrl\":\"https://redcircle.com/shows/jocko-podcast\",\"name\":\"Jocko Podcast\",\"contentRating\":\"explicit\",\"artistName\":\"Jocko DEFCOR Network\",\"subscribable\":true,\"subscriptionUrl\":\"https://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/subscribePodcast?cc=us\u0026id=1070322219\"}},{\"id\":\"1012570406\",\"type\":\"podcasts\",\"href\":\"/v1/catalog/us/podcasts/1012570406\",\"attributes\":{\"offers\":[{\"kind\":\"get\",\"type\":\"STDQ\"}],\"copyright\":\"© Andy Frisella 2020, All Rights Reseved\",\"genreNames\":[\"Entrepreneurship\",\"Podcasts\",\"Business\"],\"kind\":\"episodic\",\"releaseFrequency\":\"Updated Daily\",\"seasonNumbers\":[],\"description\":{\"standard\":\"Entrepreneur Andy Frisella and his guests discuss, debate, and laugh their way through trending topics and hot-button issues. (This is also the home of Andy's other show, the top-ranked MFCEO Project Podcast)\"},\"artwork\":{\"width\":1400,\"height\":1400,\"url\":\"https://is4-ssl.mzstatic.com/image/thumb/Podcasts115/v4/55/21/67/55216775-731a-1a0b-6c2a-81923902f058/mza_11706571282358600140.jpeg/{w}x{h}bb.{f}\",\"bgColor\":\"0d0d0d\",\"textColor1\":\"fefefe\",\"textColor2\":\"dbdbdb\",\"textColor3\":\"cecece\",\"textColor4\":\"b2b2b2\"},\"completed\":false,\"languageTag\":\"en-US\",\"url\":\"https://podcasts.apple.com/us/podcast/real-af-with-andy-frisella/id1012570406\",\"releaseDateTime\":\"2022-08-24T09:00:00Z\",\"trackCount\":686,\"displayType\":\"free\",\"createdDate\":\"2015-06-25\",\"websiteUrl\":\"https://andyfrisella.com/blogs/realaf-podcast\",\"name\":\"REAL AF with Andy Frisella\",\"contentRating\":\"clean\",\"artistName\":\"Andy Frisella #100to0\",\"subscribable\":true,\"subscriptionUrl\":\"https://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/subscribePodcast?cc=us\u0026id=1012570406\"}},{\"id\":\"594419649\",\"type\":\"podcasts\",\"href\":\"/v1/catalog/us/podcasts/594419649\",\"attributes\":{\"offers\":[{\"kind\":\"get\",\"type\":\"STDQ\"}],\"copyright\":\"© Copyright © 2022 BiggerPockets LLC, All Rights Reserved. Disclaimer: The information contained in this podcast is for general information purposes only. In no event will we be liable for any loss or damage derived from the information provided.\",\"genreNames\":[\"Investing\",\"Podcasts\",\"Business\",\"Education\"],\"kind\":\"episodic\",\"releaseFrequency\":\"Updated Daily\",\"seasonNumbers\":[],\"description\":{\"standard\":\"On the BiggerPockets Real Estate Podcast, co-hosts David Greene and Rob Abasolo interview real estate investors and entrepreneurs about successes, failures, and hard-earned lessons. Through in-depth conversations, 1-on-1 listener coaching calls, and news analysis, you’ll get a breakdown of real strategies that work for different niches and experience levels. Tune into the #1 real estate investing podcast every Tuesday, Thursday, and Sunday.\"},\"artwork\":{\"width\":3000,\"height\":3000,\"url\":\"https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/a4/60/bc/a460bc48-9257-570e-9812-7b0b7cebc5ee/mza_5927738068872231461.jpeg/{w}x{h}bb.{f}\",\"bgColor\":\"394f5a\",\"textColor1\":\"fdfdfd\",\"textColor2\":\"efbe18\",\"textColor3\":\"d6dadc\",\"textColor4\":\"cba825\"},\"completed\":false,\"languageTag\":\"en-US\",\"url\":\"https://podcasts.apple.com/us/podcast/biggerpockets-real-estate-podcast/id594419649\",\"releaseDateTime\":\"2022-08-25T06:00:00Z\",\"trackCount\":659,\"displayType\":\"free\",\"createdDate\":\"2013-01-17\",\"websiteUrl\":\"https://www.biggerpockets.com/podcast\",\"name\":\"BiggerPockets Real Estate Podcast\",\"contentRating\":\"clean\",\"artistName\":\"BiggerPockets\",\"subscribable\":true,\"subscriptionUrl\":\"https://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/subscribePodcast?cc=us\u0026id=594419649\"}},{\"id\":\"1150510297\",\"type\":\"podcasts\",\"href\":\"/v1/catalog/us/podcasts/1150510297\",\"attributes\":{\"offers\":[{\"kind\":\"get\",\"type\":\"PLUS\"},{\"kind\":\"get\",\"type\":\"STDQ\"},{\"kind\":\"subscribe\",\"type\":\"PSUB\"}],\"genreNames\":[\"Business\",\"Podcasts\"],\"kind\":\"episodic\",\"releaseFrequency\":\"Updated Weekly\",\"seasonNumbers\":[],\"description\":{\"standard\":\"New episodes on Mondays and Thursdays for free, with 1-week early access for Wondery+ subscribers. Guy Raz dives into the stories behind some of the world's best known companies. How I Built This weaves a narrative journey about innovators, entrepreneurs and idealists—and the movements they built. Order the How I Built This book at https://www.guyraz.com.\"},\"artwork\":{\"width\":3000,\"height\":3000,\"url\":\"https://is3-ssl.mzstatic.com/image/thumb/Podcasts126/v4/0b/46/9a/0b469a46-3452-48ce-5ed0-bf22be14bb0b/mza_6526217132721629383.jpeg/{w}x{h}bb.{f}\",\"bgColor\":\"464646\",\"textColor1\":\"ffffff\",\"textColor2\":\"f7cb16\",\"textColor3\":\"d9d9d9\",\"textColor4\":\"d4b020\"},\"completed\":false,\"languageTag\":\"en-US\",\"url\":\"https://podcasts.apple.com/us/podcast/how-i-built-this-with-guy-raz/id1150510297\",\"releaseDateTime\":\"2022-09-01T04:00:00Z\",\"trackCount\":446,\"displayType\":\"hybrid\",\"createdDate\":\"2016-09-02\",\"websiteUrl\":\"https://wondery.com/shows/how-i-built-this\",\"name\":\"How I Built This with Guy Raz\",\"contentRating\":\"clean\",\"artistName\":\"Guy Raz | Wondery\",\"subscribable\":true,\"subscriptionUrl\":\"https://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/subscribePodcast?cc=us\u0026id=1150510297\"}},{\"id\":\"1181233130\",\"type\":\"podcasts\",\"href\":\"/v1/catalog/us/podcasts/1181233130\",\"attributes\":{\"offers\":[{\"kind\":\"get\",\"type\":\"STDQ\"}],\"copyright\":\"© Copyright: EdMylett.com\",\"genreNames\":[\"Entrepreneurship\",\"Podcasts\",\"Business\",\"Education\",\"Self-Improvement\"],\"kind\":\"episodic\",\"releaseFrequency\":\"Updated Weekly\",\"seasonNumbers\":[],\"description\":{\"standard\":\"The Ed Mylett Show showcases the greatest peak-performers across all industries in one place, sharing their journey, knowledge and thought leadership. With Ed Mylett and featured guests in almost every industry including business, health, collegiate and professional sports, politics, entrepreneurship, science, and entertainment, you'll find motivation, inspiration and practical steps to help you become the best version of you!\"},\"artwork\":{\"width\":1500,\"height\":1500,\"url\":\"https://is2-ssl.mzstatic.com/image/thumb/Podcasts116/v4/6d/ed/1c/6ded1c94-87cd-6281-26d9-0e1f44b044a4/mza_5773368827684590332.jpg/{w}x{h}bb.{f}\",\"bgColor\":\"00203e\",\"textColor1\":\"feffff\",\"textColor2\":\"a6cac2\",\"textColor3\":\"cbd2d8\",\"textColor4\":\"85a8a7\"},\"completed\":false,\"languageTag\":\"en-US\",\"url\":\"https://podcasts.apple.com/us/podcast/the-ed-mylett-show/id1181233130\",\"releaseDateTime\":\"2022-08-23T10:00:00Z\",\"trackCount\":253,\"displayType\":\"free\",\"createdDate\":\"2016-11-30\",\"websiteUrl\":\"https://the-ed-mylett-show.simplecast.com\",\"name\":\"THE ED MYLETT SHOW\",\"contentRating\":\"clean\",\"artistName\":\"Ed Mylett\",\"subscribable\":true,\"subscriptionUrl\":\"https://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/subscribePodcast?cc=us\u0026id=1181233130\"}},{\"id\":\"863897795\",\"type\":\"podcasts\",\"href\":\"/v1/catalog/us/podcasts/863897795\",\"attributes\":{\"offers\":[{\"kind\":\"get\",\"type\":\"STDQ\"}],\"copyright\":\"© 2014–2021 Tim Ferriss\",\"genreNames\":[\"Entrepreneurship\",\"Podcasts\",\"Business\"],\"kind\":\"episodic\",\"seasonNumbers\":[],\"description\":{\"standard\":\"Tim Ferriss is a self-experimenter and bestselling author, best known for The 4-Hour Workweek, which has been translated into 40+ languages.  Newsweek calls him \\\"the world's best human guinea pig,\\\" and The New York Times calls him \\\"a cross between Jack Welch and a Buddhist monk.\\\"  In this show, he deconstructs world-class performers from eclectic areas (investing, chess, pro sports, etc.), digging deep to find the tools, tactics, and tricks that listeners can use.\"},\"artwork\":{\"width\":1400,\"height\":1400,\"url\":\"https://is2-ssl.mzstatic.com/image/thumb/Podcasts125/v4/1e/6c/a3/1e6ca389-8db6-f7e0-7883-1f84d446fb03/mza_1352041245047545601.jpeg/{w}x{h}bb.{f}\"},\"completed\":false,\"languageTag\":\"en-US\",\"url\":\"https://podcasts.apple.com/us/podcast/the-tim-ferriss-show/id863897795\",\"releaseDateTime\":\"2022-08-24T21:20:00Z\",\"trackCount\":619,\"displayType\":\"free\",\"createdDate\":\"2014-04-16\",\"websiteUrl\":\"https://tim.blog/podcast\",\"name\":\"The Tim Ferriss Show\",\"artistName\":\"Tim Ferriss: Bestselling Author, Human Guinea Pig\",\"subscribable\":true,\"subscriptionUrl\":\"https://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/subscribePodcast?cc=us\u0026id=863897795\"}},{\"id\":\"201853034\",\"type\":\"podcasts\",\"href\":\"/v1/catalog/us/podcasts/201853034\",\"attributes\":{\"offers\":[{\"kind\":\"get\",\"type\":\"STDQ\"}],\"copyright\":\"© Copyright 2022 American Public Media\",\"genreNames\":[\"Business\",\"Podcasts\",\"News\"],\"kind\":\"episodic\",\"releaseFrequency\":\"Updated Daily\",\"seasonNumbers\":[],\"description\":{\"standard\":\"Every weekday, host Kai Ryssdal helps you make sense of the day’s business and economic news — no econ degree or finance background required. “Marketplace” takes you beyond the numbers, bringing you context. Our team of reporters all over the world speak with CEOs, policymakers and regular people just trying to get by.\"},\"artwork\":{\"width\":1400,\"height\":1400,\"url\":\"https://is2-ssl.mzstatic.com/image/thumb/Podcasts125/v4/21/09/ce/2109ce83-20b7-26bb-1af7-ae80299686da/mza_14819090495944690305.png/{w}x{h}bb.{f}\",\"bgColor\":\"ffffff\",\"textColor1\":\"0a0b0a\",\"textColor2\":\"041006\",\"textColor3\":\"3b3c3b\",\"textColor4\":\"363f38\"},\"completed\":false,\"languageTag\":\"en-US\",\"url\":\"https://podcasts.apple.com/us/podcast/marketplace/id201853034\",\"releaseDateTime\":\"2022-08-24T22:51:00Z\",\"trackCount\":51,\"displayType\":\"free\",\"createdDate\":\"2006-10-13\",\"websiteUrl\":\"https://www.marketplace.org/shows/marketplace/\",\"name\":\"Marketplace\",\"contentRating\":\"clean\",\"artistName\":\"Marketplace\",\"subscribable\":true,\"subscriptionUrl\":\"https://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/subscribePodcast?cc=us\u0026id=201853034\"}},{\"id\":\"1534324153\",\"type\":\"podcasts\",\"href\":\"/v1/catalog/us/podcasts/1534324153\",\"attributes\":{\"offers\":[{\"kind\":\"get\",\"type\":\"STDQ\"}],\"copyright\":\"© 2022 Barstool Sports, Inc.\",\"genreNames\":[\"Investing\",\"Podcasts\",\"Business\"],\"kind\":\"episodic\",\"releaseFrequency\":\"Updated Daily\",\"seasonNumbers\":[],\"description\":{\"standard\":\"The unlikely trio of Josh Richards, Dave Portnoy \u0026 Brianna Chickenfry team up to talk all things pop culture, celebrities, influencers \u0026 TikTok. You never know what to expect from this trio from breaking entertainment news to generational differences they’re sure to make you laugh while keeping you up to date.\"},\"artwork\":{\"width\":1533,\"height\":1533,\"url\":\"https://is3-ssl.mzstatic.com/image/thumb/Podcasts115/v4/d5/e6/e3/d5e6e3de-e3ea-75c5-bcd2-dc8e24f4c4bb/mza_10482054809245039264.jpg/{w}x{h}bb.{f}\"},\"completed\":false,\"languageTag\":\"en-US\",\"url\":\"https://podcasts.apple.com/us/podcast/bffs-with-dave-portnoy-josh-richards-and/id1534324153\",\"releaseDateTime\":\"2022-08-25T00:00:00Z\",\"trackCount\":91,\"displayType\":\"free\",\"createdDate\":\"2020-10-02\",\"websiteUrl\":\"https://www.barstoolsports.com/shows/134/Bffs\",\"name\":\"BFFs with Dave Portnoy, Josh Richards, and Brianna Chickenfry\",\"contentRating\":\"explicit\",\"artistName\":\"Barstool Sports\",\"subscribable\":true,\"subscriptionUrl\":\"https://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/subscribePodcast?cc=us\u0026id=1534324153\"}},{\"id\":\"1320118593\",\"type\":\"podcasts\",\"href\":\"/v1/catalog/us/podcasts/1320118593\",\"attributes\":{\"offers\":[{\"kind\":\"get\",\"type\":\"STDQ\"},{\"kind\":\"subscribe\",\"type\":\"PSUB\"}],\"copyright\":\"© Copyright 2015-2021 NPR - For Personal Use Only\",\"genreNames\":[\"Business\",\"Podcasts\"],\"kind\":\"episodic\",\"seasonNumbers\":[],\"description\":{\"standard\":\"A little show about big ideas. From the people who make Planet Money, The Indicator helps you make sense of what's happening today. It's a quick hit of insight into work, business, the economy, and everything else. Listen weekday afternoons.\\n\\nGot money on your mind? Try Planet Money+ — a new way to support the show you love, get a sponsor-free feed of the podcast, *and* get access to bonus content. A subscription also gets you access to The Indicator and Planet Money Summer School, both without interruptions.\"},\"artwork\":{\"width\":1400,\"height\":1400,\"url\":\"https://is3-ssl.mzstatic.com/image/thumb/Podcasts115/v4/f3/74/85/f3748574-e22e-f4c5-499a-bb5b8921ed3a/mza_4068194384821564613.jpg/{w}x{h}bb.{f}\",\"bgColor\":\"1e1950\",\"textColor1\":\"ffffff\",\"textColor2\":\"bce954\",\"textColor3\":\"d2d1db\",\"textColor4\":\"9cbf53\"},\"completed\":false,\"languageTag\":\"en-US\",\"url\":\"https://podcasts.apple.com/us/podcast/the-indicator-from-planet-money/id1320118593\",\"releaseDateTime\":\"2022-08-24T23:21:00Z\",\"trackCount\":301,\"displayType\":\"hybrid\",\"createdDate\":\"2017-12-01\",\"websiteUrl\":\"https://www.npr.org/sections/money/567724614/the-indicator\",\"name\":\"The Indicator from Planet Money\",\"artistName\":\"NPR\",\"subscribable\":true,\"subscriptionUrl\":\"https://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/subscribePodcast?cc=us\u0026id=1320118593\"}},{\"id\":\"928159684\",\"type\":\"podcasts\",\"href\":\"/v1/catalog/us/podcasts/928159684\",\"attributes\":{\"offers\":[{\"kind\":\"get\",\"type\":\"STDQ\"}],\"copyright\":\"© Gary Vaynerchuk\",\"genreNames\":[\"Entrepreneurship\",\"Podcasts\",\"Business\"],\"kind\":\"episodic\",\"releaseFrequency\":\"Updated Daily\",\"seasonNumbers\":[],\"description\":{\"standard\":\"Welcome to The GaryVee Audio Experience, hosted by entrepreneur, CEO, investor, content creator, and public speaker Gary Vaynerchuk. On this podcast you'll find a mix of the #AskGaryVee show episodes, keynote speeches on marketing and business, segments from my DAILYVEE video series, interviews and fireside chats I've given, as well as new and current thoughts I record originally for this audio experience!\"},\"artwork\":{\"width\":3000,\"height\":3000,\"url\":\"https://is3-ssl.mzstatic.com/image/thumb/Podcasts112/v4/8c/48/23/8c4823ac-ceb4-abca-0170-409fcdc92920/mza_12383661170196124213.jpg/{w}x{h}bb.{f}\",\"bgColor\":\"b91715\",\"textColor1\":\"fbec0a\",\"textColor2\":\"faccc9\",\"textColor3\":\"eec20c\",\"textColor4\":\"eda8a5\"},\"completed\":false,\"languageTag\":\"en-US\",\"url\":\"https://podcasts.apple.com/us/podcast/the-garyvee-audio-experience/id928159684\",\"releaseDateTime\":\"2022-08-25T10:00:00Z\",\"trackCount\":2000,\"displayType\":\"free\",\"createdDate\":\"2014-10-09\",\"websiteUrl\":\"http://www.garyvaynerchuk.com\",\"name\":\"The GaryVee Audio Experience\",\"contentRating\":\"explicit\",\"artistName\":\"Gary Vaynerchuk\",\"subscribable\":true,\"subscriptionUrl\":\"https://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/subscribePodcast?cc=us\u0026id=928159684\"}},{\"id\":\"1254720112\",\"type\":\"podcasts\",\"href\":\"/v1/catalog/us/podcasts/1254720112\",\"attributes\":{\"offers\":[{\"kind\":\"get\",\"type\":\"STDQ\"}],\"copyright\":\"© 098740\",\"genreNames\":[\"Entrepreneurship\",\"Podcasts\",\"Business\",\"Education\",\"How To\"],\"kind\":\"episodic\",\"releaseFrequency\":\"Updated Biweekly\",\"seasonNumbers\":[],\"description\":{\"standard\":\"Welcome to The Game Podcast where we talk about how to get more customers, make more profit per customer, and keep them longer, and the many failures and lessons we have learned along the way to $100M in sales. We've got roll up your sleeves kind of hustle with a little bit of cleverness and a lot of heart. Hosted by Alex Hormozi.\"},\"artwork\":{\"width\":1400,\"height\":1400,\"url\":\"https://is3-ssl.mzstatic.com/image/thumb/Podcasts122/v4/bc/bb/1f/bcbb1f5e-6741-3f8f-f068-89f774b0a75e/mza_8523909673512210159.png/{w}x{h}bb.{f}\",\"bgColor\":\"fafafa\",\"textColor1\":\"000000\",\"textColor2\":\"151515\",\"textColor3\":\"323232\",\"textColor4\":\"434343\"},\"completed\":false,\"languageTag\":\"en-US\",\"url\":\"https://podcasts.apple.com/us/podcast/the-game-w-alex-hormozi/id1254720112\",\"releaseDateTime\":\"2022-08-23T04:01:00Z\",\"trackCount\":430,\"displayType\":\"free\",\"createdDate\":\"2017-07-01\",\"websiteUrl\":\"https://www.acquisition.com/\",\"name\":\"The Game w/ Alex Hormozi\",\"contentRating\":\"explicit\",\"artistName\":\"Alex Hormozi\",\"subscribable\":true,\"subscriptionUrl\":\"https://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/subscribePodcast?cc=us\u0026id=1254720112\"}},{\"id\":\"1450211392\",\"type\":\"podcasts\",\"href\":\"/v1/catalog/us/podcasts/1450211392\",\"attributes\":{\"offers\":[{\"kind\":\"get\",\"type\":\"STDQ\"}],\"copyright\":\"© 2022 The Black Effect and iHeartPodcasts\",\"genreNames\":[\"Investing\",\"Podcasts\",\"Business\",\"Entrepreneurship\"],\"kind\":\"episodic\",\"seasonNumbers\":[],\"description\":{\"standard\":\"Welcome to The Earn Your Leisure Podcast. Rashad Bilal and Troy Millings will be your host. Earn Your Leisure will be giving you behind the scenes financial views into the entertainment and sports industries as well as highlighting back stories of entrepreneurs. We will also be breaking down business models and examining the latest trends in finance. Earn Your Leisure is a college business class mixed with pop culture. We blend the two together for a unique and exciting look into the world of business. Let’s go!! #earnyourleisurepodcast\"},\"artwork\":{\"width\":3000,\"height\":3000,\"url\":\"https://is3-ssl.mzstatic.com/image/thumb/Podcasts122/v4/b0/eb/ba/b0ebba62-2e78-2cb9-0c48-18fa76abb10b/mza_7792872222140089612.jpg/{w}x{h}bb.{f}\",\"bgColor\":\"e7e9e6\",\"textColor1\":\"040404\",\"textColor2\":\"442d23\",\"textColor3\":\"313231\",\"textColor4\":\"65524a\"},\"completed\":false,\"languageTag\":\"en-US\",\"url\":\"https://podcasts.apple.com/us/podcast/earn-your-leisure/id1450211392\",\"releaseDateTime\":\"2022-08-21T16:30:00Z\",\"trackCount\":397,\"displayType\":\"free\",\"createdDate\":\"2019-01-21\",\"websiteUrl\":\"https://www.iheart.com/podcast/256-earn-your-leisure-31087183/\",\"name\":\"Earn Your Leisure\",\"contentRating\":\"clean\",\"artistName\":\"The Black Effect and iHeartPodcasts\",\"subscribable\":true,\"subscriptionUrl\":\"https://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/subscribePodcast?cc=us\u0026id=1450211392\"}},{\"id\":\"833641766\",\"type\":\"podcasts\",\"href\":\"/v1/catalog/us/podcasts/833641766\",\"attributes\":{\"offers\":[{\"kind\":\"get\",\"type\":\"STDQ\"}],\"copyright\":\"© All rights reserved.\",\"genreNames\":[\"Investing\",\"Podcasts\",\"Business\",\"Education\"],\"kind\":\"episodic\",\"releaseFrequency\":\"Updated Weekly\",\"seasonNumbers\":[],\"description\":{\"standard\":\"Beat conventional advice on personal finance, investing, and business with the author of Rich Dad Poor Dad, Robert Kiyosaki. Get ahead with his pull-no-punches style of challenging the advice we’ve all been given on money, investing, and the economy. Frustrated and frightened by the financial advice being given by the mainstream talking heads, Robert Kiyosaki sits down with professionals from the world of money, investing, business, and personal development. Listeners will be provided various viewpoints on how to set themselves up for financial success. If you’re looking for get-rich-quick tips and tricks to investing, move on. Listeners dedicated to the craft of finance and a better life, subscribe! New podcasts released weekly!\"},\"artwork\":{\"width\":1400,\"height\":1400,\"url\":\"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/57/14/4d/57144d3e-bc60-31cd-8fc5-b3d5df2a35a4/mza_2734186127497628516.jpg/{w}x{h}bb.{f}\",\"bgColor\":\"ffffff\",\"textColor1\":\"291b2e\",\"textColor2\":\"332738\",\"textColor3\":\"544858\",\"textColor4\":\"5c5260\"},\"completed\":false,\"languageTag\":\"en-US\",\"url\":\"https://podcasts.apple.com/us/podcast/rich-dad-radio-show-in-your-face-advice-on-investing/id833641766\",\"releaseDateTime\":\"2022-08-24T06:00:00Z\",\"trackCount\":387,\"displayType\":\"free\",\"createdDate\":\"2014-03-03\",\"websiteUrl\":\"https://rich-dad.sounder.fm\",\"name\":\"Rich Dad Radio Show: In-Your-Face Advice on Investing, Personal Finance, \u0026 Starting a Business\",\"artistName\":\"The Rich Dad Radio Network\",\"subscribable\":true,\"subscriptionUrl\":\"https://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/subscribePodcast?cc=us\u0026id=833641766\"}},{\"id\":\"1335814741\",\"type\":\"podcasts\",\"href\":\"/v1/catalog/us/podcasts/1335814741\",\"attributes\":{\"offers\":[{\"kind\":\"get\",\"type\":\"STDQ\"},{\"kind\":\"subscribe\",\"type\":\"PSUB\"}],\"copyright\":\"© 2022 Wondery LLC. All rights reserved.\",\"genreNames\":[\"Management\",\"Podcasts\",\"Business\",\"History\"],\"kind\":\"serial\",\"releaseFrequency\":\"Semiweekly Series\",\"seasonNumbers\":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73],\"description\":{\"standard\":\"New episodes come out Wednesdays for free, with 1-week early access for Wondery+ subscribers.\\nNetflix vs. HBO. Nike vs. Adidas. Business is war. Sometimes the prize is your wallet or your attention. Sometimes, it’s just the fun of beating the other guy. The outcome of these battles shapes what we buy and how we live. \\nBusiness Wars gives you the unauthorized, real story of what drives these companies and their leaders, inventors, investors and executives to new heights -- or to ruin. Hosted by David Brown, former anchor of Marketplace. From Wondery, the network behind Dirty John and American History Tellers.\"},\"artwork\":{\"width\":3000,\"height\":3000,\"url\":\"https://is5-ssl.mzstatic.com/image/thumb/Podcasts122/v4/5d/5f/d1/5d5fd167-d6ee-2e00-a8a5-7607feb458b9/mza_5380857966091700760.jpeg/{w}x{h}bb.{f}\",\"bgColor\":\"b42616\",\"textColor1\":\"ffffff\",\"textColor2\":\"ffe5d4\",\"textColor3\":\"efd3d0\",\"textColor4\":\"efbeae\"},\"completed\":false,\"languageTag\":\"en-US\",\"url\":\"https://podcasts.apple.com/us/podcast/business-wars/id1335814741\",\"releaseDateTime\":\"2022-08-31T04:00:00Z\",\"trackCount\":452,\"displayType\":\"hybrid\",\"createdDate\":\"2018-01-20\",\"websiteUrl\":\"https://wondery.com/shows/Business-Wars/\",\"name\":\"Business Wars\",\"contentRating\":\"clean\",\"artistName\":\"Wondery\",\"subscribable\":true,\"subscriptionUrl\":\"https://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/subscribePodcast?cc=us\u0026id=1335814741\"}},{\"id\":\"1611322611\",\"type\":\"podcasts\",\"href\":\"/v1/catalog/us/podcasts/1611322611\",\"attributes\":{\"offers\":[{\"kind\":\"get\",\"type\":\"STDQ\"}],\"copyright\":\"© 2022 The NatureBacked Podcast\",\"genreNames\":[\"Investing\",\"Podcasts\",\"Business\",\"News\",\"Business News\"],\"kind\":\"serial\",\"releaseFrequency\":\"Weekly Series\",\"seasonNumbers\":[1,2],\"description\":{\"standard\":\"At NatureBacked, we talk with investors worldwide about climate change, covering everything from CO2 emissions to floods to investors' personal choices for turning the world greener. We speak with one investor in each episode, released on Mondays. The NatureBacked podcast is supported by Single.Earth - a startup that tokenizes the world's nature, bringing financial value to ecosystem services.\"},\"artwork\":{\"width\":1400,\"height\":1400,\"url\":\"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/b3/c5/22/b3c522a8-c5c3-1d27-aa31-22c579cc7075/mza_2072581406855200853.jpg/{w}x{h}bb.{f}\",\"bgColor\":\"8ce4f8\",\"textColor1\":\"261a00\",\"textColor2\":\"4b2420\",\"textColor3\":\"3a4231\",\"textColor4\":\"584a4b\"},\"completed\":false,\"languageTag\":\"en-US\",\"url\":\"https://podcasts.apple.com/us/podcast/the-naturebacked-podcast/id1611322611\",\"releaseDateTime\":\"2022-08-22T03:00:00Z\",\"trackCount\":25,\"displayType\":\"free\",\"createdDate\":\"2022-02-23\",\"websiteUrl\":\"https://www.naturebacked.com\",\"name\":\"The NatureBacked Podcast\",\"contentRating\":\"clean\",\"artistName\":\"Single.Earth\",\"subscribable\":true,\"subscriptionUrl\":\"https://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/subscribePodcast?cc=us\u0026id=1611322611\"}},{\"id\":\"1532284669\",\"type\":\"podcasts\",\"href\":\"/v1/catalog/us/podcasts/1532284669\",\"attributes\":{\"offers\":[{\"kind\":\"get\",\"type\":\"STDQ\"}],\"copyright\":\"© 2022 Barstool Sports, Inc.\",\"genreNames\":[\"Management\",\"Podcasts\",\"Business\"],\"kind\":\"episodic\",\"seasonNumbers\":[],\"description\":{\"standard\":\"Dave Portnoy and Chicago Eddie talk the inner workings of Barstool, while reflecting back on company history with guests that everybody knows and loves.\"},\"artwork\":{\"width\":2000,\"height\":2000,\"url\":\"https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/2c/30/82/2c3082f0-c95a-5acf-aab1-532f18a4fd2e/mza_1815130075526339514.jpg/{w}x{h}bb.{f}\"},\"completed\":false,\"languageTag\":\"en-US\",\"url\":\"https://podcasts.apple.com/us/podcast/the-dave-portnoy-show-with-eddie-co/id1532284669\",\"releaseDateTime\":\"2022-08-17T00:00:00Z\",\"trackCount\":99,\"displayType\":\"free\",\"createdDate\":\"2020-09-17\",\"websiteUrl\":\"https://www.barstoolsports.com/shows/129/The-Dave-Portnoy-Show-with-Eddie-and-Co.\",\"name\":\"The Dave Portnoy Show with Eddie \u0026 Co\",\"contentRating\":\"explicit\",\"artistName\":\"Barstool Sports\",\"subscribable\":true,\"subscriptionUrl\":\"https://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/subscribePodcast?cc=us\u0026id=1532284669\"}},{\"id\":\"1589146097\",\"type\":\"podcasts\",\"href\":\"/v1/catalog/us/podcasts/1589146097\",\"attributes\":{\"offers\":[{\"kind\":\"get\",\"type\":\"STDQ\"}],\"copyright\":\"© Morning Brew, 2022\",\"genreNames\":[\"Investing\",\"Podcasts\",\"Business\",\"Education\",\"How To\"],\"kind\":\"episodic\",\"releaseFrequency\":\"Updated Weekly\",\"seasonNumbers\":[1,2],\"description\":{\"standard\":\"Finance bros are out, #RichGirls are in. Join Money with Katie and her guests as they talk spending habits, smart investing, and tax strategies – without putting you to sleep. Listen weekly on Wednesdays to learn how to turn your Rich Girl mindset into money.\"},\"artwork\":{\"width\":3000,\"height\":3000,\"url\":\"https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/c1/a5/e1/c1a5e148-f334-5768-1d6a-22eb6b54124f/mza_3107337594023579102.jpeg/{w}x{h}bb.{f}\",\"bgColor\":\"ffe6d8\",\"textColor1\":\"0e0e0f\",\"textColor2\":\"402e1e\",\"textColor3\":\"3e3937\",\"textColor4\":\"665343\"},\"completed\":false,\"languageTag\":\"en-US\",\"url\":\"https://podcasts.apple.com/us/podcast/the-money-with-katie-show/id1589146097\",\"releaseDateTime\":\"2022-08-24T06:00:00Z\",\"trackCount\":47,\"displayType\":\"free\",\"createdDate\":\"2021-10-06\",\"websiteUrl\":\"https://podcast.moneywithkatie.com\",\"name\":\"The Money with Katie Show\",\"contentRating\":\"clean\",\"artistName\":\"Morning Brew\",\"subscribable\":true,\"subscriptionUrl\":\"https://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/subscribePodcast?cc=us\u0026id=1589146097\"}}],\"href\":\"/v1/catalog/us/charts?chart=top\u0026genre=1321\u0026types=podcasts\"}]}}"}</script><script type="fastboot/shoebox" id="shoebox-global-elements">{"nav":"\u003caside id=\"ac-gn-segmentbar\" class=\"ac-gn-segmentbar\" lang=\"en-US\" dir=\"ltr\" data-strings=\"{ \u0026apos;exit\u0026apos;: \u0026apos;Exit\u0026apos;, \u0026apos;view\u0026apos;: \u0026apos;{%STOREFRONT%} Store Home\u0026apos;, \u0026apos;segments\u0026apos;: { \u0026apos;smb\u0026apos;: \u0026apos;Business Store Home\u0026apos;, \u0026apos;eduInd\u0026apos;: \u0026apos;Education Store Home\u0026apos;, \u0026apos;other\u0026apos;: \u0026apos;Store Home\u0026apos; } }\"\u003e\u003c/aside\u003e\n\u003cinput type=\"checkbox\" id=\"ac-gn-menustate\" class=\"ac-gn-menustate\"\u003e\n\u003cnav id=\"ac-globalnav\" class=\"no-js\" role=\"navigation\" aria-label=\"Global\" data-hires=\"false\" data-analytics-region=\"global nav\" lang=\"en-US\" dir=\"ltr\" data-www-domain=\"www.apple.com\" data-store-locale=\"us\" data-store-root-path=\"/us\" data-store-api=\"https://www.apple.com/[storefront]/shop/bag/status\" data-search-locale=\"en_US\" data-search-suggestions-api=\"https://www.apple.com/search-services/suggestions/\" data-search-defaultlinks-api=\"https://www.apple.com/search-services/suggestions/defaultlinks/\"\u003e\n\t\u003cdiv class=\"ac-gn-content\"\u003e\n\t\t\u003cul class=\"ac-gn-header\"\u003e\n\t\t\t\u003cli class=\"ac-gn-item ac-gn-menuicon\"\u003e\n\t\t\t\t\u003ca href=\"#ac-gn-menustate\" role=\"button\" class=\"ac-gn-menuanchor ac-gn-menuanchor-open\" id=\"ac-gn-menuanchor-open\"\u003e\n\t\t\t\t\t\u003cspan class=\"ac-gn-menuanchor-label\"\u003eGlobal Nav Open Menu\u003c/span\u003e\n\t\t\t\t\u003c/a\u003e\n\t\t\t\t\u003ca href=\"#\" role=\"button\" class=\"ac-gn-menuanchor ac-gn-menuanchor-close\" id=\"ac-gn-menuanchor-close\"\u003e\n\t\t\t\t\t\u003cspan class=\"ac-gn-menuanchor-label\"\u003eGlobal Nav Close Menu\u003c/span\u003e\n\t\t\t\t\u003c/a\u003e\n\t\t\t\t\u003clabel class=\"ac-gn-menuicon-label\" for=\"ac-gn-menustate\" aria-hidden=\"true\"\u003e\n\t\t\t\t\t\u003cspan class=\"ac-gn-menuicon-bread ac-gn-menuicon-bread-top\"\u003e\n\t\t\t\t\t\t\u003cspan class=\"ac-gn-menuicon-bread-crust ac-gn-menuicon-bread-crust-top\"\u003e\u003c/span\u003e\n\t\t\t\t\t\u003c/span\u003e\n\t\t\t\t\t\u003cspan class=\"ac-gn-menuicon-bread ac-gn-menuicon-bread-bottom\"\u003e\n\t\t\t\t\t\t\u003cspan class=\"ac-gn-menuicon-bread-crust ac-gn-menuicon-bread-crust-bottom\"\u003e\u003c/span\u003e\n\t\t\t\t\t\u003c/span\u003e\n\t\t\t\t\u003c/label\u003e\n\t\t\t\u003c/li\u003e\n\t\t\t\u003cli class=\"ac-gn-item ac-gn-apple\"\u003e\n\t\t\t\t\u003ca class=\"ac-gn-link ac-gn-link-apple\" href=\"https://www.apple.com/\" data-analytics-title=\"apple home\" id=\"ac-gn-firstfocus-small\"\u003e\n\t\t\t\t\t\u003cspan class=\"ac-gn-link-text\"\u003eApple\u003c/span\u003e\n\t\t\t\t\u003c/a\u003e\n\t\t\t\u003c/li\u003e\n\t\t\t\u003cli class=\"ac-gn-item ac-gn-bag ac-gn-bag-small\" id=\"ac-gn-bag-small\"\u003e\n\t\t\t\t\u003cdiv class=\"ac-gn-bag-wrapper\"\u003e\n\t\t\t\t\t\u003ca class=\"ac-gn-link ac-gn-link-bag\" href=\"https://www.apple.com/us/shop/goto/bag\" data-analytics-title=\"bag\" data-analytics-click=\"bag\" aria-label=\"Shopping Bag\" data-string-badge=\"Shopping Bag with item count :\"\u003e\n\t\t\t\t\t\t\u003cspan class=\"ac-gn-link-text\"\u003eShopping Bag\u003c/span\u003e\n\t\t\t\t\t\u003c/a\u003e\n\t\t\t\t\t\u003cspan class=\"ac-gn-bag-badge\" aria-hidden=\"true\" data-analytics-title=\"bag\" data-analytics-click=\"bag\"\u003e\n\t\t\t\t\t\t\u003cspan class=\"ac-gn-bag-badge-separator\"\u003e\u003c/span\u003e\n\t\t\t\t\t\t\u003cspan class=\"ac-gn-bag-badge-number\"\u003e\u003c/span\u003e\n\t\t\t\t\t\t\u003cspan class=\"ac-gn-bag-badge-unit\"\u003e+\u003c/span\u003e\n\t\t\t\t\t\u003c/span\u003e\n\t\t\t\t\u003c/div\u003e\n\t\t\t\t\u003cspan class=\"ac-gn-bagview-caret ac-gn-bagview-caret-large\"\u003e\u003c/span\u003e\n\t\t\t\u003c/li\u003e\n\t\t\u003c/ul\u003e\n\t\t\u003cdiv class=\"ac-gn-search-placeholder-container\" role=\"search\"\u003e\n\t\t\t\u003cdiv class=\"ac-gn-search ac-gn-search-small\"\u003e\n\t\t\t\t\u003ca id=\"ac-gn-link-search-small\" class=\"ac-gn-link\" href=\"https://www.apple.com/us/search\" data-analytics-title=\"search\" data-analytics-intrapage-link aria-label=\"Search apple.com\"\u003e\n\t\t\t\t\t\u003cdiv class=\"ac-gn-search-placeholder-bar\"\u003e\n\t\t\t\t\t\t\u003cdiv class=\"ac-gn-search-placeholder-input\"\u003e\n\t\t\t\t\t\t\t\u003cdiv class=\"ac-gn-search-placeholder-input-text\" aria-hidden=\"true\"\u003e\n\t\t\t\t\t\t\t\t\u003cdiv class=\"ac-gn-link-search ac-gn-search-placeholder-input-icon\"\u003e\u003c/div\u003e\n\t\t\t\t\t\t\t\t\u003cspan class=\"ac-gn-search-placeholder\"\u003eSearch apple.com\u003c/span\u003e\n\t\t\t\t\t\t\t\u003c/div\u003e\n\t\t\t\t\t\t\u003c/div\u003e\n\t\t\t\t\t\t\u003cdiv class=\"ac-gn-searchview-close ac-gn-searchview-close-small ac-gn-search-placeholder-searchview-close\"\u003e\n\t\t\t\t\t\t\t\u003cspan class=\"ac-gn-searchview-close-cancel\" aria-hidden=\"true\"\u003eCancel\u003c/span\u003e\n\t\t\t\t\t\t\u003c/div\u003e\n\t\t\t\t\t\u003c/div\u003e\n\t\t\t\t\u003c/a\u003e\n\t\t\t\u003c/div\u003e\n\t\t\u003c/div\u003e\n\t\t\u003cul class=\"ac-gn-list\"\u003e\n\t\t\t\u003cli class=\"ac-gn-item ac-gn-apple\"\u003e\n\t\t\t\t\u003ca class=\"ac-gn-link ac-gn-link-apple\" href=\"https://www.apple.com/\" data-analytics-title=\"apple home\" id=\"ac-gn-firstfocus\"\u003e\n\t\t\t\t\t\u003cspan class=\"ac-gn-link-text\"\u003eApple\u003c/span\u003e\n\t\t\t\t\u003c/a\u003e\n\t\t\t\u003c/li\u003e\n\t\t\t\u003cli class=\"ac-gn-item ac-gn-item-menu ac-gn-store\"\u003e\n\t\t\t\t\u003ca class=\"ac-gn-link ac-gn-link-store\" href=\"https://www.apple.com/us/shop/goto/store\" data-analytics-title=\"store\"\u003e\n\t\t\t\t\t\u003cspan class=\"ac-gn-link-text\"\u003eStore\u003c/span\u003e\n\t\t\t\t\u003c/a\u003e\n\t\t\t\u003c/li\u003e\n\t\t\t\u003cli class=\"ac-gn-item ac-gn-item-menu ac-gn-mac\"\u003e\n\t\t\t\t\u003ca class=\"ac-gn-link ac-gn-link-mac\" href=\"https://www.apple.com/mac/\" data-analytics-title=\"mac\"\u003e\n\t\t\t\t\t\u003cspan class=\"ac-gn-link-text\"\u003eMac\u003c/span\u003e\n\t\t\t\t\u003c/a\u003e\n\t\t\t\u003c/li\u003e\n\t\t\t\u003cli class=\"ac-gn-item ac-gn-item-menu ac-gn-ipad\"\u003e\n\t\t\t\t\u003ca class=\"ac-gn-link ac-gn-link-ipad\" href=\"https://www.apple.com/ipad/\" data-analytics-title=\"ipad\"\u003e\n\t\t\t\t\t\u003cspan class=\"ac-gn-link-text\"\u003eiPad\u003c/span\u003e\n\t\t\t\t\u003c/a\u003e\n\t\t\t\u003c/li\u003e\n\t\t\t\u003cli class=\"ac-gn-item ac-gn-item-menu ac-gn-iphone\"\u003e\n\t\t\t\t\u003ca class=\"ac-gn-link ac-gn-link-iphone\" href=\"https://www.apple.com/iphone/\" data-analytics-title=\"iphone\"\u003e\n\t\t\t\t\t\u003cspan class=\"ac-gn-link-text\"\u003eiPhone\u003c/span\u003e\n\t\t\t\t\u003c/a\u003e\n\t\t\t\u003c/li\u003e\n\t\t\t\u003cli class=\"ac-gn-item ac-gn-item-menu ac-gn-watch\"\u003e\n\t\t\t\t\u003ca class=\"ac-gn-link ac-gn-link-watch\" href=\"https://www.apple.com/watch/\" data-analytics-title=\"watch\"\u003e\n\t\t\t\t\t\u003cspan class=\"ac-gn-link-text\"\u003eWatch\u003c/span\u003e\n\t\t\t\t\u003c/a\u003e\n\t\t\t\u003c/li\u003e\n\t\t\t\u003cli class=\"ac-gn-item ac-gn-item-menu ac-gn-airpods\"\u003e\n\t\t\t\t\u003ca class=\"ac-gn-link ac-gn-link-airpods\" href=\"https://www.apple.com/airpods/\" data-analytics-title=\"airpods\"\u003e\n\t\t\t\t\t\u003cspan class=\"ac-gn-link-text\"\u003eAirPods\u003c/span\u003e\n\t\t\t\t\u003c/a\u003e\n\t\t\t\u003c/li\u003e\n\t\t\t\u003cli class=\"ac-gn-item ac-gn-item-menu ac-gn-tvhome\"\u003e\n\t\t\t\t\u003ca class=\"ac-gn-link ac-gn-link-tvhome\" href=\"https://www.apple.com/tv-home/\" data-analytics-title=\"tv and home\"\u003e\n\t\t\t\t\t\u003cspan class=\"ac-gn-link-text\"\u003eTV \u0026amp; Home\u003c/span\u003e\n\t\t\t\t\u003c/a\u003e\n\t\t\t\u003c/li\u003e\n\t\t\t\u003cli class=\"ac-gn-item ac-gn-item-menu ac-gn-onlyonapple\"\u003e\n\t\t\t\t\u003ca class=\"ac-gn-link ac-gn-link-onlyonapple\" href=\"https://www.apple.com/services/\" data-analytics-title=\"only on apple\"\u003e\n\t\t\t\t\t\u003cspan class=\"ac-gn-link-text\"\u003eOnly on Apple\u003c/span\u003e\n\t\t\t\t\u003c/a\u003e\n\t\t\t\u003c/li\u003e\n\t\t\t\u003cli class=\"ac-gn-item ac-gn-item-menu ac-gn-accessories\"\u003e\n\t\t\t\t\u003ca class=\"ac-gn-link ac-gn-link-accessories\" href=\"https://www.apple.com/us/shop/goto/buy_accessories\" data-analytics-title=\"accessories\"\u003e\n\t\t\t\t\t\u003cspan class=\"ac-gn-link-text\"\u003eAccessories\u003c/span\u003e\n\t\t\t\t\u003c/a\u003e\n\t\t\t\u003c/li\u003e\n\t\t\t\u003cli class=\"ac-gn-item ac-gn-item-menu ac-gn-support\"\u003e\n\t\t\t\t\u003ca class=\"ac-gn-link ac-gn-link-support\" href=\"https://support.apple.com\" data-analytics-title=\"support\"\u003e\n\t\t\t\t\t\u003cspan class=\"ac-gn-link-text\"\u003eSupport\u003c/span\u003e\n\t\t\t\t\u003c/a\u003e\n\t\t\t\u003c/li\u003e\n\t\t\t\u003cli class=\"ac-gn-item ac-gn-item-menu ac-gn-search\" role=\"search\"\u003e\n\t\t\t\t\u003ca id=\"ac-gn-link-search\" class=\"ac-gn-link ac-gn-link-search\" href=\"https://www.apple.com/us/search\" data-analytics-title=\"search\" data-analytics-intrapage-link aria-label=\"Search apple.com\"\u003e\u003c/a\u003e\n\t\t\t\u003c/li\u003e\n\t\t\t\u003cli class=\"ac-gn-item ac-gn-bag\" id=\"ac-gn-bag\"\u003e\n\t\t\t\t\u003cdiv class=\"ac-gn-bag-wrapper\"\u003e\n\t\t\t\t\t\u003ca class=\"ac-gn-link ac-gn-link-bag\" href=\"https://www.apple.com/us/shop/goto/bag\" data-analytics-title=\"bag\" data-analytics-click=\"bag\" aria-label=\"Shopping Bag\" data-string-badge=\"Shopping Bag with item count : {%BAGITEMCOUNT%}\"\u003e\n\t\t\t\t\t\t\u003cspan class=\"ac-gn-link-text\"\u003eShopping Bag\u003c/span\u003e\n\t\t\t\t\t\u003c/a\u003e\n\t\t\t\t\t\u003cspan class=\"ac-gn-bag-badge\" aria-hidden=\"true\" data-analytics-title=\"bag\" data-analytics-click=\"bag\"\u003e\n\t\t\t\t\t\t\u003cspan class=\"ac-gn-bag-badge-separator\"\u003e\u003c/span\u003e\n\t\t\t\t\t\t\u003cspan class=\"ac-gn-bag-badge-number\"\u003e\u003c/span\u003e\n\t\t\t\t\t\t\u003cspan class=\"ac-gn-bag-badge-unit\"\u003e+\u003c/span\u003e\n\t\t\t\t\t\u003c/span\u003e\n\t\t\t\t\u003c/div\u003e\n\t\t\t\t\u003cspan class=\"ac-gn-bagview-caret ac-gn-bagview-caret-large\"\u003e\u003c/span\u003e\n\t\t\t\u003c/li\u003e\n\t\t\u003c/ul\u003e\n\t\t\u003caside id=\"ac-gn-searchview\" class=\"ac-gn-searchview\" role=\"search\" data-analytics-region=\"search\"\u003e\n\t\t\t\u003cdiv class=\"ac-gn-searchview-content\"\u003e\n\t\t\t\t\u003cdiv class=\"ac-gn-searchview-bar\"\u003e\n\t\t\t\t\t\u003cdiv class=\"ac-gn-searchview-bar-wrapper\"\u003e\n\t\t\t\t\t\t\u003cform id=\"ac-gn-searchform\" class=\"ac-gn-searchform\" action=\"https://www.apple.com/us/search\" method=\"get\"\u003e\n\t\t\t\t\t\t\t\u003cdiv class=\"ac-gn-searchform-wrapper\"\u003e\n\t\t\t\t\t\t\t\t\u003cinput id=\"ac-gn-searchform-input\" class=\"ac-gn-searchform-input\" type=\"text\" aria-label=\"Search apple.com\" placeholder=\"Search apple.com\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"off\" spellcheck=\"false\" role=\"combobox\" aria-autocomplete=\"list\" aria-expanded=\"true\" aria-owns=\"quicklinks suggestions\"\u003e\n\t\t\t\t\t\t\t\t\u003cinput id=\"ac-gn-searchform-src\" type=\"hidden\" name=\"src\" value=\"itunes_serp\"\u003e\n\t\t\t\t\t\t\t\t\u003cbutton id=\"ac-gn-searchform-submit\" class=\"ac-gn-searchform-submit\" type=\"submit\" disabled aria-label=\"Submit Search\"\u003e \u003c/button\u003e\n\t\t\t\t\t\t\t\t\u003cbutton id=\"ac-gn-searchform-reset\" class=\"ac-gn-searchform-reset\" type=\"reset\" disabled aria-label=\"Clear Search\"\u003e\n\t\t\t\t\t\t\t\t\t\u003cspan class=\"ac-gn-searchform-reset-background\"\u003e\u003c/span\u003e\n\t\t\t\t\t\t\t\t\u003c/button\u003e\n\t\t\t\t\t\t\t\u003c/div\u003e\n\t\t\t\t\t\t\u003c/form\u003e\n\t\t\t\t\t\t\u003cbutton id=\"ac-gn-searchview-close-small\" class=\"ac-gn-searchview-close ac-gn-searchview-close-small\" aria-label=\"Cancel Search\"\u003e\n\t\t\t\t\t\t\t\u003cspan class=\"ac-gn-searchview-close-cancel\" aria-hidden=\"true\"\u003e\n\t\t\t\t\t\t\t\tCancel\n\t\t\t\t\t\t\t\u003c/span\u003e\n\t\t\t\t\t\t\u003c/button\u003e\n\t\t\t\t\t\u003c/div\u003e\n\t\t\t\t\u003c/div\u003e\n\t\t\t\t\u003caside id=\"ac-gn-searchresults\" class=\"ac-gn-searchresults\" data-string-quicklinks=\"Quick Links\" data-string-suggestions=\"Suggested Searches\" data-string-noresults\u003e\u003c/aside\u003e\n\t\t\t\u003c/div\u003e\n\t\t\t\u003cbutton id=\"ac-gn-searchview-close\" class=\"ac-gn-searchview-close\" aria-label=\"Cancel Search\"\u003e\n\t\t\t\t\u003cspan class=\"ac-gn-searchview-close-wrapper\"\u003e\n\t\t\t\t\t\u003cspan class=\"ac-gn-searchview-close-left\"\u003e\u003c/span\u003e\n\t\t\t\t\t\u003cspan class=\"ac-gn-searchview-close-right\"\u003e\u003c/span\u003e\n\t\t\t\t\u003c/span\u003e\n\t\t\t\u003c/button\u003e\n\t\t\u003c/aside\u003e\n\t\t\u003caside class=\"ac-gn-bagview\" data-analytics-region=\"bag\"\u003e\n\t\t\t\u003cdiv class=\"ac-gn-bagview-scrim\"\u003e\n\t\t\t\t\u003cspan class=\"ac-gn-bagview-caret ac-gn-bagview-caret-small\"\u003e\u003c/span\u003e\n\t\t\t\u003c/div\u003e\n\t\t\t\u003cdiv class=\"ac-gn-bagview-content\" id=\"ac-gn-bagview-content\"\u003e\n\t\t\t\u003c/div\u003e\n\t\t\u003c/aside\u003e\n\t\u003c/div\u003e\n\u003c/nav\u003e\n\u003cdiv class=\"ac-gn-blur\"\u003e\u003c/div\u003e\n\u003cdiv id=\"ac-gn-curtain\" class=\"ac-gn-curtain\"\u003e\u003c/div\u003e\n\u003cdiv id=\"ac-gn-placeholder\" class=\"ac-nav-placeholder\"\u003e\u003c/div\u003e\n","footer":"\u003cfooter id=\"ac-globalfooter\" class=\"no-js\" role=\"contentinfo\" lang=\"en-US\" dir=\"ltr\"\u003e\u003cdiv class=\"ac-gf-content\"\u003e\u003csection class=\"ac-gf-footer\"\u003e\n\t\u003cdiv class=\"ac-gf-footer-shop\" x-ms-format-detection=\"none\"\u003e\n\t\tMore ways to shop: \u003ca href=\"https://www.apple.com/retail/\" data-analytics-title=\"find an apple store\"\u003eFind an Apple Store\u003c/a\u003e or \u003ca href=\"https://locate.apple.com/\" data-analytics-title=\"other retailers or resellers\" data-analytics-exit-link\u003eother retailer\u003c/a\u003e near you. \u003cspan class=\"nowrap\"\u003eOr call 1-800-MY-APPLE.\u003c/span\u003e\n\t\u003c/div\u003e\n\t\u003cdiv class=\"ac-gf-footer-locale\"\u003e\n\t\t\u003ca class=\"ac-gf-footer-locale-link\" href=\"https://www.apple.com/choose-country-region/\" title=\"Choose your country or region\" aria-label=\"Choose your country or region\" data-analytics-title=\"choose your country\"\u003eChoose your country or region\u003c/a\u003e\n\t\u003c/div\u003e\n\t\u003cdiv class=\"ac-gf-footer-legal\"\u003e\n\t\t\u003cdiv class=\"ac-gf-footer-legal-copyright\"\u003eCopyright \u0026#xA9; 2022 Apple Inc. All rights reserved.\n\t\t\u003c/div\u003e\n\t\t\u003cdiv class=\"ac-gf-footer-legal-links\"\u003e\n\t\t\t\u003ca class=\"ac-gf-footer-legal-link\" href=\"https://www.apple.com/legal/privacy/\" data-analytics-title=\"privacy policy\"\u003ePrivacy Policy\u003c/a\u003e\n\t\t\t\u003ca class=\"ac-gf-footer-legal-link\" href=\"https://www.apple.com/legal/internet-services/terms/site.html\" data-analytics-title=\"terms of use\"\u003eTerms of Use\u003c/a\u003e\n\t\t\t\u003ca class=\"ac-gf-footer-legal-link\" href=\"https://www.apple.com/us/shop/goto/help/sales_refunds\" data-analytics-title=\"sales and refunds\"\u003eSales and Refunds\u003c/a\u003e\n\t\t\t\u003ca class=\"ac-gf-footer-legal-link\" href=\"https://www.apple.com/legal/\" data-analytics-title=\"legal\"\u003eLegal\u003c/a\u003e\n\t\t\t\u003ca class=\"ac-gf-footer-legal-link\" href=\"https://www.apple.com/sitemap/\" data-analytics-title=\"site map\"\u003eSite Map\u003c/a\u003e\n\t\t\u003c/div\u003e\n\t\u003c/div\u003e\n\u003c/section\u003e\n\u003c/div\u003e\u003c/footer\u003e","styles":{"nav":"2210.1.0/en_US/ac-global-nav.6ab06e7ad3aaf025138951b5c958ae3b.css","footer":"2210.1.0/en_US/ac-global-footer.7fb24d229e183ab411ed7662850ce5a0.css"},"scripts":{"nav":"2210.1.0/en_US/ac-global-nav.294b65e7729ab1c596e195cd90349397.js","footer":"2210.1.0/en_US/ac-global-footer.33e5f7b4cd1360fa6599e7adcbb494dd.js"},"isLoaded":true}</script><script type="x/boundary" id="fastboot-body-end"></script>
+    <div id="modal-container"></div>
+    <script integrity="" src="/assets/vendor-58205b5fd810c33e0b930776b6f89626.js"></script>
+<script src="/assets/chunk.309.848d97fb43af54a66969.js"></script>
+<script src="/assets/chunk.143.c6f3d80cf1e4c914f266.js"></script>
+    <script integrity="" src="/assets/web-experience-app-599a8830fe1acd9f1f31bdc93c51f785.js" data-app-legacy-src="" nomodule></script>
+
+    
+    
+  <script type="application/ld+json" data-test-seo-data-org="podcasts">
+    {
+      "@context": "https://schema.org",
+      "@id": "https://podcasts.apple.com/#organization",
+      "@type": "Organization",
+      "name": "Apple Podcasts",
+      "url": "https://podcasts.apple.com",
+      "logo": "https://podcasts.apple.com/assets/images/knowledge-graph/podcasts.png",
+      "sameAs": [
+        "https://twitter.com/ApplePodcasts",
+        "https://www.facebook.com/ApplePodcasts/"
+      ],
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Apple",
+        "@id": "https://www.apple.com/#organization",
+        "url": "https://www.apple.com/"
+      }
+    }
+  </script>
+
+  
+
+<script type="module" src="/assets/web-experience-app-9c274d07b08d16388448d73c189b0e03.modern.js" integrity=""></script></body></html>
